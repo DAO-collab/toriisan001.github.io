@@ -116,6 +116,14 @@ main pre {
     padding: 1px 10px;
 }
 
+main img {
+    outline: 2px solid #dcdcdc;
+    border-radius: 5px;
+    height: 300px;
+    margin-top: 5px;
+    align-items: left;
+}
+
 /* footer */
 
 footer {
