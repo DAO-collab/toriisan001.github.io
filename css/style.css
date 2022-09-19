@@ -1,0 +1,153 @@
+/* common */
+body {
+    margin: 0;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+h1,
+h2,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2 {
+    font-weight: normal;
+}
+
+.container {
+    width: 400px;
+    margin: 0 auto;
+}
+
+/* header */
+header {
+    background: #efefef;
+}
+
+header .container {
+    padding: 32px 0;
+    display: flex;
+    align-items: center;
+}
+
+header .container div + div {
+    margin-left: 32px;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header ul li + li {
+    margin-left: 8px;
+}
+
+header .icon {
+    border-radius: 50%;
+}
+
+/* main */
+
+main ul {
+    list-style: none;
+    text-align: left;
+}
+
+main a {
+    text-decoration: none;
+}
+
+main h1 {
+    line-height: 2;
+    font-size: 24px;
+    text-align: left;
+}
+
+main h2 {
+    line-height: 2;
+    font-size: 20px;
+    text-align: left;
+    text-indent: 1em;
+    border-left: 5px solid #ffa500;
+    padding-left: .5em;
+    padding-top: .5em;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+}
+
+main p {
+    line-height: 1;
+    margin-top: 5px;
+    text-align: left;
+    text-indent: 2em;
+}
+
+main a {
+    line-height: 1;
+    margin-top: 10px;
+    text-align: left;
+    text-indent: 2em;
+}
+
+main pre {
+    line-height: 1;
+    margin-top: 5px;
+    text-align: left;
+    text-indent: 2em;
+    outline: 2px solid #dcdcdc;
+    border-radius: 5px;
+    padding: 10px 10px;
+}
+
+/* footer */
+
+footer {
+    padding: 60px 0;
+    text-align: center;
+}
+
+/* side */
+
+.side {
+    /* background-color: #ff838b; */
+    width: 150px;
+    text-align: center;
+}
+
+.content {
+    /* background-color: #b3d874; */
+    text-align: center;
+    margin-left: 1px;
+}
+
+article {
+    /* outline: 2px solid red; */
+    margin: 0 auto;
+    width: 1500px;
+    display: flex;
+}
+
+/* animation */
+
+.animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .3s, transform .3s;
+}
+
+.animate.appear {
+    opacity: 1;
+    transform: none;
+}
