@@ -60,6 +60,11 @@ header .icon {
 
 /* main */
 
+main {
+    width: 1000px;
+    margin: 0 auto;
+}
+
 main ul {
     list-style: none;
     text-align: left;
@@ -108,7 +113,7 @@ main pre {
     text-indent: 2em;
     outline: 2px solid #dcdcdc;
     border-radius: 5px;
-    padding: 10px 10px;
+    padding: 1px 10px;
 }
 
 /* footer */
@@ -135,7 +140,7 @@ footer {
 article {
     /* outline: 2px solid red; */
     margin: 0 auto;
-    width: 1500px;
+    width: 1000px;
     display: flex;
 }
 

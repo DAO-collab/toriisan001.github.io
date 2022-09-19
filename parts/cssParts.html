@@ -30,6 +30,137 @@ body {
         </code>
     </pre>
 
+    <h2>画像下の余白を消す</h2>
+    <pre>
+        <code>
+img {
+    vertical-align: bottom;
+}
+        </code>
+    </pre>
 
+    <h2>タグの中のタグを指定</h2>
+    <pre>
+        <code>
+header .container {
+}
+        </code>
+    </pre>
+
+    <h2>幅を指定</h2>
+    <pre>
+        <code>
+width: 400px;
+        </code>
+    </pre>
+
+    <h2>左右にマージンを設定して画面中央に配置</h2>
+    <pre>
+        <code>
+margin: 0 auto;
+        </code>
+    </pre>
+
+    <h2>目安にするためアウトラインを設定</h2>
+    <pre>
+        <code>
+outline: 2px solid red;
+        </code>
+    </pre>
+
+    <h2>横並びに表示</h2>
+    <pre>
+        <code>
+1.divの中にdivを入れる
+&lt;div class=&quot;container&quot;&gt;
+    &lt;div&gt;
+        &lt;h1&gt;文字列１&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;h1&gt;文字列２&lt;/h1&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+2.「display: flex;」を指定する
+.container {
+display: flex;
+}
+
+※ul要素にflexを付けることもできる
+        </code>
+    </pre>
+
+    <h2>文字の太さを指定</h2>
+    <pre>
+        <code>
+font-weight:normal;
+        </code>
+    </pre>
+
+    <h2>文字のサイズを変更</h2>
+    <pre>
+        <code>
+font-size: 24px;
+        </code>
+    </pre>
+
+    <h2>リストのスタイルをなくす</h2>
+    <pre>
+        <code>
+header ul {
+    list-style: none;
+}
+        </code>
+    </pre>
+
+    <h2>要素に続く要素に対して属性を指定</h2>
+    <pre>
+        <code>
+header ul li + li {
+    margin-left: 8px;
+}
+        </code>
+    </pre>
+
+    <h2>親要素に対して中央ぞろえ</h2>
+    <pre>
+        <code>
+align-items: center;
+text-align: center;
+※どう違うのかはよくわからん
+        </code>
+    </pre>
+
+    <h2>要素を丸くする</h2>
+    <pre>
+        <code>
+&lt;img
+src=&quot;../img/tottori.png&quot;
+alt=&quot;鳥居涼太のアイコン&quot;
+width=&quot;120&quot;
+height=&quot;120&quot;
+class=&quot;icon&quot;&gt;
+header .icon {
+border-radius: 50%;
+}
+※画像、ボーダーラインなどに使用できる
+        </code>
+    </pre>
+
+    <h2>余白</h2>
+    <pre>
+        <code>
+margin: 0 auto;
+padding: 0 auto;
+それから margin の場合、 margin の相殺が起きると面倒なので、どちらでもいいときは padding を選ぶ人も多い
+        </code>
+    </pre>
+
+    <h2>boxの高さ（文字の行間を調節）</h2>
+    <pre>
+        <code>
+line-height: 1.8;
+        </code>
+    </pre>
 
     </div>

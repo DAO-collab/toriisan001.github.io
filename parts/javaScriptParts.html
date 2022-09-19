@@ -1,0 +1,82 @@
+<div id="javaScript">
+<h1>javaScript</h1>
+
+<h2>厳密なチェック</h2>
+<pre>
+    <code>
+'use strict';
+    </code>
+</pre>
+
+<h2>まずブロックで囲むらしい</h2>
+<pre>
+    <code>
+{
+
+}
+    </code>
+</pre>
+
+<h2>ファイルを読み込む</h2>
+<pre>
+    <code>
+・jquery-3.6.1.min.jsを読み込む
+&lt;script src=&quot;../js/jquery-3.6.1.min.js&quot;&gt;&lt;/script&gt;
+
+・htmlParts.htmlを作成
+&lt;div id=&quot;home&quot;&gt;
+パーツ部分記述
+&lt;/div&gt;
+
+・htmlPage.html
+以下の場所に配置
+&lt;div id=&quot;home&quot;&gt;&lt;/div&gt;
+
+    </code>
+</pre>
+<p><a href="https://codelife.cafe/entry/2015/10/27/222803" target="_blank">【jQuery】htmlページをパーツごとに分けて読み込む方法</a></p>
+
+<h2>HTML aside要素でサイドバーのアウトラインを作る</h2>
+<pre>
+    <code>
+・homePage.html
+&lt;article&gt;
+&lt;div class=&quot;side&quot;&gt;
+    &lt;div id=&quot;side&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;content&quot;&gt;
+    &lt;div id=&quot;home&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/article&gt;
+
+・style.css
+/* side */
+
+.side {
+    /* background-color: #ff838b; */
+    width: 150px;
+    text-align: center;
+}
+
+.content {
+    /* background-color: #b3d874; */
+    text-align: center;
+    margin-left: 1px;
+}
+
+article {
+    /* outline: 2px solid red; */
+    margin: 0 auto;
+    width: 1000px;
+    display: flex;
+}
+
+    </code>
+</pre>
+<p><a href="https://webukatu.com/wordpress/blog/27994/" target="_blank">HTML aside要素でサイドバーのアウトラインを作る</a></p>
+
+<h2>「index.html:1 Access to XMLHttpRequest at 'file:///C:/xampp/htdocs/MyPortfolio/header.html' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, chrome-untrusted, https, isolated-app.」</h2>
+<p>Chromeはhttpアクセスしかファイルへのアクセスを許可していない</p>
+<p>nodejsでローカルサーバーを立ち上げることで解決する</p>
+
+</div>
