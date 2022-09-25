@@ -1,0 +1,276 @@
+<div id="css">
+    <h1>CSS</h1>
+
+    <h2>情報</h2>
+    <p>ページの上にほうに目立つ画像を置くエリアをヒーローエリアと呼ぶらしい</p>
+
+    <h2>cssは長くなりがちなのでコメントを書いておくと便利</h2>
+    <pre>
+        <code>
+/* common */
+/* header */
+/* main */
+/* footer */
+/* side */
+/* animation */
+        </code>
+    </pre>
+    
+    <h2>バックグラウンド色を変更</h2>
+    <pre>
+        <code>
+background: #efefef;
+        </code>
+    </pre>
+
+    <h2>bodyタグ全体のマージンを0にする</h2>
+    <pre>
+        <code>
+/* common */
+body {
+    margin: 0;
+}
+        </code>
+    </pre>
+
+    <h2>画像下の余白を消す</h2>
+    <pre>
+        <code>
+img {
+    vertical-align: bottom;
+}
+        </code>
+    </pre>
+
+    <h2>タグの中のタグを指定</h2>
+    <pre>
+        <code>
+header .container {
+}
+        </code>
+    </pre>
+
+    <h2>幅を指定</h2>
+    <pre>
+        <code>
+width: 400px;
+        </code>
+    </pre>
+
+    <h2>左右にマージンを設定して画面中央に配置</h2>
+    <pre>
+        <code>
+margin: 0 auto;
+        </code>
+    </pre>
+
+    <h2>目安にするためアウトラインを設定</h2>
+    <pre>
+        <code>
+outline: 2px solid red;
+        </code>
+    </pre>
+
+    <h2>横並びに表示</h2>
+    <pre>
+        <code>
+1.divの中にdivを入れる
+&lt;div class=&quot;container&quot;&gt;
+    &lt;div&gt;
+        &lt;h1&gt;文字列１&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;h1&gt;文字列２&lt;/h1&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+2.「display: flex;」を指定する
+.container {
+display: flex;
+}
+
+※ul要素にflexを付けることもできる
+        </code>
+    </pre>
+
+    <h2>文字の太さを指定</h2>
+    <pre>
+        <code>
+font-weight:normal;
+        </code>
+    </pre>
+
+    <h2>文字のサイズを変更</h2>
+    <pre>
+        <code>
+font-size: 24px;
+        </code>
+    </pre>
+
+    <h2>リストのスタイルをなくす</h2>
+    <pre>
+        <code>
+header ul {
+    list-style: none;
+}
+        </code>
+    </pre>
+
+    <h2>要素に続く要素に対して属性を指定</h2>
+    <pre>
+        <code>
+header ul li + li {
+    margin-left: 8px;
+}
+        </code>
+    </pre>
+
+    <h2>親要素に対して中央ぞろえ</h2>
+    <pre>
+        <code>
+align-items: center;
+text-align: center;
+※どう違うのかはよくわからん
+
+※displayプロパティがblockの要素に関しては中のテキストが中央ぞろえになるだけで
+それ自体が親要素に対して中央ぞろえにはならない。
+そんなときはmarginを両サイドに割り当てて中央ぞろえにする
+margin: 64px auto 0;
+        </code>
+    </pre>
+
+    <h2>要素を丸くする</h2>
+    <pre>
+        <code>
+&lt;img
+src=&quot;../img/tottori.png&quot;
+alt=&quot;鳥居涼太のアイコン&quot;
+width=&quot;120&quot;
+height=&quot;120&quot;
+class=&quot;icon&quot;&gt;
+header .icon {
+border-radius: 50%;
+}
+※画像、ボーダーラインなどに使用できる
+        </code>
+    </pre>
+
+    <h2>余白</h2>
+    <pre>
+        <code>
+margin: 0 auto;
+padding: 0 auto;
+それから margin の場合、 margin の相殺が起きると面倒なので、どちらでもいいときは padding を選ぶ人も多い
+        </code>
+    </pre>
+
+    <h2>boxの高さ（文字の行間を調節）</h2>
+    <pre>
+        <code>
+line-height: 1.8;
+        </code>
+    </pre>
+    
+    <h2>aタグの下線を消して、そこで設定されている文字色をそのまま継承する</h2>
+    <pre>
+        <code>
+a {
+    text-decoration: none;
+    color:inherit
+}
+        </code>
+    </pre>
+
+    <h2>ボタンに幅を持たせたい場合はdisplay blockを使用する</h2>
+    <pre>
+        <code>
+.btn {
+    display: block;
+    width: 160px;
+    background: #329e00;
+    color:#fff;
+}
+
+以下ボタンらしく加工した例
+.btn {
+    display: block;
+    width: 160px;
+    background: #329e00;
+    color:#fff;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 4px;
+    font-weight: bold;
+}
+        </code>
+    </pre>
+
+    <h2>左右幅32pxを持ちつつ両側にマージンを設定した中央配置</h2>
+    <pre>
+        <code>
+.container {
+    width: calc(100% - 32px);
+    margin: 0 auto;
+    outline: 2px solid red;
+}   
+        </code>
+    </pre>
+
+    <h2>間にスペースを開けて真ん中にスペースを設定して上下中央で配置。</h2>
+    <pre>
+        <code>
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+        </code>
+    </pre>
+
+    <h2>文字をくっきりさせる</h2>
+    <pre>
+        <code>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+        </code>
+    </pre>
+
+    <h2>背景に画像を設定。繰り返しの設定。配置位置の設定</h2>
+    <pre>
+        <code>
+.hero {
+    background-color: #99e6ff;
+    background-image: url(../img/bg.png);
+    background-repeat: repeat-x;
+    background-position: center bottom;
+}
+        </code>
+    </pre>
+
+    <h2>画像をはみ出さないように配置</h2>
+    <pre>
+        <code>
+.features img {
+    width: 100%;
+}
+        </code>
+    </pre>
+
+    <h2>Pタグの調整</h2>
+    <pre>
+        <code>
+高さを調整
+p {
+    margin: 0;
+    line-height: 1.6;
+}
+pタグに続くpタグにマージンを設定
+p + p {
+    margin-top: 16px;
+}
+        </code>
+    </pre>
+
+    </div>
