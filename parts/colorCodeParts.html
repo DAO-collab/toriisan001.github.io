@@ -1,0 +1,63 @@
+<div id="colorCode">
+<h1>Color Code</h1>
+<h2>Headerに使えそう？</h2>
+<div class="button" style="background-color: #efefef;">#efefef</div>
+<div class="button" style="background-color: #99e6ff;">#99e6ff</div>
+
+<h2>ボタンに使えそう？</h2>
+<div class="button" style="background-color: #329e00;">#329e00</div>
+
+<h2>健屋花那 - デフォルト</h2>
+<h3>髪</h3>
+<div class="button" style="background-color: #F0E4E6;">#F0E4E6</div>
+<h3>肌</h3>
+<div class="button" style="background-color: #FFF8EE;">#FFF8EE</div>
+<h3>目・ベース</h3>
+<div class="button" style="background-color: #1D2B96;">#1D2B96</div>
+<h3>目・白目</h3>
+<div class="button" style="background-color: #FBEAD4;">#FBEAD4</div>
+<h3>目・黒目</h3>
+<div class="button" style="background-color: #683D80;">#683D80</div>
+<h3>目・グラデーション</h3>
+<div class="button" style="background-color: #E281C5;">#E281C5</div>
+<h3>ほほ紅</h3>
+<div class="button" style="background-color: #FDCCCA;">#FDCCCA</div>
+<h3>唇</h3>
+<div class="button" style="background-color: #C33741;">#C33741</div>
+<h3>十字ヘアピン・包帯</h3>
+<div class="button" style="background-color: #FFFFFF;">#FFFFFF</div>
+<h3>首元リング</h3>
+<div class="button" style="background-color: #212020; color: #FFFFFF;">#212020</div>
+<h3>胸元プレート</h3>
+<div class="button" style="background-color: #DDDDDD;">#DDDDDD</div>
+<h3>服ベース</h3>
+<div class="button" style="background-color: #D9C9D5;">#D9C9D5</div>
+<h3>イメージカラー</h3>
+<div class="button" style="background-color: #FD1AA4;">#FD1AA4</div>
+<h3>黄色ボタン（胸元）</h3>
+<div class="button" style="background-color: #B5804B;">#B5804B</div>
+<h3>青ボタン（腰・袖）</h3>
+<div class="button" style="background-color: #065BE9;">#065BE9</div>
+<h3>手袋</h3>
+<div class="button" style="background-color: #F7F2EA;">#F7F2EA</div>
+<h3>フリル</h3>
+<div class="button" style="background-color: #FFFFF9;">#FFFFF9</div>
+<h3>影</h3>
+<div class="button" style="background-color: #ED94A5;">#ED94A5</div>
+<h3>靴</h3>
+<div class="button" style="background-color: #DECDCB;">#DECDCB</div>
+
+<script>
+    $(function() {
+        var button = document.getElementsByClassName("button");
+        Array.from(button).forEach(element => {
+            const bkupText = element.innerHTML;
+            element.addEventListener('click', () => {
+                navigator.clipboard.writeText(element.innerHTML);
+                element.innerHTML = 'Copy OK！';
+                setTimeout(() => element.innerHTML = bkupText, 500);
+            });
+        });
+    });
+</script>
+</div>

@@ -139,4 +139,41 @@ targets.forEach(target => {
     </code>
 </pre>
 
+<h2>クラス名ごとにループして処理を行う</h2>
+<pre>
+    <code>
+===HTML===
+&lt;p class=&quot;button&quot; style=&quot;background-color: #efefef;&quot;&gt;#efefef&lt;/p&gt;
+
+===CSS===
+var button = document.getElementsByClassName("button");
+Array.from(button).forEach((element, index) => {
+}
+    </code>
+</pre>
+<p><a href="https://9cubed.info/article/javascript/0029" target="_blank">【参考】JavaScript - アロー関数(ラムダ式)</a></p>
+
+<h2>テキストをクリップボードにコピー</h2>
+<pre>
+    <code>
+===HTML===
+&lt;p class=&quot;button&quot; style=&quot;background-color: #efefef;&quot;&gt;#efefef&lt;/p&gt;
+
+===JavaScript===
+&lt;script&gt;
+    $(function() {
+        var button = document.getElementsByClassName(&quot;button&quot;);
+        Array.from(button).forEach(element =&gt; {
+            const bkupText = element.innerHTML;
+            element.addEventListener(&#039;click&#039;, () =&gt; {
+                navigator.clipboard.writeText(element.innerHTML);
+                element.innerHTML = &#039;Copy OK！&#039;;
+                setTimeout(() =&gt; element.innerHTML = bkupText, 500);
+            });
+        });
+    });
+&lt;/script&gt;
+    </code>
+</pre>
+
 </div>

@@ -172,7 +172,15 @@ article {
     transition: opacity .3s, transform .3s;
 }
 
-.animate.appear {
-    opacity: 1;
-    transform: none;
+/* colorCode */
+
+#colorCode > .button {
+    border: solid 1px #333;
+    border-radius: 3px;
+    text-align: center;
+    text-indent: 0;
+}
+
+#colorCode > .button + .button {
+    margin-top: 5px;
 }
