@@ -21,6 +21,21 @@ h3 {
     font-weight: normal;
 }
 
+h3 {
+    text-indent: -1em;
+    margin-left: 1em;
+}
+h3:before {
+    content: '';
+    display: inline-block;
+    width: .5em;
+    height: .5em;
+    margin-right: .5em;
+    background: #C33741;
+    transform: rotate(45deg);
+    vertical-align: 2px;
+}
+
 .container {
     width: 400px;
     margin: 0 auto;
@@ -87,7 +102,7 @@ main h2 {
     font-size: 20px;
     text-align: left;
     text-indent: 1em;
-    border-left: 5px solid #ffa500;
+    border-left: 5px solid #EEE0E1;
     padding-left: .5em;
     padding-top: .5em;
     margin-top: 1.5em;
@@ -160,7 +175,7 @@ footer {
 article {
     /* outline: 2px solid red; */
     margin: 0 auto;
-    width: 1000px;
+    width: 1500px;
     display: flex;
 }
 

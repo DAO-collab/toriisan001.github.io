@@ -1,6 +1,216 @@
 <div id="home">
 <h1>HOME</h1>
+
 <h2>更新内容</h2>
 <p>2022/09/18 日々の学習内容の備忘録として作成</p>
 <p>2022/09/18 更新テスト</p>
+
+<h2>現在情報</h2>
+<p>西暦：<span id="current_date"></span></p>
+<p>和暦：<span id="japanese_calender"></span></p>
+<p>時刻：<span id="current_time"></span></p>
+<p>曜日：<span id="day_of_week"></span></p>
+<p>うるう年判定：<span id="leap_year"></span></p>
+<p>十二支：<span id="zodiac"></span></p>
+<p>和風月名：<span id="Japanese_moon_name"></span></p>
+
+<h2>ブラウザ、スクリーン、URLなど</h2>
+<span id="information"></span>
+
+<h2>位置情報</h2>
+<span id="location"></span>
+
+<h2>通信状況</h2>
+<span id="communication_status"></span>
+
+<h2>加速度</h2>
+<span id="acceleration"></span>
+
+<script>
+    {
+        'use strict';
+
+        // ゼロ埋め
+        function zeroPadding(no, digit) {
+            return ('0'.repeat(digit) + no).slice( (-1 * digit) );
+        }
+
+        // うるう年判定
+        function isLeapYear(year) {
+            return new Date(year, 2, 0).getDate() === 29;
+        }
+
+        // 西暦
+        date = new Date();
+        year = date.getFullYear();
+        month = date.getMonth() + 1;
+        day = date.getDate();
+        document.getElementById("current_date").innerHTML = year + "/" + month + "/" + day;
+        
+        // 和暦
+        const options = {era: 'long'};
+        const japaneseCalender =  new Intl.DateTimeFormat('ja-JP-u-ca-japanese', options).format(date);
+        document.getElementById("japanese_calender").innerHTML = japaneseCalender;
+
+        // 曜日
+        var hour = date.getHours();
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+        document.getElementById("current_time").innerHTML = hour + ":" + minute + ":" + second;
+
+        // うるう年判定
+        document.getElementById("leap_year").innerHTML = isLeapYear(hour);
+        
+        // 時刻
+        var dayOfWeek = date.getDay();
+        var dayOfWeekStr = [ "日", "月", "火", "水", "木", "金", "土" ][dayOfWeek];
+        document.getElementById("day_of_week").innerHTML = dayOfWeekStr + "曜日";
+
+        // 干支
+        const zodiacData = [
+            "申(さる)",
+            "酉(とり)",
+            "戌(いぬ)",
+            "亥(い)",
+            "子(ね)",
+            "丑(うし)",
+            "寅(とら)",
+            "卯(う)",
+            "辰(たつ)",
+            "巳(み)",
+            "午(うま)",
+            "未(ひつじ)"
+        ];
+        document.getElementById("zodiac").innerHTML = zodiacData[parseInt(year) % 12];
+
+        // 和風月名
+        const japaneseMoonNameData = [
+            "睦月(むつき)・・・正月に親類一同が集まる、睦び（親しくする）の月。",
+            "如月(きさらぎ)・・・衣更着（きさらぎ）とも言う。まだ寒さが残っていて、衣を重ね着する（更に着る）月。",
+            "弥生(やよい)・・・木草弥生い茂る（きくさいやおいしげる、草木が生い茂る）月。",
+            "卯月(うづき)・・・卯の花の月。",
+            "皐月(さつき)・・・	早月（さつき）とも言う。早苗（さなえ）を植える月。",
+            "水無月(みなづき、みなつき)・・・水の月（「無」は「の」を意味する）で、田に水を引く月の意と言われる。",
+            "文月(ふみづき、ふづき)・・・稲の穂が実る月（穂含月：ほふみづき）",
+            "葉月(はづき、はつき)・・・木々の葉落ち月（はおちづき）。",
+            "長月(ながつき、ながづき)・・・夜長月（よながづき）。",
+            "神無月(かんなづき)・・・神の月（「無」は「の」を意味する）の意味。全国の神々が出雲大社に集まり、各地の神々が留守になる月という説などもある。",
+            "霜月(しもつき)・・・霜の降る月。",
+            "師走(しわす)・・・師匠といえども趨走（すうそう、走り回る）する月。"
+        ];
+        document.getElementById("Japanese_moon_name").innerHTML = japaneseMoonNameData[date.getMonth()];
+
+
+        // ブラウザ、スクリーン、URLなど
+        const information=document.getElementById("information");
+        const infoArray=[];
+        infoArray.ホスト=location.host;
+        infoArray.ホスト名=location.hostname;
+        infoArray.ポート番号=location.port;
+        infoArray.URL=location.href;
+        infoArray.プロトコル情報=location.protocol;
+        infoArray.サーチ情報=location.search;
+        infoArray.ハッシュ=location.hash;
+        infoArray.ページURLのパス=location.pathname;
+        infoArray.ブラウザのコードネーム=location.appCodeName;
+        infoArray.ブラウザ名=navigator.appName;
+        infoArray.ブラウザのバージョン=navigator.appVersion;
+        infoArray.ブラウザの使用言語=navigator.language;
+        infoArray.ブラウザのプラットフォーム=navigator.platform;
+        infoArray.ブラウザのユーザーエージェント=navigator.userAgent;
+        infoArray.リファラー=document.referrer;
+        infoArray.ドメイン=document.domain;
+        infoArray.スクリーンの幅=screen.width;
+        infoArray.スクリーンの高さ=screen.height;
+        infoArray.スクリーンの色深度=screen.colorDepth+"bit";
+        infoArray.ブラウザのビューポートの幅 = window.innerWidth;
+        infoArray.ブラウザのビューポートの高さ = window.innerHeight;
+        infoArray.デバイスピクセル比 = window.devicePixelRatio;
+        infoArray.タッチ操作可能 = navigator.pointerEnabled;
+        infoArray.最大同時タッチ数 = navigator.maxTouchPoints;
+        for (key in infoArray) {
+            information.innerHTML += ("<p>" + key+"：" + infoArray[key] + "</p>");
+        }
+
+        // 位置情報
+        const locationInfo = document.getElementById("location");
+        const locArray=[];
+        // 位置情報取得成功時の処理
+        let successCallback=(position)=>{
+            locationInfo.innerHTML="";
+
+            locArray.緯度=position.coords.latitude;
+            locArray.経度=position.coords.longitude;
+            locArray.高度=position.coords.altitude;
+            locArray.緯度と経度の誤差=position.coords.accuracy;
+            locArray.高度の誤差=position.coords.altitudeAccuracy;
+            locArray.方角=position.coords.heading;
+            locArray.速度=position.coords.speed;
+
+            for(key in locArray){
+                locationInfo.innerHTML += ("<p>" + key+"：" + locArray[key] + "</p>");
+            }
+        }
+
+        // 位置情報取得失敗時の処理
+        const failureCallback=(error)=>{
+            let errorMessage = "";
+            switch(error.code){
+            case 1:
+                errorMessage = "位置情報の取得がユーザーに拒否されました";
+                break;
+            case 2:
+                errorMessage = "位置情報が判定できません";
+                break;
+            case 3:
+                errorMessage = "位置情報の取得処理がタイムアウトしました";
+                break;
+            }
+            locationInfo.innerHTML=errorMessage;
+        }
+
+        //ユーザーの現在の位置情報を取得を実行
+        navigator.geolocation.watchPosition(successCallback, failureCallback);
+
+        // 通信状況
+        const communicationStatusInfo = document.getElementById("communication_status");
+        const getNetworkCondition = () => {
+            communicationStatusInfo.innerHTML = "<p>通信状況：" + navigator.onLine + "</p>";
+            window.requestAnimationFrame(getNetworkCondition);
+        }
+        getNetworkCondition();
+
+        // 加速度
+        const accelerationInfo = document.getElementById("acceleration");
+        const accelerationArray=[];
+
+        //センサーから加速度を取得して書き出す処理
+        const deviceOrientationTest=()=>{window.addEventListener("devicemotion", (event)=> {          
+            accelerationInfo.innerHTML="";
+
+                accelerationArray.加速度X軸=parseFloat(event.acceleration.x);
+                accelerationArray.加速度Y軸=parseFloat(event.acceleration.y);
+                accelerationArray.加速度Z軸=parseFloat(event.acceleration.z);
+
+                accelerationArray.加速度重力加速度X軸=parseFloat(event.accelerationIncludingGravity.x);
+                accelerationArray.加速度重力加速度Y軸=parseFloat(event.accelerationIncludingGravity.y);
+                accelerationArray.加速度重力加速度Z軸=parseFloat(event.accelerationIncludingGravity.z);
+
+                accelerationArray.回転加速度X軸=parseFloat(event.rotationRate.beta);
+                accelerationArray.回転加速度Y軸=parseFloat(event.rotationRate.gamma);
+                accelerationArray.回転加速度Z軸=parseFloat(event.rotationRate.alpha);
+
+                for(key in accelerationArray){
+                    accelerationInfo.innerHTML += ("<p>" + key+"：" + accelerationArray[key] + "</p>");
+                };
+            });
+        };
+
+        //センサーから加速度を取得して書き出す処理をループ実行
+        (deviceOrientationLoop=()=>{
+            deviceOrientationTest();
+            window.requestAnimationFrame(deviceOrientationLoop);
+        })();
+    };
+</script>
 </div>
