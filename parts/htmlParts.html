@@ -1,5 +1,29 @@
 <div id="html">
 <h1>HTML</h1>
+<h2>よく使うタグ一覧</h2>
+<pre>
+    <code>
+    html
+    head
+        meta
+        title
+        link
+    boxy
+        header
+        main
+        section
+        h1
+        h2
+        h3
+        div
+        span
+        p
+        code
+        ul
+    fooder
+    </code>
+</pre>
+<p><a href="https://zero-plus.io/media/html-tags-and-usage/">【参考】HTMLのよく使うタグ一覧！この15個さえ押さえればOK！</a></p>
 
 <h2>「!」を押してエンターキーで以下のひな型を入力（右下の言語モードがhtmlになっていることを確認）</h2>
 <pre>
@@ -95,6 +119,107 @@ class=&quot;icon&quot;&gt;
 &lt;br&gt;
 &lt;/body&gt;
 &lt;/html&gt;
+    </code>
+</pre>
+
+<h2>行を移動</h2>
+<p>alt + 上下矢印キー</p>
+
+<h2>行を複製</h2>
+<p>Windows だったら shift + alt + 下矢印、 macOS だったら shift + option + 下矢印</p>
+
+<h2>Emmetの活用</h2>
+<p>タグ名を書いてエンター。</p>
+<h3>heml例</h3>
+<pre>
+    <code>
+header エンター
+&lt;header&gt;&lt;/header&gt;
+
+a&gt;h1&gt;img エンター
+        &lt;a href=&quot;&quot;&gt;
+            &lt;h1&gt;&lt;img src=&quot;&quot; alt=&quot;&quot;&gt;&lt;/h1&gt;
+        &lt;/a&gt;
+
+link:css エンター
+&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+
+a エンター
+&lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+
+div.container エンター
+.container エンター
+&lt;div class=&quot;container&quot;&gt;&lt;/div&gt;
+※divの場合は省略できる
+    </code>
+</pre>
+
+<h3>css例</h3>
+<pre>
+    <code>
+        bg エンター
+        header {
+            background: #eee;
+        }
+        
+        m0 エンター
+        margin: 0;
+        
+        tac エンター
+        text-align: center;
+        
+        p8-0 エンター
+        padding: 8px 0;
+        
+        m0-auto エンター
+        margin: 0 auto;
+        
+        fsz24 エンター
+        font-size: 24px;
+        
+        fwn エンター
+        font-weight: normal;
+        
+        同じ階層に追加したい場合は＋で繋ぐ
+        .container&gt;section&gt;img+h2+p エンター
+        
+                &lt;div class=&quot;container&quot;&gt;
+                    &lt;section&gt;
+                        &lt;img src=&quot;&quot; alt=&quot;&quot;&gt;
+                        &lt;h2&gt;&lt;/h2&gt;
+                        &lt;p&gt;&lt;/p&gt;
+                    &lt;/section&gt;
+                &lt;/div&gt;
+    </code>
+</pre>
+
+<h2>aタグのhrefについて</h2>
+<p>ダミーにするときは#パウンド記号を入れておく。入れても特に変わりなし。ダミーってことを示すため？</p>
+<pre>
+    <code>
+&lt;a&gt;href=&quot;#&quot;&gt;&lt;/a&gt;
+    </code>
+</pre>
+
+<h2>文字列内で改行</h2>
+<pre>
+    <code>
+&lt;p&gt;毎日を&lt;br&gt;楽しく&lt;/p&gt;
+    </code>
+</pre>
+
+<h2>画像を少し小さくする方法</h2>
+<pre>
+    <code>
+画像をdivで囲み、paddingを少しつける
+===html===
+                &lt;div class=&quot;pic&quot;&gt;
+                    &lt;img src=&quot;&quot; alt=&quot;&quot;&gt;
+                &lt;/div&gt;
+===css===
+.features .pic {
+    padding: 32px;
+}
     </code>
 </pre>
 
