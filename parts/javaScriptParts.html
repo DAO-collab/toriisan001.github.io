@@ -82,73 +82,58 @@ article {
 <h2>Intersection Observer APIを使用して浮かび上がらせるアニメーションを埋め込む</h2>
 <pre>
     <code>
-===HTML===
-&lt;div class=&quot;container&quot;&gt;
-    &lt;h1&gt;&lt;/h1&gt;
-    &lt;section class=&quot;animate&quot;&gt;
-        &lt;h2&gt;&lt;/h2&gt;
-        &lt;p&gt;&lt;/p&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;animate&quot;&gt;
-        &lt;h2&gt;&lt;/h2&gt;
-        &lt;p&gt;&lt;/p&gt;
-    &lt;/section&gt;
-    &lt;section class=&quot;animate&quot;&gt;
-        &lt;h2&gt;&lt;/h2&gt;
-        &lt;p&gt;&lt;/p&gt;
-    &lt;/section&gt;
+===HEML===
+&lt;div class=&quot;animate&quot;&gt;
 &lt;/div&gt;
 
 ===CSS===
+// 初期状態。少し下に配置して見えないようにする
 .animate {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity .3s, transform .3s;
+opacity: 0;
+transform: translateY(40px);
+transition: opacity .3s, transform .3s;
 }
 
+// 見えるようにする（javascriptでappearを付与させる）。animateクラスとappearがある状態。 
 .animate.appear {
-    opacity: 1;
-    transform: none;
+opacity: 1;
+transform: none;
 }
 
-===javascript===
-//Intersection Observer API
+===JavaScript===
+// Intersection Observer API
 
-function callback(entries, obs) {
-    entries.forEach(entry => {
+function inViewCallback(entries, obs) {
+    entries.forEach(entry =&gt; {
+        // 要素が画面と交差したかどうか判定
         if (!entry.isIntersecting) {
             return;
         }
 
-        entry.target.classList.add('appear');
+        // 画面に要素が現れた場合はappearクラスを付与
+        entry.target.classList.add(&#039;appear&#039;);
+        // 一度付与された項目を監視対象から外す
         obs.unobserve(entry.target);
     });
 }
 
-const options = {
+// 特定の要素が画面に 20% くらい交差したときにこちらの callback の処理を実行
+const inViewObserver = new IntersectionObserver(inViewCallback, {
     threshold: 0.2,
-};
+});
 
-const observer = new IntersectionObserver(callback, options);
-
-const targets = document.querySelectorAll('.animate');
-
-targets.forEach(target => {
-    observer.observe(target);
+document.querySelectorAll(&#039;.animate&#039;).forEach(el =&gt; {
+    inViewObserver.observe(el);
 });
     </code>
 </pre>
 
-<h2>クラス名ごとにループして処理を行う</h2>
+<h2>複数のクラスに処理を行う</h2>
 <pre>
     <code>
-===HTML===
-&lt;p class=&quot;button&quot; style=&quot;background-color: #efefef;&quot;&gt;#efefef&lt;/p&gt;
-
-===CSS===
-var button = document.getElementsByClassName("button");
-Array.from(button).forEach((element, index) => {
-}
+document.querySelectorAll('.animate').forEach(el => {
+    observer.observe(el);
+});
     </code>
 </pre>
 <p><a href="https://9cubed.info/article/javascript/0029" target="_blank">【参考】JavaScript - アロー関数(ラムダ式)</a></p>
@@ -186,12 +171,73 @@ function zeroPadding(no, digit) {
     </code>
 </pre>
 
-<h2>うるう年判定</h2>
+<h2>うるう年判定関数</h2>
 <pre>
     <code>
-function isLeapYear(year) {
-    return new Date(year, 2, 0).getDate() === 29;
+function zeroPadding(no, digit) {
+    return ('0'.repeat(digit) + no).slice(-1 * digit);
 }
+    </code>
+</pre>
+
+<h2>毎秒実行</h2>
+<pre>
+    <code>
+setInterval(() => {
+
+}, 1000);
+    </code>
+</pre>
+
+<h2>headerを固定する(Intersection Observer API)</h2>
+<pre>
+    <code>
+===HTML===
+&lt;header&gt;
+&lt;/header&gt;
+
+===CSS===
+header {
+    padding: 16px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: background-color .3s, box-shadow .3s;
+    z-index: 1;
+}
+
+header.scrolled {
+    background-color: rgba(255, 255, 255, .95);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+}
+
+===JavaScript===
+    function onScrollCallback(entries) {
+        entries.forEach(entry =&gt; {
+            // 要素が画面と交差したかどうか判定
+            if (!entry.isIntersecting) {
+                header.classList.add(&#039;scrolled&#039;);
+            } else {
+                // 要素が画面に表示されている
+                header.classList.remove(&#039;scrolled&#039;);
+            }
+        });
+    }
+    const header = document.querySelector(&#039;header&#039;);
+    </code>
+</pre>
+
+<h2>クラスを付与する</h2>
+<pre>
+    <code>
+header.classList.add('scrolled');
+    </code>
+</pre>
+
+<h2>クラスを除去する</h2>
+<pre>
+    <code>
+header.classList.remove('scrolled');
     </code>
 </pre>
 

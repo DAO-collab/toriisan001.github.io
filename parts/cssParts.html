@@ -222,7 +222,13 @@ a {
     width: calc(100% - 32px);
     margin: 0 auto;
     outline: 2px solid red;
-}   
+}
+
+※以下画像
+    .hero img {
+        width: calc(100% - 32px);
+        height: auto;
+    }
         </code>
     </pre>
 
@@ -283,10 +289,129 @@ p + p {
         </code>
     </pre>
 
-    <h2>行や列に隙間を入れる</h2>
+    <h2>行や列に隙間を入れる（display flexで横並びにした項目の間を開ける）</h2>
     <pre>
         <code>
-gap: 8px;
+.voices .container {
+    display: flex;
+    gap:16px;
+}
+        </code>
+    </pre>
+
+    <h2>large screen（600ピクセルを超えたら次のスタイルにしなさい）</h2>
+    <pre>
+        <code>
+===HTML===
+&lt;section class=&quot;hero&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;desc&quot;&gt;
+            &lt;h1&gt;&lt;/h1&gt;
+            &lt;p&gt;&lt;/p&gt;
+            &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;ダウンロード&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;pic&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+===CSS===
+/* large screen */
+
+@media (min-width: 600px) {
+
+    .hero .container {
+        display: flex;
+    }
+
+    .hero .desc,
+    .hero .pic {
+        width: 50%;
+    }
+
+}
+        </code>
+    </pre>
+
+    <h2>最大サイズを指定</h2>
+    <pre>
+        <code>
+max-width: 800px;
+        </code>
+    </pre>
+
+    <h2>横並びに配置して、基数番目の位置を反転させる。</h2>
+    <pre>
+        <code>
+.features section {
+    display:flex;
+}
+
+.features section:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+        </code>
+    </pre>
+
+    <h2>縦方向にflexboxを設定して間を開ける。</h2>
+    <pre>
+        <code>
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+        </code>
+    </pre>
+
+    <h2>transformで画面外に移動させたコンテンツを非表示に（左右のスクロールバーが出てしまうのを防ぐらしい）</h2>
+    <pre>
+        <code>
+overflow: hidden;
+        </code>
+    </pre>
+
+    <h2>小数点の省略</h2>
+    <pre>
+        <code>
+transition-delay: .3s;
+
+background-color: rgba(255, 255, 255, .95);
+        </code>
+    </pre>
+
+    <h2>transitionのタイミングをずらす</h2>
+    <pre>
+        <code>
+===HTML===
+&lt;section class=&quot;animate delay&quot;&gt;
+
+===CSS===
+.abunate.delay {
+    transition-delay: .3s;
+}
+        </code>
+    </pre>
+
+    <h2>半透明な白</h2>
+    <p>rgbaを使用する</p>
+    <pre>
+        <code>
+background-color: rgba(255, 255, 255, .95);
+        </code>
+    </pre>
+
+    <h2>影を付ける</h2>
+    <p>rgbaを使用する</p>
+    <pre>
+        <code>
+box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+        </code>
+    </pre>
+
+    <h2>z軸のindex指定（アニメーション等で描画されるときにどちらを上にするかを指定するなど）</h2>
+    <p>rgbaを使用する</p>
+    <pre>
+        <code>
+z-index: 1;
         </code>
     </pre>
 
