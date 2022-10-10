@@ -60,7 +60,7 @@
             // 時刻
             var hour = date.getHours();
             var minute = date.getMinutes();
-            var second = date.getSeconds();
+            var second = zeroPadding(date.getSeconds(), 2);
             document.getElementById("current_time").innerHTML = hour + ":" + minute + ":" + second;
 
             // うるう年判定
