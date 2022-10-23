@@ -17,6 +17,78 @@
     </code>
 </pre>
 
+<h2>要素の取得</h2>
+<p>getElementByの方がquerySelectorよりも速度が早いらしい</p>
+<p><a href="https://qiita.com/tomokichi_ruby/items/c3ed6f6edbd5078ddf70">【JavaScript】要素の取得方法(getElement、querySelector)</a></p>
+<h3>IDで取得</h3>
+<p>documentオブジェクトに対してのみ使用可能</p>
+<p>id属性の値は、HTMLドキュメント上で唯一の値である必要がある</p>
+<p>同じidを持つ要素ノードが複数ある場合、基本的に一番はじめの要素ノードを取得する</p>
+<pre>
+    <code>
+const sample = document.getElementById('sample');
+    </code>
+</pre>
+<h3>クラス名で取得</h3>
+<pre>
+    <code>
+===HTML===
+&lt;p class=&quot;sample&quot;&gt;サンプルテキスト１&lt;/p&gt;
+===JavaScript===
+const sample = document.getElementsByClassName('sample');
+    </code>
+</pre>
+<h3>ID or クラス名で取得</h3>
+<pre>
+    <code>
+===IDで取得===
+===HTML===
+&lt;p id=&quot;sample&quot;&gt;サンプルテキスト１&lt;/p&gt;
+===JavaScript===
+const sample = document.querySelector('#sample');
+
+===クラス名で取得===
+===HTML===
+&lt;p class=&quot;sample&quot;&gt;サンプルテキスト１&lt;/p&gt;
+===JavaScript===
+const sample = document.querySelector('.sample');
+// すべての要素に処理
+sample.forEach(el => {
+    // 処理...
+});
+    </code>
+</pre>
+<h3>引数で指定したID名、もしくはクラス名と一致する全ての要素を取得</h3>
+<pre>
+    <code>
+以下1・3番目を取得
+===HTML===
+&lt;div class=&quot;hoge&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;foo&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;hoge&quot;&gt;&lt;/div&gt;
+===JavaScript===
+const hoge = document.querySelectorAll('.hoge');
+// すべての要素に処理
+hoge.forEach(el => {
+    // 処理...
+});
+    </code>
+</pre>
+<h3>タグの要素を全て取得</h3>
+<pre>
+    <code>
+// インデックスを指定して1番目の要素を取得
+let element = document.getElementsByTagName('p')[0];
+
+// すべての要素を一つずつ取得
+let elements = document.getElementsByTagName('p');
+// すべての要素に処理
+elements.forEach(el => {
+    // 処理...
+});
+    </code>
+</pre>
+
 <h2>htmlのパーツを読み込む</h2>
 <pre>
     <code>

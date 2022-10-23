@@ -10,14 +10,17 @@ img {
 h1,
 h2,
 h3,
-p {
+p,
+textarea {
     margin: 0;
     padding: 0;
 }
 
 h1,
 h2,
-h3 {
+h3,
+p,
+textarea {
     font-weight: normal;
 }
 
@@ -122,9 +125,17 @@ main p {
     text-indent: 2em;
 }
 
+main .memo_div {
+    line-height: 1;
+    margin-top: 5px;
+    text-align: left;
+    align-items: center;
+    text-indent: 2em;
+}
+
 main a {
     line-height: 1;
-    margin-top: 10px;
+    margin: 0;
     text-align: left;
     text-indent: 2em;
 }
