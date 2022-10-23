@@ -313,4 +313,37 @@ header.classList.remove('scrolled');
     </code>
 </pre>
 
+<h2>キーでイベントを発火</h2>
+<pre>
+    <code>
+// エンターキーでイベント発火
+document.getElementById('k').onkeydown = function() {
+    if (event.key === 'Enter') set();
+};
+    </code>
+</pre>
+
+<h2>WEBストレージ</h2>
+<pre>
+    <code>
+// データを保存
+var k = document.getElementById("k").value;
+if (k === '') return;
+var v = document.getElementById("v").value;
+storage.setItem(k, v);
+
+// keyを指定してデータを取得
+getItem(key)
+
+// データを全てクリア
+storage.clear();
+
+// キーを指定してデータをクリア
+storage.removeItem(k);
+
+// i番目のキーを取得
+var k = storage.key(i);
+    </code>
+</pre>
+
 </div>

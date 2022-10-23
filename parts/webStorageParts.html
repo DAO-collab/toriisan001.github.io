@@ -17,6 +17,9 @@
     {
         'use strict';
 
+        // 変数storageにlocalStorageを格納
+        var storage = localStorage;
+
         // エンターキーでイベント発火
         document.getElementById('k').onkeydown = function() {
             if (event.key === 'Enter') set();
@@ -25,14 +28,12 @@
             if (event.key === 'Enter') set();
         };
 
-        //変数storageにlocalStorageを格納
-        var storage = localStorage;
-
         show_result();
 
         // データを保存する
         function set() {
             var k = document.getElementById("k").value;
+            if (k === '') return;
             var v = document.getElementById("v").value;
             storage.setItem(k, v);
             show_result();
@@ -68,7 +69,6 @@
                 // ボックスdiv作成
                 var box_element = document.createElement('div');
                 box_element.style = "display: flex; justify-content: space-between; width: 500px; border-bottom: solid 1px #333;";
-                // box_element.style.backgroundColor = "#ff838b";
                 box_element.style.paddingTop = "10px";
                 // テキストdiv作成
                 var text_element = document.createElement('div');
