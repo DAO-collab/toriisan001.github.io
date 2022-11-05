@@ -112,6 +112,12 @@
                         tdElement.style = "border-bottom: 1px solid black;";
                         tdElement.textContent = dateFomatYYYYMMDDhhmmss(note.updated_at, '/', ':');
                         trElement.appendChild(tdElement);
+                        // 削除ボタン追加
+                        tdElement = document.createElement('td');
+                        tdElement.textContent = '×';
+                        const message = 'ID(' + note.id + ')を削除してよいですか？';
+                        tdElement.setAttribute('onclick', `if (confirm('${message}')) keyCle(${note.id}); return false;`);
+                        trElement.appendChild(tdElement);
                         // テーブルエレメントの末尾に挿入
                         tableElement.appendChild(trElement);
                     });
