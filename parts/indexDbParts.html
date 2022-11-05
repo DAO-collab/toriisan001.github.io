@@ -27,6 +27,9 @@
     {
         'use strict';
         const config = getconfig();
+        const title = document.getElementById('title');
+        const body = document.getElementById('body');
+        const updatedAt = document.getElementById('updated_at');
 
         var db = new Dexie(config.INDEX_DB.DB_NAME);
 
@@ -37,9 +40,6 @@
 
         // データを保存する
         function set() {
-            const title = document.getElementById('title');
-            const body = document.getElementById('body');
-            const updatedAt = document.getElementById('updated_at');
             db.notes.add({ title: title.value, body: body.value, updated_at: new Date(updatedAt.value) });
             show_result();
         }
@@ -54,6 +54,10 @@
         function keyCle(id) {
             db.notes.delete(id);
             show_result();
+        }
+        // キー情報を取得
+        function keyCopy(id) {
+            console.log(id);
         }
 
         // データの取得
@@ -96,6 +100,7 @@
                         tdElement = document.createElement('td');
                         tdElement.style = "border-bottom: 1px solid black;";
                         tdElement.textContent = note.id;
+                        tdElement.setAttribute('onclick', `keyCopy(${note.id})`);
                         trElement.appendChild(tdElement);
                         // タイトル追加
                         tdElement = document.createElement('td');
