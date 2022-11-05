@@ -26,11 +26,9 @@
 <script>
     {
         'use strict';
-        const config = getconfig();
-        const title = document.getElementById('title');
-        const body = document.getElementById('body');
-        const updatedAt = document.getElementById('updated_at');
 
+        const config = getconfig();
+        const tableDiv = document.getElementById('table');
         var db = new Dexie(config.INDEX_DB.DB_NAME);
 
         // // データベースにテーブルを設定 ・初期化
@@ -40,6 +38,9 @@
 
         // データを保存する
         function set() {
+            const title = document.getElementById('title');
+            const body = document.getElementById('body');
+            const updatedAt = document.getElementById('updated_at');
             db.notes.add({ title: title.value, body: body.value, updated_at: new Date(updatedAt.value) });
             show_result();
         }
@@ -55,6 +56,7 @@
             db.notes.delete(id);
             show_result();
         }
+
         // キー情報を取得
         function keyCopy(id) {
             console.log(id);
@@ -66,7 +68,6 @@
                 .toArray()
                 .then(function (notes) {
                     // 子要素を全て削除
-                    const tableDiv = document.getElementById('table');
                     while (tableDiv.firstChild) {
                         tableDiv.removeChild(tableDiv.firstChild);
                     }
