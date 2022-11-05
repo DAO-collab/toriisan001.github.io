@@ -11,16 +11,11 @@ h1,
 h2,
 h3,
 p,
-textarea {
+textarea,
+detailsm
+{
     margin: 0;
     padding: 0;
-}
-
-h1,
-h2,
-h3,
-p,
-textarea {
     font-weight: normal;
 }
 
@@ -118,18 +113,12 @@ main h3 {
     text-align: left;
 }
 
-main p {
-    line-height: 1;
+main p,
+main detailsm
+ {
+    line-height: 1.8;
     margin-top: 5px;
     text-align: left;
-    text-indent: 2em;
-}
-
-main .memo_div {
-    line-height: 1;
-    margin-top: 5px;
-    text-align: left;
-    align-items: center;
     text-indent: 2em;
 }
 
@@ -156,10 +145,6 @@ main img {
     height: 300px;
     margin-top: 5px;
     align-items: left;
-}
-
-main p {
-    line-height: 1.8;
 }
 
 /* footer */

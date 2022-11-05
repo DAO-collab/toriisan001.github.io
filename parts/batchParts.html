@@ -1,12 +1,13 @@
 <div id="batch">
-<h1>Batch</h1>
+    <h1>Batch</h1>
+    <p id="lastModified"></p>
 
-<h2>@echo off</h2>
-<p>「@echo off」は冗長なコマンドの画面出力を消すためのものらしい</p>
-<p>「@echo off」で消せるのはコマンドの実行表示だけらしい（実行結果のみが表示される）</p>
-<p>これがなぜ便利かといいますと、batファイルで複雑な処理や長い処理をするときなど出力結果だけが見えていいかららしい</p>
+    <h2>@echo off</h2>
+    <p>「@echo off」は冗長なコマンドの画面出力を消すためのものらしい</p>
+    <p>「@echo off」で消せるのはコマンドの実行表示だけらしい（実行結果のみが表示される）</p>
+    <p>これがなぜ便利かといいますと、batファイルで複雑な処理や長い処理をするときなど出力結果だけが見えていいかららしい</p>
 
-<pre>
+    <pre>
 =====「@echo off」無し=====
 C:\Users\*****\Desktop>echo これは「echo」コマンドで出力されたメッセージです
 これは「echo」コマンドで出力されたメッセージです
@@ -19,8 +20,8 @@ C:\Users\*****\Desktop>pause
 続行するには何かキーを押してください . . .
 </pre>
 
-<h2>cmdを最小化した状態で起動</h2>
-<pre>
+    <h2>cmdを最小化した状態で起動</h2>
+    <pre>
     <code>
 @echo off
 if not "%1" == "1" (
@@ -30,6 +31,8 @@ if not "%1" == "1" (
 )
     </code>
 </pre>
-<p><a href="https://forgetmenots.doorblog.jp/archives/52556936.html">バッチファイルを最小化して実行する【参考】</a></p>
+    <p><a href="https://forgetmenots.doorblog.jp/archives/52556936.html">バッチファイルを最小化して実行する【参考】</a></p>
 
 </div>
+<script src="../js/util.js"></script>
+<script src="../js/common.js"></script>

@@ -1,18 +1,22 @@
 <div id="webStorage">
-<h1>WebStorage</h1>
+    <h1>WebStorage</h1>
+    <p id="lastModified"></p>
 
-<h2>localStorage</h2>
-<div id="textbox"></div>
-<div style="padding-top: 5px; display: flex;">
-    <p>キー：<input id="k" type="text"onfocus="this.select();" ></p>
-    <p>値：<input id="v" type="text"onfocus="this.select();" ></p>
-</div>
-<div style="padding-top: 5px;">
-    <input type="button" value="新規・更新" onClick="set()">
-    <input type="button" value="全クリア" onClick="if (confirm('テキストを全て削除してよいですか？')) cle(); return false;">
-</div>
-<p><a href="http://www.htmq.com/webstorage/">Web Storage－HTML5のAPI - HTMLクイックリファレンス（参考）</a></p>
+    <h2>localStorage</h2>
+    <div id="textbox"></div>
+    <div style="padding-top: 5px; display: flex;">
+        <p>キー：<input id="k" type="text" onfocus="this.select();"></p>
+        <p>値：<input id="v" type="text" onfocus="this.select();"></p>
+    </div>
+    <div style="padding-top: 5px;">
+        <input type="button" value="新規・更新" onClick="set()">
+        <input type="button" value="全クリア" onClick="if (confirm('テキストを全て削除してよいですか？')) cle(); return false;">
+    </div>
+    <p><a href="http://www.htmq.com/webstorage/">Web Storage－HTML5のAPI - HTMLクイックリファレンス（参考）</a></p>
 
+</div>
+<script src="../js/util.js"></script>
+<script src="../js/common.js"></script>
 <script>
     {
         'use strict';
@@ -21,10 +25,10 @@
         var storage = localStorage;
 
         // エンターキーでイベント発火
-        document.getElementById('k').onkeydown = function() {
+        document.getElementById('k').onkeydown = function () {
             if (event.key === 'Enter') set();
         };
-        document.getElementById('v').onkeydown = function() {
+        document.getElementById('v').onkeydown = function () {
             if (event.key === 'Enter') set();
         };
 
@@ -65,20 +69,20 @@
                 textbox_element.removeChild(textbox_element.firstChild);
             }
             // 保存されているデータの数だけループ
-            for (var i=0; i<storage.length; i++) {
+            for (var i = 0; i < storage.length; i++) {
                 // i番目のキーを取得
-                var k = storage.key(i);
+                const k = storage.key(i);
                 // ボックスdiv作成
-                var box_element = document.createElement('div');
+                const box_element = document.createElement('div');
                 box_element.style = "display: flex; justify-content: space-between; width: 500px; border-bottom: solid 1px #333;";
                 box_element.style.paddingTop = "10px";
                 // テキストdiv作成
-                var text_element = document.createElement('div');
+                const text_element = document.createElement('div');
                 text_element.textContent = k + "：" + storage.getItem(k);
                 text_element.setAttribute('onclick', `keyCopy('${k}', '${storage.getItem(k)}')`);
                 box_element.appendChild(text_element);
                 // 削除div作成
-                var delete_element = document.createElement('div');
+                const delete_element = document.createElement('div');
                 delete_element.textContent = '×';
                 const message = 'テキスト(id:' + k + ')を削除してよいですか？';
                 delete_element.setAttribute('onclick', `if (confirm('${message}')) keyCle('${k}'); return false;`);
@@ -89,4 +93,3 @@
         }
     };
 </script>
-</div>

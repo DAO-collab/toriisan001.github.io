@@ -1,15 +1,17 @@
 <div id="javaScript">
-<h1>javaScript</h1>
+    <h1>javaScript</h1>
+    <p id="lastModified"></p>
 
-<h2>厳密なチェック</h2>
-<pre>
+    <h2>厳密なチェック</h2>
+    <p>スクリプトの先頭にあるようにする必要があるらしい</p>
+    <pre>
     <code>
 'use strict';
     </code>
 </pre>
 
-<h2>まずブロックで囲むらしい</h2>
-<pre>
+    <h2>まずブロックで囲むらしい</h2>
+    <pre>
     <code>
 {
 
@@ -17,20 +19,22 @@
     </code>
 </pre>
 
-<h2>要素の取得</h2>
-<p>getElementByの方がquerySelectorよりも速度が早いらしい</p>
-<p><a href="https://qiita.com/tomokichi_ruby/items/c3ed6f6edbd5078ddf70">【JavaScript】要素の取得方法(getElement、querySelector)</a></p>
-<h3>IDで取得</h3>
-<p>documentオブジェクトに対してのみ使用可能</p>
-<p>id属性の値は、HTMLドキュメント上で唯一の値である必要がある</p>
-<p>同じidを持つ要素ノードが複数ある場合、基本的に一番はじめの要素ノードを取得する</p>
-<pre>
+    <h2>要素の取得</h2>
+    <p>getElementByの方がquerySelectorよりも速度が早いらしい</p>
+    <p><a
+            href="https://qiita.com/tomokichi_ruby/items/c3ed6f6edbd5078ddf70">【JavaScript】要素の取得方法(getElement、querySelector)</a>
+    </p>
+    <h3>IDで取得</h3>
+    <p>documentオブジェクトに対してのみ使用可能</p>
+    <p>id属性の値は、HTMLドキュメント上で唯一の値である必要がある</p>
+    <p>同じidを持つ要素ノードが複数ある場合、基本的に一番はじめの要素ノードを取得する</p>
+    <pre>
     <code>
 const sample = document.getElementById('sample');
     </code>
 </pre>
-<h3>クラス名で取得</h3>
-<pre>
+    <h3>クラス名で取得</h3>
+    <pre>
     <code>
 ===HTML===
 &lt;p class=&quot;sample&quot;&gt;サンプルテキスト１&lt;/p&gt;
@@ -38,8 +42,8 @@ const sample = document.getElementById('sample');
 const sample = document.getElementsByClassName('sample');
     </code>
 </pre>
-<h3>ID or クラス名で取得</h3>
-<pre>
+    <h3>ID or クラス名で取得</h3>
+    <pre>
     <code>
 ===IDで取得===
 ===HTML===
@@ -58,8 +62,8 @@ sample.forEach(el => {
 });
     </code>
 </pre>
-<h3>引数で指定したID名、もしくはクラス名と一致する全ての要素を取得</h3>
-<pre>
+    <h3>引数で指定したID名、もしくはクラス名と一致する全ての要素を取得</h3>
+    <pre>
     <code>
 以下1・3番目を取得
 ===HTML===
@@ -74,8 +78,8 @@ hoge.forEach(el => {
 });
     </code>
 </pre>
-<h3>タグの要素を全て取得</h3>
-<pre>
+    <h3>タグの要素を全て取得</h3>
+    <pre>
     <code>
 // インデックスを指定して1番目の要素を取得
 let element = document.getElementsByTagName('p')[0];
@@ -89,8 +93,8 @@ elements.forEach(el => {
     </code>
 </pre>
 
-<h2>htmlのパーツを読み込む</h2>
-<pre>
+    <h2>htmlのパーツを読み込む</h2>
+    <pre>
     <code>
 ・jquery-3.6.1.min.jsを読み込む
 &lt;script src=&quot;../js/jquery-3.6.1.min.js&quot;&gt;&lt;/script&gt;
@@ -106,10 +110,10 @@ elements.forEach(el => {
 
     </code>
 </pre>
-<p><a href="https://codelife.cafe/entry/2015/10/27/222803" target="_blank">【jQuery】htmlページをパーツごとに分けて読み込む方法</a></p>
+    <p><a href="https://codelife.cafe/entry/2015/10/27/222803" target="_blank">【jQuery】htmlページをパーツごとに分けて読み込む方法</a></p>
 
-<h2>HTML aside要素でサイドバーのアウトラインを作る</h2>
-<pre>
+    <h2>HTML aside要素でサイドバーのアウトラインを作る</h2>
+    <pre>
     <code>
 ・homePage.html
 &lt;article&gt;
@@ -145,14 +149,16 @@ article {
 
     </code>
 </pre>
-<p><a href="https://webukatu.com/wordpress/blog/27994/" target="_blank">HTML aside要素でサイドバーのアウトラインを作る</a></p>
+    <p><a href="https://webukatu.com/wordpress/blog/27994/" target="_blank">HTML aside要素でサイドバーのアウトラインを作る</a></p>
 
-<h2>「index.html:1 Access to XMLHttpRequest at 'file:///C:/xampp/htdocs/MyPortfolio/header.html' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, chrome-untrusted, https, isolated-app.」</h2>
-<p>Chromeはhttpアクセスしかファイルへのアクセスを許可していない</p>
-<p>nodejsでローカルサーバーを立ち上げることで解決する</p>
+    <h2>「index.html:1 Access to XMLHttpRequest at 'file:///C:/xampp/htdocs/MyPortfolio/header.html' from origin 'null'
+        has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: http, data,
+        chrome, chrome-extension, chrome-untrusted, https, isolated-app.」</h2>
+    <p>Chromeはhttpアクセスしかファイルへのアクセスを許可していない</p>
+    <p>nodejsでローカルサーバーを立ち上げることで解決する</p>
 
-<h2>Intersection Observer APIを使用して浮かび上がらせるアニメーションを埋め込む</h2>
-<pre>
+    <h2>Intersection Observer APIを使用して浮かび上がらせるアニメーションを埋め込む</h2>
+    <pre>
     <code>
 ===HEML===
 &lt;div class=&quot;animate&quot;&gt;
@@ -200,18 +206,18 @@ document.querySelectorAll(&#039;.animate&#039;).forEach(el =&gt; {
     </code>
 </pre>
 
-<h2>複数のクラスに処理を行う</h2>
-<pre>
+    <h2>複数のクラスに処理を行う</h2>
+    <pre>
     <code>
 document.querySelectorAll('.animate').forEach(el => {
     observer.observe(el);
 });
     </code>
 </pre>
-<p><a href="https://9cubed.info/article/javascript/0029" target="_blank">【参考】JavaScript - アロー関数(ラムダ式)</a></p>
+    <p><a href="https://9cubed.info/article/javascript/0029" target="_blank">【参考】JavaScript - アロー関数(ラムダ式)</a></p>
 
-<h2>テキストをクリップボードにコピー</h2>
-<pre>
+    <h2>テキストをクリップボードにコピー</h2>
+    <pre>
     <code>
 ===HTML===
 &lt;p class=&quot;button&quot; style=&quot;background-color: #efefef;&quot;&gt;#efefef&lt;/p&gt;
@@ -232,10 +238,11 @@ document.querySelectorAll('.animate').forEach(el => {
 &lt;/script&gt;
     </code>
 </pre>
-<p><a href="https://don-bu-rakko.com/%E3%80%90%E8%B6%85%E7%B0%A1%E5%8D%98%E3%80%91javascript-%E3%81%A7-%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%92%E6%8A%BC%E3%81%97%E3%81%9F%E3%82%89%E3%82%B3%E3%83%94%E3%83%BC-%E3%82%92%E5%AE%9F%E8%A3%85/" target="_blank">【１行だけ】ボタンをクリックしたら文章をコピーしたい！【JavaScript】</a></p>
+    <p><a href="https://don-bu-rakko.com/%E3%80%90%E8%B6%85%E7%B0%A1%E5%8D%98%E3%80%91javascript-%E3%81%A7-%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%92%E6%8A%BC%E3%81%97%E3%81%9F%E3%82%89%E3%82%B3%E3%83%94%E3%83%BC-%E3%82%92%E5%AE%9F%E8%A3%85/"
+            target="_blank">【１行だけ】ボタンをクリックしたら文章をコピーしたい！【JavaScript】</a></p>
 
-<h2>ゼロ埋め関数</h2>
-<pre>
+    <h2>ゼロ埋め関数</h2>
+    <pre>
     <code>
 function zeroPadding(no, digit) {
     return ('0'.repeat(digit) + no).slice( (-1 * digit) );
@@ -243,8 +250,8 @@ function zeroPadding(no, digit) {
     </code>
 </pre>
 
-<h2>うるう年判定関数</h2>
-<pre>
+    <h2>うるう年判定関数</h2>
+    <pre>
     <code>
 function zeroPadding(no, digit) {
     return ('0'.repeat(digit) + no).slice(-1 * digit);
@@ -252,8 +259,8 @@ function zeroPadding(no, digit) {
     </code>
 </pre>
 
-<h2>毎秒実行</h2>
-<pre>
+    <h2>毎秒実行</h2>
+    <pre>
     <code>
 setInterval(() => {
 
@@ -261,8 +268,8 @@ setInterval(() => {
     </code>
 </pre>
 
-<h2>headerを固定する(Intersection Observer API)</h2>
-<pre>
+    <h2>headerを固定する(Intersection Observer API)</h2>
+    <pre>
     <code>
 ===HTML===
 &lt;header&gt;
@@ -299,22 +306,22 @@ header.scrolled {
     </code>
 </pre>
 
-<h2>クラスを付与する</h2>
-<pre>
+    <h2>クラスを付与する</h2>
+    <pre>
     <code>
 header.classList.add('scrolled');
     </code>
 </pre>
 
-<h2>クラスを除去する</h2>
-<pre>
+    <h2>クラスを除去する</h2>
+    <pre>
     <code>
 header.classList.remove('scrolled');
     </code>
 </pre>
 
-<h2>キーでイベントを発火</h2>
-<pre>
+    <h2>キーでイベントを発火</h2>
+    <pre>
     <code>
 // エンターキーでイベント発火
 document.getElementById('k').onkeydown = function() {
@@ -323,8 +330,8 @@ document.getElementById('k').onkeydown = function() {
     </code>
 </pre>
 
-<h2>WEBストレージ</h2>
-<pre>
+    <h2>WEBストレージ</h2>
+    <pre>
     <code>
 // データを保存
 var k = document.getElementById("k").value;
@@ -346,8 +353,9 @@ var k = storage.key(i);
     </code>
 </pre>
 
-<h2>js内で別のjsを読み込む。</h2>
-<pre>
+    <h2>js内で別のjsを読み込む。(モジュール)</h2>
+    <p>type="module"を設定することでimportが使えるようになるらしい</p>
+    <pre>
     <code>
 =====html body部=====
 &lt;script type=&quot;module&quot;src=&quot;../js/import1.js&quot;&gt;&lt;/script&gt;
@@ -359,5 +367,20 @@ const txt = "Hello,World";
 export default txt; //これが必要になります
     </code>
 </pre>
+    <p>以下のように直接埋め込むことも出来るらしい</p>
+    <pre>
+    <code>
+&lt;!-- &lt;script type=&quot;module&quot;src=&quot;../js/import1.js&quot;&gt;&lt;/script&gt; --&gt;
+&lt;script type=&quot;module&quot;&gt;
+    &#039;use strict&#039;;
+    import txt from &quot;../js/import2.js&quot; //これが必要になります
+    {
+        console.log(txt);
+    };
+&lt;/script&gt;
+    </code>
+</pre>
 
 </div>
+<script src="../js/util.js"></script>
+<script src="../js/common.js"></script>

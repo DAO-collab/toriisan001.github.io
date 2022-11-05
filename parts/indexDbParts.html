@@ -1,12 +1,88 @@
 <div id="indexDb">
-<h1>IndexDb</h1>
+    <h1>IndexDb</h1>
+    <p id="lastModified"></p>
 
-<h2>aaaaaaaaaaaa</h2>
-<p>a</p>
-<script type="module"src="../js/import1.js"></script>
-<script>
+    <hr>
+    <details>
+        <h2>データベース削除</h2>
+        <p>db.delete();</p>
+        <p><a href="https://qiita.com/yamayamasan/items/a4297e724b86f4a00fd2">Dexie.jsでIndexedDBを使ってみる【参考】</a></p>
+        <p><a href="https://www.codit.work/notes/25ykyi18blgmi8fkfi66/">データベースの操作【参考】</a></p>
+    </details>
+    <hr>
+
+    <div id="table"></div>
+
+</div>
+<script src="../js/util.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/dexie.min.js"></script>
+<script type="module">
+import config from "../js/config.js"
     {
         'use strict';
-    };
+
+        var db = new Dexie(config.INDEX_DB.DB_NAME);
+        // DB削除
+        // db.delete();
+
+        // データベースにテーブルを設定 ・初期化
+        db.version(config.INDEX_DB.DB_VERSION).stores({ notes: "++id, title, body, updated_at" });
+
+        // データ追加
+        // db.notes.add({ title: "タイトル", body: '本文', updated_at: new Date() });
+
+        // データの取得
+        db.notes
+            .toArray()
+            .then(function (notes) {
+                // 子要素を全て削除
+                const tableDiv = document.getElementById('table');
+                while (tableDiv.firstChild) {
+                    tableDiv.removeChild(tableDiv.firstChild);
+                }
+                // テーブルを作成
+                const tableElement = document.createElement('table');
+                var trElement = null;
+                var thElement = null;
+                var tdElement = null;
+                trElement = document.createElement('tr');
+                // タイトルヘッダを追加
+                thElement = document.createElement('th');
+                thElement.textContent = 'タイトル';
+                trElement.appendChild(thElement);
+                // 本文ヘッダを追加
+                thElement = document.createElement('th');
+                thElement.textContent = '本文';
+                trElement.appendChild(thElement);
+                // 登録日時ヘッダを追加
+                thElement = document.createElement('th');
+                thElement.textContent = '登録日時';
+                trElement.appendChild(thElement);
+                // テーブルエレメントの末尾に挿入
+                tableElement.appendChild(trElement);
+                notes.forEach(function (note) {
+                    trElement = document.createElement('tr');
+                    // タイトル追加
+                    tdElement = document.createElement('td');
+                    tdElement.style = "border-bottom: 1px solid black;";
+                    tdElement.textContent = note.title;
+                    trElement.appendChild(tdElement);
+                    // 本文追加
+                    tdElement = document.createElement('td');
+                    tdElement.style = "border-bottom: 1px solid black;";
+                    tdElement.textContent = note.body;
+                    trElement.appendChild(tdElement);
+                    // 登録日時追加
+                    tdElement = document.createElement('td');
+                    tdElement.style = "border-bottom: 1px solid black;";
+                    tdElement.textContent = note.updated_at;
+                    trElement.appendChild(tdElement);
+                    // テーブルエレメントの末尾に挿入
+                    tableElement.appendChild(trElement);
+                });
+                // テーブルDIVの末尾に挿入
+                tableDiv.appendChild(tableElement);
+            });
+    }
 </script>
-</div>
