@@ -42,8 +42,9 @@
             const title = document.getElementById('title');
             const body = document.getElementById('body');
             const updatedAt = document.getElementById('updated_at');
-            console.log(id.value);
-            db.notes.put({ id: id.value, title: title.value, body: body.value, updated_at: dateFomatYYYYMMDDhhmmss(new Date(updatedAt.value), '/', ':') });
+            console.log(id.value);            
+            console.log(parseInt(id.value));
+            db.notes.put({ id: parseInt(id.textContent), title: title.value, body: body.value, updated_at: dateFomatYYYYMMDDhhmmss(new Date(updatedAt.value), '/', ':') });
             show_result();
         }
 
