@@ -4,10 +4,10 @@
 
     <hr>
     <details>
-        <h2>データベース削除</h2>
-        <p>db.delete();</p>
+        <h2>使い方参考サイト</h2>
         <p><a href="https://qiita.com/yamayamasan/items/a4297e724b86f4a00fd2">Dexie.jsでIndexedDBを使ってみる【参考】</a></p>
         <p><a href="https://www.codit.work/notes/25ykyi18blgmi8fkfi66/">データベースの操作【参考】</a></p>
+        <p><a href="https://noxi515.hateblo.jp/entry/2018/04/01/233950">noxi雑記【参考】</a></p>
     </details>
     <hr>
 
@@ -30,9 +30,6 @@
 
         var db = new Dexie(config.INDEX_DB.DB_NAME);
 
-        // // DB削除
-        // // db.delete();
-
         // // データベースにテーブルを設定 ・初期化
         db.version(config.INDEX_DB.DB_VERSION).stores({ notes: "++id, title, body, updated_at" });
 
@@ -50,6 +47,12 @@
         // データを全てクリアする
         function cle() {
             db.notes.clear();
+            show_result();
+        }
+
+        // 対象キーのデータをクリアする
+        function keyCle(id) {
+            db.notes.delete(id);
             show_result();
         }
 
@@ -132,8 +135,8 @@
                     // 登録日時用テキストボックス追加
                     inputElement = document.createElement('input');
                     inputElement.id = 'updated_at';
-                    inputElement.type = 'date';
-                    inputElement.value = dateFomatYYYYMMDD(new Date(), '-');
+                    inputElement.type = 'datetime';
+                    inputElement.value = dateFomatYYYYMMDDhhmmss(new Date(document.lastModified), '-', ':');
                     tdElement = document.createElement('td');
                     tdElement.appendChild(inputElement);
                     trElement.appendChild(tdElement);
