@@ -236,4 +236,86 @@ div.container エンター
     </code>
 </pre>
 
+<h2>テキストボックスをクリックしたときに全選択状態にする</h2>
+<pre>
+    <code>
+&lt;input type=&quot;text&quot;onfocus=&quot;this.select();&quot;&gt;
+    </code>
+</pre>
+
+<h2>詳細折りたたみ要素</h2>
+<details>
+    <summary>Details</summary>
+    Something small enough to escape casual notice.
+</details>
+<pre>
+    <code>
+&lt;details&gt;
+    &lt;summary&gt;Details&lt;/summary&gt;
+    Something small enough to escape casual notice.
+&lt;/details&gt;
+    </code>
+</pre>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/details">mdn_web_docs_詳細折りたたみ要素</a></p>
+
+<h2>詳細折りたたみ要素</h2>
+<blockquote contenteditable="true">
+    <p>このコンテンツを編集して、独自の見積もりを追加してください</p>
+</blockquote>
+<cite contenteditable="true">-- ここに自分の名前を書いてください</cite>
+<pre>
+    <code>
+&lt;blockquote contenteditable=&quot;true&quot;&gt;
+    &lt;p&gt;このコンテンツを編集して、独自の見積もりを追加してください&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;cite contenteditable=&quot;true&quot;&gt;-- ここに自分の名前を書いてください&lt;/cite&gt;
+    </code>
+</pre>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Global_attributes/contenteditable">mdn_web_docs_contenteditable</a></p>
+
+<h2>入力データを保持テキスト（datalist）</h2>
+<p>何故かinputのnameがqではないとautocompleteが効かなかった。理由はわからなかった。</p>
+<form>
+    <fieldset>
+        <label for="q">一覧からブラウザーを選択して下さい:</label>
+        <input type="search" name="q" autocomplete="on" list="myBrowserList">
+            <datalist id="myBrowserList">
+                <option value="Chrome">
+                <option value="Firefox">
+                <option value="Internet Explorer">
+                <option value="Opera">
+                <option value="Safari">
+                <option value="Microsoft Edge">
+            </datalist>
+        <input type="submit" value="送信">
+    </fieldset>
+</form>
+<pre>
+    <code>
+&lt;form&gt;
+    &lt;fieldset&gt;
+        &lt;label for=&quot;q&quot;&gt;一覧からブラウザーを選択して下さい:&lt;/label&gt;
+        &lt;input type=&quot;search&quot; name=&quot;q&quot; autocomplete=&quot;on&quot; list=&quot;myBrowserList&quot;&gt;
+            &lt;datalist id=&quot;myBrowserList&quot;&gt;
+                &lt;option value=&quot;Chrome&quot;&gt;
+                &lt;option value=&quot;Firefox&quot;&gt;
+                &lt;option value=&quot;Internet Explorer&quot;&gt;
+                &lt;option value=&quot;Opera&quot;&gt;
+                &lt;option value=&quot;Safari&quot;&gt;
+                &lt;option value=&quot;Microsoft Edge&quot;&gt;
+            &lt;/datalist&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;送信&quot;&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+    </code>
+</pre>
+<p><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/datalist">mdn_web_docs_datalist</a></p>
+
+<h2>horizontal rule（水平方向の罫線）水平の横線を引くためのタグ</h2>
+<pre>
+    <code>
+&lt;hr&gt;
+    </code>
+</pre>
+
 </div>

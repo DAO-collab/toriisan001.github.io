@@ -4,8 +4,8 @@
 <h2>localStorage</h2>
 <div id="textbox"></div>
 <div style="padding-top: 5px; display: flex;">
-    <p>キー：<input id="k" type="text"></p>
-    <p>値：<input id="v" type="text"></p>
+    <p>キー：<input id="k" type="text"onfocus="this.select();" ></p>
+    <p>値：<input id="v" type="text"onfocus="this.select();" ></p>
 </div>
 <div style="padding-top: 5px;">
     <input type="button" value="新規・更新" onClick="set()">
@@ -52,10 +52,12 @@
         }
 
         // キー情報を取得
-        function keyCopy(k) {
+        function keyCopy(k, v) {
             document.getElementById("k").value = k;
+            document.getElementById("v").value = v;
         }
 
+        // キー情報を取得
         function show_result() {
             // 子要素を全て削除
             var textbox_element = document.getElementById('textbox');
@@ -73,19 +75,18 @@
                 // テキストdiv作成
                 var text_element = document.createElement('div');
                 text_element.textContent = k + "：" + storage.getItem(k);
-                text_element.setAttribute('onclick', `keyCopy(${k})`);
+                text_element.setAttribute('onclick', `keyCopy('${k}', '${storage.getItem(k)}')`);
                 box_element.appendChild(text_element);
                 // 削除div作成
                 var delete_element = document.createElement('div');
                 delete_element.textContent = '×';
                 const message = 'テキスト(id:' + k + ')を削除してよいですか？';
-                delete_element.setAttribute('onclick', `if (confirm('${message}')) keyCle(${k}); return false;`);
+                delete_element.setAttribute('onclick', `if (confirm('${message}')) keyCle('${k}'); return false;`);
                 box_element.appendChild(delete_element);
                 // 指定した要素の中の末尾に挿入
                 textbox_element.appendChild(box_element);
             }
         }
-        
     };
 </script>
 </div>

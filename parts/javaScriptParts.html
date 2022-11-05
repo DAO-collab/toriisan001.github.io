@@ -346,4 +346,18 @@ var k = storage.key(i);
     </code>
 </pre>
 
+<h2>js内で別のjsを読み込む。</h2>
+<pre>
+    <code>
+=====html body部=====
+&lt;script type=&quot;module&quot;src=&quot;../js/import1.js&quot;&gt;&lt;/script&gt;
+=====import1.js======
+import txt from "./import2.js" //これが必要になります
+console.log(txt);
+=====import1.js======
+const txt = "Hello,World";
+export default txt; //これが必要になります
+    </code>
+</pre>
+
 </div>
