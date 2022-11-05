@@ -38,10 +38,12 @@
 
         // データを保存する
         function set() {
+            const id = document.getElementById('id');
             const title = document.getElementById('title');
             const body = document.getElementById('body');
             const updatedAt = document.getElementById('updated_at');
-            db.notes.add({ title: title.value, body: body.value, updated_at: new Date(updatedAt.value) });
+            console.log(id.value);
+            db.notes.put({ id: id.value, title: title.value, body: body.value, updated_at: dateFomatYYYYMMDDhhmmss(new Date(updatedAt.value), '/', ':') });
             show_result();
         }
 
@@ -58,18 +60,18 @@
         }
 
         // キー情報を取得
-        function keyCopy(id) {
+        function keyCopy(pId) {
+            const id = document.getElementById('id');
             const title = document.getElementById('title');
             const body = document.getElementById('body');
-            const updatedAt = document.getElementById('updated_at');            
-            console.log(id);
-            const aaa = db.notes.where({id: id}).toArray();
-            db.notes.where({id: id})
+            const updatedAt = document.getElementById('updated_at');
+            db.notes.where({ id: pId })
                 .toArray()
                 .then(function (notes) {
+                    id.textContent = notes[0].id;
                     title.value = notes[0].title;
                     body.value = notes[0].body;
-                    updatedAt.value = dateFomatYYYYMMDDhhmmss(notes[0].updatedAt);
+                    updatedAt.value = dateFomatYYYYMMDDhhmmss(new Date(notes[0].updatedAt), '/', ':');
                 });
         }
 
@@ -127,7 +129,7 @@
                         // 登録日時追加
                         tdElement = document.createElement('td');
                         tdElement.style = "border-bottom: 1px solid black;";
-                        tdElement.textContent = dateFomatYYYYMMDDhhmmss(note.updated_at, '/', ':');
+                        tdElement.textContent = dateFomatYYYYMMDDhhmmss(new Date(note.updated_at), '/', ':');
                         trElement.appendChild(tdElement);
                         // 削除ボタン追加
                         tdElement = document.createElement('td');
@@ -142,6 +144,7 @@
                     trElement = document.createElement('tr');
                     // IDについてはダミーを追加
                     tdElement = document.createElement('td');
+                    tdElement.id = 'id';
                     trElement.appendChild(tdElement);
                     // タイトル用テキストボックス追加
                     inputElement = document.createElement('input');
