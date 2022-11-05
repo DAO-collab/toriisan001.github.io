@@ -59,7 +59,18 @@
 
         // キー情報を取得
         function keyCopy(id) {
+            const title = document.getElementById('title');
+            const body = document.getElementById('body');
+            const updatedAt = document.getElementById('updated_at');            
             console.log(id);
+            const aaa = db.notes.where({id: id}).toArray();
+            db.notes.where({id: id})
+                .toArray()
+                .then(function (notes) {
+                    title.value = notes[0].title;
+                    body.value = notes[0].body;
+                    updatedAt.value = dateFomatYYYYMMDDhhmmss(notes[0].updatedAt);
+                });
         }
 
         // データの取得
