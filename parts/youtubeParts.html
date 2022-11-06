@@ -7,6 +7,9 @@
         <h2>使い方参考サイト</h2>
         <p><a href="https://cly7796.net/blog/javascript/how-to-use-youtube-player-api/">YouTubeのプレーヤーAPIの使い方【参考】</a></p>
         <p><a href="https://blog.kimizuka.org/entry/2020/11/02/125648">YouTube IFrame Player APIで読み込んだ動画を自動で再生してループさせる【参考】</a></p>
+        <p><a href="https://www.billionwallet.com/goods/youtube_image.html">Youtube動画からサムネイル画像を取得する方法【参考】</a></p>
+        <p><a href="https://goodizer.jp/youtube-data-api/#i">YouTubeDataAPIを使って動画情報を取得してみた！【参考】</a></p>
+        <p><a href="https://qiita.com/azukiazusa/items/2dc6407665785127cccc">【Youtube Player API】埋め込む動画を動的に変更する【参考】</a></p>
     </details>
     <hr>
 
@@ -28,7 +31,13 @@
 
     <hr>
 
-    
+    <div style="text-align: left;">
+        <div onclick="select('Kjoe1vXlmxQ')"><img src="http://img.youtube.com/vi/Kjoe1vXlmxQ/3.jpg" alt="Kjoe1vXlmxQ.png"><span>【オリジナル振付】蝶々結び歌って踊ってみた【健屋花那/にじさんじ】</span><span>【Kjoe1vXlmxQ】</span></div>
+        <div onclick="select('6km7iBmjSnE')"><img src="http://img.youtube.com/vi/6km7iBmjSnE/3.jpg" alt="6km7iBmjSnE.png"><span>【医療従事者が】乙女解剖歌ってみた【健屋花那/にじさんじ】</span><span>【6km7iBmjSnE】</span></div>
+        <div onclick="select('fxzBmLVfLOw')"><img src="http://img.youtube.com/vi/fxzBmLVfLOw/3.jpg" alt="fxzBmLVfLOw.png"><span>【歌ってみた】インタビュア by健屋花那/にじさんじ【半年&15万人ありがとう】</span><span>【fxzBmLVfLOw】</span></div>
+        <div onclick="select('B-VRImY__i8')"><img src="http://img.youtube.com/vi/B-VRImY__i8/3.jpg" alt="B-VRImY__i8.png"><span>【歌ってみた】ファンサ by健屋花那/にじさんじ【#健屋花那誕生祭2020】</span><span>【B-VRImY__i8】</span></div>
+    </div>
+
 </div>
 <script src="../js/util.js"></script>
 <script src="../js/common.js"></script>
@@ -45,13 +54,14 @@
         // プレーヤーを埋め込む場所
         var ytArea = 'sample';
 
-        // 埋め込むYouTube ID
+        // 埋め込むYouTube ID(デフォルト)
         var ytID = 'Kjoe1vXlmxQ';
 
         // プレーヤーのサイズを指定
         var ytWidth = 560;
         var ytHeight = 315;
 
+        var ytPlayer;
         // 再生
         var ytPlay = document.getElementById('play');
         ytPlay.addEventListener('click', function () {
@@ -132,10 +142,20 @@
             });
         }
 
+        // 動画選択
+        function select(id) {
+            ytPlayer.cueVideoById({videoId: id});
+            // 1秒後に再生
+            setTimeout(() => {
+                ytPlayer.playVideo();
+            }, 1000);
+            
+        }
+
         function onPlayerReady(e) {
             // e.target.mute();// ミュート（これを設定しないとスマホで流れません）
             // 読み込み完了後に自動再生
-            e.target.playVideo();
+            // e.target.playVideo();
 
             // 動画の長さ取得
             var total = document.getElementById('total');
