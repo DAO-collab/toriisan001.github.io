@@ -1,5 +1,5 @@
 <div id="indexDb">
-    <h1>IndexDbaaa</h1>
+    <h1>IndexDb(ver0.02)</h1>
     <p id="lastModified"></p>
 
     <hr>
@@ -10,6 +10,7 @@
         <p><a href="https://noxi515.hateblo.jp/entry/2018/04/01/233950">noxi雑記【参考】</a></p>
         <p><a href="https://launchcart.jp/blog/%E3%80%90react%E3%80%91dexie-js%E3%81%A7indexeddb%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F/">【React】Dexie.jsでIndexedDBを使ってみました</a></p>
         <p><a href="https://codesandbox.io/s/react-dexie-js-mui-j4k3n3">【React】Dexie.jsでIndexedDBを使ってみました。- Dexie.jsを使って作ってみたDEMO【参考】</a></p>
+        <p><a href="https://b-risk.jp/blog/2020/07/indexeddb_and_dexie/">【スマホアプリ開発】ハイブリッドアプリ開発が楽になる js のみのデータベース【indexedDB + Dexie.js】（動作例付き）【参考】</a></p>        
     </details>
     <hr>
 
@@ -43,12 +44,12 @@
         }).catch (function (err) {
             // エラーが起きたとき
             console.log("DB connection failed. : " + err);
-            alert("DB connection failed. : " + err);            
+            alert("DB connection failed. : " + err);
         });
 
         db.notes.add({title: "タイトル1", body: '本文1', updated_at: dateFomatYYYYMMDDhhmmss(new Date())});
-        db.notes.add({title: "タイトル2", body: '本文2', updated_at: dateFomatYYYYMMDDhhmmss(new Date())});
-        db.notes.add({title: "タイトル3", body: '本文3', updated_at: dateFomatYYYYMMDDhhmmss(new Date())});
+        // db.notes.add({title: "タイトル2", body: '本文2', updated_at: dateFomatYYYYMMDDhhmmss(new Date())});
+        // db.notes.add({title: "タイトル3", body: '本文3', updated_at: dateFomatYYYYMMDDhhmmss(new Date())});
 
         show_result();
 
@@ -132,6 +133,10 @@
                     // テーブルエレメントの末尾に挿入
                     tableElement.appendChild(trElement);
                     notes.forEach(function (note) {
+                        const testId = note.id;
+                        const testTitle = note.title;
+                        const testBody = note.body;
+                        alert(testId + testTitle + testBody);
                         trElement = document.createElement('tr');
                         // ID追加
                         tdElement = document.createElement('td');
