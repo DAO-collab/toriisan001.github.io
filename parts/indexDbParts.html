@@ -69,7 +69,7 @@
             }
             params.title = title.value;
             params.body = body.value;
-            params.updated_at = dateFomatYYYYMMDDhhmmss(new Date(updatedAt.value), '/', ':');
+            params.updated_at = dateFomatYYYYMMDDhhmmss(new Date(updatedAt.textContent), '/', ':');
             db.notes.put(params);
             show_result();
         }
@@ -118,7 +118,7 @@
                             notes_html += `<tr><td style="border-bottom: 1px solid black;" onClick="keyCopy(${note.id})">${note.id}</td><td style="border-bottom: 1px solid black;">${note.title}</td><td style="border-bottom: 1px solid black;">${note.body}</td><td style="border-bottom: 1px solid black;">${updatedAt}</td><td onClick="if (confirm('${message}')) keyCle(${note.id}); return false;">×</td></tr>`;
                         });
                         const updatedAt = dateFomatYYYYMMDDhhmmss(new Date(), '/', ':');
-                        notes_html += `<tr><td id="id"></td><td><input type="text" id="title"></td><td><input type="text" id="body"></td><td><input type="datetime" id="updated_at" value="${updatedAt}"></td></tr>`;
+                        notes_html += `<tr><td id="id"></td><td><input type="text" id="title"></td><td><input type="text" id="body"></td><td id="updated_at">${updatedAt}</td></tr>`;
                         notes_html += '</table>';
                         $('#table').html(notes_html);
                     });

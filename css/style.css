@@ -139,7 +139,7 @@ main pre {
     padding: 1px 10px;
 }
 
-main img {
+main #gallery img {
     outline: 2px solid #dcdcdc;
     border-radius: 5px;
     height: 300px;
