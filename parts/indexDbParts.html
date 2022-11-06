@@ -1,5 +1,5 @@
 <div id="indexDb">
-    <h1>IndexDb(ver0.02)</h1>
+    <h1>IndexDb(ver0.03)</h1>
     <p id="lastModified"></p>
 
     <hr>
@@ -104,6 +104,11 @@
             db.notes
                 .toArray()
                 .then(function (notes) {
+                    // console.log(notes[0].id);
+                    const testId = notes[0].id;
+                    const testTitle = notes[0].title;
+                    const testBody = notes[0].body;
+                    alert(testId + testTitle + testBody);                    
                     // 子要素を全て削除
                     while (tableDiv.firstChild) {
                         tableDiv.removeChild(tableDiv.firstChild);
@@ -133,10 +138,6 @@
                     // テーブルエレメントの末尾に挿入
                     tableElement.appendChild(trElement);
                     notes.forEach(function (note) {
-                        const testId = note.id;
-                        const testTitle = note.title;
-                        const testBody = note.body;
-                        alert(testId + testTitle + testBody);
                         trElement = document.createElement('tr');
                         // ID追加
                         tdElement = document.createElement('td');
