@@ -6,12 +6,11 @@
     <details>
         <h2>使い方参考サイト</h2>
         <p><a href="https://cly7796.net/blog/javascript/how-to-use-youtube-player-api/">YouTubeのプレーヤーAPIの使い方【参考】</a></p>
-        <p><a href="https://blog.kimizuka.org/entry/2020/11/02/125648">YouTube IFrame Player
-                APIで読み込んだ動画を自動で再生してループさせる【参考】</a></p>
+        <p><a href="https://blog.kimizuka.org/entry/2020/11/02/125648">YouTube IFrame Player APIで読み込んだ動画を自動で再生してループさせる【参考】</a></p>
     </details>
     <hr>
 
-    <div id="sample"></div>
+    <div id="sample" style="pointer-events: none;"></div>
 
     <div>
         <button id="play">再生</button>
@@ -27,6 +26,9 @@
     <div id="status">現在のステータス：</div>
     <div>動画の長さ：<span id="total"></span></div>
 
+    <hr>
+
+    
 </div>
 <script src="../js/util.js"></script>
 <script src="../js/common.js"></script>
@@ -49,22 +51,6 @@
         // プレーヤーのサイズを指定
         var ytWidth = 560;
         var ytHeight = 315;
-
-        // API読み込み後にプレーヤー埋め込み
-        function onYouTubeIframeAPIReady() {
-            ytPlayer = new YT.Player(ytArea, {
-                height: ytHeight,
-                width: ytWidth,
-                videoId: ytID,
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                },
-                playerVars: {
-                    playsinline: 1,
-                }
-            });
-        }
 
         // 再生
         var ytPlay = document.getElementById('play');
@@ -139,6 +125,9 @@
                     'onReady': onPlayerReady,
                     'onStateChange': onPlayerStateChange,
                     'onError': onPlayerError
+                },
+                playerVars: {
+                    playsinline: 1,
                 }
             });
         }
