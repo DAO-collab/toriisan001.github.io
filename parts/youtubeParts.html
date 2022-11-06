@@ -10,6 +10,7 @@
         <p><a href="https://www.billionwallet.com/goods/youtube_image.html">Youtube動画からサムネイル画像を取得する方法【参考】</a></p>
         <p><a href="https://goodizer.jp/youtube-data-api/#i">YouTubeDataAPIを使って動画情報を取得してみた！【参考】</a></p>
         <p><a href="https://qiita.com/azukiazusa/items/2dc6407665785127cccc">【Youtube Player API】埋め込む動画を動的に変更する【参考】</a></p>
+        <p><a href="https://cly7796.net/blog/javascript/set-parameters-of-youtube/">YouTubeのパラメータを色々試してみる【参考】</a></p>
     </details>
     <hr>
 
@@ -141,7 +142,13 @@
                     'onError': onPlayerError
                 },
                 playerVars: {
-                    playsinline: 1,
+                    autohide: 1, // 動画再生開始後にコントロールバーとシークバーを非表示にするかどうか。
+                    disablekb: 1, // キーボードの操作をさせるかどうか
+                    fs: 0, // 全画面表示ボタンを表示するかどうか。
+                    iv_load_policy: 3, // アノテーション(動画上に表示されるクリック可能なテキスト)を表示するかどうか。
+                    modestbranding: 1, // プレーヤーにYouTubeロゴが表示されないようにする。
+                    playsinline: 1, // iOS上のHTML5プレーヤーで、動画をインラインにするか全画面表示にするかを設定。
+                    rel: 0, // 再生終了後に関連動画を表示するかどうか。
                 }
             });
         }
