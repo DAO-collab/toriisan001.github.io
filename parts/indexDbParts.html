@@ -1,5 +1,5 @@
 <div id="indexDb">
-    <h1>IndexDb(ver0.07)</h1>
+    <h1>IndexDb(ver0.08)</h1>
     <p id="lastModified"></p>
 
     <hr>
@@ -108,26 +108,33 @@
                 db.notes
                     .toArray()
                     .then(function (notes) {
+
+                        var games_html = '';
+                        games_html += '<div class="table01"><p class="table-title">[試合情報]</p><table class="nowrap"><tr><th>試合ID</th><th>試合名</th><th></th></tr>';
+                        games_html += '<tr><td><input type="hidden" name="game_id"><span class="game_id"></span></td><td><input type="text" name="game_name"></td><td><button class="new-btn">新規</button><button class="update-btn">更新</button></td></tr>';
+                        games_html += '</table></div>';
+                        $('#table').html(games_html);
+
                         // console.log(notes[0].id);
-                        const testId = notes[0].id;
-                        const testTitle = notes[0].title;
-                        const testBody = notes[0].body;
-                        alert(testId + testTitle + testBody);
-                        // 子要素を全て削除
-                        while (tableDiv.firstChild) {
-                            tableDiv.removeChild(tableDiv.firstChild);
-                        }
-                        alert('子要素を全て削除');
-                        // テーブルを作成
-                        const tableElement = document.createElement('table');
-                        var trElement = null;
-                        var thElement = null;
-                        var tdElement = null;
-                        trElement = document.createElement('tr');
-                        // IDヘッダを追加
-                        thElement = document.createElement('th');
-                        thElement.textContent = 'ID';
-                        trElement.appendChild(thElement);
+                        // const testId = notes[0].id;
+                        // const testTitle = notes[0].title;
+                        // const testBody = notes[0].body;
+                        // alert(testId + testTitle + testBody);
+                        // // 子要素を全て削除
+                        // while (tableDiv.firstChild) {
+                        //     tableDiv.removeChild(tableDiv.firstChild);
+                        // }
+                        // alert('子要素を全て削除');
+                        // // テーブルを作成
+                        // const tableElement = document.createElement('table');
+                        // var trElement = null;
+                        // var thElement = null;
+                        // var tdElement = null;
+                        // trElement = document.createElement('tr');
+                        // // IDヘッダを追加
+                        // thElement = document.createElement('th');
+                        // thElement.textContent = 'ID';
+                        // trElement.appendChild(thElement);
                         // // タイトルヘッダを追加
                         // thElement = document.createElement('th');
                         // thElement.textContent = 'タイトル';
@@ -141,7 +148,7 @@
                         // thElement.textContent = '登録日時';
                         // trElement.appendChild(thElement);
                         // テーブルエレメントの末尾に挿入
-                        tableElement.appendChild(trElement);
+                        // tableElement.appendChild(trElement);
                         // notes.forEach(function (note) {
                         //     trElement = document.createElement('tr');
                         //     // ID追加
@@ -174,36 +181,36 @@
                         // テーブルエレメントの末尾に挿入
                         //     tableElement.appendChild(trElement);
                         // });
-                        var inputElement = null;
-                        trElement = document.createElement('tr');
-                        // IDについてはダミーを追加
-                        tdElement = document.createElement('td');
-                        tdElement.id = 'id';
-                        trElement.appendChild(tdElement);
-                        // タイトル用テキストボックス追加
-                        inputElement = document.createElement('input');
-                        inputElement.id = 'title';
-                        tdElement = document.createElement('td');
-                        tdElement.appendChild(inputElement);
-                        trElement.appendChild(tdElement);
-                        // 本文用テキストボックス追加
-                        inputElement = document.createElement('input');
-                        inputElement.id = 'body';
-                        tdElement = document.createElement('td');
-                        tdElement.appendChild(inputElement);
-                        trElement.appendChild(tdElement);
-                        // 登録日時用テキストボックス追加
-                        inputElement = document.createElement('input');
-                        inputElement.id = 'updated_at';
-                        inputElement.type = 'datetime';
-                        inputElement.value = dateFomatYYYYMMDDhhmmss(new Date(document.lastModified), '-', ':');
-                        tdElement = document.createElement('td');
-                        tdElement.appendChild(inputElement);
-                        trElement.appendChild(tdElement);
-                        // テーブルエレメントの末尾に挿入
-                        tableElement.appendChild(trElement);
-                        // テーブルDIVの末尾に挿入
-                        tableDiv.appendChild(tableElement);
+                        // var inputElement = null;
+                        // trElement = document.createElement('tr');
+                        // // IDについてはダミーを追加
+                        // tdElement = document.createElement('td');
+                        // tdElement.id = 'id';
+                        // trElement.appendChild(tdElement);
+                        // // タイトル用テキストボックス追加
+                        // inputElement = document.createElement('input');
+                        // inputElement.id = 'title';
+                        // tdElement = document.createElement('td');
+                        // tdElement.appendChild(inputElement);
+                        // trElement.appendChild(tdElement);
+                        // // 本文用テキストボックス追加
+                        // inputElement = document.createElement('input');
+                        // inputElement.id = 'body';
+                        // tdElement = document.createElement('td');
+                        // tdElement.appendChild(inputElement);
+                        // trElement.appendChild(tdElement);
+                        // // 登録日時用テキストボックス追加
+                        // inputElement = document.createElement('input');
+                        // inputElement.id = 'updated_at';
+                        // inputElement.type = 'datetime';
+                        // inputElement.value = dateFomatYYYYMMDDhhmmss(new Date(document.lastModified), '-', ':');
+                        // tdElement = document.createElement('td');
+                        // tdElement.appendChild(inputElement);
+                        // trElement.appendChild(tdElement);
+                        // // テーブルエレメントの末尾に挿入
+                        // tableElement.appendChild(trElement);
+                        // // テーブルDIVの末尾に挿入
+                        // tableDiv.appendChild(tableElement);
                     });
             }, 100);
         }
