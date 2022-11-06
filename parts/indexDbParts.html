@@ -46,6 +46,10 @@
             alert("DB connection failed. : " + err);            
         });
 
+        db.notes.add({title: "タイトル1", body: '本文1', updated_at: dateFomatYYYYMMDDhhmmss(new Date())});
+        db.notes.add({title: "タイトル2", body: '本文2', updated_at: dateFomatYYYYMMDDhhmmss(new Date())});
+        db.notes.add({title: "タイトル3", body: '本文3', updated_at: dateFomatYYYYMMDDhhmmss(new Date())});
+
         show_result();
 
         // データを保存する
