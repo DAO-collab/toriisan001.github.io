@@ -1,5 +1,5 @@
 <div id="indexDb">
-    <h1>IndexDb(ver0.06)</h1>
+    <h1>IndexDb(ver0.07)</h1>
     <p id="lastModified"></p>
 
     <hr>
@@ -8,9 +8,13 @@
         <p><a href="https://qiita.com/yamayamasan/items/a4297e724b86f4a00fd2">Dexie.jsでIndexedDBを使ってみる【参考】</a></p>
         <p><a href="https://www.codit.work/notes/25ykyi18blgmi8fkfi66/">データベースの操作【参考】</a></p>
         <p><a href="https://noxi515.hateblo.jp/entry/2018/04/01/233950">noxi雑記【参考】</a></p>
-        <p><a href="https://launchcart.jp/blog/%E3%80%90react%E3%80%91dexie-js%E3%81%A7indexeddb%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F/">【React】Dexie.jsでIndexedDBを使ってみました</a></p>
-        <p><a href="https://codesandbox.io/s/react-dexie-js-mui-j4k3n3">【React】Dexie.jsでIndexedDBを使ってみました。- Dexie.jsを使って作ってみたDEMO【参考】</a></p>
-        <p><a href="https://b-risk.jp/blog/2020/07/indexeddb_and_dexie/">【スマホアプリ開発】ハイブリッドアプリ開発が楽になる js のみのデータベース【indexedDB + Dexie.js】（動作例付き）【参考】</a></p>        
+        <p><a
+                href="https://launchcart.jp/blog/%E3%80%90react%E3%80%91dexie-js%E3%81%A7indexeddb%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F/">【React】Dexie.jsでIndexedDBを使ってみました</a>
+        </p>
+        <p><a href="https://codesandbox.io/s/react-dexie-js-mui-j4k3n3">【React】Dexie.jsでIndexedDBを使ってみました。-
+                Dexie.jsを使って作ってみたDEMO【参考】</a></p>
+        <p><a href="https://b-risk.jp/blog/2020/07/indexeddb_and_dexie/">【スマホアプリ開発】ハイブリッドアプリ開発が楽になる js
+                のみのデータベース【indexedDB + Dexie.js】（動作例付き）【参考】</a></p>
     </details>
     <hr>
 
@@ -41,13 +45,13 @@
             // 接続に成功したとき
             console.log("DB connection successful.");
             alert("DB connection successful.");
-        }).catch (function (err) {
+        }).catch(function (err) {
             // エラーが起きたとき
             console.log("DB connection failed. : " + err);
             alert("DB connection failed. : " + err);
         });
 
-        db.notes.add({title: "タイトル1", body: '本文1', updated_at: dateFomatYYYYMMDDhhmmss(new Date())});
+        db.notes.add({ title: "タイトル1", body: '本文1', updated_at: dateFomatYYYYMMDDhhmmss(new Date()) });
         // db.notes.add({title: "タイトル2", body: '本文2', updated_at: dateFomatYYYYMMDDhhmmss(new Date())});
         // db.notes.add({title: "タイトル3", body: '本文3', updated_at: dateFomatYYYYMMDDhhmmss(new Date())});
 
@@ -100,7 +104,7 @@
 
         // データの取得
         function show_result() {
-            setTimeout( function() {
+            setTimeout(function () {
                 db.notes
                     .toArray()
                     .then(function (notes) {
@@ -146,28 +150,28 @@
                         //     tdElement.textContent = note.id;
                         //     tdElement.setAttribute('onclick', `keyCopy(${note.id})`);
                         //     trElement.appendChild(tdElement);
-                            // // タイトル追加
-                            // tdElement = document.createElement('td');
-                            // tdElement.style = "border-bottom: 1px solid black;";
-                            // tdElement.textContent = note.title;
-                            // trElement.appendChild(tdElement);
-                            // // 本文追加
-                            // tdElement = document.createElement('td');
-                            // tdElement.style = "border-bottom: 1px solid black;";
-                            // tdElement.textContent = note.body;
-                            // trElement.appendChild(tdElement);
-                            // // 登録日時追加
-                            // tdElement = document.createElement('td');
-                            // tdElement.style = "border-bottom: 1px solid black;";
-                            // tdElement.textContent = dateFomatYYYYMMDDhhmmss(new Date(note.updated_at), '/', ':');
-                            // trElement.appendChild(tdElement);
-                            // // 削除ボタン追加
-                            // tdElement = document.createElement('td');
-                            // tdElement.textContent = '×';
-                            // const message = 'ID(' + note.id + ')を削除してよいですか？';
-                            // tdElement.setAttribute('onclick', `if (confirm('${message}')) keyCle(${note.id}); return false;`);
-                            // trElement.appendChild(tdElement);
-                            // テーブルエレメントの末尾に挿入
+                        // // タイトル追加
+                        // tdElement = document.createElement('td');
+                        // tdElement.style = "border-bottom: 1px solid black;";
+                        // tdElement.textContent = note.title;
+                        // trElement.appendChild(tdElement);
+                        // // 本文追加
+                        // tdElement = document.createElement('td');
+                        // tdElement.style = "border-bottom: 1px solid black;";
+                        // tdElement.textContent = note.body;
+                        // trElement.appendChild(tdElement);
+                        // // 登録日時追加
+                        // tdElement = document.createElement('td');
+                        // tdElement.style = "border-bottom: 1px solid black;";
+                        // tdElement.textContent = dateFomatYYYYMMDDhhmmss(new Date(note.updated_at), '/', ':');
+                        // trElement.appendChild(tdElement);
+                        // // 削除ボタン追加
+                        // tdElement = document.createElement('td');
+                        // tdElement.textContent = '×';
+                        // const message = 'ID(' + note.id + ')を削除してよいですか？';
+                        // tdElement.setAttribute('onclick', `if (confirm('${message}')) keyCle(${note.id}); return false;`);
+                        // trElement.appendChild(tdElement);
+                        // テーブルエレメントの末尾に挿入
                         //     tableElement.appendChild(trElement);
                         // });
                         var inputElement = null;
@@ -201,7 +205,7 @@
                         // テーブルDIVの末尾に挿入
                         tableDiv.appendChild(tableElement);
                     });
-            });
+            }, 100);
         }
     }
 </script>
