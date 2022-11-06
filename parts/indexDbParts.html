@@ -8,13 +8,20 @@
         <p><a href="https://qiita.com/yamayamasan/items/a4297e724b86f4a00fd2">Dexie.jsでIndexedDBを使ってみる【参考】</a></p>
         <p><a href="https://www.codit.work/notes/25ykyi18blgmi8fkfi66/">データベースの操作【参考】</a></p>
         <p><a href="https://noxi515.hateblo.jp/entry/2018/04/01/233950">noxi雑記【参考】</a></p>
-        <p><a
-                href="https://launchcart.jp/blog/%E3%80%90react%E3%80%91dexie-js%E3%81%A7indexeddb%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F/">【React】Dexie.jsでIndexedDBを使ってみました</a>
+        <p>
+            <a
+                href="https://launchcart.jp/blog/%E3%80%90react%E3%80%91dexie-js%E3%81%A7indexeddb%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%81%9F/">
+                【React】Dexie.jsでIndexedDBを使ってみました
+            </a>
         </p>
-        <p><a href="https://codesandbox.io/s/react-dexie-js-mui-j4k3n3">【React】Dexie.jsでIndexedDBを使ってみました。-
-                Dexie.jsを使って作ってみたDEMO【参考】</a></p>
-        <p><a href="https://b-risk.jp/blog/2020/07/indexeddb_and_dexie/">【スマホアプリ開発】ハイブリッドアプリ開発が楽になる js
-                のみのデータベース【indexedDB + Dexie.js】（動作例付き）【参考】</a></p>
+        <p>
+            <a href="https://codesandbox.io/s/react-dexie-js-mui-j4k3n3">
+                【React】Dexie.jsでIndexedDBを使ってみました。- Dexie.jsを使って作ってみたDEMO【参考】</a>
+        </p>
+        <p>
+            <a href="https://b-risk.jp/blog/2020/07/indexeddb_and_dexie/">
+                【スマホアプリ開発】ハイブリッドアプリ開発が楽になる jsのみのデータベース【indexedDB + Dexie.js】（動作例付き）【参考】</a>
+        </p>
     </details>
     <hr>
 
@@ -43,16 +50,10 @@
         db.open().then(function (db) {
             // 接続に成功したとき
             console.log("DB connection successful.");
-            // alert("DB connection successful.");
         }).catch(function (err) {
             // エラーが起きたとき
             console.log("DB connection failed. : " + err);
-            // alert("DB connection failed. : " + err);
         });
-
-        db.notes.add({ title: "タイトル1", body: '本文1', updated_at: dateFomatYYYYMMDDhhmmss(new Date(), '/', ':') });
-        // db.notes.add({title: "タイトル2", body: '本文2', updated_at: dateFomatYYYYMMDDhhmmss(new Date())});
-        // db.notes.add({title: "タイトル3", body: '本文3', updated_at: dateFomatYYYYMMDDhhmmss(new Date())});
 
         show_result();
 
@@ -103,6 +104,7 @@
 
         // データの取得
         function show_result() {
+            // 実行タイミング(100ミリ秒)で実行
             setTimeout(function () {
                 db.notes
                     .toArray()
@@ -110,7 +112,7 @@
                         var games_html = '';
                         games_html += '<table>';
                         games_html += '<tr><th>ID</th><th>タイトル</th><th>本文</th><th>登録日時</th></tr>';
-                        $.each( notes, function(index, note) {
+                        $.each(notes, function (index, note) {
                             const updatedAt = dateFomatYYYYMMDDhhmmss(new Date(note.updated_at), '/', ':');
                             const message = 'ID(' + note.id + ')を削除してよいですか？';
                             games_html += `<tr><td style="border-bottom: 1px solid black;" onClick="keyCopy(${note.id})">${note.id}</td><td style="border-bottom: 1px solid black;">${note.title}</td><td style="border-bottom: 1px solid black;">${note.body}</td><td style="border-bottom: 1px solid black;">${updatedAt}</td><td onClick="if (confirm('${message}')) keyCle(${note.id}); return false;">×</td></tr>`;
