@@ -35,7 +35,8 @@ h3:before {
 }
 
 .container {
-    width: 400px;
+    /* background-color: #683D80; */
+    width: 1150px;
     margin: 0 auto;
 }
 
@@ -76,7 +77,8 @@ header .icon {
 /* main */
 
 main {
-    width: 1000px;
+    /* background-color: #683D80;     */
+    /* width: 1000px; */
     margin: 0 auto;
 }
 
@@ -147,6 +149,15 @@ main #gallery img {
     align-items: left;
 }
 
+main #apl img {
+    outline: 2px solid #dcdcdc;
+    border-radius: 5px;
+    height: 100px;
+    width: 100px;
+    margin-top: 5px;
+    align-items: left;
+}
+
 /* footer */
 
 footer {
@@ -164,6 +175,7 @@ footer {
 
 .content {
     /* background-color: #b3d874; */
+    width: 1000px;
     text-align: center;
     margin-left: 1px;
 }
@@ -171,7 +183,7 @@ footer {
 article {
     /* outline: 2px solid red; */
     margin: 0 auto;
-    width: 1500px;
+    width: 1150px;
     display: flex;
 }
 
