@@ -1,5 +1,5 @@
 <div id="indexDb">
-    <h1>IndexDb(ver0.04)</h1>
+    <h1>IndexDb(ver0.05)</h1>
     <p id="lastModified"></p>
 
     <hr>
@@ -137,14 +137,14 @@
                     // trElement.appendChild(thElement);
                     // テーブルエレメントの末尾に挿入
                     tableElement.appendChild(trElement);
-                    notes.forEach(function (note) {
-                        trElement = document.createElement('tr');
-                        // ID追加
-                        tdElement = document.createElement('td');
-                        tdElement.style = "border-bottom: 1px solid black;";
-                        tdElement.textContent = note.id;
-                        tdElement.setAttribute('onclick', `keyCopy(${note.id})`);
-                        trElement.appendChild(tdElement);
+                    // notes.forEach(function (note) {
+                    //     trElement = document.createElement('tr');
+                    //     // ID追加
+                    //     tdElement = document.createElement('td');
+                    //     tdElement.style = "border-bottom: 1px solid black;";
+                    //     tdElement.textContent = note.id;
+                    //     tdElement.setAttribute('onclick', `keyCopy(${note.id})`);
+                    //     trElement.appendChild(tdElement);
                         // // タイトル追加
                         // tdElement = document.createElement('td');
                         // tdElement.style = "border-bottom: 1px solid black;";
@@ -167,34 +167,34 @@
                         // tdElement.setAttribute('onclick', `if (confirm('${message}')) keyCle(${note.id}); return false;`);
                         // trElement.appendChild(tdElement);
                         // テーブルエレメントの末尾に挿入
-                        tableElement.appendChild(trElement);
-                    });
+                    //     tableElement.appendChild(trElement);
+                    // });
                     var inputElement = null;
                     trElement = document.createElement('tr');
                     // IDについてはダミーを追加
                     tdElement = document.createElement('td');
                     tdElement.id = 'id';
                     trElement.appendChild(tdElement);
-                    // // タイトル用テキストボックス追加
-                    // inputElement = document.createElement('input');
-                    // inputElement.id = 'title';
-                    // tdElement = document.createElement('td');
-                    // tdElement.appendChild(inputElement);
-                    // trElement.appendChild(tdElement);
-                    // // 本文用テキストボックス追加
-                    // inputElement = document.createElement('input');
-                    // inputElement.id = 'body';
-                    // tdElement = document.createElement('td');
-                    // tdElement.appendChild(inputElement);
-                    // trElement.appendChild(tdElement);
-                    // // 登録日時用テキストボックス追加
-                    // inputElement = document.createElement('input');
-                    // inputElement.id = 'updated_at';
-                    // inputElement.type = 'datetime';
-                    // inputElement.value = dateFomatYYYYMMDDhhmmss(new Date(document.lastModified), '-', ':');
-                    // tdElement = document.createElement('td');
-                    // tdElement.appendChild(inputElement);
-                    // trElement.appendChild(tdElement);
+                    // タイトル用テキストボックス追加
+                    inputElement = document.createElement('input');
+                    inputElement.id = 'title';
+                    tdElement = document.createElement('td');
+                    tdElement.appendChild(inputElement);
+                    trElement.appendChild(tdElement);
+                    // 本文用テキストボックス追加
+                    inputElement = document.createElement('input');
+                    inputElement.id = 'body';
+                    tdElement = document.createElement('td');
+                    tdElement.appendChild(inputElement);
+                    trElement.appendChild(tdElement);
+                    // 登録日時用テキストボックス追加
+                    inputElement = document.createElement('input');
+                    inputElement.id = 'updated_at';
+                    inputElement.type = 'datetime';
+                    inputElement.value = dateFomatYYYYMMDDhhmmss(new Date(document.lastModified), '-', ':');
+                    tdElement = document.createElement('td');
+                    tdElement.appendChild(inputElement);
+                    trElement.appendChild(tdElement);
                     // テーブルエレメントの末尾に挿入
                     tableElement.appendChild(trElement);
                     // テーブルDIVの末尾に挿入
