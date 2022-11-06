@@ -52,7 +52,7 @@
             console.log("DB connection successful.");
         }).catch(function (err) {
             // エラーが起きたとき
-            console.log("DB connection failed. : " + err);
+            console.err("DB connection failed. : " + err);
         });
 
         show_result();
@@ -109,19 +109,18 @@
                 db.notes
                     .toArray()
                     .then(function (notes) {
-                        var games_html = '';
-                        games_html += '<table>';
-                        games_html += '<tr><th>ID</th><th>タイトル</th><th>本文</th><th>登録日時</th></tr>';
+                        var notes_html = '';
+                        notes_html += '<table>';
+                        notes_html += '<tr><th>ID</th><th>タイトル</th><th>本文</th><th>登録日時</th></tr>';
                         $.each(notes, function (index, note) {
                             const updatedAt = dateFomatYYYYMMDDhhmmss(new Date(note.updated_at), '/', ':');
                             const message = 'ID(' + note.id + ')を削除してよいですか？';
-                            games_html += `<tr><td style="border-bottom: 1px solid black;" onClick="keyCopy(${note.id})">${note.id}</td><td style="border-bottom: 1px solid black;">${note.title}</td><td style="border-bottom: 1px solid black;">${note.body}</td><td style="border-bottom: 1px solid black;">${updatedAt}</td><td onClick="if (confirm('${message}')) keyCle(${note.id}); return false;">×</td></tr>`;
+                            notes_html += `<tr><td style="border-bottom: 1px solid black;" onClick="keyCopy(${note.id})">${note.id}</td><td style="border-bottom: 1px solid black;">${note.title}</td><td style="border-bottom: 1px solid black;">${note.body}</td><td style="border-bottom: 1px solid black;">${updatedAt}</td><td onClick="if (confirm('${message}')) keyCle(${note.id}); return false;">×</td></tr>`;
                         });
                         const updatedAt = dateFomatYYYYMMDDhhmmss(new Date(), '/', ':');
-                        console.log(updatedAt);
-                        games_html += `<tr><td id="id"></td><td><input type="text" id="title"></td><td><input type="text" id="body"></td><td><input type="datetime" id="updated_at" value="${updatedAt}"></td></tr>`;
-                        games_html += '</table>';
-                        $('#table').html(games_html);
+                        notes_html += `<tr><td id="id"></td><td><input type="text" id="title"></td><td><input type="text" id="body"></td><td><input type="datetime" id="updated_at" value="${updatedAt}"></td></tr>`;
+                        notes_html += '</table>';
+                        $('#table').html(notes_html);
                     });
             }, 100);
         }

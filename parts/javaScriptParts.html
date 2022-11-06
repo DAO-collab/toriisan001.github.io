@@ -382,6 +382,16 @@ export default txt; //これが必要になります
     </code>
 </pre>
 
+<h2>指定したエレメントのhtml要素を書き換える。(jQueryが必要)</h2>
+<pre>
+<code>
+var notes_html = '';
+games_html += `&lt;tr&gt;&lt;td id=&quot;id&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;text&quot; id=&quot;title&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;text&quot; id=&quot;body&quot;&gt;&lt;/td&gt;&lt;td&gt;&lt;input type=&quot;datetime&quot; id=&quot;updated_at&quot; value=&quot;${updatedAt}&quot;&gt;&lt;/td&gt;&lt;/tr&gt;`;
+games_html += &#039;&lt;/table&gt;&#039;;
+$(&#039;#table&#039;).html(games_html);
+</code>
+</pre>
+
 </div>
 <script src="../js/util.js"></script>
 <script src="../js/common.js"></script>
