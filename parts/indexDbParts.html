@@ -33,16 +33,18 @@
         const tableDiv = document.getElementById('table');
         var db = new Dexie(config.INDEX_DB.DB_NAME);
 
+        // データベースにテーブルを設定 ・初期化
+        db.version(config.INDEX_DB.DB_VERSION).stores({ notes: "++id, title, body, updated_at" });
+
         db.open().then(function (db) {
             // 接続に成功したとき
             console.log("DB connection successful.");
+            alert("DB connection successful.");
         }).catch (function (err) {
             // エラーが起きたとき
             console.log("DB connection failed. : " + err);
+            alert("DB connection failed. : " + err);            
         });
-
-        // データベースにテーブルを設定 ・初期化
-        db.version(config.INDEX_DB.DB_VERSION).stores({ notes: "++id, title, body, updated_at" });
 
         show_result();
 
