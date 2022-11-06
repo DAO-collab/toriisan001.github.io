@@ -145,10 +145,10 @@
         // 動画選択
         function select(id) {
             ytPlayer.cueVideoById({videoId: id});
-            // 1秒後に再生
+            // 2秒後に再生
             setTimeout(() => {
                 ytPlayer.playVideo();
-            }, 1000);
+            }, 2000);
             
         }
 
