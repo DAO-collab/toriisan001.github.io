@@ -1,8 +1,14 @@
 <div id="localStorage">
-    <h1>WebStorage</h1>
+    <h1>WebStorage(ver0.01)</h1>
     <p id="lastModified"></p>
 
-    <h2>localStorage(ver0.01)</h2>
+    <hr>
+    <details>
+        <h2>使い方参考サイト</h2>
+        <p><a href="http://www.htmq.com/webstorage/">Web Storage－HTML5のAPI - HTMLクイックリファレンス（参考）</a></p>
+    </details>
+    <hr>
+
     <div id="textbox"></div>
     <div style="padding-top: 5px; display: flex;">
         <p>キー：<input id="k" type="text" onfocus="this.select();"></p>
@@ -12,7 +18,7 @@
         <input type="button" value="新規・更新" onClick="set()">
         <input type="button" value="全クリア" onClick="if (confirm('テキストを全て削除してよいですか？')) cle(); return false;">
     </div>
-    <p><a href="http://www.htmq.com/webstorage/">Web Storage－HTML5のAPI - HTMLクイックリファレンス（参考）</a></p>
+
 
 </div>
 <script src="../js/util.js"></script>
@@ -64,31 +70,31 @@
         // キー情報を取得
         function show_result() {
             // 子要素を全て削除
-            var textbox_element = document.getElementById('textbox');
-            while (textbox_element.firstChild) {
-                textbox_element.removeChild(textbox_element.firstChild);
+            var textboxElement = document.getElementById('textbox');
+            while (textboxElement.firstChild) {
+                textboxElement.removeChild(textboxElement.firstChild);
             }
             // 保存されているデータの数だけループ
             for (var i = 0; i < storage.length; i++) {
                 // i番目のキーを取得
                 const k = storage.key(i);
                 // ボックスdiv作成
-                const box_element = document.createElement('div');
-                box_element.style = "display: flex; justify-content: space-between; width: 500px; border-bottom: solid 1px #333;";
-                box_element.style.paddingTop = "10px";
+                const boxElement = document.createElement('div');
+                boxElement.style = "display: flex; justify-content: space-between; width: 500px; border-bottom: solid 1px #333;";
+                boxElement.style.paddingTop = "10px";
                 // テキストdiv作成
-                const text_element = document.createElement('div');
-                text_element.textContent = k + "：" + storage.getItem(k);
-                text_element.setAttribute('onclick', `keyCopy('${k}', '${storage.getItem(k)}')`);
-                box_element.appendChild(text_element);
+                const textElement = document.createElement('div');
+                textElement.textContent = k + "：" + storage.getItem(k);
+                textElement.setAttribute('onclick', `keyCopy('${k}', '${storage.getItem(k)}')`);
+                boxElement.appendChild(textElement);
                 // 削除div作成
-                const delete_element = document.createElement('div');
-                delete_element.textContent = '×';
+                const deleteElement = document.createElement('div');
+                deleteElement.textContent = '×';
                 const message = 'テキスト(id:' + k + ')を削除してよいですか？';
-                delete_element.setAttribute('onclick', `if (confirm('${message}')) keyCle('${k}'); return false;`);
-                box_element.appendChild(delete_element);
+                deleteElement.setAttribute('onclick', `if (confirm('${message}')) keyCle('${k}'); return false;`);
+                boxElement.appendChild(deleteElement);
                 // 指定した要素の中の末尾に挿入
-                textbox_element.appendChild(box_element);
+                textboxElement.appendChild(boxElement);
             }
         }
     };
