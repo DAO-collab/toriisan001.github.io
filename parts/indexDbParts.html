@@ -30,6 +30,9 @@
         const config = getconfig();
         const tableDiv = document.getElementById('table');
         var db = new Dexie(config.INDEX_DB.DB_NAME);
+        if (db === null) {
+            alert("使用しているブラウザがindexDB非対応のようです。");
+        }
 
         // // データベースにテーブルを設定 ・初期化
         db.version(config.INDEX_DB.DB_VERSION).stores({ notes: "++id, title, body, updated_at" });
