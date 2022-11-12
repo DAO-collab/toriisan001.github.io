@@ -51,21 +51,21 @@
         // 再読み込み
         show_result();
 
-        // ストレージの切り替え
-        const strageSelect = document.getElementById('strageSelect');
-        // プルダウンを更新
-        strageSelect.value = localStorageObj.getItem('STRANGE_KBN');
-        // プルダウンの変更イベントを追加
-        strageSelect.addEventListener('change', (e) => {
-            // 変数を更新
-            localStorageObj.setItem('STRANGE_KBN', String(e.target.value));
-            // ストレージタイトルの設定
-            setStorageTitle();
-            // ストレージ選択
-            selectStrage();
-            // 再読み込み
-            show_result();
-        });
+        // // ストレージの切り替え
+        // const strageSelect = document.getElementById('strageSelect');
+        // // プルダウンを更新
+        // strageSelect.value = localStorageObj.getItem('STRANGE_KBN');
+        // // プルダウンの変更イベントを追加
+        // strageSelect.addEventListener('change', (e) => {
+        //     // 変数を更新
+        //     localStorageObj.setItem('STRANGE_KBN', String(e.target.value));
+        //     // ストレージタイトルの設定
+        //     setStorageTitle();
+        //     // ストレージ選択
+        //     selectStrage();
+        //     // 再読み込み
+        //     show_result();
+        // });
 
         // // 新規・更新ボタンにイベントを追加
         // const setElement = document.getElementById('set');
@@ -98,7 +98,6 @@
 
         // データを保存する
         function set() {
-            console.log('aaaa')
             var k = document.getElementById("k").value;
             if (k === '') return;
             var v = document.getElementById("v").value;
