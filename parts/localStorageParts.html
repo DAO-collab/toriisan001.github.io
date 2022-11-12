@@ -9,6 +9,13 @@
     </details>
     <hr>
 
+    <h2>localStorage</h2>
+    <div style="text-align: left;">
+        <select id="strageSelect" name="strageSelect" style="font-size: 20px">
+            <option value="0">0:localStorage</option>
+            <option value="1">1:SessionStorage</option>
+        </select>
+    </div>
     <div id="textbox"></div>
     <div style="padding-top: 5px; display: flex;">
         <p>キー：<input id="k" type="text" onfocus="this.select();"></p>
@@ -26,30 +33,40 @@
 <script>
     {
         'use strict';
+        var localStorageObj = getStorageOBJ(localStorage);
 
-        // 変数storageにlocalStorageを格納
         var storage = null;
-        const localStorageObj = getStorageOBJ(localStorage);
+        // 初期状態の場合は0:ローカルストレージを設定
         if (localStorageObj.getItem('%STRAGE_KBN%') === null) {
-            console.log('a');
-            localStorageObj.setItem('%STRAGE_KBN%', '1');
-            storage = localStorage;
-        } else {
-            console.log(localStorageObj.getItem('%STRAGE_KBN%'));
-            storage = sessionStorage;
+            localStorageObj.setItem('STRANGE_KBN', '0');
         }
-        storage = localStorage;
-        console.log(getStorageOBJ(localStorage).getItem('%STRAGE_KBN%'));
-
-        // エンターキーでイベント発火
-        document.getElementById('k').onkeydown = function () {
-            if (event.key === 'Enter') set();
-        };
-        document.getElementById('v').onkeydown = function () {
-            if (event.key === 'Enter') set();
-        };
-
+        // ストレージ選択
+        selectStrage();
+        // 再読み込み
         show_result();
+
+        // ストレージの切り替え
+        const strageSelect = document.getElementById('strageSelect');
+        // プルダウンを更新
+        strageSelect.value = localStorageObj.getItem('STRANGE_KBN');
+        // プルダウンが切り替わった時のイベントリスナー
+        strageSelect.addEventListener('change', (e) => {
+            // 変数を更新
+            localStorageObj.setItem('STRANGE_KBN', String(e.target.value));
+            // ストレージ選択
+            selectStrage();
+            // 再読み込み
+            show_result();
+        });
+
+        // データを保存する
+        function selectStrage() {
+            if (localStorageObj.getItem('STRANGE_KBN') === '0') {
+                storage = localStorage;
+            } else {
+                storage = sessionStorage;
+            }
+        }
 
         // データを保存する
         function set() {
@@ -108,5 +125,13 @@
                 textboxElement.appendChild(boxElement);
             }
         }
+
+        // エンターキーでイベント発火
+        document.getElementById('k').onkeydown = function () {
+            if (event.key === 'Enter') set();
+        };
+        document.getElementById('v').onkeydown = function () {
+            if (event.key === 'Enter') set();
+        };
     };
 </script>

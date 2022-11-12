@@ -148,6 +148,14 @@ text-align: center;
 それ自体が親要素に対して中央ぞろえにはならない。
 そんなときはmarginを両サイドに割り当てて中央ぞろえにする
 margin: 64px auto 0;
+
+以下の場合はdivに入れて「text-align: left;」すると左に寄った。
+&lt;div style=&quot;text-align: left;&quot;&gt;
+&lt;select id=&quot;strageSelect&quot; name=&quot;strageSelect&quot; style=&quot;font-size: 20px&quot;&gt;
+    &lt;option value=&quot;0&quot;&gt;0:localStorage&lt;/option&gt;
+    &lt;option value=&quot;1&quot;&gt;1:SessionStorage&lt;/option&gt;
+&lt;/select&gt;
+&lt;/div&gt;
         </code>
     </pre>
 
