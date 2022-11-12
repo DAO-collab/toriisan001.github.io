@@ -98,7 +98,7 @@
                     id.textContent = notes[0].id;
                     title.value = notes[0].title;
                     body.value = notes[0].body;
-                    updatedAt.value = dateFomatYYYYMMDDhhmmss(new Date(notes[0].updated_at), '/', ':');
+                    updatedAt.textContent = dateFomatYYYYMMDDhhmmss(new Date(notes[0].updated_at), '/', ':');
                 });
         }
 
