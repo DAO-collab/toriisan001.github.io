@@ -1,5 +1,5 @@
 <div id="localStorage">
-    <h1>WebStorage(ver0.02)</h1>
+    <h1>WebStorage(ver0.03)</h1>
     <p id="lastModified"></p>
 
     <hr>
@@ -24,8 +24,8 @@
         <p>値：<input id="v" type="text" onfocus="this.select();"></p>
     </div>
     <div style="padding-top: 5px;">
-        <input id="set" type="button" value="新規・更新">
-        <input id="cle" type="button" value="全クリア">
+        <input type="button" value="新規・更新" onClick="set()">
+        <input type="button" value="全クリア" onClick="if (confirm('テキストを全て削除してよいですか？')) cle(); return false;">
     </div>
 
 </div>
@@ -67,15 +67,15 @@
             show_result();
         });
 
-        // 新規・更新ボタンにイベントを追加
-        const setElement = document.getElementById('set');
-        setElement.addEventListener('click', set);
+        // // 新規・更新ボタンにイベントを追加
+        // const setElement = document.getElementById('set');
+        // setElement.addEventListener('click', set);
 
-        // 全クリアボタンにイベントを追加
-        const cleElement = document.getElementById('cle');
-        cleElement.addEventListener('click', () => {
-            if (confirm('テキストを全て削除してよいですか？')) cle(); return false;
-        });
+        // // 全クリアボタンにイベントを追加
+        // const cleElement = document.getElementById('cle');
+        // cleElement.addEventListener('click', () => {
+        //     if (confirm('テキストを全て削除してよいですか？')) cle(); return false;
+        // });
 
         // ストレージタイトルの設定
         function setStorageTitle() {
@@ -142,17 +142,19 @@
                 // テキストdiv作成
                 const textElement = document.createElement('div');
                 textElement.textContent = k + "：" + storage.getItem(k);
-                textElement.addEventListener('click' ,() => {
-                    keyCopy(k, storage.getItem(k));
-                });
+                textElement.setAttribute('onclick', `keyCopy('${k}', '${storage.getItem(k)}')`);
+                // textElement.addEventListener('click' ,() => {
+                //     keyCopy(k, storage.getItem(k));
+                // });
                 boxElement.appendChild(textElement);
                 // 削除div作成
                 const deleteElement = document.createElement('div');
                 deleteElement.textContent = '×';
                 const message = 'テキスト(id:' + k + ')を削除してよいですか？';
-                deleteElement.addEventListener('click' ,() => {
-                    if (confirm(message)) keyCle(k); return false;
-                });
+                deleteElement.setAttribute('onclick', `if (confirm('${message}')) keyCle('${k}'); return false;`);
+                // deleteElement.addEventListener('click' ,() => {
+                //     if (confirm(message)) keyCle(k); return false;
+                // });
                 boxElement.appendChild(deleteElement);
                 // 指定した要素の中の末尾に挿入
                 textboxElement.appendChild(boxElement);
