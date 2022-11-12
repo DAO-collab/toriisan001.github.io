@@ -28,7 +28,18 @@
         'use strict';
 
         // 変数storageにlocalStorageを格納
-        var storage = localStorage;
+        var storage = null;
+        const localStorageObj = getStorageOBJ(localStorage);
+        if (localStorageObj.getItem('%STRAGE_KBN%') === null) {
+            console.log('a');
+            localStorageObj.setItem('%STRAGE_KBN%', '1');
+            storage = localStorage;
+        } else {
+            console.log(localStorageObj.getItem('%STRAGE_KBN%'));
+            storage = sessionStorage;
+        }
+        storage = localStorage;
+        console.log(getStorageOBJ(localStorage).getItem('%STRAGE_KBN%'));
 
         // エンターキーでイベント発火
         document.getElementById('k').onkeydown = function () {
