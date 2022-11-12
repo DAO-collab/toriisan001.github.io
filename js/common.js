@@ -31,40 +31,53 @@
     }
 
     // Dexie
-    class DexieWrap {
-        // DB変数
-        #db;
-        constructor(dbName) {
-            this.db = Dexie(dbName);
-            this.db.open().then(function () {
-                // 接続に成功したとき
-                console.log("DB connection successful.");
-            }).catch(function (err) {
-                // エラーが起きたとき
-                console.err("DB connection failed. : " + err);
-            });
-            db.version(config.INDEX_DB.MASTER.DB_VERSION).stores({ notes: "++id, title, body, updated_at" });
-        }
-        // データの取得
-        getResult() {
-            // 実行タイミング(100ミリ秒)で実行
-            setTimeout(function () {
-                db.notes
-                    .toArray()
-                    .then(function (notes) {
-                        return notes;
-                    });
-            }, 100);
-        }
-        // keyCle(k) {
-        //     this.storage.removeItem(k);
-        // }
-        // getItem(k) {
-        //     return this.storage.getItem(k);
-        // }
-    }
-    // ストレージクラスを取得
-    function getDexieWrapOBJ(dbName) {
-        return new DexieWrap(dbName);
-    }
+    // class DexieWrapNotes {
+    //     // DB変数
+    //     #db;
+    //     constructor(dbName) {
+    //         this.db = Dexie(dbName);
+    //         this.db.open().then(function () {
+    //             // 接続に成功したとき
+    //             console.log("DB connection successful.");
+    //         }).catch(function (err) {
+    //             // エラーが起きたとき
+    //             console.err("DB connection failed. : " + err);
+    //         });
+    //         db.version(config.INDEX_DB.MASTER.DB_VERSION).stores({ notes: "++id, title, body, updated_at" });
+    //     }
+    //     // データの取得
+    //     getResult() {
+    //         // 実行タイミング(100ミリ秒)で実行
+    //         setTimeout(function () {
+    //             this.db('youtube')
+    //                 .toArray()
+    //                 .then(function (data) {
+    //                     return data;
+    //                 });
+    //         }, 100);
+    //     }
+    //     // データ追加
+    //     set() {
+    //         const id = document.getElementById('id');
+    //         const title = document.getElementById('title');
+    //         const body = document.getElementById('body');
+    //         const updatedAt = document.getElementById('updated_at');
+    //         var params = {};
+    //         if (id.textContent !== '') {
+    //             params.id = parseInt(id.textContent);
+    //         }
+    //         params.title = title.value;
+    //         params.body = body.value;
+    //         params.updated_at = dateFomatYYYYMMDDhhmmss(new Date(updatedAt.textContent), '/', ':');
+    //         his.db('youtube').put(params);
+    //     }
+    //     // keyを指定してデータを削除
+    //     keyCle(id) {
+    //         this.db('youtube').delete(id);
+    //     }
+    // }
+    // // ストレージクラスを取得
+    // function getDexieWrapNotesOBJ(dbName) {
+    //     return new DexieWrapNotes(dbName);
+    // }
 }

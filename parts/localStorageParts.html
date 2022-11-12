@@ -1,5 +1,5 @@
 <div id="localStorage">
-    <h1>WebStorage(ver0.04)</h1>
+    <h1>WebStorage(ver0.02)</h1>
     <p id="lastModified"></p>
 
     <hr>
@@ -9,15 +9,6 @@
     </details>
     <hr>
 
-    <h2 id="storageTitle">localStorage</h2>
-    <div style="text-align: left;">
-        <select id="strageSelect" name="strageSelect" style="font-size: 20px">
-            <option value="0">0:localStorage</option>
-            <option value="1">1:SessionStorage</option>
-        </select>
-    </div>
-    <hr>
-    <div style="text-align: left;">key:value</div>
     <div id="textbox"></div>
     <div style="padding-top: 5px; display: flex;">
         <p>キー：<input id="k" type="text" onfocus="this.select();"></p>
@@ -28,73 +19,26 @@
         <input type="button" value="全クリア" onClick="if (confirm('テキストを全て削除してよいですか？')) cle(); return false;">
     </div>
 
+
 </div>
 <script src="../js/util.js"></script>
 <script src="../js/common.js"></script>
 <script>
     {
         'use strict';
-        // ストレージ区分
-        const STRANGE_KBN_LOCAL_STRANGE = '0';
-        // ストレージオブジェクトを取得
-        var localStorageObj = getStorageOBJ(localStorage);
 
-        var storage = null;
-        // 初期状態の場合は0:ローカルストレージを設定
-        if (localStorageObj.getItem('STRANGE_KBN') === null) {
-            localStorageObj.setItem('STRANGE_KBN', STRANGE_KBN_LOCAL_STRANGE);
-        }
-        // ストレージタイトルの設定
-        setStorageTitle();
-        // ストレージ選択
-        selectStrage();
-        // 再読み込み
+        // 変数storageにlocalStorageを格納
+        var storage = localStorage;
+
+        // エンターキーでイベント発火
+        document.getElementById('k').onkeydown = function () {
+            if (event.key === 'Enter') set();
+        };
+        document.getElementById('v').onkeydown = function () {
+            if (event.key === 'Enter') set();
+        };
+
         show_result();
-
-        // // ストレージの切り替え
-        // const strageSelect = document.getElementById('strageSelect');
-        // // プルダウンを更新
-        // strageSelect.value = localStorageObj.getItem('STRANGE_KBN');
-        // // プルダウンの変更イベントを追加
-        // strageSelect.addEventListener('change', (e) => {
-        //     // 変数を更新
-        //     localStorageObj.setItem('STRANGE_KBN', String(e.target.value));
-        //     // ストレージタイトルの設定
-        //     setStorageTitle();
-        //     // ストレージ選択
-        //     selectStrage();
-        //     // 再読み込み
-        //     show_result();
-        // });
-
-        // // 新規・更新ボタンにイベントを追加
-        // const setElement = document.getElementById('set');
-        // setElement.addEventListener('click', set);
-
-        // // 全クリアボタンにイベントを追加
-        // const cleElement = document.getElementById('cle');
-        // cleElement.addEventListener('click', () => {
-        //     if (confirm('テキストを全て削除してよいですか？')) cle(); return false;
-        // });
-
-        // ストレージタイトルの設定
-        function setStorageTitle() {
-            const storageTitle = document.getElementById('storageTitle');
-            if (localStorageObj.getItem('STRANGE_KBN') === STRANGE_KBN_LOCAL_STRANGE) {
-                storageTitle.textContent = 'LocalStorage';
-            } else {
-                storageTitle.textContent = 'SessionStorage';
-            }
-        }
-
-        // データを保存する
-        function selectStrage() {
-            if (localStorageObj.getItem('STRANGE_KBN') === STRANGE_KBN_LOCAL_STRANGE) {
-                storage = localStorage;
-            } else {
-                storage = sessionStorage;
-            }
-        }
 
         // データを保存する
         function set() {
@@ -142,30 +86,16 @@
                 const textElement = document.createElement('div');
                 textElement.textContent = k + "：" + storage.getItem(k);
                 textElement.setAttribute('onclick', `keyCopy('${k}', '${storage.getItem(k)}')`);
-                // textElement.addEventListener('click' ,() => {
-                //     keyCopy(k, storage.getItem(k));
-                // });
                 boxElement.appendChild(textElement);
                 // 削除div作成
                 const deleteElement = document.createElement('div');
                 deleteElement.textContent = '×';
                 const message = 'テキスト(id:' + k + ')を削除してよいですか？';
                 deleteElement.setAttribute('onclick', `if (confirm('${message}')) keyCle('${k}'); return false;`);
-                // deleteElement.addEventListener('click' ,() => {
-                //     if (confirm(message)) keyCle(k); return false;
-                // });
                 boxElement.appendChild(deleteElement);
                 // 指定した要素の中の末尾に挿入
                 textboxElement.appendChild(boxElement);
             }
         }
-
-        // エンターキーでイベント発火
-        document.getElementById('k').onkeydown = function () {
-            if (event.key === 'Enter') set();
-        };
-        document.getElementById('v').onkeydown = function () {
-            if (event.key === 'Enter') set();
-        };
     };
 </script>

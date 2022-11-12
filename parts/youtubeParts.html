@@ -65,7 +65,7 @@
         var db = new Dexie(config.INDEX_DB.YOUTUBE.DB_NAME);
 
         // データベースにテーブルを設定 ・初期化
-        db.version(config.INDEX_DB.YOUTUBE.DB_VERSION).stores({ notes: "++id, id_youtube" });
+        db.version(config.INDEX_DB.YOUTUBE.DB_VERSION).stores({ yotube: "++id, id_youtube" });
 
 
         var ytPlayer;
