@@ -9,13 +9,15 @@
     </details>
     <hr>
 
-    <h2>localStorage</h2>
+    <h2 id="storageTitle">localStorage</h2>
     <div style="text-align: left;">
         <select id="strageSelect" name="strageSelect" style="font-size: 20px">
             <option value="0">0:localStorage</option>
             <option value="1">1:SessionStorage</option>
         </select>
     </div>
+    <hr>
+    <div style="text-align: left;">key:value</div>
     <div id="textbox"></div>
     <div style="padding-top: 5px; display: flex;">
         <p>キー：<input id="k" type="text" onfocus="this.select();"></p>
@@ -33,13 +35,18 @@
 <script>
     {
         'use strict';
+        // ストレージ区分
+        const STRANGE_KBN_LOCAL_STRANGE = '0';
+        // ストレージオブジェクトを取得
         var localStorageObj = getStorageOBJ(localStorage);
 
         var storage = null;
         // 初期状態の場合は0:ローカルストレージを設定
-        if (localStorageObj.getItem('%STRAGE_KBN%') === null) {
-            localStorageObj.setItem('STRANGE_KBN', '0');
+        if (localStorageObj.getItem('STRANGE_KBN') === null) {
+            localStorageObj.setItem('STRANGE_KBN', STRANGE_KBN_LOCAL_STRANGE);
         }
+        // ストレージタイトルの設定
+        setStorageTitle();
         // ストレージ選択
         selectStrage();
         // 再読み込み
@@ -53,15 +60,27 @@
         strageSelect.addEventListener('change', (e) => {
             // 変数を更新
             localStorageObj.setItem('STRANGE_KBN', String(e.target.value));
+            // ストレージタイトルの設定
+            setStorageTitle();
             // ストレージ選択
             selectStrage();
             // 再読み込み
             show_result();
         });
 
+        // ストレージタイトルの設定
+        function setStorageTitle() {
+            const storageTitle = document.getElementById('storageTitle');
+            if (localStorageObj.getItem('STRANGE_KBN') === STRANGE_KBN_LOCAL_STRANGE) {
+                storageTitle.textContent = 'LocalStorage';
+            } else {
+                storageTitle.textContent = 'SessionStorage';
+            }
+        }
+
         // データを保存する
         function selectStrage() {
-            if (localStorageObj.getItem('STRANGE_KBN') === '0') {
+            if (localStorageObj.getItem('STRANGE_KBN') === STRANGE_KBN_LOCAL_STRANGE) {
                 storage = localStorage;
             } else {
                 storage = sessionStorage;
