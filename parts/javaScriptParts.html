@@ -400,11 +400,20 @@ $(&#039;#table&#039;).html(games_html);
 </code>
 </pre>
 
-<h2>テキストボックスをクリックしたときに全選択状態にする</h2>
+<h2>addEventListener</h2>
 <a href="https://qiita.com/mzmz__02/items/873118fbd8723c44956d">【JavaScript】addEventListenerの使い方</a>
 <pre>
 <code>
-&lt;input type=&quot;text&quot;onfocus=&quot;this.select();&quot;&gt;
+strageSelect.addEventListener('change', (e) => {
+    // 変数を更新
+    localStorageObj.setItem('STRANGE_KBN', String(e.target.value));
+    // ストレージタイトルの設定
+    setStorageTitle();
+    // ストレージ選択
+    selectStrage();
+    // 再読み込み
+    show_result();
+});
 </code>
 </pre>
 
