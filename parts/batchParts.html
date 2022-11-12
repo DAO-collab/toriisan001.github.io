@@ -33,6 +33,36 @@ if not "%1" == "1" (
 </pre>
     <p><a href="https://forgetmenots.doorblog.jp/archives/52556936.html">バッチファイルを最小化して実行する【参考】</a></p>
 
+    <h2>出力した内容をファイルに出力</h2>
+    <pre>
+    <code>
+C:\Users\*****>cd C:\Users\*****\Desktop\cmd
+C:\Users\*****\Desktop\cmd>echo 'hogehoge' > test.txt
+C:\Users\*****\Desktop\cmd>
+    </code>
+</pre>
+
+    <h2>ファイル内を検索</h2>
+    <pre>
+    <code>
+C:\Users\\*****\\Desktop\cmd>find "fsd" test.txt
+---------- TEST.TXT
+gfsdgjnodpgnodfagf
+fsd
+fsd
+fsd
+    </code>
+</pre>
+
+    <h2>ループ処理</h2>
+    <pre>
+    <code>
+for /l %%i in (1, 1, 30) do {
+    // 処理を記載
+}
+    </code>
+</pre>
+
 </div>
 <script src="../js/util.js"></script>
 <script src="../js/common.js"></script>
