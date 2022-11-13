@@ -25,6 +25,17 @@
     const onScrollObserver = new IntersectionObserver(onScrollCallback);
     onScrollObserver.observe(document.getElementById('target'));
 
+    // to_topイベント
+    toTop.addEventListener('click', e => {
+        // イベントを無効化(#(パウンド記号がついてしまうことを防ぐため))
+        e.preventDefault();
+        // ページ上部へ戻る
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        })
+    });
+
     // ストレージクラス
     class Storage {
         // ストレージ変数
