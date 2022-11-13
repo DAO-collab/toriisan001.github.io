@@ -417,6 +417,74 @@ strageSelect.addEventListener('change', (e) => {
 </code>
 </pre>
 
+<h2>イベント無効化</h2>
+<pre>
+<code>
+// to_topイベント
+toTop.addEventListener('click', e => {
+    // イベントを無効化(#(パウンド記号がついてしまうことを防ぐため))
+    e.preventDefault();
+    // ページ上部へ戻る
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    })
+});
+</code>
+</pre>
+
+<h2>ページ上部へ移動</h2>
+<pre>
+<code>
+=====html=====
+&lt;a href=&quot;#&quot; id=&quot;to_top&quot;&gt;
+    &lt;i class=&quot;bi bi-arrow-up-square-fill&quot;&gt;&lt;/i&gt;
+&lt;/a&gt;
+=====css=====
+#to_top {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    opacity: 0;
+    transition: opacity .3s;
+}
+#to_top.scrolled {
+    opacity: 1;
+}
+#to_top i {
+    font-size: 32px;
+    color:#22577a;
+}
+=====javascript=====
+function onScrollCallback(entries) {
+    entries.forEach(entry => {
+        // 要素が画面と交差したかどうか判定
+        if (!entry.isIntersecting) {
+            toTop.classList.add('scrolled');
+        } else {
+            // 要素が画面に表示されている
+            toTop.classList.remove('scrolled');
+        }
+    });
+}
+const toTop = document.getElementById('to_top');
+// 特定の要素が画面に 20% くらい交差したときにこちらの callback の処理を実行
+const onScrollObserver = new IntersectionObserver(onScrollCallback);
+onScrollObserver.observe(document.getElementById('target'));
+
+// to_topイベント
+toTop.addEventListener('click', e => {
+    // イベントを無効化(#(パウンド記号がついてしまうことを防ぐため))
+    e.preventDefault();
+    // ページ上部へ戻る
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    })
+});
+</code>
+</pre>
+
 </div>
 <script src="../js/util.js"></script>
 <script src="../js/common.js"></script>
