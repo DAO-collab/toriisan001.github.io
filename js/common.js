@@ -43,18 +43,20 @@
                 // エラーが起きたとき
                 console.err("DB connection failed. : " + err);
             });
-            db.version(config.INDEX_DB.MASTER.DB_VERSION).stores({ notes: "++id, title, body, updated_at" });
+            db.version(config.INDEX_DB.MASTER.DB_VERSION).stores({ 'notes': "++id, title, body, updated_at" });
         }
         // データの取得
-        getResult() {
+        async getResult() {
             // 実行タイミング(100ミリ秒)で実行
-            setTimeout(function () {
-                this.db('youtube')
+            var res;
+            await setTimeout(function () {
+                this.db('notes')
                     .toArray()
                     .then(function (data) {
-                        return data;
+                        res = data;
                     });
             }, 100);
+            return res;
         }
         // データ追加
         set() {
@@ -69,11 +71,11 @@
             params.title = title.value;
             params.body = body.value;
             params.updated_at = dateFomatYYYYMMDDhhmmss(new Date(updatedAt.textContent), '/', ':');
-            his.db('youtube').put(params);
+            his.db('notes').put(params);
         }
         // keyを指定してデータを削除
         keyCle(id) {
-            this.db('youtube').delete(id);
+            this.db('notes').delete(id);
         }
     }
     // ストレージクラスを取得
