@@ -26,6 +26,8 @@
 <script>
     {
         'use strict';
+        const storageOBJ = getStorageOBJ(localStorage);
+        storageOBJ.setItem('objTest', 'objTest');
 
         // 変数storageにlocalStorageを格納
         var storage = localStorage;
