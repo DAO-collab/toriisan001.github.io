@@ -1,5 +1,5 @@
 <div id="localStorage">
-    <h1>WebStorage(ver0.04)</h1>
+    <h1>WebStorage(ver0.05)</h1>
     <p id="lastModified"></p>
 
     <hr>
@@ -23,8 +23,12 @@
 <script src="../js/util.js"></script>
 <script src="../js/common.js"></script>
 <script type="module">
+    import Storage from "../js/Storage.js"
     {
         'use strict';
+
+        var storageObj = new Storage(localStorage);
+        storageObj.setItem('storageObj', 'storageObj')
 
         // 変数storageにlocalStorageを格納
         var storage = localStorage;
@@ -94,7 +98,7 @@
                 // テキストdiv作成
                 const textElement = document.createElement('div');
                 textElement.textContent = k + "：" + storage.getItem(k);
-                textElement.addEventListener('click' ,() => {
+                textElement.addEventListener('click', () => {
                     keyCopy(k, storage.getItem(k));
                 });
                 boxElement.appendChild(textElement);
@@ -102,7 +106,7 @@
                 const deleteElement = document.createElement('div');
                 deleteElement.textContent = '×';
                 const message = 'テキスト(id:' + k + ')を削除してよいですか？';
-                deleteElement.addEventListener('click' ,() => {
+                deleteElement.addEventListener('click', () => {
                     if (confirm(message)) keyCle(k); return false;
                 });
                 boxElement.appendChild(deleteElement);
