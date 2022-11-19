@@ -418,7 +418,7 @@ box-shadow: 0 0 4px rgba(0, 0, 0, .3);
     </pre>
 
     <h2>z軸のindex指定（アニメーション等で描画されるときにどちらを上にするかを指定するなど）</h2>
-    <p>rgbaを使用する</p>
+    <p>指定した値が大きいほど上に配置される。何も書かなければ0とみなされる</p>
     <pre>
         <code>
 z-index: 1;
@@ -439,6 +439,54 @@ z-index: 1;
     <p>上記をhtmlのヘッドタグに貼り付け※cssは上から順番に読み込まれるため、上書きされないよう内部で作ったcssが下になるようにする</p>
     <p>好きなアイコンを選ぶ</p>
     <p>Icon fontをコピーしてhtml上に張り付けることで使用できる</p>
+
+    <h2>カーソルポインターをやじるしにする</h2>
+    <pre>
+        <code>
+#open, #close {
+    cursor: pointer;
+}
+        </code>
+    </pre>
+
+    <h2>全画面に設定</h2>
+    <pre>
+        <code>
+#mask {
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+        </code>
+    </pre>
+    <p><a href="https://mdstage.com/html-css/css-intermediate/position">CSSのpositionで「relative」,「absolute」,「fixed」の違いを理解しよう</p>
+    <p>positionプロパティの種類は、「static（初期値）」、「relative」、「absolute」、「fixed」がある</p>
+    <p>relativeは「相対的」、absoluteは「絶対的」、fixedは「固定配置」と覚えよう。</p>
+    <p>absoluteを指定する際は、親要素をposition:relative;にすること。</p>
+
+    <h2>要素を非表示に</h2>
+    <pre>
+        <code>
+=====HTML=====
+&lt;div id=&quot;mask&quot; class=&quot;hidden&quot;&gt;&lt;/div&gt;
+=====CSS=====
+#mask.hidden {
+    display:none;
+}
+        </code>
+    </pre>
+
+    <h2>移動させる(transform)</h2>
+    <pre>
+        <code>
+#modal.hidden {
+    transform: translate(0, -500px);
+}
+        </code>
+    </pre>
 
 </div>
 <script src="../js/util.js"></script>
