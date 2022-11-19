@@ -1,0 +1,136 @@
+<div id="modalC">
+    <h1>Modal</h1>
+    <p id="lastModified"></p>
+
+    <hr>
+    <details>
+        <h2>ソース</h2>
+        <pre>
+        <code>
+        =====html=====
+        &lt;section id=&quot;modal&quot; class=&quot;hidden&quot;&gt;
+        &lt;p&gt;こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。&lt;/p&gt;
+        &lt;div id=&quot;close&quot;&gt;
+            閉じる
+        &lt;/div&gt;
+        &lt;/section&gt;
+        
+        &lt;div id=&quot;open&quot;&gt;
+        詳細を見る
+        &lt;/div&gt;
+        
+        &lt;div id=&quot;mask&quot; class=&quot;hidden&quot;&gt;&lt;/div&gt;
+        =====css=====
+        body {
+            font-size: 14px;
+        }
+        
+        #open, #close {
+            cursor: pointer;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center;
+            padding: 12px 0;
+            margin: 16px auto 0;
+        }
+        
+        #mask {
+            background: rgba(0, 0, 0, 0.4);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            z-index:1;
+        }
+        
+        #modal {
+            background: #fff;
+            width: 300px;
+            padding: 20px;
+            border-radius: 4px;
+            /* 絶対指定??? */
+            position: absolute;
+            top: 40px;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            /* transitionに対してtransformが変化する時には0.4秒かけて */
+            transition: transform 0.4s;
+            /* マスクより上に配置されるように指定 */
+            z-index:2;
+        }
+        
+        #modal > p {
+            margin: 0 0 20px;
+        }
+        
+        #mask.hidden {
+            display:none;
+        }
+        
+        #modal.hidden {
+            transform: translate(0, -500px);
+        }
+        =====javascript=====
+        'use strict'
+        {
+            const open = document.getElementById('open');
+            const close = document.getElementById('close');
+            const modal = document.getElementById('modal');
+            const mask = document.getElementById('mask');
+        
+            open.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+                mask.classList.remove('hidden');
+            });
+            close.addEventListener('click', () => {
+                modal.classList.add('hidden');
+                mask.classList.add('hidden');
+            });
+            mask.addEventListener('click', () => {
+                // modal.classList.add('hidden');
+                // mask.classList.add('hidden');
+                close.click();
+            });
+        }
+        </code>
+        </pre>
+        <p><a href="https://dotinstall.com/lessons/modal_js_v3">JavaScriptでモーダルウィンドウを作ろう(引用)</a></p>
+    </details>
+    <hr>
+
+    <section id="modal" class="hidden">
+        <p>こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。</p>
+        <div id="close">
+            閉じる
+        </div>
+    </section>
+    <div id="open">
+        詳細を見る
+    </div>
+    <div id="mask" class="hidden"></div>
+</div>
+<script src="../js/util.js"></script>
+<script src="../js/common.js"></script>
+<script>
+    const open = document.getElementById('open');
+    const close = document.getElementById('close');
+    const modal = document.getElementById('modal');
+    const mask = document.getElementById('mask');
+
+    open.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+        mask.classList.remove('hidden');
+    });
+    close.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        mask.classList.add('hidden');
+    });
+    mask.addEventListener('click', () => {
+        // modal.classList.add('hidden');
+        // mask.classList.add('hidden');
+        close.click();
+    });
+</script>
