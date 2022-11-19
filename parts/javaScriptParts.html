@@ -488,6 +488,21 @@ toTop.addEventListener('click', e => {
 </code>
 </pre>
 
+<h2>別のクリックイベントを呼び出す</h2>
+<pre>
+<code>
+close.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    mask.classList.add('hidden');
+});
+mask.addEventListener('click', () => {
+    // modal.classList.add('hidden');
+    // mask.classList.add('hidden');
+    close.click();
+});
+</code>
+</pre>
+
 </div>
 <script src="../js/util.js"></script>
 <script src="../js/common.js"></script>
