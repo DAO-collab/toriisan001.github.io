@@ -76,6 +76,11 @@ type test.csv
 <p><a href="https://qiita.com/mik_claire/items/ec7ecc9a005f440fd7f0">【bat】外部ファイルの変数と値を読み込んで使用する</a></p>
 
 <h2>Windowsコマンドプロンプトでフォルダ配下の全ファイル内の文字列検索を行うコマンド</h2>
+<pre>
+<code>
+for /f "usebackq" %i in (`dir /a-d /s /b ${検索対象パス}`) do findstr /i /m "${検索文字列}" %i >> output.csv
+</code>
+</pre>
 <p><a href="https://miffy252lion.hatenablog.com/entry/2021/02/18/140014">Windowsコマンドプロンプトでフォルダ配下の全ファイル内の文字列検索を行うコマンド</a></p>
 
 </div>
