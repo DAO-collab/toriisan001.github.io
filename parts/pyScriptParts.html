@@ -1,5 +1,5 @@
 <div id="pyScript">
-    <h1>PyScript(v0.05)</h1>
+    <h1>PyScript(v0.06)</h1>
     <p id="lastModified"></p>
 
     <hr>
@@ -287,10 +287,10 @@ def createPlot(fig):
     <h2>py-repl</h2>
     <div id="plot" style="border: solid 1px #333;">グラフ表示領域</div>
     <div style="text-align: left;">
-        <button class="torii" type="button" id="clear">Output Clear</button>
+        <py-repl/>
     </div>
     <div style="text-align: left;">
-        <py-repl/>
+        <button class="torii" type="button" id="clear">Output Clear</button>
     </div>
 
 </div>
@@ -305,13 +305,19 @@ def createPlot(fig):
         clear.addEventListener('click', () => {
             console.log('clear click');
             const output = document.getElementsByClassName('output')[0];
+            const plot = document.getElementById('plot');
             // エラー時に付与されるクラスを除去
             output.classList.remove("bg-red-200");
             output.classList.remove("p-2");
-            // コンソールの子要素を除去
+            // コンソールを初期化
             while (output.firstChild) {
                 output.removeChild(output.firstChild);
             }
+            // グラフを初期化
+            while (plot.firstChild) {
+                plot.removeChild(plot.firstChild);
+            }
+            plot.textContent = 'グラフの表示領域'
         });
     }
 </script>
