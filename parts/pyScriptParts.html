@@ -217,6 +217,27 @@ print(f'バージョン: {sys.version_info}')
             </code>
         </pre>
 
+        <h2>グラフを表示する</h2>
+        <pre>
+            <code>
+=====py-script=====
+def createPlot(fig):
+pyscript.write('plot', fig)
+
+=====py-repl(例)=====
+import pandas as pd
+import matplotlib.pyplot as plt
+df = pd.DataFrame({
+    '名前':['sato', 'saito', 'tanaka'],
+    '年齢':[10, 32, 46]})
+
+fig, ax = plt.subplots()
+# x軸を名前、y軸を年齢に設定
+ax.bar(df['名前'], df['年齢'])
+writeOutputDiv(fig)
+            </code>
+        </pre>
+
     </details>
 
     <hr>
@@ -255,12 +276,12 @@ def func1(x):
     print(x + 10)
         </py-script>
 
-        <h2>グラフを表示する</h2>
+        <h2>divへ出力</h2>
         <pre>
             <code>
 =====py-script=====
-def createPlot(fig):
-pyscript.write('plot', fig)
+def writeOutputDiv(fig):
+    pyscript.write('outputDiv', fig)
 
 =====py-repl(例)=====
 import pandas as pd
@@ -272,12 +293,12 @@ df = pd.DataFrame({
 fig, ax = plt.subplots()
 # x軸を名前、y軸を年齢に設定
 ax.bar(df['名前'], df['年齢'])
-createPlot(fig)
+writeOutputDiv(fig)
             </code>
         </pre>
         <py-script>
-def createPlot(fig):
-    pyscript.write('plot', fig)
+def writeOutputDiv(item):
+    pyscript.write('outputDiv', item)
         </py-script>
 
     </details>
@@ -288,7 +309,7 @@ def createPlot(fig):
     <div style="text-align: left;margin-bottom: 10px;">
         <button class="torii" type="button" id="clear">Output Clear</button>
     </div>
-    <div id="plot"></div>
+    <div id="outputDiv" style="text-align: left;border: solid 1px #333;">OutputDiv</div>
     <div style="text-align: left;">
         <py-repl/>
     </div>
@@ -305,7 +326,6 @@ def createPlot(fig):
         clear.addEventListener('click', () => {
             console.log('clear click');
             const output = document.getElementsByClassName('output')[0];
-            const plot = document.getElementById('plot');
             // エラー時に付与されるクラスを除去
             output.classList.remove("bg-red-200");
             output.classList.remove("p-2");
@@ -313,10 +333,12 @@ def createPlot(fig):
             while (output.firstChild) {
                 output.removeChild(output.firstChild);
             }
-            // グラフを初期化
-            while (plot.firstChild) {
-                plot.removeChild(plot.firstChild);
+            // outputDivを初期化
+            const outputDiv = document.getElementById('outputDiv');
+            while (outputDiv.firstChild) {
+                outputDiv.removeChild(outputDiv.firstChild);
             }
+
         });
     }
 </script>
