@@ -240,21 +240,51 @@ print(f'バージョン: {sys.version_info}')
         <h2>10足して返す</h2>
         <pre>
             <code>
+=====py-script=====
 &lt;py-script&gt;
 def func1(x):
     print(x + 10)
 &lt;/py-script&gt;
+
+=====py-repl(例)=====
+func1(100)
             </code>
         </pre>
         <py-script>
 def func1(x):
     print(x + 10)
         </py-script>
+
+        <h2>グラフを表示する</h2>
+        <pre>
+            <code>
+=====py-script=====
+def createPlot(fig):
+pyscript.write('plot', fig)
+
+=====py-repl(例)=====
+import pandas as pd
+import matplotlib.pyplot as plt
+df = pd.DataFrame({
+    '名前':['sato', 'saito', 'tanaka'],
+    '年齢':[10, 32, 46]})
+
+fig, ax = plt.subplots()
+ax.bar(df['名前'], df['年齢'])
+createPlot(fig)
+            </code>
+        </pre>
+        <py-script>
+def createPlot(fig):
+    pyscript.write('plot', fig)
+        </py-script>
+
     </details>
 
     <hr>
 
     <h2>py-repl</h2>
+    <div id="plot" style="border: solid 1px #333;">グラフ表示領域</div>
     <div style="text-align: left;">
         <button class="torii" type="button" id="clear">Output Clear</button>
     </div>
