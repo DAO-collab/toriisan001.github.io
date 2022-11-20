@@ -1,5 +1,5 @@
 <div id="pyScript">
-    <h1>PyScript(v0.06)</h1>
+    <h1>PyScript(v0.07)</h1>
     <p id="lastModified"></p>
 
     <hr>
@@ -285,12 +285,12 @@ def createPlot(fig):
     <hr>
 
     <h2>py-repl</h2>
-    <div id="plot" style="border: solid 1px #333;">グラフ表示領域</div>
+    <div style="text-align: left;margin-bottom: 10px;">
+        <button class="torii" type="button" id="clear">Output Clear</button>
+    </div>
+    <div id="plot"></div>
     <div style="text-align: left;">
         <py-repl/>
-    </div>
-    <div style="text-align: left;">
-        <button class="torii" type="button" id="clear">Output Clear</button>
     </div>
 
 </div>
@@ -317,7 +317,6 @@ def createPlot(fig):
             while (plot.firstChild) {
                 plot.removeChild(plot.firstChild);
             }
-            plot.textContent = 'グラフの表示領域'
         });
     }
 </script>
