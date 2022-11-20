@@ -5,22 +5,43 @@
     <hr>
     <details>
         <h2>使い方参考サイト</h2>
+        <p><a href="https://pyscript.net/">pyscript公式【参考】</a></p>
         <p><a href="https://thilog.com/pyscript-sample-github-pages/">PyScriptで書いたスクリプトをGithub Pagesで動かしてみた【参考】</a></p>
         <p><a href="https://qiita.com/S_Kaji/items/293021fbcf35eab5102e">PyScriptを試してみました【参考】</a></p>
         <p>yScriptはWebAssemblyを活用していてPythonをブラウザ上で実行できるようにするオープンソースソフトウェアらしい</p>
         <p>まだアルファ版でありプロダクションには使用しないよう勧めるらしい</p>
+
+        <h2>使い方</h2>
+        <h3>py-script</h3>
+        <p>パイソン埋め込み</p>
+        <pre>
+            <code>
+        &lt;py-script&gt;print(&quot;Hello, world!&quot;)&lt;/py-script&gt;
+            </code>
+        </pre>
+
+        <h3>py-repl</h3>
+        <p>ユーザーがパイソンを実行可能。コードを打ち込むと右端に緑の再生ボタンで実行可能らしい(Shift + Enterでも可)</p>
+        
+        <h3>py-env</h3>
+        <p>環境変数らしい。使い方はよくわからない。</p>
+
+        <h2>パイソンコマンド</h2>
+        <h3>文字列出力</h3>
+        <pre>
+            <code>
+        print(&quot;Hello, world!&quot;)
+            </code>
+        </pre>
+
     </details>
     <hr>
-    <h2>使い方</h2>
-    <p></p>
-    <py-script>
-        print('Hello! PyScript!!')
-    </py-script>
-    <py-script>print("Hello, world!")</py-script>
 
-    <div><py-repl/></div>
+    <div style="text-align: left;">
+        <py-repl/>
+    </div>
 
 </div>
-<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+<script defer src="../js/pyscript.js"></script>
 <script src="../js/util.js"></script>
 <script src="../js/common.js"></script>
