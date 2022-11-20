@@ -309,7 +309,7 @@ def writeOutputDiv(item):
     <div style="text-align: left;margin-bottom: 10px;">
         <button class="torii" type="button" id="clear">Output Clear</button>
     </div>
-    <div id="outputDiv" style="text-align: left;border: solid 1px #333;">OutputDiv</div>
+    <div id="outputDiv" style="text-align: left;"></div>
     <div style="text-align: left;">
         <py-repl/>
     </div>
@@ -338,7 +338,6 @@ def writeOutputDiv(item):
             while (outputDiv.firstChild) {
                 outputDiv.removeChild(outputDiv.firstChild);
             }
-            outputDiv.textContent = 'OutputDiv';
         });
     }
 </script>
