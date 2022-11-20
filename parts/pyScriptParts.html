@@ -177,6 +177,7 @@
 
     <hr>
 
+    <button type="button" id="clear">Clear</button>
     <div style="text-align: left;">
         <py-repl/>
     </div>
@@ -185,3 +186,16 @@
 <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 <script src="../js/util.js"></script>
 <script src="../js/common.js"></script>
+<script>
+'use strict';
+    {
+        // コンソールをクリア
+        const clear = document.getElementById("clear");
+        clear.addEventListener('click', () => {
+            const output = document.getElementsByClassName('output');
+            while (output.firstChild) {
+                output.removeChild(output.firstChild);
+            }
+        });
+    }
+</script>
