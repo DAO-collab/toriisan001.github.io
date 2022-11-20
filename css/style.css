@@ -7,6 +7,14 @@ img {
     vertical-align: bottom;
 }
 
+
+button.torii {
+    border: solid 1px #333;
+    font-size: 15px;
+    margin-top: 10px;
+    padding: 1px 3px;
+}
+
 h1,
 h2,
 h3,

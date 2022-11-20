@@ -1,5 +1,5 @@
 <div id="pyScript">
-    <h1>PyScript(v0.03)</h1>
+    <h1>PyScript(v0.04)</h1>
     <p id="lastModified"></p>
 
     <hr>
@@ -188,8 +188,10 @@
     </details>
 
     <hr>
-
-    <button type="button" id="clear">Clear</button>
+    
+    <div style="text-align: left;">
+        <button class="torii" type="button" id="clear">Output Clear</button>
+    </div>
     <div style="text-align: left;">
         <py-repl/>
     </div>
@@ -204,9 +206,11 @@
         // コンソールをクリア
         const clear = document.getElementById("clear");
         clear.addEventListener('click', () => {
+            console.log('clear click');
             const output = document.getElementsByClassName('output');
-            while (output.firstChild) {
-                output.removeChild(output.firstChild);
+            console.log(output[0])
+            while (output[0].firstChild) {
+                output[0].removeChild(output[0].firstChild);
             }
         });
     }
