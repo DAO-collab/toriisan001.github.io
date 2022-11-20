@@ -207,10 +207,9 @@
         const clear = document.getElementById("clear");
         clear.addEventListener('click', () => {
             console.log('clear click');
-            const output = document.getElementsByClassName('output');
-            console.log(output[0])
-            while (output[0].firstChild) {
-                output[0].removeChild(output[0].firstChild);
+            const output = document.getElementsByClassName('output')[0];
+            while (output.firstChild) {
+                output.removeChild(output.firstChild);
             }
         });
     }
