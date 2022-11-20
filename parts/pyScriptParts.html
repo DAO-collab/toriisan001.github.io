@@ -59,6 +59,7 @@
         print("hello %s" %name)
             </code>
         </pre>
+        <p>整数値の場合は%sではなく%iを使用する</p>
 
         <h3>printで改行させない</h3>
         <pre>
@@ -93,6 +94,84 @@
             </code>
         </pre>
         <p>※スペース4つが字下げとなる</p>
+
+        <h3>else if文</h3>
+        <pre>
+            <code>
+        answer = 6
+
+        print("Your guess? ", end="")
+        guess = int(input())
+        
+        if answer == guess:
+            print("Bingo!")
+        elif answer > guess:
+            print("Bigger!!")
+        else:
+            print("Smaller!!")
+            </code>
+        </pre>
+
+        <h3>ランダムな数を読み込む</h3>
+        <pre>
+            <code>
+        import random
+        answer = random.randint(1, 10)
+        
+        print("Your guess? ", end="")
+        guess = int(input())
+        
+        if answer == guess:
+            print("Bingo!")
+        elif answer > guess:
+            print("Bigger!!")
+        else:
+            print("Smaller!!")
+        
+        print("[Answer: %i]" %answer)
+            </code>
+        </pre>
+
+        <h3>正解するまでループさせる</h3>
+        <pre>
+            <code>
+        import random
+        answer = random.randint(1, 10)
+        while True:
+            print("Your guess? ", end="")
+            guess = int(input())
+            
+            if answer == guess:
+                print("Bingo!")
+                break
+            elif answer > guess:
+                print("Bigger!")
+            else:
+                print("Smaller!")
+            </code>
+        </pre>
+
+        <h3>回数を保持する</h3>
+        <pre>
+            <code>
+        import random
+
+        answer = random.randint(1, 10)
+        count = 0
+        
+        while True:
+            print("Your guess? ", end="")
+            guess = int(input())
+            count += 1
+            if answer == guess:
+                print("Bingo! It took %i guesses" %count)
+                break
+            elif answer > guess:
+                print("Bigger!")
+            else:
+                print("Smaller!")
+            </code>
+        </pre>
 
     </details>
 
