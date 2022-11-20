@@ -187,10 +187,39 @@
             </code>
         </pre>
 
+        <h3>関数(py-script)の呼び出し</h3>
+        <pre>
+            <code>
+=====py-script=====
+&lt;py-script&gt;
+def func1(x):
+    print(x + 10)
+&lt;/py-script&gt;
+=====py-repl=====
+func1(10)
+            </code>
+        </pre>
+
     </details>
 
     <hr>
-    
+    <details>
+        <summary>関数(py-script)</summary>
+        <h2>10足して返す</h2>
+        <pre>
+&lt;py-script&gt;
+def func1(x):
+    print(x + 10)
+&lt;/py-script&gt;
+        </pre>
+        <py-script>
+def func1(x):
+    print(x + 10)
+        </py-script>
+    </details>
+    <hr>
+
+    <h2>py-repl</h2>
     <div style="text-align: left;">
         <button class="torii" type="button" id="clear">Output Clear</button>
     </div>
