@@ -238,6 +238,44 @@ writeOutputDiv(fig)
             </code>
         </pre>
 
+        <h2>配列でforループ</h2>
+        <pre>
+            <code>
+words = ['Japanese', 'English', 'French']
+for w in words:
+    print (w)
+            </code>
+        </pre>
+
+        <h2>rangeでループ</h2>
+        <pre>
+            <code>
+for num in range(5):
+    print(num)
+            </code>
+        </pre>
+
+        <h2>breakでループを抜ける</h2>
+        <pre>
+            <code>
+for num in range(20):
+    print(num)
+    if num == 10:
+            break
+            </code>
+        </pre>
+
+        <h2>continueで次のループへ</h2>
+        <pre>
+            <code>
+for num in range(2, 10):
+    if num % 2 == 0:
+        print("偶数 %i" %num)
+        continue
+    print("奇数 %i" %num)
+            </code>
+        </pre>
+
     </details>
 
     <hr>
