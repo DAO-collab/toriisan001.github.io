@@ -53,9 +53,8 @@ main {
 
 .overlay #close {
     position: absolute;
-    top: 32px;
-    right: 32px;
-    font-size: 32px;
+    top: 64px;
+    right: 64px;
     cursor: pointer;
 }
 
