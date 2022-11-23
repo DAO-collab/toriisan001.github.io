@@ -4,7 +4,20 @@
 
     <h2>情報</h2>
     <p>ページの上にほうに目立つ画像を置くエリアをヒーローエリアと呼ぶらしい</p>
-    <p><a href="https://itsakura.com/css-multi-selector">CSS 複数のセレクタを指定する/絞り込むサンプル</a></p>
+
+    <h2>とりあえず書いとく</h2>
+    <pre>
+        <code>
+body {
+    margin: 0;
+    font-family: Verdana, sans-serif
+}
+        </code>
+    </pre>
+    <p>※font-family</p>
+    <p>通常のフォントや太字、イタリック体、斜体など、デザインを統一した複数のフォントをまとめたものを「フォントファミリー」といいます。</p>
+    <p>左に書いたものから優先的に適用され、OS（PC）で利用しているフォントの条件に合致したものを適用します。PCに別のフォントをインストールすればそれも適用対象になる</p>
+    <p><a href="https://www.koikikukan.com/archives/2012/08/13-023456.php">いまさら聞けないCSS font-familyのまとめ</a></p>
 
     <h2>cssは長くなりがちなのでコメントを書いておくと便利</h2>
     <pre>
@@ -18,6 +31,29 @@
         </code>
     </pre>
 
+    <h2>タグの中のタグを指定</h2>
+    <pre>
+        <code>
+header .container {
+}
+        </code>
+    </pre>
+    <h3>タグに続くタグに指定という方法もあるらしい</h3>
+    <pre>
+        <code>
+高さを調整
+p {
+    margin: 0;
+    line-height: 1.6;
+}
+pタグに続くpタグにマージンを設定
+p + p {
+    margin-top: 16px;
+}
+        </code>
+    </pre>
+    <p><a href="https://itsakura.com/css-multi-selector">CSS 複数のセレクタを指定する/絞り込むサンプル【参考】</a></p>
+
     <h2>バックグラウンド色を変更</h2>
     <pre>
         <code>
@@ -25,7 +61,8 @@ background: #efefef;
         </code>
     </pre>
 
-    <h2>bodyタグ全体のマージンを0にする</h2>
+    <h2>パディング・マージン関係</h2>
+    <h3>使用例）bodyタグ全体のマージンを0にする</h3>
     <pre>
         <code>
 /* common */
@@ -34,8 +71,7 @@ body {
 }
         </code>
     </pre>
-
-    <h2>画像下の余白を消す</h2>
+    <h3>使用例）画像下の余白を消す</h3>
     <pre>
         <code>
 img {
@@ -43,11 +79,47 @@ img {
 }
         </code>
     </pre>
+    <h3>使用例）左側に余白を入れて右寄せにする</h3>
+    <pre>
+        <code>
+    header {
+        display: flex;
+        padding: 0 16px;
+    }
+    .sp-menu {
+        margin-left: auto;
+    }
+        </code>
+    </pre>
+    <h3>使用例）左右にマージンを設定して画面中央に配置</h3>
+    <pre>
+        <code>
+margin: 0 auto;
+        </code>
+    </pre>
+    <h3>使用例）左右幅32pxを持ちつつ両側にマージンを設定した中央配置</h3>
+    <pre>
+        <code>
+.container {
+    width: calc(100% - 32px);
+    margin: 0 auto;
+    outline: 2px solid red;
+}
 
-    <h2>タグの中のタグを指定</h2>
+※以下画像
+    .hero img {
+        width: calc(100% - 32px);
+        height: auto;
+    }
+        </code>
+    </pre>
+    <h3>使用例）間にスペースを開けて真ん中にスペースを設定して上下中央で配置。</h3>
     <pre>
         <code>
 header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
 }
         </code>
     </pre>
@@ -59,29 +131,18 @@ width: 400px;
         </code>
     </pre>
 
-    <h2>左右にマージンを設定して画面中央に配置</h2>
-    <pre>
-        <code>
-margin: 0 auto;
-        </code>
-    </pre>
-
-    <h2>目安にするためアウトラインを設定</h2>
-    <pre>
-        <code>
-outline: 2px solid red;
-        </code>
-    </pre>
-
     <h2>枠線を設定</h2>
     <pre>
         <code>
+■ボーダーを使う
 border: solid 1px #333;
+■アウトラインを使う
+outline: 2px solid red;
         </code>
-※ outlineとborderの違い
-border・・・他の要素も動いてしまう。
-outline・・・輪郭が出てくるだけで、他の要素に影響しない。outlineは上下左右で同じ指定しか指定できない。
     </pre>
+    <p>※ outlineとborderの違い</p>
+    <p>border・・・他の要素も動いてしまう。</p>
+    <p>outline・・・輪郭が出てくるだけで、他の要素に影響しない。outlineは上下左右で同じ指定しか指定できない。</p>
 
     <h2>横並びに表示</h2>
     <pre>
@@ -127,6 +188,8 @@ header ul {
 }
         </code>
     </pre>
+    <p>list-style-type: none;と書いている箇所もあった。list-style-typeが良いらしいが？？？</p>
+    <p><a href="https://note.com/yukianemone07/n/nfa8be1ce168d">listのstyle指定がイマイチよくわかってなかった件</a></p>
 
     <h2>要素に続く要素に対して属性を指定</h2>
     <pre>
@@ -185,7 +248,7 @@ padding: 0 auto;
         </code>
     </pre>
 
-    <h2>boxの高さ（文字の行間を調節）</h2>
+    <h2>boxの高さ（文字の行間を調節。文字列について、上下中央ぞろえにしたい場合にも使える）</h2>
     <pre>
         <code>
 line-height: 1.8;
@@ -226,44 +289,6 @@ a {
         </code>
     </pre>
 
-    <h2>左右幅32pxを持ちつつ両側にマージンを設定した中央配置</h2>
-    <pre>
-        <code>
-.container {
-    width: calc(100% - 32px);
-    margin: 0 auto;
-    outline: 2px solid red;
-}
-
-※以下画像
-    .hero img {
-        width: calc(100% - 32px);
-        height: auto;
-    }
-        </code>
-    </pre>
-
-    <h2>間にスペースを開けて真ん中にスペースを設定して上下中央で配置。</h2>
-    <pre>
-        <code>
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items:center;
-}
-        </code>
-    </pre>
-
-    <h2>文字をくっきりさせる</h2>
-    <pre>
-        <code>
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-        </code>
-    </pre>
-
     <h2>背景に画像を設定。繰り返しの設定。配置位置の設定</h2>
     <pre>
         <code>
@@ -281,21 +306,6 @@ body {
         <code>
 .features img {
     width: 100%;
-}
-        </code>
-    </pre>
-
-    <h2>Pタグの調整</h2>
-    <pre>
-        <code>
-高さを調整
-p {
-    margin: 0;
-    line-height: 1.6;
-}
-pタグに続くpタグにマージンを設定
-p + p {
-    margin-top: 16px;
 }
         </code>
     </pre>
@@ -434,14 +444,7 @@ z-index: 1;
     </pre>
     <p><a href="https://kouhekikyozou.com/css_hover_cancel">CSS「:hover」を無効化するには？シーン別の対応策まとめ</a></p>
 
-    <h2>BootStrap Iconを使う</h2>
-    <p><a href="https://icons.getbootstrap.com/">Bootstrap Icons</a>からinstallを選択</p>
-    <p>CDNの「<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.1/font/bootstrap-icons.css">」をコピペ</p>
-    <p>上記をhtmlのヘッドタグに貼り付け※cssは上から順番に読み込まれるため、上書きされないよう内部で作ったcssが下になるようにする</p>
-    <p>好きなアイコンを選ぶ</p>
-    <p>Icon fontをコピーしてhtml上に張り付けることで使用できる</p>
-
-    <h2>カーソルポインターをやじるしにする</h2>
+    <h2>クリックできることが分かりやすいようにカーソルポインターに変更</h2>
     <pre>
         <code>
 #open, #close {
@@ -463,12 +466,9 @@ z-index: 1;
 }
         </code>
     </pre>
-    <p><a href="https://mdstage.com/html-css/css-intermediate/position">CSSのpositionで「relative」,「absolute」,「fixed」の違いを理解しよう</p>
-    <p>positionプロパティの種類は、「static（初期値）」、「relative」、「absolute」、「fixed」がある</p>
-    <p>relativeは「相対的」、absoluteは「絶対的」、fixedは「固定配置」と覚えよう。</p>
-    <p>absoluteを指定する際は、親要素をposition:relative;にすること。</p>
 
     <h2>要素を非表示に</h2>
+    <h3>displayを使用する</h3>
     <pre>
         <code>
 =====HTML=====
@@ -479,6 +479,13 @@ z-index: 1;
 }
         </code>
     </pre>
+    <h3>opacityを使用する</h3>
+    <pre>
+        <code>
+opacity: 0;
+        </code>
+    </pre>
+    <p>※逆に表示させたい場合は1を指定する</p>
 
     <h2>移動させる(transform)</h2>
     <pre>
@@ -486,8 +493,26 @@ z-index: 1;
 #modal.hidden {
     transform: translate(0, -500px);
 }
+transform: translateY(16px);
+※逆にoffにしたい場合は以下を使用
+transform: none;
+※transitionをゆっくり動かす場合は以下を設定(以下の例ではopacityとtransformを0.3秒で変化させている)
+transition: opacity .3s, transform .3s;
+※以下li要素の1番目の要素をディレイさせる例
+.overlay.show li:nth-child(1) {
+    transition-delay: .1s;
+}
         </code>
     </pre>
+
+    <h2>項目が重なった場合、ポインターイベントをnoneにすれば、下の要素を選択できるようになる。</h2>
+    <pre>
+        <code>
+pointer-events: none;
+        </code>
+    </pre>
+    <p>※有効にしたい場合はautoを指定する</p>
+    <p>pointer-events: auto;</p>
 
 </div>
 <script src="../js/util.js"></script>
