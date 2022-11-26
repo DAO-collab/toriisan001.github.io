@@ -175,8 +175,27 @@
 
     <h2>HTMLヘッダについて</h2>
     <p>読み込むリソースについての情報や、そのリソースをリクエストしているクライアントに関する詳細な情報を持ちます</p>
-    <h3>Authorization</h3>
+    <p>APIで呼び出す時にヘッダに認証やファイルの情報を持たせている？？？</p>
+    <h3>Authorization</h3> 
+    <p>サーバーでユーザーエージェントを認証するための資格情報を持ちます。</p>
+    <p>トークンとか？？？</p>
+    <h3>Content-Type</h3>
+    <p>リソースのメディア種別を示します。</p>
+    <h3>Content-Disposition</h3>
+    <p>転送したリソースをインラインで表示すべきか (ヘッダーが存在しない場合の既定の動作)、またはダウンロードとして扱い、「名前を付けて保存」ウィンドウを表示すべきかを示します。</p>
     <p><a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Headers">MDN WEb docs HTTP ヘッダー</a></p>
+
+    <h2>Content-Type(MIME type (MIMEタイプ))</h2>
+    <p>「ファイルの分類/ファイルの種類」らしい</p>
+    <p>本体（ボディ）として送信するデータの種類や形式を相手方に伝達するためのものらしい</p>
+    <h3>application/json</h3>
+    <p>JSONファイル</p>
+    <h3>text/plain</h3>
+    <p>テキストファイル</p>
+    <h3>multipart/form-data</h3>
+    <p>電子メールの添付ファイルやHTTP通信でファイルの種別を表すのに用いられる</p>
+    <p><a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP/MIME_types">MIME タイプ (IANA メディアタイプ)</a></p>
+    <p><a href="https://tech.stmn.co.jp/entry/2021/03/15/183722">HTTPヘッダーのContent-Typeを自在に扱う</a></p>
 
     <h2>HTMLタグの使い分けについて</h2>
     <h3>&lt;!DOCTYPE html&gt;</h3>
