@@ -142,6 +142,33 @@
     <p><a href="https://www.google.com/design/icons/">https://www.google.com/design/icons/</a>を参照</p>
     <p>「「menu」「close」で検索。ヒットしたコードをソースに埋め込み</p>
 
+    <h2>HTTPメソッド(ブラウザ)</h2>
+    <p>対象となるリソースに対して「何をしたいか」を指示する。</p>
+    <p>ブラウザの制約上、実際に使用されるのは、GET、POSTの2種類らしい。</p>
+    <h3>GET</h3>
+    <p>データベースの書き換えが必要なく、データを取得するだけの場合に使用。</p>
+    <p>クエリパラメータでデータを受け渡す。(URL?パラメータ名1=値1&パラメータ名2=値2&)</p>
+    <h3>POST</h3>
+    <p>メッセージボディでデータを受け渡す。URLにパラメータがつかない。</p>
+    <p>データを変更したい時に使用。パスワードのような秘匿情報をURLに表示したくない場合。データ容量が多い場合に使用</p>
+
+    <h2>HTTPメソッド(API)</h2>
+    <p>REST(REpresentational State Transfer) API「シンプルなWebシステムの設計思想」があるらしい</p>
+    <p>GET 、 POST 、 PUT 、 PATCH 、 DELETE が用意されているらしい。</p>
+    <p>同じURL(URLにリソースを書く)でHTTPメソッドだけを変えて、リソースに対する操作を行う</p>
+    <h3>GET</h3>
+    <p>取得</p>
+    <h3>POST</h3>
+    <p>リソースの作成</p>
+    <h3>PUT</h3>
+    <p>データが存在しているかどうかわからないときに使用します。データが存在しているときは更新をし、データが存在しない場合は新規作成を行う</p>
+    <h3>PATCH</h3>
+    <p>データがすでに存在しているものに対して更新をかける処理</p>
+    <h3>DELETE</h3>
+    <p>削除</p>
+    <p><a href="https://progzakki.sanachan.com/develop-software/design/rest-for-beginner/">REST（Representational State Transfer）とは？【基礎知識】</a></p>
+    <p><a href="https://omathin.com/http-method/">HTTPメソッド9種類 | PATCHとPUTの違いも解説</a></p>
+
     <h2>HTMLタグの使い分けについて</h2>
     <h3>&lt;!DOCTYPE html&gt;</h3>
     <p>タグではない</p>
