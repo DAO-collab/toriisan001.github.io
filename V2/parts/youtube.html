@@ -1,0 +1,235 @@
+<main>
+
+    <h1>Youtube(v0.03)</h1>
+    <p id="lastModified"></p>
+
+    <hr>
+    <details style="text-align: left;">
+        <h2>使い方参考サイト</h2>
+        <p><a href="https://cly7796.net/blog/javascript/how-to-use-youtube-player-api/">YouTubeのプレーヤーAPIの使い方【参考】</a></p>
+        <p><a href="https://blog.kimizuka.org/entry/2020/11/02/125648">YouTube IFrame Player APIで読み込んだ動画を自動で再生してループさせる【参考】</a></p>
+        <p><a href="https://www.billionwallet.com/goods/youtube_image.html">Youtube動画からサムネイル画像を取得する方法【参考】</a></p>
+        <p><a href="https://goodizer.jp/youtube-data-api/#i">YouTubeDataAPIを使って動画情報を取得してみた！【参考】</a></p>
+        <p><a href="https://qiita.com/azukiazusa/items/2dc6407665785127cccc">【Youtube Player API】埋め込む動画を動的に変更する【参考】</a></p>
+        <p><a href="https://cly7796.net/blog/javascript/set-parameters-of-youtube/">YouTubeのパラメータを色々試してみる【参考】</a></p>
+    </details>
+    <hr>
+
+    <div id="sample" style="pointer-events: none;"></div>
+
+    <div>
+        <button id="play">再生</button>
+        <button id="pause">一時停止</button>
+        <button id="stop">停止</button>
+        <button id="prev">10秒前へ</button>
+        <button id="next">10秒先へ</button>
+        <button id="volup">音量アップ</button>
+        <button id="voldown">音量ダウン</button>
+        <button id="mute">ミュート</button>
+    </div>
+
+    <div id="status">現在のステータス：</div>
+    <div>動画の長さ：<span id="total"></span></div>
+
+    <hr>
+
+    <h2>健屋花那</h2>
+    <div style="text-align: left;">
+        <div onclick="select('Kjoe1vXlmxQ')"><img src="http://img.youtube.com/vi/Kjoe1vXlmxQ/3.jpg" alt="Kjoe1vXlmxQ.png"><span style="font-size: 18px;">【オリジナル振付】蝶々結び歌って踊ってみた【健屋花那/にじさんじ】</span><span style="font-size: 18px;">【Kjoe1vXlmxQ】</span></div>
+        <div onclick="select('JS-pilhQFA8')"><img src="http://img.youtube.com/vi/JS-pilhQFA8/3.jpg" alt="JS-pilhQFA8.png"><span style="font-size: 18px;">健屋花那 / カタオモイ (Remix)</span><span style="font-size: 18px;">【JS-pilhQFA8】</span></div>
+        <div onclick="select('6km7iBmjSnE')"><img src="http://img.youtube.com/vi/6km7iBmjSnE/3.jpg" alt="6km7iBmjSnE.png"><span style="font-size: 18px;">【医療従事者が】乙女解剖歌ってみた【健屋花那/にじさんじ】</span><span style="font-size: 18px;">【6km7iBmjSnE】</span></div>
+        <div onclick="select('fxzBmLVfLOw')"><img src="http://img.youtube.com/vi/fxzBmLVfLOw/3.jpg" alt="fxzBmLVfLOw.png"><span style="font-size: 18px;">【歌ってみた】インタビュア by健屋花那/にじさんじ【半年&15万人ありがとう】</span><span style="font-size: 18px;">【fxzBmLVfLOw】</span></div>
+        <div onclick="select('2OvEh2nEDr8')"><img src="http://img.youtube.com/vi/2OvEh2nEDr8/3.jpg" alt="2OvEh2nEDr8.png"><span style="font-size: 18px;">【歌ってみた】リスキーゲームby健屋花那/にじさんじ【新衣装記念】</span><span style="font-size: 18px;">【2OvEh2nEDr8】</span></div>
+        <div onclick="select('B-VRImY__i8')"><img src="http://img.youtube.com/vi/B-VRImY__i8/3.jpg" alt="B-VRImY__i8.png"><span style="font-size: 18px;">【歌ってみた】ファンサ by健屋花那/にじさんじ【#健屋花那誕生祭2020】</span><span style="font-size: 18px;">【B-VRImY__i8】</span></div>
+        <div onclick="select('PtofI6fOQJs')"><img src="http://img.youtube.com/vi/PtofI6fOQJs/3.jpg" alt="PtofI6fOQJs.png"><span style="font-size: 18px;">【歌ってみた】p.h.【健屋花那/にじさんじ】</span><span style="font-size: 18px;">【PtofI6fOQJs】</span></div>
+        <div onclick="select('HCbcdycBUG4')"><img src="http://img.youtube.com/vi/HCbcdycBUG4/3.jpg" alt="HCbcdycBUG4.png"><span style="font-size: 18px;">【歌ってみた】少女レイ【健屋花那/にじさんじ】</span><span style="font-size: 18px;">【HCbcdycBUG4】</span></div>
+        <div onclick="select('wwo8CqLKIA0')"><img src="http://img.youtube.com/vi/wwo8CqLKIA0/3.jpg" alt="wwo8CqLKIA0.png"><span style="font-size: 18px;">【歌ってみた】花に亡霊【にじさんじ/健屋花那】</span><span style="font-size: 18px;">【wwo8CqLKIA0】</span></div>
+    </div>
+</main>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+    {
+        'use strict';
+
+        // プレーヤーを埋め込む場所
+        var ytArea = 'sample';
+
+        // 埋め込むYouTube ID(デフォルト)
+        var ytID = 'Kjoe1vXlmxQ';
+
+        // プレーヤーのサイズを指定
+        var ytWidth = 350;
+        var ytHeight = 250;
+
+        var ytPlayer;
+        // 再生
+        var ytPlay = document.getElementById('play');
+        ytPlay.addEventListener('click', function () {
+            ytPlayer.playVideo();
+        });
+
+        // 一時停止
+        var ytPause = document.getElementById('pause');
+        ytPause.addEventListener('click', function () {
+            ytPlayer.pauseVideo();
+        });
+
+        // 停止
+        var ytStop = document.getElementById('stop');
+        ytStop.addEventListener('click', function () {
+            ytPlayer.pauseVideo().seekTo(0);
+        });
+
+        // 10秒前へ
+        var ytPrev = document.getElementById('prev');
+        ytPrev.addEventListener('click', function () {
+            // 現在の再生時間取得
+            var currentTime = ytPlayer.getCurrentTime();
+            ytPlayer.seekTo(currentTime - 10);
+        });
+
+        // 10秒先へ
+        var ytNext = document.getElementById('next');
+        ytNext.addEventListener('click', function () {
+            // 現在の再生時間取得
+            var currentTime = ytPlayer.getCurrentTime();
+            ytPlayer.seekTo(currentTime + 10);
+        });
+
+        // 音量アップ(+10)
+        var ytVolup = document.getElementById('volup');
+        ytVolup.addEventListener('click', function () {
+            // 現在の音量取得
+            var currentVol = ytPlayer.getVolume();
+            ytPlayer.setVolume(currentVol + 10);
+        });
+
+        // 音量ダウン(-10)
+        var ytVoldown = document.getElementById('voldown');
+        ytVoldown.addEventListener('click', function () {
+            // 現在の音量取得
+            var currentVol = ytPlayer.getVolume();
+            ytPlayer.setVolume(currentVol - 10);
+        });
+
+        // ミュート
+        var ytMute = document.getElementById('mute');
+        ytMute.addEventListener('click', function () {
+            // ミュートされているかどうか
+            if (ytPlayer.isMuted()) {
+                // ミュートの解除
+                ytPlayer.unMute();
+            } else {
+                // ミュート
+                ytPlayer.mute();
+            }
+        });
+
+        // API読み込み後にプレーヤー埋め込み
+        function onYouTubeIframeAPIReady() {
+            ytPlayer = new YT.Player(ytArea, {
+                height: ytHeight,
+                width: ytWidth,
+                videoId: ytID,
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange,
+                    'onError': onPlayerError
+                },
+                playerVars: {
+                    autohide: 1, // 動画再生開始後にコントロールバーとシークバーを非表示にするかどうか。
+                    disablekb: 1, // キーボードの操作をさせるかどうか
+                    fs: 0, // 全画面表示ボタンを表示するかどうか。
+                    iv_load_policy: 3, // アノテーション(動画上に表示されるクリック可能なテキスト)を表示するかどうか。
+                    modestbranding: 1, // プレーヤーにYouTubeロゴが表示されないようにする。
+                    playsinline: 1, // iOS上のHTML5プレーヤーで、動画をインラインにするか全画面表示にするかを設定。
+                    rel: 0, // 再生終了後に関連動画を表示するかどうか。
+                }
+            });
+        }
+
+        // 動画選択
+        function select(id) {
+            ytPlayer.cueVideoById({videoId: id});
+            // 2秒後に再生
+            setTimeout(() => {
+                ytPlayer.playVideo();
+            }, 2000);
+        }
+
+        function onPlayerReady(e) {
+            // e.target.mute();// ミュート（これを設定しないとスマホで流れません）
+            // 読み込み完了後に自動再生
+            // e.target.playVideo();
+
+            // 動画の長さ取得
+            var total = document.getElementById('total');
+            total.innerHTML = e.target.getDuration() + '秒';
+        }
+
+        var stateArea = document.getElementById('status');
+        function onPlayerStateChange(e) {
+            // 現在のステータス取得
+            var ytStatus = e.target.getPlayerState();
+            var stateIns = '現在のステータス：';
+            // ステータスの判別
+            switch (ytStatus) {
+                case -1:
+                    stateIns += '未開始(-1)';
+                    break;
+                case 0:
+                    stateIns += '終了(0)';
+                    break;
+                case 1:
+                    stateIns += '再生中(1)';
+                    break;
+                case 2:
+                    stateIns += '停止(2)';
+                    break;
+                case 3:
+                    stateIns += 'バッファリング中(3)';
+                    break;
+                case 5:
+                    stateIns += '頭出し済み(5)';
+                    break;
+                default:
+                    break;
+            }
+            stateArea.innerHTML = stateIns;
+
+            // ループ再生
+            switch (e.data) {
+                case YT.PlayerState.ENDED:
+                    e.target.playVideo();
+                    break;
+            }
+        }
+
+        function onPlayerError(e) {
+            // エラーの種別取得
+            var ytError = e.data;
+            var errorIns = '読み込みに失敗しました。';
+            // エラーの判別
+            switch (ytError) {
+                case 2:
+                    errorIns += '無効なパラメータ値が含まれています。(2)';
+                    break;
+                case 5:
+                    errorIns += 'HTML5プレーヤーで再生できない、または HTML5プレーヤーに関する別のエラーが発生しました。(5)';
+                    break;
+                case 100:
+                    errorIns += '動画が見つかりません。(100)';
+                    break;
+                case 101:
+                    errorIns += '動画の所有者が、埋め込み動画プレーヤーでの再生を許可していません。(101)';
+                    break;
+                case 150:
+                    errorIns += '動画の所有者が、埋め込み動画プレーヤーでの再生を許可していません。(150)';
+                    break;
+                default:
+                    break;
+            }
+            alert(errorIns);
+        }
+    }
+</script>
