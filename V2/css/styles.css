@@ -10,14 +10,11 @@ body {
 
 header {
     display: flex;
-    padding: 0 16px;
     background: #efefef;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 22px;
-    line-height: 64px;
+    margin: 5px 5px;
+    padding: 1px 16px;
+    border-radius: 1%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
 }
 
 header .icon {
@@ -33,66 +30,76 @@ header .icon {
     margin-top: 15px;
 }
 
-.sp-menu #open.hide {
+.sp-menu #open.hidden {
     display: none;
 }
 
+/* main */
+
 main {
-    padding: 0 16px;
+    margin: 5px 5px;
+    padding: 1px 16px;
+    border-radius: 1%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
 }
 
-.overlay {
+/* mask */
+
+#mask.hidden {
+    display:none;
+}
+
+#mask {
+    background: rgba(0, 0, 0, 0.4);
     position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    background: rgba(255, 255, 255, .95);
-    text-align: center;
-    padding: 64px;
+    z-index:1;
+}
+
+/* menu */
+
+#menu.hidden {
     opacity: 0;
     pointer-events: none;
+    transform: translate(-500px, 0);
 }
 
-.overlay.show {
+#menu {
     opacity: 1;
     pointer-events: auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    background: rgba(255, 255, 255, .95);
+    text-align: center;
+    transition: transform .2s;
+    z-index:2;
+    overflow: scroll;
 }
 
-.overlay #close {
+#menu #close {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    font-size: 32px;
+    top: 12px;
+    right: 12px;
     cursor: pointer;
 }
 
-.overlay ul {
+#menu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.overlay li {
-    margin-top: 24px;
-    opacity: 0;
-    transform: translateY(16px);
-    transition: opacity .3s, transform .3s;
-}
-
-.overlay.show li {
-    opacity: 1;
-    transform: none;
-}
-
-.overlay.show li:nth-child(1) {
-    transition-delay: .1s;
-}
-
-.overlay.show li:nth-child(2) {
-    transition-delay: .2s;
-}
-
-.overlay.show li:nth-child(3) {
-    transition-delay: .3s;
+#menu li {
+    cursor: pointer;
+    border: solid 1px #333;
+    margin: 3px 2px;
+    padding: 20px;
+    border-radius: 1%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
 }

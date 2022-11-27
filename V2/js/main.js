@@ -1,16 +1,21 @@
 'use strict';
 {
+    // メニュー制御
     const open = document.getElementById('open');
-    const overlay = document.querySelector('.overlay');
     const close = document.getElementById('close');
-
+    const menu = document.getElementById('menu');
+    const mask = document.getElementById('mask');
     open.addEventListener('click', () => {
-        overlay.classList.add('show');
-        open.classList.add('hide');
+        open.classList.add('hidden');
+        menu.classList.remove('hidden');
+        mask.classList.remove('hidden');
     });
-
     close.addEventListener('click', () => {
-        overlay.classList.remove('show');
-        open.classList.remove('hide');
+        open.classList.remove('hidden');
+        menu.classList.add('hidden');
+        mask.classList.add('hidden');
     });
+    mask.addEventListener('click', () => {
+        close.click();
+    })
 }
