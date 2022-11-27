@@ -162,9 +162,12 @@ article {
 </pre>
     <p><a href="https://webukatu.com/wordpress/blog/27994/" target="_blank">HTML aside要素でサイドバーのアウトラインを作る</a></p>
 
-    <h2>「index.html:1 Access to XMLHttpRequest at 'file:///C:/xampp/htdocs/MyPortfolio/header.html' from origin 'null'
+    <h2>ファイルアクセスエラー</h2>
+    <pre>
+        「index.html:1 Access to XMLHttpRequest at 'file:///C:/xampp/htdocs/MyPortfolio/header.html' from origin 'null'
         has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: http, data,
-        chrome, chrome-extension, chrome-untrusted, https, isolated-app.」</h2>
+        chrome, chrome-extension, chrome-untrusted, https, isolated-app.」
+    </pre>
     <p>Chromeはhttpアクセスしかファイルへのアクセスを許可していない</p>
     <p>nodejsでローカルサーバーを立ち上げることで解決する</p>
 
