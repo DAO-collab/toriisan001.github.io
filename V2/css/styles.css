@@ -3,7 +3,7 @@
 body {
     margin: 0;
     font-family: Verdana, sans-serif;
-    overflow-x: scroll;
+    overflow-x: hidden;
 }
 
 /* header */
@@ -86,6 +86,7 @@ pre {
     border: solid 1px #eaedf2;/* 枠線 */
     background: #f3f6fc;/* 背景色 */
     color: #54687c;/* 文字色 */
+    overflow-x: scroll;
 }
 
 main img {
