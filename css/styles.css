@@ -1,0 +1,187 @@
+/* common */
+
+body {
+    margin: 0;
+    font-family: Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* header */
+
+header {
+    display: flex;
+    background: #efefef;
+    margin: 5px 5px;
+    padding: 1px 16px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
+}
+
+header .icon {
+    border-radius: 50%;
+}
+
+.sp-menu {
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.sp-menu #open {
+    margin-top: 15px;
+}
+
+.sp-menu #open.hidden {
+    display: none;
+}
+
+/* main */
+
+main {
+    margin: 5px 5px;
+    padding: 1px 16px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
+}
+
+main h1 {
+    text-indent: 1em;
+    border-left: 5px solid #b82d37;
+}
+
+main h2 {
+    text-indent: 1em;
+    border-left: 5px solid #ddcf10;
+}
+
+main h3 {
+    text-indent: 1em;
+    border-left: 5px solid #4edb0c;
+}
+
+main h4 {
+    text-indent: 1em;
+    border-left: 5px solid #0adddd;
+}
+
+main h5 {
+    text-indent: 1em;
+    border-left: 5px solid #4007df;
+}
+
+main h6 {
+    text-indent: 1em;
+    border-left: 5px solid #e40ed2;
+}
+
+code {
+    padding: 0.2em 0.3em;/* 内側の余白 */
+    margin: 0 0.2em;/* 外側の余白 */
+    border-radius: 5px;/* 角の丸み */
+    background: #f1f2f3;/* 背景色 */
+    color: #404040;/* 文字色 */
+    font-size: 0.9em;/* 文字サイズ */
+}
+
+pre {
+    padding: 1em;/* 内側の余白 */
+    margin: 0 0 1.5em;/* 外側の余白 */
+    border: solid 1px #eaedf2;/* 枠線 */
+    background: #f3f6fc;/* 背景色 */
+    color: #54687c;/* 文字色 */
+    overflow-x: scroll;
+}
+
+main img.vertical {
+    width: 100px;
+}
+
+main img.beside {
+    width: 300px;
+}
+
+main img.apl {
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
+    border-radius: 10%;
+}
+
+/* mask */
+
+#mask.hidden {
+    display:none;
+}
+
+#mask {
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index:1;
+}
+
+/* menu */
+
+#menu.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-500px, 0);
+}
+
+#menu {
+    opacity: 1;
+    pointer-events: auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    background: rgba(255, 255, 255, .95);
+    text-align: center;
+    transition: transform .2s;
+    z-index:2;
+    overflow: scroll;
+}
+
+#menu #close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu li {
+    cursor: pointer;
+    border: solid 1px #333;
+    margin: 3px 2px;
+    padding: 20px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
+}
+
+/* footer */
+
+footer {
+    margin: 5px 5px;
+    padding: 30px 16px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
+}
+
+/* pageTop */
+
+#pageTop {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+#pageTop.scrolled {
+    opacity: 1;
+}

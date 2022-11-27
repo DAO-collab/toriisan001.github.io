@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鳥居涼太のポートフォリオサイト(開発用)</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div id="target"></div>
+    <div id="headerParts"></div>
+    <div id="menuParts"></div>
+    <div id="youtubeParts"></div>
+    <div id="footerParts"></div>
+    <div id="scriptParts"></div>
+    <a href="#" id="pageTop"><img src="../img/pageTop.png" alt="pageTop.png"></a>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script>
+        'use strict';
+        {
+            $("#headerParts").load("../parts/header.html");
+            $("#menuParts").load("../parts/menu.html");
+            $("#youtubeParts").load("../parts/youtube.html");
+            $("#footerParts").load("../parts/footer.html");
+            $("#scriptParts").load("../parts/script.html");
+        }
+    </script>
+</body>
+</html>

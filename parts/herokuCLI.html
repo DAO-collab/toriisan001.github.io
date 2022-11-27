@@ -1,0 +1,56 @@
+<main>
+    <h1>HerokuCLI</h1>
+    <p id="lastModified"></p>
+
+    <h2>ログイン</h2>
+    <pre>
+        <code>
+heroku loign
+        </code>
+    </pre>
+
+    <h2>postgres接続</h2>
+    <pre>
+        <code>
+heroku pg:psql -app ${アプリ名}
+        </code>
+    </pre>
+
+    <h2>bash参照</h2>
+    <pre>
+        <code>
+heroku run bash -a ${アプリ名}
+        </code>
+    </pre>
+
+    <h2>REDISインスタンスの情報を確認</h2>
+    <pre>
+        <code>
+heroku redis:info -a ${アプリ名}
+        </code>
+    </pre>
+
+    <h2>環境情報を確認</h2>
+    <pre>
+        <code>
+heroku config -a ${アプリ名}
+        </code>
+    </pre>
+
+    <h2>DBから取得</h2>
+    <pre>
+        <code>
+\o output.csv // 記録開始
+\a // エンコードだっけ
+\f ',' // ファイル読み込み
+\o // ファイル出力
+        </code>
+    </pre>
+
+    <h2>UTF-8に変換(変換しないとDB取得が出来ないことがあった)</h2>
+    <pre>
+        <code>
+chcp 65001
+        </code>
+    </pre>
+</main>
