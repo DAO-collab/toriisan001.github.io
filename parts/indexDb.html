@@ -1,5 +1,5 @@
 <main>
-    <h1>IndexDb(ver0.09)</h1>
+    <h1>IndexDb(ver0.10)</h1>
     <p id="lastModified"></p>
 
     <hr>
@@ -36,12 +36,13 @@
 <script>
     {
         'use strict';
+        console.log("DB connection successful.");
 
-        const config = getconfig();
-        var db = new Dexie(config.INDEX_DB.MASTER.DB_NAME);
+        // const config = getconfig();
+        var db = new Dexie('ToriiTestDB');
 
         // データベースにテーブルを設定 ・初期化
-        db.version(config.INDEX_DB.MASTER.DB_VERSION).stores({ notes: "++id, title, body, updated_at" });
+        db.version(1).stores({ notes: "++id, title, body, updated_at" });
 
         db.open().then(function (db) {
             // 接続に成功したとき
@@ -114,7 +115,7 @@
                             notes_html += `<tr><td style="border-bottom: 1px solid black;" onClick="keyCopy(${note.id})">${note.id}</td><td style="border-bottom: 1px solid black;">${note.title}</td><td style="border-bottom: 1px solid black;">${note.body}</td><td style="border-bottom: 1px solid black;">${updatedAt}</td><td onClick="if (confirm('${message}')) keyCle(${note.id}); return false;">×</td></tr>`;
                         });
                         const updatedAt = dateFomatYYYYMMDDhhmmss(new Date(), '/', ':');
-                        notes_html += `<tr><td id="id"></td><td><input type="text" id="title"></td><td><input type="text" id="body"></td><td id="updated_at">${updatedAt}</td></tr>`;
+                        notes_html += `<tr><td id="id"></td><td><input type="text" id="title" style="width:130px"></td><td><input type="text" id="body" style="width:130px"></td><td id="updated_at">${updatedAt}</td></tr>`;
                         notes_html += '</table>';
                         $('#table').html(notes_html);
                     });
