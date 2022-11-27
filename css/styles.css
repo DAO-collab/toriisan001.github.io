@@ -5,6 +5,7 @@ body {
     font-family: Verdana, sans-serif;
     overflow-x: hidden;
     word-break: break-all;
+    font-size: 12px;
 }
 
 /* header */
@@ -46,38 +47,43 @@ main {
 main h1 {
     text-indent: 1em;
     border-left: 5px solid #b82d37;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 main h2 {
     text-indent: 1em;
     border-left: 5px solid #ddcf10;
-    font-size: 20px;
+    font-size: 14px;
     margin-top: 50px;
+    margin-left: 5px;
 }
 
 main h3 {
     text-indent: 1em;
     border-left: 5px solid #4edb0c;
-    font-size: 20px;
+    font-size: 14px;
+    margin-left: 10px;
 }
 
 main h4 {
     text-indent: 1em;
     border-left: 5px solid #0adddd;
-    font-size: 20px;
+    font-size: 14px;
+    margin-left: 15px;
 }
 
 main h5 {
     text-indent: 1em;
     border-left: 5px solid #4007df;
-    font-size: 20px;
+    font-size: 14px;
+    margin-left: 20px;
 }
 
 main h6 {
     text-indent: 1em;
     border-left: 5px solid #e40ed2;
-    font-size: 20px;
+    font-size: 14px;
+    margin-left: 25px;
 }
 
 code {
