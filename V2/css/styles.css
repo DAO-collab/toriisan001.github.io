@@ -152,3 +152,17 @@ main img {
     padding: 20px;
     box-shadow: 0 0 3px rgba(0, 0, 0, 1);
 }
+
+/* pageTop */
+
+#pageTop {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+#pageTop.scrolled {
+    opacity: 1;
+}
