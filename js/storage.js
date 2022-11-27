@@ -1,4 +1,4 @@
-export default class Storage {
+export default class storage {
     // ストレージ変数
     #storage;
     constructor(storage) {
@@ -15,5 +15,15 @@ export default class Storage {
     // keyを指定してデータを取得
     getItem(k) {
         return this.storage.getItem(k);
+    }
+
+    // 最終アクセスパス名を設定
+    setLastAcssesHref(config, location) {
+        this.setItem(config.SYSTEM_KEY.LAST_HREF, location.href)
+    }
+
+    // 最終アクセスパス名を取得
+    getLastAcssesHref(config) {
+        return this.getItem(config.SYSTEM_KEY.LAST_HREF)
     }
 }

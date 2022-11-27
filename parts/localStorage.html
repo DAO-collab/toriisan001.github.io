@@ -20,12 +20,10 @@
     </div>
 </main>
 <script type="module">
-    import Storage from "../js/Storage.js"
+import Storage from "../js/storage.js"
+import config from "../js/config.js"
     {
         'use strict';
-
-        var storageObj = new Storage(localStorage);
-        storageObj.setItem('storageObj', 'storageObj')
 
         // 変数storageにlocalStorageを格納
         var storage = localStorage;

@@ -1,3 +1,5 @@
+import Storage from "../js/storage.js"
+import config from "../js/config.js"
 {
     'use strict';
 
@@ -18,6 +20,7 @@
         mask.classList.add('hidden');
     });
 
+    // ページトップへ移動する制御
     // Intersection Observer API
     function onScrollCallback(entries) {
         entries.forEach(entry => {
@@ -46,81 +49,7 @@
         })
     });
 
-    // // ストレージクラス
-    // class Storage {
-    //     // ストレージ変数
-    //     #storage;
-    //     constructor(storage) {
-    //         this.storage = storage;
-    //     }
-    //     // データ追加
-    //     setItem(k, v) {
-    //         this.storage.setItem(k, v);
-    //     }
-    //     // keyを指定してデータを削除
-    //     keyCle(k) {
-    //         this.storage.removeItem(k);
-    //     }
-    //     // keyを指定してデータを取得
-    //     getItem(k) {
-    //         return this.storage.getItem(k);
-    //     }
-    // }
-    // // Storageオブジェクトを取得
-    // function getStorageOBJ(storage) {
-    //     return new Storage(storage);
-    // }
-
-    // // Dexie
-    // class DexieWrapNotes {
-    //     // DB変数
-    //     #db;
-    //     constructor(dbName) {
-    //         this.db = Dexie(dbName);
-    //         this.db.open().then(function () {
-    //             // 接続に成功したとき
-    //             console.log("DB connection successful.");
-    //         }).catch(function (err) {
-    //             // エラーが起きたとき
-    //             console.err("DB connection failed. : " + err);
-    //         });
-    //         db.version(config.INDEX_DB.MASTER.DB_VERSION).stores({ 'notes': "++id, title, body, updated_at" });
-    //     }
-    //     // データの取得
-    //     async getResult() {
-    //         // 実行タイミング(100ミリ秒)で実行
-    //         var res;
-    //         await setTimeout(function () {
-    //             this.db('notes')
-    //                 .toArray()
-    //                 .then(function (data) {
-    //                     res = data;
-    //                 });
-    //         }, 100);
-    //         return res;
-    //     }
-    //     // データ追加
-    //     set() {
-    //         const id = document.getElementById('id');
-    //         const title = document.getElementById('title');
-    //         const body = document.getElementById('body');
-    //         const updatedAt = document.getElementById('updated_at');
-    //         var params = {};
-    //         if (id.textContent !== '') {
-    //             params.id = parseInt(id.textContent);
-    //         }
-    //         params.title = title.value;
-    //         params.body = body.value;
-    //         params.updated_at = dateFomatYYYYMMDDhhmmss(new Date(updatedAt.textContent), '/', ':');
-    //         his.db('notes').put(params);
-    //     }
-    //     // keyを指定してデータを削除
-    //     keyCle(id) {
-    //         this.db('notes').delete(id);
-    //     }
-    // }
-    // // ストレージクラスを取得
-    // function getDexieWrapNotesOBJ(dbName) {
-    //     return new DexieWrapNotes(dbName);
-    // }
+    // 最終アクセスを保持
+    var storageObj = new Storage(localStorage);
+    storageObj.setLastAcssesHref(config, location);
 }
