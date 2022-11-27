@@ -52,6 +52,7 @@ main h2 {
     text-indent: 1em;
     border-left: 5px solid #ddcf10;
     font-size: 20px;
+    margin-top: 50px;
 }
 
 main h3 {
