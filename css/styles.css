@@ -19,6 +19,7 @@ header {
 
 header .icon {
     border-radius: 50%;
+    margin-top: 2px;
 }
 
 .sp-menu {
@@ -27,7 +28,7 @@ header .icon {
 }
 
 .sp-menu #open {
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .sp-menu #open.hidden {
