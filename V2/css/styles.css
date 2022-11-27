@@ -97,6 +97,13 @@ main img.beside {
     width: 350px;
 }
 
+main img.apl {
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
+    border-radius: 10%;
+}
+
 /* mask */
 
 #mask.hidden {
