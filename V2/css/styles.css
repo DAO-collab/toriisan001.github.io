@@ -153,6 +153,14 @@ main img {
     box-shadow: 0 0 3px rgba(0, 0, 0, 1);
 }
 
+/* footer */
+
+footer {
+    margin: 5px 5px;
+    padding: 30px 16px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
+}
+
 /* pageTop */
 
 #pageTop {
