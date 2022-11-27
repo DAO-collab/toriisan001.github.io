@@ -13,8 +13,6 @@ import Storage from "./js/storage.js"
 import config from "./js/config.js"
         'use strict';
         {
-            // 共通部読み込み
-            console.log(config);
             // 最終アクセスを取得
             var storageObj = new Storage(localStorage);
             const lastAccessHref = storageObj.getLastAcssesHref(config);
