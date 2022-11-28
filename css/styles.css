@@ -179,6 +179,20 @@ main img.apl {
     box-shadow: 0 0 3px rgba(0, 0, 0, 1);
 }
 
+/* application */
+
+main .applicationBox {
+    display: flex;
+    flex-wrap:wrap;
+    border: 1px solid #999;
+    justify-content: space-around;
+}
+
+main .applicationBox > figure {
+    margin: 10px;
+    text-align: center;
+}
+
 /* footer */
 
 footer {
