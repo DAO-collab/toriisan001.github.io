@@ -149,17 +149,15 @@
     </details>
     <hr>
 
-    <header>
-        <div class="logo">
-            <h1>LOGO</h1>
+    <div class="headerSample">
+        <div class="logoSample">LOGO</div>
+        <div class="sp-menuSample">
+            <img src="../img/open.png" id="openSample" alt="open.png">
         </div>
-        <div class="sp-menu">
-            <img src="../img/open.png" id="open" alt="open.png">
-        </div>
-    </header>
+    </div>
 
-    <div class="overlay">
-        <img src="../img/close.png" id="close" alt="close.png">
+    <div class="overlaySample">
+        <img src="../img/close.png" id="closeSample" alt="close.png">
         <nav>
             <ul>
                 <li><a href="#">Menu</a></li>
@@ -169,9 +167,27 @@
         </nav>
     </div>
 
-    <main>
+    <div class="mainSample">
         <p>こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。</p>
         <p>こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。</p>
-    </main>
+    </div>
 </main>
-<script src="../js/hamburgerMenu.js"></script>
+<!-- <script src="../js/hamburgerMenu.js"></script> -->
+<script>
+'use strict';
+{
+    const openSample = document.getElementById('openSample');
+    const overlaySample = document.querySelector('.overlaySample');
+    const closeSample = document.getElementById('closeSample');
+
+    openSample.addEventListener('click', () => {
+        overlaySample.classList.add('show');
+        openSample.classList.add('hide');
+    });
+
+    closeSample.addEventListener('click', () => {
+        overlaySample.classList.remove('show');
+        openSample.classList.remove('hide');
+    });
+}
+</script>
