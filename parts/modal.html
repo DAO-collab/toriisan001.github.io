@@ -102,32 +102,32 @@
     </details>
     <hr>
 
-    <section id="modal" class="hidden">
+    <section id="modalSample" class="hidden">
         <p>こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。</p>
-        <div id="close">
+        <div id="closeSample">
             閉じる
         </div>
     </section>
-    <div id="open">
+    <div id="openSample">
         詳細を見る
     </div>
-    <div id="mask" class="hidden"></div>
+    <div id="maskSample" class="hidden"></div>
 </main>
 <script>
-    const open = document.getElementById('open');
-    const close = document.getElementById('close');
-    const modal = document.getElementById('modal');
-    const mask = document.getElementById('mask');
+    const openSample = document.getElementById('openSample');
+    const closeSample = document.getElementById('closeSample');
+    const modalSample = document.getElementById('modalSample');
+    const maskSample = document.getElementById('maskSample');
 
-    open.addEventListener('click', () => {
-        modal.classList.remove('hidden');
-        mask.classList.remove('hidden');
+    openSample.addEventListener('click', () => {
+        modalSample.classList.remove('hidden');
+        maskSample.classList.remove('hidden');
     });
-    close.addEventListener('click', () => {
-        modal.classList.add('hidden');
-        mask.classList.add('hidden');
+    closeSample.addEventListener('click', () => {
+        modalSample.classList.add('hidden');
+        maskSample.classList.add('hidden');
     });
-    mask.addEventListener('click', () => {
-        close.click();
+    maskSample.addEventListener('click', () => {
+        closeSample.click();
     });
 </script>
