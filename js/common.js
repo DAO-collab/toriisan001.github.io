@@ -52,4 +52,8 @@ import config from "../js/config.js"
     // 最終アクセスを保持
     var storageObj = new Storage(localStorage);
     storageObj.setLastAcssesHref(config, location);
+
+    // 最終更新日を追記
+    const lastModified = document.getElementById('lastModified');
+    lastModified.textContent += "(最終更新日時：" + dateFomatYYYYMMDDhhmmss(new Date(document.lastModified), '/', ':') + ")";
 }
