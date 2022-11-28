@@ -186,6 +186,7 @@ main .applicationBox {
     flex-wrap:wrap;
     border: 1px solid #999;
     justify-content: space-around;
+    margin-bottom: 20px;
 }
 
 main .applicationBox > figure {
