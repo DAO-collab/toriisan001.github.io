@@ -119,6 +119,10 @@ main img.apl {
     border-radius: 10%;
 }
 
+main input[type="text"] {
+    width:70px;
+}
+
 /* mask */
 
 #mask.hidden {
