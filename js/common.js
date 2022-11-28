@@ -11,13 +11,16 @@ import config from "../js/config.js"
     const open = document.getElementById('open');
     const menu = document.getElementById('menu');
     const mask = document.getElementById('mask');
+    const main = document.getElementsByTagName('main')[0];
     open.addEventListener('click', () => {
         menu.classList.remove('hidden');
         mask.classList.remove('hidden');
+        main.classList.add('hidden');
     });
     mask.addEventListener('click', () => {
         menu.classList.add('hidden');
         mask.classList.add('hidden');
+        main.classList.remove('hidden');
     });
 
     // ページトップへ移動する制御
