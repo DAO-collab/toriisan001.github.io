@@ -430,6 +430,7 @@ strageSelect.addEventListener('change', (e) => {
 });
 </code>
 </pre>
+※removeもあるらしい。document.removeEventListener('touchmove', disableScroll, { passive: false });
 
 <h2>イベント無効化</h2>
 <pre>
@@ -492,9 +493,9 @@ onScrollObserver.observe(document.getElementById('target'));
 toTop.addEventListener('click', e => {
     // イベントを無効化(#(パウンド記号がついてしまうことを防ぐため))
     e.preventDefault();
-    // ページ上部へ戻る
+    // ページ上部へ戻る(top0だと一番上まで行ってなかった)
     window.scrollTo({
-        top: 0,
+        top: -500,
         behavior: 'smooth',
     })
 });
