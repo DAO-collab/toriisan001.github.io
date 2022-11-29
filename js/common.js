@@ -5,7 +5,10 @@ import config from "../js/config.js"
 
     // スクロールを禁止にする関数
     function disableScroll(event) {
-        event.preventDefault();
+        // console.log(event.path[0].id);
+        if (event.path[0].id === 'mask') {
+            event.preventDefault();
+        }
     }
 
     // メニュー制御
@@ -16,18 +19,16 @@ import config from "../js/config.js"
     open.addEventListener('click', () => {
         menu.classList.remove('hidden');
         mask.classList.remove('hidden');
-        // main.classList.add('hidden');
         // スクロール禁止付与
-        main.addEventListener('touchmove', disableScroll, { passive: false });
-        main.classList.add('overflow-hidden');
+        document.addEventListener('touchmove', disableScroll, { passive: false });
+        document.body.classList.add('overflow-hidden');
     });
     mask.addEventListener('click', () => {
         menu.classList.add('hidden');
         mask.classList.add('hidden');
-        // main.classList.remove('hidden');
         // スクロール禁止除去
-        main.removeEventListener('touchmove', disableScroll, { passive: false });
-        main.classList.remove('overflow-hidden');
+        document.removeEventListener('touchmove', disableScroll, { passive: false });
+        document.body.classList.remove('overflow-hidden');
     });
 
     // ページトップへ移動する制御
