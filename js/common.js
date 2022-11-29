@@ -3,9 +3,8 @@ import config from "../js/config.js"
 {
     'use strict';
 
-    // スクロールを禁止にする関数
-    function disableScroll(event) {
-        // console.log(event.path[0].id);
+    // スクロール禁止(マスク上)
+    function maskDisableScroll(event) {
         if (event.path[0].id === 'mask') {
             event.preventDefault();
         }
@@ -20,14 +19,14 @@ import config from "../js/config.js"
         menu.classList.remove('hidden');
         mask.classList.remove('hidden');
         // スクロール禁止付与
-        document.addEventListener('touchmove', disableScroll, { passive: false });
+        document.addEventListener('touchmove', maskDisableScroll, { passive: false });
         document.body.classList.add('overflow-hidden');
     });
     mask.addEventListener('click', () => {
         menu.classList.add('hidden');
         mask.classList.add('hidden');
         // スクロール禁止除去
-        document.removeEventListener('touchmove', disableScroll, { passive: false });
+        document.removeEventListener('touchmove', maskDisableScroll, { passive: false });
         document.body.classList.remove('overflow-hidden');
     });
 
