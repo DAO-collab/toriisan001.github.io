@@ -3,9 +3,10 @@ import config from "../js/config.js"
 {
     'use strict';
 
-    // 最終更新日を追記
-    // const lastModified = document.getElementById('lastModified');
-    // lastModified.textContent += "(最終更新日時：" + dateFomatYYYYMMDDhhmmss(new Date(document.lastModified), '/', ':') + ")";
+    // スクロールを禁止にする関数
+    function disableScroll(event) {
+        event.preventDefault();
+    }
 
     // メニュー制御
     const open = document.getElementById('open');
@@ -16,11 +17,17 @@ import config from "../js/config.js"
         menu.classList.remove('hidden');
         mask.classList.remove('hidden');
         main.classList.add('hidden');
+        // スクロール禁止付与
+        document.addEventListener('touchmove', disableScroll, { passive: false });
+        document.body.classList.add('overflow-hidden');
     });
     mask.addEventListener('click', () => {
         menu.classList.add('hidden');
         mask.classList.add('hidden');
         main.classList.remove('hidden');
+        // スクロール禁止除去
+        document.removeEventListener('touchmove', disableScroll, { passive: false });
+        document.body.classList.remove('overflow-hidden');
     });
 
     // ページトップへ移動する制御
@@ -47,7 +54,7 @@ import config from "../js/config.js"
         e.preventDefault();
         // ページ上部へ戻る
         window.scrollTo({
-            top: 0,
+            top: -500,
             behavior: 'smooth',
         })
     });
@@ -59,4 +66,5 @@ import config from "../js/config.js"
     // 最終更新日を追記
     const lastModified = document.getElementById('lastModified');
     lastModified.textContent += "(最終更新日時：" + dateFomatYYYYMMDDhhmmss(new Date(document.lastModified), '/', ':') + ")";
+
 }

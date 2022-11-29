@@ -44,8 +44,9 @@ main {
     box-shadow: 0 0 3px rgba(0, 0, 0, 1);
 }
 
-main.hidden {
-    pointer-events: none;
+/* スクロール禁止 */
+.overflow-hidden {
+    overflow: hidden;
 }
 
 main h1 {
