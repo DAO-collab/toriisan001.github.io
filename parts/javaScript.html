@@ -267,8 +267,8 @@ function zeroPadding(no, digit) {
 <h2>うるう年判定関数</h2>
     <pre>
     <code>
-function zeroPadding(no, digit) {
-    return ('0'.repeat(digit) + no).slice(-1 * digit);
+function isLeapYear(year) {
+    return new Date(year, 2, 0).getDate() === 29;
 }
     </code>
 </pre>
