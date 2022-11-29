@@ -515,4 +515,24 @@ mask.addEventListener('click', () => {
 });
 </code>
 </pre>
+
+<h2>スクロールを禁止にする</h2>
+<pre>
+<code>
+=====CSS=====
+/* スクロール禁止 */
+.overflow-hidden {
+    overflow: hidden;
+}
+=====JavaScript=====
+// スクロール禁止付与
+document.addEventListener('touchmove', disableScroll, { passive: false });
+document.body.classList.add('overflow-hidden');
+
+// スクロール禁止除去
+document.removeEventListener('touchmove', disableScroll, { passive: false });
+document.body.classList.remove('overflow-hidden');
+</code>
+</pre>
+
 </main>
