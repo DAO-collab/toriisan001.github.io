@@ -143,6 +143,10 @@ main video {
     width:350px;
 }
 
+main button {
+    cursor: pointer;
+}
+
 /* mask */
 
 #mask.hidden {
