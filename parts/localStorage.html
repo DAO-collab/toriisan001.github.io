@@ -10,14 +10,12 @@
     <hr>
 
     <div id="textbox"></div>
-    <div style="padding-top: 5px; display: flex;">
+    <div style="display: flex;">
         <p>キー：<input id="k" type="text" onfocus="this.select();"></p>
-        <p>値：<input id="v" type="text" onfocus="this.select();"></p>
+        <p style="margin-left: 10px;">値：<input id="v" type="text" onfocus="this.select();"></p>
     </div>
-    <div style="padding-top: 5px;">
-        <input id="set" type="button" value="新規・更新">
-        <input id="cle" type="button" value="全クリア">
-    </div>
+    <button type="button" id="set">新規・更新</button>
+    <button type="button" id="cle">全クリア</button>
 </main>
 <script type="module">
 import Storage from "../js/storage.js"
