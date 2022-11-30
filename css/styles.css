@@ -102,7 +102,7 @@ main h6 {
     margin-left: 25px;
 }
 
-code {
+main code {
     padding: 0.2em 0.3em;/* 内側の余白 */
     margin: 0 0.2em;/* 外側の余白 */
     border-radius: 5px;/* 角の丸み */
@@ -111,7 +111,7 @@ code {
     font-size: 0.9em;/* 文字サイズ */
 }
 
-pre {
+main pre {
     padding: 1em;/* 内側の余白 */
     margin: 0 0 1.5em;/* 外側の余白 */
     border: solid 1px #eaedf2;/* 枠線 */
@@ -137,6 +137,10 @@ main img.apl {
 
 main input[type="text"] {
     width:70px;
+}
+
+main video {
+    width:350px;
 }
 
 /* mask */
