@@ -1,4 +1,4 @@
-import Storage from "../js/storage.js"
+import Storage from "../js/webStrage/storage.js"
 import config from "../js/config.js"
 {
     'use strict';
