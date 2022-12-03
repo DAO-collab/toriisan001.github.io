@@ -1,5 +1,5 @@
 <main>
-  <h1>Youtube(v0.09)</h1>
+  <h1>Youtube(v0.10)</h1>
   <p id="lastModified"></p>
 
   <hr>
@@ -118,9 +118,10 @@
       // 動画設定
       function mvShow() {
         const test = document.getElementById('test');
-        setInterval(() => {setLog('mvShow');}, 5000);
+        // setInterval(() => {setLog('mvShow');}, 5000);
+        setInterval(() => {
         youtubeObj.findAll().then(res => {
-          setInterval(() => {setLog(res);}, 5000);
+          // setInterval(() => {setLog(res);}, 5000);
           const mvBox = document.getElementById('mvBox');
           while (mvBox.firstChild) {
             mvBox.removeChild(mvBox.firstChild);
@@ -159,6 +160,7 @@
             mvBox.appendChild(mvDiv);
           });
         });
+      }, 5000);
       }
 
       // 動画追加
