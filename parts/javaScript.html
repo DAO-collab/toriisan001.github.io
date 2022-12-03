@@ -532,5 +532,28 @@ array1.forEach(data => console.log(data));
 </pre>
 <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">mdn web docs Array.prototype.forEach()【参考】</a>
 
+<h2>テキストエリアの項目を改行ごとに配列に設定</h2>
+<pre>
+    <code>
+=====HTML=====
+<textarea id="mvAddText" rows="1"></textarea>
+=====JavaScript=====
+const mvAddText = document.getElementById('mvAddText');
+console.log(mvAddText.value.split(/\n/));
+    </code>
+</pre>
+<a href="https://magazine.techacademy.jp/magazine/26943">JavaScriptでsplitメソッドを使ってテキストを改行で分割して配列に格納する方法を現役エンジニアが解説【初心者向け】【参考】</a>
+
+<h2>URLをパース(プログラムで扱えるようなデータ構造の集合体に変換すること)(例)</h2>
+<pre>
+    <code>
+var parser = new URL("https://www.youtube.com/watch?v=kRXn3Da895Y");
+parser.host; // "https://www.youtube.com/watch"
+var parser = new URL(url.value)
+youtubeObj.youtubeId = parser.searchParams.get('v');
+    </code>
+</pre>
+<a href="https://qiita.com/edisonthk/items/9e76784bedbd0cb969a5">javascriptでURLをパース【参考】</a>
+
 </div>
 </main>
