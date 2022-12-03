@@ -1,5 +1,5 @@
 <main>
-  <h1>Youtube(v0.10)</h1>
+  <h1>Youtube(v0.11)</h1>
   <p id="lastModified"></p>
 
   <hr>
@@ -43,13 +43,14 @@
 
   <hr>
  
+  <div id="pageTest"></div>
   <div id="mvBox"></div>
 
 </main>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script src="../js/dexie.min.js"></script>
 <script>
-    (window.onload = function() {
+    {
       'use strict';
 
       const youtube = class {
@@ -62,6 +63,8 @@
               this.db.open().then(function (db) {
                   // 接続に成功したとき
                   console.log("DB connection successful.");
+                  const pageTest = document.getElementById('pageTest');
+                  pageTest.innerText += 'DB connection successful.';
               }).catch(function (err) {
                   // エラーが起きたとき
                   console.err("DB connection failed. : " + err);
@@ -100,9 +103,13 @@
           }
           // 全データ取得
           findAll() {
+            const pageTest = document.getElementById('pageTest');
+            pageTest.innerText += 'findAll\n';
             return new Promise((resolve, reject) => {
                 this.db.youtube.toArray()
                     .then(function (result) {
+                        const pageTest = document.getElementById('pageTest');
+                        pageTest.innerText += 'findAll Promise\n';
                         resolve(result);
                     });
             });
@@ -110,11 +117,16 @@
       }
       var youtubeObj = new youtube(new Dexie("ToriiTestDB"), 1);
 
+      const pageTest = document.getElementById('pageTest');
+      pageTest.innerText += 'start\n';
       mvShow();
 
       // 動画設定
       async function mvShow() {
+        const pageTest = document.getElementById('pageTest');
+        pageTest.innerText += 'mvShow\n';
         const res = await youtubeObj.findAll();
+        pageTest.innerText += 'await\n';
         while (mvBox.firstChild) {
           mvBox.removeChild(mvBox.firstChild);
         }
@@ -342,5 +354,5 @@
         }
         alert(errorIns);
     }
-    })();
+    }
 </script>
