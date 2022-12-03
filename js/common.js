@@ -62,7 +62,7 @@
     lastModified.textContent += "(最終更新日時：" + dateFomatYYYYMMDDhhmmss(new Date(document.lastModified), '/', ':') + ")";
 
     // ログを設定
-    // param text ログに設定するテキスト
+    // param text ログに設定するテキスト(\nで改行が可能)
     // return void
     function setLog(text) {
         const log = document.getElementById('log');
