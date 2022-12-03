@@ -1,5 +1,5 @@
 <main>
-  <h1>Youtube(v0.08)</h1>
+  <h1>Youtube(v0.09)</h1>
   <p id="lastModified"></p>
 
   <hr>
@@ -118,10 +118,9 @@
       // 動画設定
       function mvShow() {
         const test = document.getElementById('test');
-        test.textContent += 'mvShow';
+        setInterval(() => {setLog('mvShow');}, 5000);
         youtubeObj.findAll().then(res => {
-          test.textContent += 'res:';
-          test.textContent += res;
+          setInterval(() => {setLog(res);}, 5000);
           const mvBox = document.getElementById('mvBox');
           while (mvBox.firstChild) {
             mvBox.removeChild(mvBox.firstChild);
