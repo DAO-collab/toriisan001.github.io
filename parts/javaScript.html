@@ -67,47 +67,12 @@ const sample = document.querySelector('.sample');
 sample.forEach(el => {
     // 処理...
 });
-        </code>
-    </pre>
-    <p>※1件しかなくても配列での取得となるため注意</p>
-    <h3>引数で指定したID名、もしくはクラス名と一致する全ての要素を取得(例)</h3>
-    <pre>
-        <code>
-以下1・3番目を取得
-===HTML===
-&lt;div class=&quot;hoge&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;foo&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;hoge&quot;&gt;&lt;/div&gt;
-===JavaScript===
-const hoge = document.querySelectorAll('.hoge');
-// すべての要素に処理
-hoge.forEach(el => {
-    // 処理...
-});
-        </code>
-    </pre>
-    <h3>タグの要素を全て取得</h3>
-    <pre>
-        <code>
-// インデックスを指定して1番目の要素を取得
-let element = document.getElementsByTagName('p')[0];
-
-// すべての要素を一つずつ取得
-let elements = document.getElementsByTagName('p');
-// すべての要素に処理
-elements.forEach(el => {
-    // 処理...
-});
-        </code>
-    </pre>
-    <h3>複数のクラスに処理を行う(例)</h3>
-    <pre>
-        <code>
 document.querySelectorAll('.animate').forEach(el => {
     observer.observe(el);
 });
         </code>
     </pre>
+    <p>※1件しかなくても配列での取得となるため注意</p>
     <p><a href="https://9cubed.info/article/javascript/0029" target="_blank">【参考】JavaScript - アロー関数(ラムダ式)</a></p>
 
 
