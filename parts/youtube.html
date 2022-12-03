@@ -1,5 +1,5 @@
 <main>
-  <h1>Youtube(v0.05)</h1>
+  <h1>Youtube(v0.06)</h1>
   <p id="lastModified"></p>
 
   <hr>
@@ -95,279 +95,254 @@
           }
           // 対象キーのデータをクリア
           delete(id) {
-              console.log(id);
               this.db.youtube.delete(id);
           }
           // 全データ取得
           async findAll() {
-            // return new Promise((resolve, reject) => {
-            //   this.db.youtube.toArray()
-            //       .then(function (result) {
-            //           resolve(result);
-            //       });
-            // });
+            return new Promise((resolve, reject) => {
+              // setTimeout(function () {
+                this.db.youtube.toArray()
+                    .then(function (result) {
+                        resolve(result);
+                    });
+              // }, 100);
+            });
           }
       }
       var youtubeObj = new youtube(new Dexie("ToriiTestDB"), 1);
 
-      // 非同期処理を含み Promiseを返す関数
-      function foo() {
-        return new Promise((resolve, reject) => {
-            setTimeout(function () {
-              console.log('aaaaa');
-              const log = document.getElementById('log');
-              log.innerText += 'awaitTest4000';
-            }, 4000);
-        });
-      }
-
-      async function main() {
-        try {
-          const res = await foo();
-          console.log(res);
-        } catch(err) {
-          alert(err);
-        }
-      }
-      main();
+      mvShow();
 
       // 動画設定
       async function mvShow() {
-        // await youtubeObj.findAll()
-        // .then(function (result) {
-        //     console.log(result);
-        // });
-        // console.log(youtubeObj.findAll());
-        // youtubeObj.findAll().then(res => {
-        //   const mvBox = document.getElementById('mvBox');
-        //   while (mvBox.firstChild) {
-        //     mvBox.removeChild(mvBox.firstChild);
-        //   }
-        //   res.forEach(youtube => {
-        //     const mvDiv = document.createElement('div');
-        //     const textDiv = document.createElement('div');
-        //     const img = document.createElement('img');
-        //     const divId = document.createElement('div');
-        //     const divTitle = document.createElement('div');
-        //     const divDel = document.createElement('div');
-        //     mvDiv.classList.add('mv');
-        //     divDel.classList.add('del');
-        //     textDiv.classList.add('text');
-        //     mvDiv.dataset.youtubeId = youtube.youtubeId;
-        //     img.src = `http://img.youtube.com/vi/${youtube.youtubeId}/3.jpg`;
-        //     divId.textContent = 'id : ' + youtube.id + ' / youtubeId : '+ youtube.youtubeId;
-        //     divTitle.textContent = youtube.title;
-        //     divDel.textContent = '×';
-        //     mvDiv.addEventListener('click', () => {
-        //       ytPlayer.cueVideoById({videoId: youtube.youtubeId});
-        //       setTimeout(() => {
-        //           ytPlayer.playVideo();
-        //       }, 2000);
-        //     });
-        //     divDel.addEventListener('click', () => {
-        //       youtubeObj.delete(youtube.id);
-        //       mvShow();
-        //     })
-        //     textDiv.appendChild(divId);
-        //     textDiv.appendChild(divTitle);
-        //     mvDiv.appendChild(img);
-        //     mvDiv.appendChild(textDiv);
-        //     mvDiv.appendChild(divDel);
-        //     mvBox.appendChild(mvDiv);
-        //   });
-        // });
-      }
-
-      // 動画追加
-      const mvAddButton = document.getElementById('mvAddButton');
-      mvAddButton.addEventListener('click', () => {
-        const url = document.getElementById('url');
-        const title = document.getElementById('title');
-        console.log(url.value);
-        var parser = new URL(url.value);
-        const pYoutubeId = parser.searchParams.get('v');
-        const pTitle = title.value;
-        youtubeObj.create(pYoutubeId, pTitle);
-        mvShow();
+        const res = await youtubeObj.findAll();
+        const mvBox = document.getElementById('mvBox');
+        while (mvBox.firstChild) {
+          mvBox.removeChild(mvBox.firstChild);
+        }
+        res.forEach(youtube => {
+        const mvDiv = document.createElement('div');
+        const textDiv = document.createElement('div');
+        const img = document.createElement('img');
+        const divId = document.createElement('div');
+        const divTitle = document.createElement('div');
+        const divDel = document.createElement('div');
+        mvDiv.classList.add('mv');
+        divDel.classList.add('del');
+        textDiv.classList.add('text');
+        mvDiv.dataset.youtubeId = youtube.youtubeId;
+        img.src = `http://img.youtube.com/vi/${youtube.youtubeId}/3.jpg`;
+        divId.textContent = 'id : ' + youtube.id + ' / youtubeId : '+ youtube.youtubeId;
+        divTitle.textContent = youtube.title;
+        divDel.textContent = '×';
+        mvDiv.addEventListener('click', () => {
+          ytPlayer.cueVideoById({videoId: youtube.youtubeId});
+          setTimeout(() => {
+              ytPlayer.playVideo();
+          }, 2000);
+        });
+        divDel.addEventListener('click', () => {
+          youtubeObj.delete(youtube.id);
+          mvShow();
+        })
+        textDiv.appendChild(divId);
+        textDiv.appendChild(divTitle);
+        mvDiv.appendChild(img);
+        mvDiv.appendChild(textDiv);
+        mvDiv.appendChild(divDel);
+        mvBox.appendChild(mvDiv);
       });
+    }
 
-      // 動画クリア
-      const allClearButton = document.getElementById('allClearButton');
-      allClearButton.addEventListener('click', () => {
-        youtubeObj.deleteAll();
-        mvShow();
-      });
+    // 動画追加
+    const mvAddButton = document.getElementById('mvAddButton');
+    mvAddButton.addEventListener('click', () => {
+      const url = document.getElementById('url');
+      const title = document.getElementById('title');
+      var parser = new URL(url.value);
+      const pYoutubeId = parser.searchParams.get('v');
+      const pTitle = title.value;
+      youtubeObj.create(pYoutubeId, pTitle);
+      mvShow();
+    });
 
-      // プレーヤーを埋め込む場所
-      var ytArea = 'sample';
+    // 動画クリア
+    const allClearButton = document.getElementById('allClearButton');
+    allClearButton.addEventListener('click', () => {
+      youtubeObj.deleteAll();
+      mvShow();
+    });
 
-      // 埋め込むYouTube ID(デフォルト)
-      var ytID = 'Kjoe1vXlmxQ';
+    // プレーヤーを埋め込む場所
+    var ytArea = 'sample';
 
-      // プレーヤーのサイズを指定
-      var ytWidth = 330;
-      var ytHeight = 300;
+    // 埋め込むYouTube ID(デフォルト)
+    var ytID = 'Kjoe1vXlmxQ';
 
-      var ytPlayer;
-      // 再生
-      var ytPlay = document.getElementById('play');
-      ytPlay.addEventListener('click', function () {
-          ytPlayer.playVideo();
-      });
+    // プレーヤーのサイズを指定
+    var ytWidth = 330;
+    var ytHeight = 300;
 
-      // 一時停止
-      var ytPause = document.getElementById('pause');
-      ytPause.addEventListener('click', function () {
-          ytPlayer.pauseVideo();
-      });
+    var ytPlayer;
+    // 再生
+    var ytPlay = document.getElementById('play');
+    ytPlay.addEventListener('click', function () {
+        ytPlayer.playVideo();
+    });
 
-      // 停止
-      var ytStop = document.getElementById('stop');
-      ytStop.addEventListener('click', function () {
-          ytPlayer.pauseVideo().seekTo(0);
-      });
+    // 一時停止
+    var ytPause = document.getElementById('pause');
+    ytPause.addEventListener('click', function () {
+        ytPlayer.pauseVideo();
+    });
 
-      // 10秒前へ
-      var ytPrev = document.getElementById('prev');
-      ytPrev.addEventListener('click', function () {
-          // 現在の再生時間取得
-          var currentTime = ytPlayer.getCurrentTime();
-          ytPlayer.seekTo(currentTime - 10);
-      });
+    // 停止
+    var ytStop = document.getElementById('stop');
+    ytStop.addEventListener('click', function () {
+        ytPlayer.pauseVideo().seekTo(0);
+    });
 
-      // 10秒先へ
-      var ytNext = document.getElementById('next');
-      ytNext.addEventListener('click', function () {
-          // 現在の再生時間取得
-          var currentTime = ytPlayer.getCurrentTime();
-          ytPlayer.seekTo(currentTime + 10);
-      });
+    // 10秒前へ
+    var ytPrev = document.getElementById('prev');
+    ytPrev.addEventListener('click', function () {
+        // 現在の再生時間取得
+        var currentTime = ytPlayer.getCurrentTime();
+        ytPlayer.seekTo(currentTime - 10);
+    });
 
-      // 音量アップ(+10)
-      var ytVolup = document.getElementById('volup');
-      ytVolup.addEventListener('click', function () {
-          // 現在の音量取得
-          var currentVol = ytPlayer.getVolume();
-          ytPlayer.setVolume(currentVol + 10);
-      });
+    // 10秒先へ
+    var ytNext = document.getElementById('next');
+    ytNext.addEventListener('click', function () {
+        // 現在の再生時間取得
+        var currentTime = ytPlayer.getCurrentTime();
+        ytPlayer.seekTo(currentTime + 10);
+    });
 
-      // 音量ダウン(-10)
-      var ytVoldown = document.getElementById('voldown');
-      ytVoldown.addEventListener('click', function () {
-          // 現在の音量取得
-          var currentVol = ytPlayer.getVolume();
-          ytPlayer.setVolume(currentVol - 10);
-      });
+    // 音量アップ(+10)
+    var ytVolup = document.getElementById('volup');
+    ytVolup.addEventListener('click', function () {
+        // 現在の音量取得
+        var currentVol = ytPlayer.getVolume();
+        ytPlayer.setVolume(currentVol + 10);
+    });
 
-      // ミュート
-      var ytMute = document.getElementById('mute');
-      ytMute.addEventListener('click', function () {
-          // ミュートされているかどうか
-          if (ytPlayer.isMuted()) {
-              // ミュートの解除
-              ytPlayer.unMute();
-          } else {
-              // ミュート
-              ytPlayer.mute();
-          }
-      });
+    // 音量ダウン(-10)
+    var ytVoldown = document.getElementById('voldown');
+    ytVoldown.addEventListener('click', function () {
+        // 現在の音量取得
+        var currentVol = ytPlayer.getVolume();
+        ytPlayer.setVolume(currentVol - 10);
+    });
 
-      // API読み込み後にプレーヤー埋め込み
-      function onYouTubeIframeAPIReady() {
-          ytPlayer = new YT.Player(ytArea, {
-              height: ytHeight,
-              width: ytWidth,
-              videoId: ytID,
-              events: {
-                  'onReady': onPlayerReady,
-                  'onStateChange': onPlayerStateChange,
-                  'onError': onPlayerError
-              },
-              playerVars: {
-                  autohide: 1, // 動画再生開始後にコントロールバーとシークバーを非表示にするかどうか。
-                  disablekb: 1, // キーボードの操作をさせるかどうか
-                  fs: 0, // 全画面表示ボタンを表示するかどうか。
-                  iv_load_policy: 3, // アノテーション(動画上に表示されるクリック可能なテキスト)を表示するかどうか。
-                  modestbranding: 1, // プレーヤーにYouTubeロゴが表示されないようにする。
-                  playsinline: 1, // iOS上のHTML5プレーヤーで、動画をインラインにするか全画面表示にするかを設定。
-                  rel: 0, // 再生終了後に関連動画を表示するかどうか。
-              }
-          });
-      }
+    // ミュート
+    var ytMute = document.getElementById('mute');
+    ytMute.addEventListener('click', function () {
+        // ミュートされているかどうか
+        if (ytPlayer.isMuted()) {
+            // ミュートの解除
+            ytPlayer.unMute();
+        } else {
+            // ミュート
+            ytPlayer.mute();
+        }
+    });
 
-      function onPlayerReady(e) {
-          // e.target.mute();// ミュート（これを設定しないとスマホで流れません）
-          // 読み込み完了後に自動再生
-          // e.target.playVideo();
+    // API読み込み後にプレーヤー埋め込み
+    function onYouTubeIframeAPIReady() {
+        ytPlayer = new YT.Player(ytArea, {
+            height: ytHeight,
+            width: ytWidth,
+            videoId: ytID,
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange,
+                'onError': onPlayerError
+            },
+            playerVars: {
+                autohide: 1, // 動画再生開始後にコントロールバーとシークバーを非表示にするかどうか。
+                disablekb: 1, // キーボードの操作をさせるかどうか
+                fs: 0, // 全画面表示ボタンを表示するかどうか。
+                iv_load_policy: 3, // アノテーション(動画上に表示されるクリック可能なテキスト)を表示するかどうか。
+                modestbranding: 1, // プレーヤーにYouTubeロゴが表示されないようにする。
+                playsinline: 1, // iOS上のHTML5プレーヤーで、動画をインラインにするか全画面表示にするかを設定。
+                rel: 0, // 再生終了後に関連動画を表示するかどうか。
+            }
+        });
+    }
 
-          // 動画の長さ取得
-          var total = document.getElementById('total');
-          total.innerHTML = e.target.getDuration() + '秒';
-      }
+    function onPlayerReady(e) {
+        // e.target.mute();// ミュート（これを設定しないとスマホで流れません）
+        // 読み込み完了後に自動再生
+        // e.target.playVideo();
 
-      var stateArea = document.getElementById('status');
-      function onPlayerStateChange(e) {
-          // 現在のステータス取得
-          var ytStatus = e.target.getPlayerState();
-          var stateIns = '現在のステータス：';
-          // ステータスの判別
-          switch (ytStatus) {
-              case -1:
-                  stateIns += '未開始(-1)';
-                  break;
-              case 0:
-                  stateIns += '終了(0)';
-                  break;
-              case 1:
-                  stateIns += '再生中(1)';
-                  break;
-              case 2:
-                  stateIns += '停止(2)';
-                  break;
-              case 3:
-                  stateIns += 'バッファリング中(3)';
-                  break;
-              case 5:
-                  stateIns += '頭出し済み(5)';
-                  break;
-              default:
-                  break;
-          }
-          stateArea.innerHTML = stateIns;
+        // 動画の長さ取得
+        var total = document.getElementById('total');
+        total.innerHTML = e.target.getDuration() + '秒';
+    }
 
-          // ループ再生
-          switch (e.data) {
-              case YT.PlayerState.ENDED:
-                  e.target.playVideo();
-                  break;
-          }
-      }
+    var stateArea = document.getElementById('status');
+    function onPlayerStateChange(e) {
+        // 現在のステータス取得
+        var ytStatus = e.target.getPlayerState();
+        var stateIns = '現在のステータス：';
+        // ステータスの判別
+        switch (ytStatus) {
+            case -1:
+                stateIns += '未開始(-1)';
+                break;
+            case 0:
+                stateIns += '終了(0)';
+                break;
+            case 1:
+                stateIns += '再生中(1)';
+                break;
+            case 2:
+                stateIns += '停止(2)';
+                break;
+            case 3:
+                stateIns += 'バッファリング中(3)';
+                break;
+            case 5:
+                stateIns += '頭出し済み(5)';
+                break;
+            default:
+                break;
+        }
+        stateArea.innerHTML = stateIns;
 
-      function onPlayerError(e) {
-          // エラーの種別取得
-          var ytError = e.data;
-          var errorIns = '読み込みに失敗しました。';
-          // エラーの判別
-          switch (ytError) {
-              case 2:
-                  errorIns += '無効なパラメータ値が含まれています。(2)';
-                  break;
-              case 5:
-                  errorIns += 'HTML5プレーヤーで再生できない、または HTML5プレーヤーに関する別のエラーが発生しました。(5)';
-                  break;
-              case 100:
-                  errorIns += '動画が見つかりません。(100)';
-                  break;
-              case 101:
-                  errorIns += '動画の所有者が、埋め込み動画プレーヤーでの再生を許可していません。(101)';
-                  break;
-              case 150:
-                  errorIns += '動画の所有者が、埋め込み動画プレーヤーでの再生を許可していません。(150)';
-                  break;
-              default:
-                  break;
-          }
-          alert(errorIns);
-      }
+        // ループ再生
+        switch (e.data) {
+            case YT.PlayerState.ENDED:
+                e.target.playVideo();
+                break;
+        }
+    }
+
+    function onPlayerError(e) {
+        // エラーの種別取得
+        var ytError = e.data;
+        var errorIns = '読み込みに失敗しました。';
+        // エラーの判別
+        switch (ytError) {
+            case 2:
+                errorIns += '無効なパラメータ値が含まれています。(2)';
+                break;
+            case 5:
+                errorIns += 'HTML5プレーヤーで再生できない、または HTML5プレーヤーに関する別のエラーが発生しました。(5)';
+                break;
+            case 100:
+                errorIns += '動画が見つかりません。(100)';
+                break;
+            case 101:
+                errorIns += '動画の所有者が、埋め込み動画プレーヤーでの再生を許可していません。(101)';
+                break;
+            case 150:
+                errorIns += '動画の所有者が、埋め込み動画プレーヤーでの再生を許可していません。(150)';
+                break;
+            default:
+                break;
+        }
+        alert(errorIns);
+    }
   }
 </script>
