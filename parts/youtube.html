@@ -1,5 +1,5 @@
 <main>
-  <h1>Youtube(v0.11)</h1>
+  <h1>Youtube(v0.12)</h1>
   <p id="lastModified"></p>
 
   <hr>
@@ -114,12 +114,14 @@
 
       mvShow();
 
-
+      setTimeout(function () {
         const log = document.getElementById('log');
         log.innerText += 'mvShow';
+      }, 100);
 
       // 動画設定
       function mvShow() {
+        setTimeout(function () {
         youtubeObj.findAll().then(res => {
           const mvBox = document.getElementById('mvBox');
           while (mvBox.firstChild) {
@@ -159,6 +161,7 @@
             mvBox.appendChild(mvDiv);
           });
         });
+      }, 100);
       }
 
       // 動画追加
