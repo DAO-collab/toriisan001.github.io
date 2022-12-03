@@ -1,5 +1,5 @@
 <main>
-  <h1>Youtube(v0.05)</h1>
+  <h1>Youtube(v0.06)</h1>
   <p id="lastModified"></p>
 
   <hr>
@@ -123,34 +123,34 @@
           }
           res.forEach(youtube => {
             const mvDiv = document.createElement('div');
-            const textDiv = document.createElement('div');
+            // const textDiv = document.createElement('div');
             const img = document.createElement('img');
-            const divId = document.createElement('div');
-            const divTitle = document.createElement('div');
-            const divDel = document.createElement('div');
-            mvDiv.classList.add('mv');
-            divDel.classList.add('del');
-            textDiv.classList.add('text');
-            mvDiv.dataset.youtubeId = youtube.youtubeId;
+            // const divId = document.createElement('div');
+            // const divTitle = document.createElement('div');
+            // const divDel = document.createElement('div');
+            // mvDiv.classList.add('mv');
+            // divDel.classList.add('del');
+            // textDiv.classList.add('text');
+            // mvDiv.dataset.youtubeId = youtube.youtubeId;
             img.src = `http://img.youtube.com/vi/${youtube.youtubeId}/3.jpg`;
-            divId.textContent = 'id : ' + youtube.id + ' / youtubeId : '+ youtube.youtubeId;
-            divTitle.textContent = youtube.title;
-            divDel.textContent = '×';
-            mvDiv.addEventListener('click', () => {
-              ytPlayer.cueVideoById({videoId: youtube.youtubeId});
-              setTimeout(() => {
-                  ytPlayer.playVideo();
-              }, 2000);
-            });
-            divDel.addEventListener('click', () => {
-              youtubeObj.delete(youtube.id);
-              mvShow();
-            })
-            textDiv.appendChild(divId);
-            textDiv.appendChild(divTitle);
+            // divId.textContent = 'id : ' + youtube.id + ' / youtubeId : '+ youtube.youtubeId;
+            // divTitle.textContent = youtube.title;
+            // divDel.textContent = '×';
+            // mvDiv.addEventListener('click', () => {
+            //   ytPlayer.cueVideoById({videoId: youtube.youtubeId});
+            //   setTimeout(() => {
+            //       ytPlayer.playVideo();
+            //   }, 2000);
+            // });
+            // divDel.addEventListener('click', () => {
+            //   youtubeObj.delete(youtube.id);
+            //   mvShow();
+            // })
+            // textDiv.appendChild(divId);
+            // textDiv.appendChild(divTitle);
             mvDiv.appendChild(img);
-            mvDiv.appendChild(textDiv);
-            mvDiv.appendChild(divDel);
+            // mvDiv.appendChild(textDiv);
+            // mvDiv.appendChild(divDel);
             mvBox.appendChild(mvDiv);
           });
         });
