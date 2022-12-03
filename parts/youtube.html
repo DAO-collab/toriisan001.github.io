@@ -1,5 +1,5 @@
 <main>
-  <h1>Youtube(v0.13)</h1>
+  <h1>Youtube(v0.04)</h1>
   <p id="lastModified"></p>
 
   <hr>
@@ -17,13 +17,11 @@
   <hr>
 
   <details>
-    <summary>動画追加</summary>
     <p>url : <input id="url" type="text"></p>
     <p>title : <input id="title" type="text"></p>
     <button id="mvAddButton">追加</button>
     <button id="allClearButton">全てクリア</button>
   </details>
-
   <hr>
 
   <div id="sample" style="pointer-events: none;"></div>
@@ -50,7 +48,7 @@
 <script src="https://www.youtube.com/iframe_api"></script>
 <script src="../js/dexie.min.js"></script>
 <script>
-(window.onload = function() {
+   {
       'use strict';
 
       const youtube = class {
@@ -105,10 +103,6 @@
               return new Promise(resolve => {
                 this.db.youtube.toArray()
                   .then(function (result) {
-                    setTimeout(function () {
-                      const log = document.getElementById('log');
-                      log.innerText += result;
-                    }, 100);
                       resolve(result);
                   });
               });
@@ -118,54 +112,46 @@
 
       mvShow();
 
-      setTimeout(function () {
-        const log = document.getElementById('log');
-        log.innerText += 'mvShow';
-      }, 100);
-
       // 動画設定
       function mvShow() {
-        setTimeout(function () {
         youtubeObj.findAll().then(res => {
           const mvBox = document.getElementById('mvBox');
           while (mvBox.firstChild) {
             mvBox.removeChild(mvBox.firstChild);
           }
           res.forEach(youtube => {
-            // test.textContent += ',' + youtube.youtubeId;
             const mvDiv = document.createElement('div');
-            // const textDiv = document.createElement('div');
+            const textDiv = document.createElement('div');
             const img = document.createElement('img');
-            // const divId = document.createElement('div');
-            // const divTitle = document.createElement('div');
-            // const divDel = document.createElement('div');
-            // mvDiv.classList.add('mv');
-            // divDel.classList.add('del');
-            // textDiv.classList.add('text');
-            // mvDiv.dataset.youtubeId = youtube.youtubeId;
+            const divId = document.createElement('div');
+            const divTitle = document.createElement('div');
+            const divDel = document.createElement('div');
+            mvDiv.classList.add('mv');
+            divDel.classList.add('del');
+            textDiv.classList.add('text');
+            mvDiv.dataset.youtubeId = youtube.youtubeId;
             img.src = `http://img.youtube.com/vi/${youtube.youtubeId}/3.jpg`;
-            // divId.textContent = 'id : ' + youtube.id + ' / youtubeId : '+ youtube.youtubeId;
-            // divTitle.textContent = youtube.title;
-            // divDel.textContent = '×';
-            // mvDiv.addEventListener('click', () => {
-            //   ytPlayer.cueVideoById({videoId: youtube.youtubeId});
-            //   setTimeout(() => {
-            //       ytPlayer.playVideo();
-            //   }, 2000);
-            // });
-            // divDel.addEventListener('click', () => {
-            //   youtubeObj.delete(youtube.id);
-            //   mvShow();
-            // })
-            // textDiv.appendChild(divId);
-            // textDiv.appendChild(divTitle);
+            divId.textContent = 'id : ' + youtube.id + ' / youtubeId : '+ youtube.youtubeId;
+            divTitle.textContent = youtube.title;
+            divDel.textContent = '×';
+            mvDiv.addEventListener('click', () => {
+              ytPlayer.cueVideoById({videoId: youtube.youtubeId});
+              setTimeout(() => {
+                  ytPlayer.playVideo();
+              }, 2000);
+            });
+            divDel.addEventListener('click', () => {
+              youtubeObj.delete(youtube.id);
+              mvShow();
+            })
+            textDiv.appendChild(divId);
+            textDiv.appendChild(divTitle);
             mvDiv.appendChild(img);
-            // mvDiv.appendChild(textDiv);
-            // mvDiv.appendChild(divDel);
+            mvDiv.appendChild(textDiv);
+            mvDiv.appendChild(divDel);
             mvBox.appendChild(mvDiv);
           });
         });
-      }, 100);
       }
 
       // 動画追加
@@ -359,5 +345,5 @@
           }
           alert(errorIns);
       }
-  })();
+  }
 </script>
