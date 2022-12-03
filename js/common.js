@@ -1,5 +1,3 @@
-import Storage from "../js/webStrage/storage.js"
-import config from "../js/config.js"
 {
     'use strict';
 
@@ -59,12 +57,12 @@ import config from "../js/config.js"
         })
     });
 
-    // 最終アクセスを保持
-    var storageObj = new Storage(localStorage);
-    storageObj.setLastAcssesHref(config, location);
-
     // 最終更新日を追記
     const lastModified = document.getElementById('lastModified');
     lastModified.textContent += "(最終更新日時：" + dateFomatYYYYMMDDhhmmss(new Date(document.lastModified), '/', ':') + ")";
 
+    function setLog(text) {
+        const log = document.getElementById('log');
+        log.innerText = text;
+    }
 }

@@ -34,4 +34,9 @@
         const day = zeroPadding(date.getDate(), 2);
         return year + yearDelimiter + month + yearDelimiter + day;
     }
+
+    // function setLog(text) {
+    //     const log = document.getElementById('log');
+    //     log.innerText = text;
+    // }
 }
