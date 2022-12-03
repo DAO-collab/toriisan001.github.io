@@ -64,7 +64,7 @@
     // ログを設定
     // param text ログに設定するテキスト(\nで改行が可能)
     // return void
-    function setLog(text) {
+    function log(text) {
         const log = document.getElementById('log');
         log.innerText = text;
     }
