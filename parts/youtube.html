@@ -1,5 +1,5 @@
 <main>
-  <h1>Youtube(v0.06)</h1>
+  <h1>Youtube(v0.07)</h1>
   <p id="lastModified"></p>
 
   <hr>
@@ -45,6 +45,7 @@
   <hr>
  
   <div id="mvBox"></div>
+  <div id="test"></div>
 
 </main>
 <script src="https://www.youtube.com/iframe_api"></script>
@@ -117,11 +118,15 @@
       // 動画設定
       function mvShow() {
         youtubeObj.findAll().then(res => {
+          const test = document.getElementById('test');
+          test.textContent = res
+
           const mvBox = document.getElementById('mvBox');
           while (mvBox.firstChild) {
             mvBox.removeChild(mvBox.firstChild);
           }
           res.forEach(youtube => {
+            test.textContent += ',' + youtube.youtubeId;
             const mvDiv = document.createElement('div');
             // const textDiv = document.createElement('div');
             const img = document.createElement('img');
