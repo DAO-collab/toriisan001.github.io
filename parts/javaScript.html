@@ -5,55 +5,53 @@
 <h2>厳密なチェック</h2>
     <p>スクリプトの先頭にあるようにする必要があるらしい</p>
     <pre>
-    <code>
+        <code>
 'use strict';
-    </code>
-</pre>
+        </code>
+    </pre>
 
     <h2>まずブロックで囲むらしい</h2>
     <pre>
-    <code>
+        <code>
 'use strict';
 {
 
 }
-    </code>
-</pre>
+        </code>
+    </pre>
 
-<h2>ログを出力</h2>
+    <h2>ログを出力</h2>
     <pre>
-    <code>
-    console.log('hogehoge');
-    </code>
+        <code>
+console.log('hogehoge');
+        </code>
     </pre>
     <p>※Ｆ12キー -> Consoleタブからログを確認</p>
 
     <h2>要素の取得</h2>
     <p>getElementByの方がquerySelectorよりも速度が早いらしい</p>
-    <p><a
-            href="https://qiita.com/tomokichi_ruby/items/c3ed6f6edbd5078ddf70">【JavaScript】要素の取得方法(getElement、querySelector)</a>
-    </p>
-    <h3>IDで取得</h3>
+    <p><a href="https://qiita.com/tomokichi_ruby/items/c3ed6f6edbd5078ddf70">【JavaScript】要素の取得方法(getElement、querySelector)</a></p>
+    <h3>IDで取得(例)</h3>
     <p>documentオブジェクトに対してのみ使用可能</p>
     <p>id属性の値は、HTMLドキュメント上で唯一の値である必要がある</p>
     <p>同じidを持つ要素ノードが複数ある場合、基本的に一番はじめの要素ノードを取得する</p>
     <pre>
-    <code>
+        <code>
 const sample = document.getElementById('sample');
-    </code>
-</pre>
-    <h3>クラス名で取得</h3>
+        </code>
+    /pre>
+    <h3>クラス名で取得(例)</h3>
     <pre>
-    <code>
+        <code>
 ===HTML===
 &lt;p class=&quot;sample&quot;&gt;サンプルテキスト１&lt;/p&gt;
 ===JavaScript===
 const sample = document.getElementsByClassName('sample');
-    </code>
-</pre>
-    <h3>ID or クラス名で取得</h3>
+        </code>
+    </pre>
+    <h3>ID or クラス名で取得(例)</h3>
     <pre>
-    <code>
+        <code>
 ===IDで取得===
 ===HTML===
 &lt;p id=&quot;sample&quot;&gt;サンプルテキスト１&lt;/p&gt;
@@ -69,13 +67,12 @@ const sample = document.querySelector('.sample');
 sample.forEach(el => {
     // 処理...
 });
-    </code>
-</pre>
-<p>※1件しかなくても配列での取得となるため注意</p>
-
-    <h3>引数で指定したID名、もしくはクラス名と一致する全ての要素を取得</h3>
+        </code>
+    </pre>
+    <p>※1件しかなくても配列での取得となるため注意</p>
+    <h3>引数で指定したID名、もしくはクラス名と一致する全ての要素を取得(例)</h3>
     <pre>
-    <code>
+        <code>
 以下1・3番目を取得
 ===HTML===
 &lt;div class=&quot;hoge&quot;&gt;&lt;/div&gt;
@@ -87,11 +84,11 @@ const hoge = document.querySelectorAll('.hoge');
 hoge.forEach(el => {
     // 処理...
 });
-    </code>
-</pre>
+        </code>
+    </pre>
     <h3>タグの要素を全て取得</h3>
     <pre>
-    <code>
+        <code>
 // インデックスを指定して1番目の要素を取得
 let element = document.getElementsByTagName('p')[0];
 
@@ -101,8 +98,18 @@ let elements = document.getElementsByTagName('p');
 elements.forEach(el => {
     // 処理...
 });
-    </code>
-</pre>
+        </code>
+    </pre>
+    <h3>複数のクラスに処理を行う(例)</h3>
+    <pre>
+        <code>
+document.querySelectorAll('.animate').forEach(el => {
+    observer.observe(el);
+});
+        </code>
+    </pre>
+    <p><a href="https://9cubed.info/article/javascript/0029" target="_blank">【参考】JavaScript - アロー関数(ラムダ式)</a></p>
+
 
 <h2>htmlのパーツを読み込む</h2>
     <pre>
@@ -219,16 +226,6 @@ document.querySelectorAll(&#039;.animate&#039;).forEach(el =&gt; {
 });
     </code>
 </pre>
-
-<h2>複数のクラスに処理を行う</h2>
-    <pre>
-    <code>
-document.querySelectorAll('.animate').forEach(el => {
-    observer.observe(el);
-});
-    </code>
-</pre>
-    <p><a href="https://9cubed.info/article/javascript/0029" target="_blank">【参考】JavaScript - アロー関数(ラムダ式)</a></p>
 
     <h2>テキストをクリップボードにコピー</h2>
     <pre>
