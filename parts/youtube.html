@@ -1,5 +1,5 @@
 <main>
-  <h1>Youtube(v0.07)</h1>
+  <h1>Youtube(v0.08)</h1>
   <p id="lastModified"></p>
 
   <hr>
@@ -115,7 +115,8 @@
       // 動画設定
       async function mvShow() {
         const res = await youtubeObj.findAll();
-        // await setLog('awaitTest');
+        const log = document.getElementById('log');
+        log.innerText += res;
         const mvBox = document.getElementById('mvBox');
         while (mvBox.firstChild) {
           mvBox.removeChild(mvBox.firstChild);
