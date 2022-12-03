@@ -1,9 +1,9 @@
 <main>
-
-  <h1>Youtube(v0.04)</h1>
+  <h1>Youtube(v0.05)</h1>
   <p id="lastModified"></p>
 
   <hr>
+
   <details>
       <h2>使い方参考サイト</h2>
       <p><a href="https://cly7796.net/blog/javascript/how-to-use-youtube-player-api/">YouTubeのプレーヤーAPIの使い方【参考】</a></p>
@@ -13,6 +13,17 @@
       <p><a href="https://qiita.com/azukiazusa/items/2dc6407665785127cccc">【Youtube Player API】埋め込む動画を動的に変更する【参考】</a></p>
       <p><a href="https://cly7796.net/blog/javascript/set-parameters-of-youtube/">YouTubeのパラメータを色々試してみる【参考】</a></p>
   </details>
+
+  <hr>
+
+  <details>
+    <summary>動画追加</summary>
+    <p>url : <input id="url" type="text"></p>
+    <p>title : <input id="title" type="text"></p>
+    <button id="mvAddButton">追加</button>
+    <button id="allClearButton">全てクリア</button>
+  </details>
+
   <hr>
 
   <div id="sample" style="pointer-events: none;"></div>
@@ -32,12 +43,7 @@
   <div>動画の長さ：<span id="total"></span></div>
 
   <hr>
-  <p>url : <input id="url" type="text"></p>
-  <p>title : <input id="title" type="text"></p>
-  <button id="mvAddButton">追加</button>
-  <button id="allClearButton">全てクリア</button>
-  <hr>
-
+ 
   <div id="mvBox"></div>
 
 </main>
