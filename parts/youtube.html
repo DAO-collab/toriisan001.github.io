@@ -1,5 +1,5 @@
 <main>
-  <h1>Youtube(v0.06)</h1>
+  <h1>Youtube(v0.07)</h1>
   <p id="lastModified"></p>
 
   <hr>
@@ -17,6 +17,7 @@
   <hr>
 
   <details>
+    <summary>構成</summary>
     <p>url : <input id="url" type="text"></p>
     <p>title : <input id="title" type="text"></p>
     <button id="mvAddButton">追加</button>
@@ -68,7 +69,7 @@
               // 初期設定動画
               // this.findAll().then(res => {
               //   if (res.length === 0) {
-                  // this.create('Kjoe1vXlmxQ', '【オリジナル振付】蝶々結び歌って踊ってみた【健屋花那/にじさんじ】');
+                  this.create('Kjoe1vXlmxQ', '【オリジナル振付】蝶々結び歌って踊ってみた【健屋花那/にじさんじ】');
                   // this.create('JS-pilhQFA8', '健屋花那 / カタオモイ (Remix)');
                   // this.create('6km7iBmjSnE', '【医療従事者が】乙女解剖歌ってみた【健屋花那/にじさんじ】');
                   // this.create('fxzBmLVfLOw', '【歌ってみた】インタビュア by健屋花那/にじさんじ【半年&15万人ありがとう】');
@@ -98,14 +99,12 @@
               this.db.youtube.delete(id);
           }
           // 全データ取得
-          async findAll() {
+          findAll() {
             return new Promise((resolve, reject) => {
-              // setTimeout(function () {
                 this.db.youtube.toArray()
                     .then(function (result) {
                         resolve(result);
                     });
-              // }, 100);
             });
           }
       }
@@ -116,41 +115,42 @@
       // 動画設定
       async function mvShow() {
         const res = await youtubeObj.findAll();
+        // await setLog('awaitTest');
         const mvBox = document.getElementById('mvBox');
         while (mvBox.firstChild) {
           mvBox.removeChild(mvBox.firstChild);
         }
         res.forEach(youtube => {
-        const mvDiv = document.createElement('div');
-        const textDiv = document.createElement('div');
-        const img = document.createElement('img');
-        const divId = document.createElement('div');
-        const divTitle = document.createElement('div');
-        const divDel = document.createElement('div');
-        mvDiv.classList.add('mv');
-        divDel.classList.add('del');
-        textDiv.classList.add('text');
-        mvDiv.dataset.youtubeId = youtube.youtubeId;
-        img.src = `http://img.youtube.com/vi/${youtube.youtubeId}/3.jpg`;
-        divId.textContent = 'id : ' + youtube.id + ' / youtubeId : '+ youtube.youtubeId;
-        divTitle.textContent = youtube.title;
-        divDel.textContent = '×';
-        mvDiv.addEventListener('click', () => {
-          ytPlayer.cueVideoById({videoId: youtube.youtubeId});
-          setTimeout(() => {
-              ytPlayer.playVideo();
-          }, 2000);
-        });
-        divDel.addEventListener('click', () => {
-          youtubeObj.delete(youtube.id);
-          mvShow();
-        })
-        textDiv.appendChild(divId);
-        textDiv.appendChild(divTitle);
-        mvDiv.appendChild(img);
-        mvDiv.appendChild(textDiv);
-        mvDiv.appendChild(divDel);
-        mvBox.appendChild(mvDiv);
+            const mvDiv = document.createElement('div');
+            const textDiv = document.createElement('div');
+            const img = document.createElement('img');
+            const divId = document.createElement('div');
+            const divTitle = document.createElement('div');
+            const divDel = document.createElement('div');
+            mvDiv.classList.add('mv');
+            divDel.classList.add('del');
+            textDiv.classList.add('text');
+            mvDiv.dataset.youtubeId = youtube.youtubeId;
+            img.src = `http://img.youtube.com/vi/${youtube.youtubeId}/3.jpg`;
+            divId.textContent = 'id : ' + youtube.id + ' / youtubeId : '+ youtube.youtubeId;
+            divTitle.textContent = youtube.title;
+            divDel.textContent = '×';
+            mvDiv.addEventListener('click', () => {
+            ytPlayer.cueVideoById({videoId: youtube.youtubeId});
+            setTimeout(() => {
+                ytPlayer.playVideo();
+            }, 2000);
+            });
+            divDel.addEventListener('click', () => {
+            youtubeObj.delete(youtube.id);
+            mvShow();
+            })
+            textDiv.appendChild(divId);
+            textDiv.appendChild(divTitle);
+            mvDiv.appendChild(img);
+            mvDiv.appendChild(textDiv);
+            mvDiv.appendChild(divDel);
+            mvBox.appendChild(mvDiv);
       });
     }
 
