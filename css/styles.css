@@ -29,9 +29,9 @@ header #headerIconTorii {
 
 header #headerIconYoutube {
     position:absolute;
-    top: 0px;
-    left: -10px;
-    scale: 30%;
+    top: 20px;
+    left: 7px;
+    width:10px;
 }
 
 .sp-menu {
