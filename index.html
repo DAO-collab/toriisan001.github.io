@@ -8,12 +8,12 @@
 </head>
 <body>
     <script type="module">
-        import Storage from "./js/webStrage/storage.js"
+        import storage from "./js/webStrage/storage.js"
         import config from "./js/configModule.js"
         'use strict';
         {
             // 最終アクセスを取得
-            var storageObj = new Storage(localStorage);
+            var storageObj = new storage(localStorage);
             const lastAccessHref = storageObj.getLastAcssesHref(config);
             // 遷移を実行
             window.location.href = (lastAccessHref === null) ? config.PAGE.HOME : lastAccessHref;
