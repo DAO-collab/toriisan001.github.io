@@ -73,20 +73,6 @@
                 // エラーが起きたとき
                 setlog("DB connection failed. : \n" + err);
             });
-            // 初期設定動画
-            this.findAll().then(res => {
-            if (res.length === 0) {
-                this.create('Kjoe1vXlmxQ', '【オリジナル振付】蝶々結び歌って踊ってみた【健屋花那/にじさんじ】');
-                this.create('JS-pilhQFA8', '健屋花那 / カタオモイ (Remix)');
-                this.create('6km7iBmjSnE', '【医療従事者が】乙女解剖歌ってみた【健屋花那/にじさんじ】');
-                this.create('fxzBmLVfLOw', '【歌ってみた】インタビュア by健屋花那/にじさんじ【半年&15万人ありがとう】');
-                this.create('2OvEh2nEDr8', '【歌ってみた】リスキーゲームby健屋花那/にじさんじ【新衣装記念】');
-                this.create('B-VRImY__i8', '【歌ってみた】ファンサ by健屋花那/にじさんじ');
-                this.create('PtofI6fOQJs', '【歌ってみた】p.h.【健屋花那/にじさんじ】');
-                this.create('HCbcdycBUG4', '【歌ってみた】少女レイ【健屋花那/にじさんじ】');
-                this.create('wwo8CqLKIA0', '【歌ってみた】花に亡霊【にじさんじ/健屋花那】');
-            }
-            });
         }
         // データ作成
         create(pYoutubeId, pTitle) {
@@ -121,8 +107,24 @@
         }
     }
     var youtubeObj = new youtube();
-
+    initMv();
     mvShow();
+
+    // 初期動画設定
+    async function initMv() {
+        const res = await youtubeObj.findAll();
+        if (res.length === 0) {
+            youtubeObj.create('Kjoe1vXlmxQ', '【オリジナル振付】蝶々結び歌って踊ってみた【健屋花那/にじさんじ】');
+            youtubeObj.create('JS-pilhQFA8', '健屋花那 / カタオモイ (Remix)');
+            youtubeObj.create('6km7iBmjSnE', '【医療従事者が】乙女解剖歌ってみた【健屋花那/にじさんじ】');
+            youtubeObj.create('fxzBmLVfLOw', '【歌ってみた】インタビュア by健屋花那/にじさんじ【半年&15万人ありがとう】');
+            youtubeObj.create('2OvEh2nEDr8', '【歌ってみた】リスキーゲームby健屋花那/にじさんじ【新衣装記念】');
+            youtubeObj.create('B-VRImY__i8', '【歌ってみた】ファンサ by健屋花那/にじさんじ');
+            youtubeObj.create('PtofI6fOQJs', '【歌ってみた】p.h.【健屋花那/にじさんじ】');
+            youtubeObj.create('HCbcdycBUG4', '【歌ってみた】少女レイ【健屋花那/にじさんじ】');
+            youtubeObj.create('wwo8CqLKIA0', '【歌ってみた】花に亡霊【にじさんじ/健屋花那】');
+        }
+    }
 
     // 動画設定
     async function mvShow() {
