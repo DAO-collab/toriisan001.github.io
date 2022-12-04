@@ -223,7 +223,7 @@ main .applicationBox > figure {
 }
 
 #youtubeParts main input[type="text"] {
-    width: 200px;
+    width: 300px;
 }
 
 #youtubeParts main .mv {
@@ -239,11 +239,14 @@ main .applicationBox > figure {
 #youtubeParts main img {
     height: 30px;
     width: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 #youtubeParts main .text {
     margin-top: 5px;
     margin-left: 5px;
+    font-size: 12px;
 }
 
 #youtubeParts main .del {
