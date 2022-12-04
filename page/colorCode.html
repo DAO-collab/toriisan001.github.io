@@ -9,21 +9,21 @@
 </head>
 <body>
     <div id="target"></div>
+    <div id="scriptParts"></div>
     <div id="headerParts"></div>
     <div id="menuParts"></div>
     <div id="colorCodeParts"></div>
     <div id="footerParts"></div>
-    <div id="scriptParts"></div>
     <a href="#" id="pageTop"><img src="../img/pageTop.png" alt="pageTop.png"></a>
     <script src="../js/jquery-3.6.1.min.js"></script>
     <script>
         'use strict';
         {
+            $("#scriptParts").load("../parts/script.html");
             $("#headerParts").load("../parts/header.html");
             $("#menuParts").load("../parts/menu.html");
             $("#colorCodeParts").load("../parts/colorCode.html");
             $("#footerParts").load("../parts/footer.html");
-            $("#scriptParts").load("../parts/script.html");
         }
     </script>
 </body>
