@@ -112,8 +112,12 @@
 
     // 初期動画設定
     async function initMv() {
+        setlog('initMv start.\n');
+        setlog('await start.\n');
         const res = await youtubeObj.findAll();
+        setlog('await end.\n');
         if (res.length === 0) {
+            setlog('initMv add.\n');
             youtubeObj.create('Kjoe1vXlmxQ', '【オリジナル振付】蝶々結び歌って踊ってみた【健屋花那/にじさんじ】');
             youtubeObj.create('JS-pilhQFA8', '健屋花那 / カタオモイ (Remix)');
             youtubeObj.create('6km7iBmjSnE', '【医療従事者が】乙女解剖歌ってみた【健屋花那/にじさんじ】');
