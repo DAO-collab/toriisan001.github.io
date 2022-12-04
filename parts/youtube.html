@@ -1,5 +1,5 @@
 <main>
-  <h1>Youtube(v0.14)</h1>
+  <h1>Youtube(v0.15)</h1>
   <p id="lastModified"></p>
 
   <hr>
@@ -144,6 +144,8 @@
             mvBox.removeChild(mvBox.firstChild);
         }
         res.forEach(youtube => {
+            const aTag = document.createElement('a');
+            aTag.href = '#';
             const mvDiv = document.createElement('div');
             const textDiv = document.createElement('div');
             const img = document.createElement('img');
@@ -158,22 +160,25 @@
             divId.textContent = 'id : ' + youtube.id + ' / youtubeId : '+ youtube.youtubeId;
             divTitle.textContent = youtube.title;
             divDel.textContent = '×';
-            mvDiv.addEventListener('click', () => {
-            ytPlayer.cueVideoById({videoId: youtube.youtubeId});
-            setTimeout(() => {
-                ytPlayer.playVideo();
-            }, 2000);
+            mvDiv.addEventListener('click', e => {
+                e.preventDefault();
+                ytPlayer.cueVideoById({videoId: youtube.youtubeId});
+                setTimeout(() => {
+                    ytPlayer.playVideo();
+                }, 2000);
             });
-            divDel.addEventListener('click', () => {
-            youtubeObj.delete(youtube.id);
-            mvShow();
-            })
+            divDel.addEventListener('click', e => {
+                e.preventDefault();
+                youtubeObj.delete(youtube.id);
+                mvShow();
+            });
             textDiv.appendChild(divId);
             textDiv.appendChild(divTitle);
             mvDiv.appendChild(img);
             mvDiv.appendChild(textDiv);
             mvDiv.appendChild(divDel);
-            mvBox.appendChild(mvDiv);
+            aTag.appendChild(mvDiv);
+            mvBox.appendChild(aTag);
         });
         setlog('mvShow end.\n');
     }
