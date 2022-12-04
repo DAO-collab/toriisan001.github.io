@@ -46,7 +46,7 @@
         var db = new Dexie(config.INDEX_DB.TEST.DB_NAME);
 
         // データベースにテーブルを設定 ・初期化
-        db.version(config.INDEX_DB.TEST.DB_NAME).stores({ notes: "++id, title, body, updated_at" });
+        db.version(Number(config.INDEX_DB.TEST.DB_NAME)).stores({ notes: "++id, title, body, updated_at" });
 
         db.open().then(function (db) {
             // 接続に成功したとき
