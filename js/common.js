@@ -65,8 +65,8 @@
         // ログを設定
         // param text ログに設定するテキスト(\nで改行が可能)
         // return void
-        // use setLog('mvShow');
-        function setLog(text) {
+        // use setlog('mvShow');
+        function setlog(text) {
             const log = document.getElementById('log');
             log.innerText += `${text}`;
             console.log(text);

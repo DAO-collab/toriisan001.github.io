@@ -272,3 +272,8 @@ footer {
 #pageTop.scrolled {
     opacity: 1;
 }
+
+/* Log */
+#log.hidden {
+    display: none;
+}

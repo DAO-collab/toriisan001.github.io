@@ -51,10 +51,6 @@
 <script src="../js/common.js"></script>
 <script type="module" src="../js/commonModule.js"></script>
 <script type="module" src="../js/config.js"></script>
-<script src="../js/util.js"></script>
-<script src="../js/common.js"></script>
-<script type="module" src="../js/commonModule.js"></script>
-<script type="module" src="../js/config.js"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script src="../js/dexie.min.js"></script>
 <script>
@@ -70,10 +66,10 @@
             this.db.version(1).stores({ youtube: "++id, youtubeId, title" });
             this.db.open().then(function (db) {
                 // 接続に成功したとき
-                setLog('DB connection successful.\n');
+                setlog('DB connection successful.\n');
             }).catch(function (err) {
                 // エラーが起きたとき
-                setLog("DB connection failed. : \n" + err);
+                setlog("DB connection failed. : \n" + err);
             });
             // 初期設定動画
             this.findAll().then(res => {
@@ -92,7 +88,7 @@
         }
         // データ作成
         create(pYoutubeId, pTitle) {
-        setLog("create.\n");
+        setlog("create.\n");
         this.db.youtube.put(
             {
                 youtubeId: pYoutubeId,
@@ -102,21 +98,21 @@
         }
         // データを全てクリア
         deleteAll() {
-            setLog("deleteAll.\n");
+            setlog("deleteAll.\n");
             this.db.youtube.clear();
         }
         // 対象キーのデータをクリア
         delete(id) {
-            setLog("delete.\n");
+            setlog("delete.\n");
             this.db.youtube.delete(id);
         }
         // 全データ取得
         findAll() {
-        setLog('findAll.\n');
+        setlog('findAll.\n');
         return new Promise((resolve, reject) => {
             this.db.youtube.toArray()
                 .then(function (result) {
-                    setLog('findAll Promise.\n');
+                    setlog('findAll Promise.\n');
                     resolve(result);
                 });
             });
@@ -128,10 +124,10 @@
 
     // 動画設定
     async function mvShow() {
-        setLog('mvShow start.\n');
-        setLog('await start.\n');
+        setlog('mvShow start.\n');
+        setlog('await start.\n');
         const res = await youtubeObj.findAll();
-        setLog('await end.\n');
+        setlog('await end.\n');
         while (mvBox.firstChild) {
             mvBox.removeChild(mvBox.firstChild);
         }
@@ -167,7 +163,7 @@
             mvDiv.appendChild(divDel);
             mvBox.appendChild(mvDiv);
         });
-        setLog('mvShow end.\n');
+        setlog('mvShow end.\n');
     }
 
     // 動画追加

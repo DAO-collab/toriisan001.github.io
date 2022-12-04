@@ -19,11 +19,21 @@ export default class storage {
 
     // 最終アクセスパス名を設定
     setLastAcssesHref(config, location) {
-        this.setItem(config.SYSTEM_KEY.LAST_HREF, location.href)
+        this.setItem(config.SYSTEM_KEY.LAST_HREF, location.href);
     }
 
     // 最終アクセスパス名を取得
     getLastAcssesHref(config) {
-        return this.getItem(config.SYSTEM_KEY.LAST_HREF)
+        return this.getItem(config.SYSTEM_KEY.LAST_HREF);
+    }
+
+    // ログ表示フラグを設定
+    setLogShowFlag(config, flag) {
+        this.setItem(config.SYSTEM_KEY.LOG_SHO_FLAG, flag);
+    }
+
+    // ログ表示フラグを取得
+    getLogShowFlag(config) {
+        return this.getItem(config.SYSTEM_KEY.LOG_SHO_FLAG);
     }
 }
