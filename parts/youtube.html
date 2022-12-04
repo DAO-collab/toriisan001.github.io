@@ -76,13 +76,13 @@
         }
         // データ作成
         create(pYoutubeId, pTitle) {
-        setlog("create.\n");
-        this.db.youtube.put(
-            {
-                youtubeId: pYoutubeId,
-                title: pTitle
-            }
-        );
+            setlog("create.\n");
+            this.db.youtube.put(
+                {
+                    youtubeId: pYoutubeId,
+                    title: pTitle
+                }
+            );
         }
         // データを全てクリア
         deleteAll() {
