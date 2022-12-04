@@ -42,8 +42,7 @@
     {
         'use strict';
 
-        // const config = getconfig();
-        var db = new Dexie('ToriiTestDB');
+        var db = new Dexie('TEST');
 
         // データベースにテーブルを設定 ・初期化
         db.version(1).stores({ notes: "++id, title, body, updated_at" });
