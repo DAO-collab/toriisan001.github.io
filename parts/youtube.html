@@ -85,6 +85,7 @@
           }
           // データ作成
           create(pYoutubeId, pTitle) {
+            setLog("create.\n");
             this.db.youtube.put(
               {
                   youtubeId: pYoutubeId,
@@ -94,10 +95,12 @@
           }
           // データを全てクリア
           deleteAll() {
+              setLog("deleteAll.\n");
               this.db.youtube.clear();
           }
           // 対象キーのデータをクリア
           delete(id) {
+              setLog("delete.\n");
               this.db.youtube.delete(id);
           }
           // 全データ取得
