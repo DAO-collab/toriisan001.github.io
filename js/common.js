@@ -67,6 +67,7 @@
     // use setLog('mvShow');
     function setLog(text) {
         const log = document.getElementById('log');
-        log.innerText += text;
+        log.innerText += `${text}`;
+        console.log(text);
     }
 }

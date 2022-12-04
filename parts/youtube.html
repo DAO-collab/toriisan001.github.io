@@ -1,5 +1,5 @@
 <main>
-  <h1>Youtube(v0.11)</h1>
+  <h1>Youtube(v0.12)</h1>
   <p id="lastModified"></p>
 
   <hr>
@@ -47,10 +47,7 @@
   <div id="mvBox"></div>
 
 </main>
-<details>
-    <summary>Log</summary>
-    <div id="log"></div>
-</details>
+<div id="log"></div>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script src="../js/dexie.min.js"></script>
 <script>
@@ -66,12 +63,10 @@
               this.db.version(version).stores({ youtube: "++id, youtubeId, title" });
               this.db.open().then(function (db) {
                   // 接続に成功したとき
-                  console.log("DB connection successful.");
-                  const pageTest = document.getElementById('pageTest');
-                  pageTest.innerText += 'DB connection successful.\n';
+                  setLog('DB connection successful.\n');
               }).catch(function (err) {
                   // エラーが起きたとき
-                  console.err("DB connection failed. : " + err);
+                  setLog("DB connection failed. : \n" + err);
               });
               // 初期設定動画
               // this.findAll().then(res => {
@@ -107,13 +102,11 @@
           }
           // 全データ取得
           findAll() {
-            const pageTest = document.getElementById('pageTest');
-            pageTest.innerText += 'findAll\n';
+            setLog('findAll.\n');
             return new Promise((resolve, reject) => {
                 this.db.youtube.toArray()
                     .then(function (result) {
-                        const pageTest = document.getElementById('pageTest');
-                        pageTest.innerText += 'findAll Promise\n';
+                        setLog('findAll Promise.\n');
                         resolve(result);
                     });
             });
@@ -121,26 +114,27 @@
       }
       var youtubeObj = new youtube(new Dexie("ToriiTestDB"), 1);
 
-      const pageTest = document.getElementById('pageTest');
-      pageTest.innerText += 'start\n';
+      setLog('start.\n');
       mvShow();
 
       // 動画設定
       async function mvShow() {
-        const pageTest = document.getElementById('pageTest');
-        pageTest.innerText += 'mvShow\n';
+        setLog('mvShow start.\n');
         const res = await youtubeObj.findAll();
-        pageTest.innerText += 'await\n';
+        setLog('await.\n');
         while (mvBox.firstChild) {
+          setLog('removeChild.\n');
           mvBox.removeChild(mvBox.firstChild);
         }
         res.forEach(youtube => {
+            setLog('res forEach.\n');
             const mvDiv = document.createElement('div');
             const textDiv = document.createElement('div');
             const img = document.createElement('img');
             const divId = document.createElement('div');
             const divTitle = document.createElement('div');
             const divDel = document.createElement('div');
+            setLog('classList add.\n'); 
             mvDiv.classList.add('mv');
             divDel.classList.add('del');
             textDiv.classList.add('text');
@@ -165,6 +159,7 @@
             mvDiv.appendChild(textDiv);
             mvDiv.appendChild(divDel);
             mvBox.appendChild(mvDiv);
+            setLog('mvShow end.\n'); 
       });
     }
 
