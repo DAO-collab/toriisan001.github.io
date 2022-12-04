@@ -237,7 +237,7 @@ main .applicationBox > figure {
     margin: 2px;
     padding: 5px 5px;
     box-shadow: 0 0 3px rgba(0, 0, 0, 1);
-    font-size: 1px;
+    font-size: 9px;
 }
 
 #youtubeParts main img {
