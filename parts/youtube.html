@@ -18,8 +18,8 @@
 
   <details>
     <summary>構成</summary>
-    <p>url : <input id="url" type="text"></p>
-    <p>title : <input id="title" type="text"></p>
+    <p>youtubeId : <input id="pYoutubeId" type="text"></p>
+    <p>title : <input id="pTitle" type="text"></p>
     <button id="mvAddButton">追加</button>
     <button id="allClearButton">全てクリア</button>
   </details>
@@ -181,13 +181,10 @@
     // 動画追加
     const mvAddButton = document.getElementById('mvAddButton');
     mvAddButton.addEventListener('click', () => {
-      const url = document.getElementById('url');
-      const title = document.getElementById('title');
-      var parser = new URL(url.value);
-      const pYoutubeId = parser.searchParams.get('v');
-      const pTitle = title.value;
-      youtubeObj.create(pYoutubeId, pTitle);
-      mvShow();
+        const pYoutubeId = document.getElementById('pYoutubeId');
+        const pTitle = document.getElementById('pTitle');
+        youtubeObj.create(pYoutubeId, pTitle.value);
+        mvShow();
     });
 
     // 動画クリア

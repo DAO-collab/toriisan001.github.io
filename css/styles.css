@@ -222,7 +222,11 @@ main .applicationBox > figure {
     text-align: center;
 }
 
-#youtubeParts main input[type="text"] {
+#youtubeParts main input[type="text"]#pYoutubeId {
+    width: 100px;
+}
+
+#youtubeParts main input[type="text"]#pTitle {
     width: 300px;
 }
 
