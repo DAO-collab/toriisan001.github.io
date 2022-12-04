@@ -35,16 +35,18 @@
 <div id="log"></div>
 <script src="../js/util.js"></script>
 <script src="../js/common.js"></script>
+<script src="../js/config.js"></script>
 <script type="module" src="../js/commonModule.js"></script>
 <script src="../js/dexie.min.js"></script>
 <script>
     {
         'use strict';
+        const config = getConfig();
 
-        var db = new Dexie('TEST');
+        var db = new Dexie(config.INDEX_DB.TEST.DB_NAME);
 
         // データベースにテーブルを設定 ・初期化
-        db.version(1).stores({ notes: "++id, title, body, updated_at" });
+        db.version(config.INDEX_DB.TEST.DB_NAME).stores({ notes: "++id, title, body, updated_at" });
 
         db.open().then(function (db) {
             // 接続に成功したとき

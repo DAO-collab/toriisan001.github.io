@@ -1,5 +1,5 @@
 import Storage from "../js/webStrage/storage.js"
-import config from "../js/config.js"
+import config from "../js/configModule.js"
 {
     'use strict';
 

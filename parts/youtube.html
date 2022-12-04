@@ -50,20 +50,22 @@
 <div id="log"></div>
 <script src="../js/util.js"></script>
 <script src="../js/common.js"></script>
+<script src="../js/config.js"></script>
 <script type="module" src="../js/commonModule.js"></script>
 <script src="https://www.youtube.com/iframe_api"></script>
 <script src="../js/dexie.min.js"></script>
 <script>
     {
     'use strict';
+    const config = getConfig();
 
     const youtube = class {
         // DB
         db;
         constructor() {
-            this.db = new Dexie("YOUTUBE");
+            this.db = new Dexie(config.INDEX_DB.YOUTUBE.DB_NAME);
             // データベースにテーブルを設定 ・初期化
-            this.db.version(1).stores({ youtube: "++id, youtubeId, title" });
+            this.db.version(Number(config.INDEX_DB.YOUTUBE.DB_VERSION)).stores({ youtube: "++id, youtubeId, title" });
             this.db.open().then(function (db) {
                 // 接続に成功したとき
                 setlog('DB connection successful.\n');
