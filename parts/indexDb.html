@@ -50,10 +50,10 @@
 
         db.open().then(function (db) {
             // 接続に成功したとき
-            csetlog("DB connection successful.");
+            setlog("DB connection successful.");
         }).catch(function (err) {
             // エラーが起きたとき
-            csetlog("DB connection failed. : " + err);
+            setlog("DB connection failed. : " + err);
         });
 
         show_result();
