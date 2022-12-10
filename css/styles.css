@@ -289,14 +289,6 @@ main .applicationBox > figure {
     transform: translateY(1000px);
 }
 
-#fontSizeSelect {
-    width: calc(100% - 62px);
-}
-
-#sizeSelect {
-    width: 60px;
-}
-
 #pageSlide {
     width: calc(100% - 100px);
     cursor: pointer;
