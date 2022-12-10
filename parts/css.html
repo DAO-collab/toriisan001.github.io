@@ -584,6 +584,44 @@ main .applicationBox > figure {
         </code>
     </pre>
     <p><a href="https://csshtml.work/flex-justify-content/#justify-contentspace-between">【CSS】flexで子要素の間隔を調整する方法。【参考】</a></p>
+
+    <h2>【Font】Google Web Fonts で日本語フォントの［Noto Sans Japanese］を使う。</h2>
+    <pre>
+        <code>
+=====HTML=====
+&lt;link
+rel=&quot;stylesheet&quot;
+href=&quot;https://fonts.googleapis.com/earlyaccess/notosansjapanese.css&quot;
+/&gt;
+=====CSS=====
+main {
+    font-family: 'Noto Sans Japanese';
+}
+        </code>
+    </pre>
+
+    <h2>【Font】IPAフォントを使用する。</h2>
+    <pre>
+        <code>
+/*IPAexゴシック(Ver.004.01)*/
+@font-face {
+    font-family: ipaexg;
+    src: url('../font/ipaexg.ttf');
+}
+/*IPAex明朝(Ver.004.01)*/
+@font-face {
+    font-family: ipaexm;
+    src: url('../font/ipaexm.ttf');
+}
+main {
+    font-family: 'ipaexg';
+}
+main {
+    font-family: 'ipaexm';
+}
+        </code>
+    </pre>
+
 </main>
 <div id="log"></div>
 <script src="../js/util.js"></script>
