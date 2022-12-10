@@ -16,7 +16,7 @@ function getConfig() {
         },
         INITIALIZATION: {
             MAIN_FONT_FAMILY: 'Verdana, sans-serif',
-            MAIN_FONT_SIZE: '10px',
+            MAIN_FONT_SIZE: '12px',
         },
     };
 }
