@@ -3,6 +3,17 @@
 
   // 画面読み込み前に実行されてエラーになったので100ミリ秒遅延させた。
   setTimeout(function () {
+    // 変数storageにlocalStorageを格納
+    const storage = localStorage;
+    const config = getConfig();
+    const main = document.getElementsByTagName("main")[0];
+    // 初期設定関係
+    if (storage.getItem(config.SYSTEM_KEY.MAIN_FONT_FAMILY) === null) {
+      main.style.fontFamily = config.INITIALIZATION.MAIN_FONT_FAMILY;
+    }
+    if (storage.getItem(config.SYSTEM_KEY.MAIN_FONT_SIZE) === null) {
+      main.style.fontSize = config.INITIALIZATION.MAIN_FONT_SIZE;
+    }
     // メニュー制御
     const open = document.getElementById("open");
     const menu = document.getElementById("menu");
@@ -41,7 +52,6 @@
       ")";
 
     // 操作パネルの制御
-    const main = document.getElementsByTagName("main")[0];
     const operationMenu = document.getElementById("operationMenu");
     const sizeSelect = document.getElementById("sizeSelect");
     const fontSelect = document.getElementById("fontSelect");
