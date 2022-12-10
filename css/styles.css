@@ -1,3 +1,15 @@
+/*IPAexゴシック(Ver.004.01)*/
+@font-face {
+    font-family: ipaexg;
+    src: url('../font/ipaexg.ttf');
+}
+
+/*IPAex明朝(Ver.004.01)*/
+@font-face {
+    font-family: ipaexm;
+    src: url('../font/ipaexm.ttf');
+}
+
 /* common */
 
 body {
@@ -257,26 +269,61 @@ main .applicationBox > figure {
     margin-left: auto;
 }
 
+/* operationMenu */
+
+#operationMenu {
+    margin: 0 20px;
+    font-size: 5px;
+    position: fixed;
+    bottom: 32px;
+    opacity: 1;
+    transition: opacity .5s;
+    width: calc(100% - 62px);
+    border: solid 1px #333;
+    padding: 10px 10px;
+    background: rgba(255, 255, 255, .95);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
+    transition: transform .2s;
+}
+
+#operationMenu.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(1000px);
+}
+
+#operationMenu select {
+    font-size: 5px;
+}
+
+#fontSizeSelect {
+    width: calc(100% - 62px);
+}
+
+#sizeSelect {
+    width: 60px;
+}
+
+#pageSlide {
+    width: calc(100% - 62px);
+    cursor: pointer;
+}
+
+#pageTop, #pageBottom {
+    margin: 0;
+    cursor: pointer;
+    border: solid 1px #333;
+    padding: 2px 5px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
 /* footer */
 
 footer {
     margin: 5px 5px;
     padding: 30px 16px;
     box-shadow: 0 0 3px rgba(0, 0, 0, 1);
-}
-
-/* pageTop */
-
-#pageTop {
-    position: fixed;
-    bottom: 32px;
-    right: 32px;
-    opacity: 0;
-    transition: opacity .3s;
-}
-
-#pageTop.scrolled {
-    opacity: 1;
 }
 
 /* Log */
