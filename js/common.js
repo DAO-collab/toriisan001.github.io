@@ -63,15 +63,22 @@
       ")";
 
     // 操作パネルの制御
+    const operationMenuShow = document.getElementById("operationMenuShow");
     const operationMenu = document.getElementById("operationMenu");
+    const operationMenuMask = document.getElementById("operationMenuMask");
     const pageSlide = document.getElementById("pageSlide");
     const pageTop = document.getElementById("pageTop");
     const pageBottom = document.getElementById("pageBottom");
     pageSlide.value = -500;
     pageSlide.max = document.documentElement.scrollHeight;
-    main.addEventListener("dblclick", (e) => {
-      setlog('main dblclick.\n');
+    operationMenuShow.addEventListener("click", (e) => {
+      setlog('operationMenuShow click.\n');
       operationMenu.classList.toggle("hidden");
+      operationMenuShow.classList.toggle("hidden");
+      operationMenuMask.classList.toggle("hidden");
+    });
+    operationMenuMask.addEventListener('click', () => {
+      operationMenuShow.click();
     });
     sizeSelect.addEventListener("change", () => {
       setlog('sizeSelect change.\n');
