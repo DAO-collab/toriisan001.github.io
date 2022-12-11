@@ -71,9 +71,9 @@
     pageSlide.max = document.documentElement.scrollHeight;
     main.addEventListener("dblclick", (e) => {
       setlog('main dblclick.\n');
-      if (!e.path[0].className.match("operationMenuParts")) {
+      // if (!e.path[0].className.match("operationMenuParts")) {
         operationMenu.classList.toggle("hidden");
-      }
+      // }
     });
     sizeSelect.addEventListener("change", () => {
       setlog('sizeSelect change.\n');
