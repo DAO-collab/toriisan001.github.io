@@ -85,6 +85,7 @@
         passive: false,
       });
       document.body.classList.add("overflow-hidden");
+      pageSlide.value = window.pageYOffset;
     });
     operationMenuMask.addEventListener('click', e => {
       operationMenuShow.click();
