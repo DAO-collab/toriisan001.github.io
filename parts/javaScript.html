@@ -555,6 +555,18 @@ youtubeObj.youtubeId = parser.searchParams.get('v');
 </pre>
 <a href="https://qiita.com/edisonthk/items/9e76784bedbd0cb969a5">javascriptでURLをパース【参考】</a>
 
+<h2>【javascript】HTMLコレクションのループ方法</h2>
+<p>HTMLコレクションはforeachが使えないが、配列に変換すると使えるようになるらしい。</p>
+<pre>
+    <code>
+const fontSelect = document.getElementById("fontSelect");
+Array.from(fontSelect.options).forEach(el => {
+    console.log(el);
+});
+    </code>
+</pre>
+<a href="https://twotone.me/web/5087/">【javascript】HTMLコレクションのループ方法【参考】</a>
+
 </div>
 </main>
 <div id="log"></div>
