@@ -69,10 +69,11 @@
     const pageBottom = document.getElementById("pageBottom");
     pageSlide.value = 0;
     pageSlide.max = document.documentElement.scrollHeight;
+    operationMenu.classList.toggle("hidden");
     main.addEventListener("dblclick", (e) => {
       setlog('main dblclick.\n');
       // if (!e.path[0].className.match("operationMenuParts")) {
-        // operationMenu.classList.toggle("hidden");
+        operationMenu.classList.toggle("hidden");
       // }
     });
     sizeSelect.addEventListener("change", () => {
