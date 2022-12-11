@@ -219,6 +219,9 @@ main button {
 }
 
 /* application */
+#mvBox, figcaption {
+    font-size: 12px;
+}
 
 main .applicationBox {
     display: flex;

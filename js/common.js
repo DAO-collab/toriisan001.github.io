@@ -50,7 +50,11 @@
 
     // スクロール禁止(マスク上)
     function maskDisableScroll(event) {
-      if (event.path[0].id === "mask") {
+      console.log(event.path[0].id);
+      if (
+        event.path[0].id === "mask"
+        || event.path[0].id === "operationMenuMask"
+      ) {
         event.preventDefault();
       }
     }
@@ -76,9 +80,19 @@
       operationMenu.classList.toggle("hidden");
       operationMenuShow.classList.toggle("hidden");
       operationMenuMask.classList.toggle("hidden");
+      // スクロール禁止付与
+      document.addEventListener("touchmove", maskDisableScroll, {
+        passive: false,
+      });
+      document.body.classList.add("overflow-hidden");
     });
-    operationMenuMask.addEventListener('click', () => {
+    operationMenuMask.addEventListener('click', e => {
       operationMenuShow.click();
+      // スクロール禁止除去
+      document.removeEventListener("touchmove", maskDisableScroll, {
+        passive: false,
+      });
+      document.body.classList.remove("overflow-hidden");
     });
     sizeSelect.addEventListener("change", () => {
       setlog('sizeSelect change.\n');
