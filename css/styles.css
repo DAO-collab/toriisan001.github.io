@@ -280,6 +280,7 @@ main .applicationBox > figure {
     font-size: 32px;
     cursor: pointer;
     opacity: 1;
+    filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.6));
 }
 
 #operationMenuShow.hidden {
