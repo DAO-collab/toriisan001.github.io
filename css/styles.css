@@ -276,7 +276,7 @@ main .applicationBox > figure {
     border: solid 1px #333;
     padding: 0 30px;
     height: 15px;
-    font-size: 2px;
+    font-size: 12px;
     cursor: pointer;
     opacity: 1;
     background: rgba(255, 255, 255, .95);
@@ -293,7 +293,6 @@ main .applicationBox > figure {
 }
 
 #operationMenuMask {
-    /* background: rgba(0, 0, 0, 0.4); */
     position: fixed;
     top: 0;
     bottom: 0;
