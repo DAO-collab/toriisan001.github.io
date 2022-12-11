@@ -69,8 +69,8 @@
     const pageBottom = document.getElementById("pageBottom");
     pageSlide.value = 0;
     pageSlide.max = document.documentElement.scrollHeight;
-    main.addEventListener("click", (e) => {
-      setlog('main click.\n');
+    main.addEventListener("dblclick", (e) => {
+      setlog('main dblclick.\n');
       if (!e.path[0].className.match("operationMenuParts")) {
         operationMenu.classList.toggle("hidden");
       }
