@@ -8,12 +8,23 @@
     const config = getConfig();
     const main = document.getElementsByTagName("main")[0];
     // 初期設定関係
-    if (storage.getItem(config.SYSTEM_KEY.MAIN_FONT_FAMILY) === null) {
-      main.style.fontFamily = config.INITIALIZATION.MAIN_FONT_FAMILY;
+    const mainFontFamily = storage.getItem(config.SYSTEM_KEY.MAIN_FONT_FAMILY);
+    main.style.fontFamily = (mainFontFamily === null) ? config.INITIALIZATION.MAIN_FONT_FAMILY: mainFontFamily;
+    const mainFontSize = storage.getItem(config.SYSTEM_KEY.MAIN_FONT_SIZE);
+    main.style.fontSize = (mainFontSize === null) ? config.INITIALIZATION.MAIN_FONT_SIZE: mainFontSize;
+    const fontSelect = document.getElementById("fontSelect");
+    const sizeSelect = document.getElementById("sizeSelect");
+    for (const [key, obj] of Object.entries(Array.from(fontSelect.options))) {
+      if ((obj.value).match(main.style.fontFamily)) {
+        fontSelect.selectedIndex = key;
+      }
     }
-    if (storage.getItem(config.SYSTEM_KEY.MAIN_FONT_SIZE) === null) {
-      main.style.fontSize = config.INITIALIZATION.MAIN_FONT_SIZE;
+    for (const [key, obj] of Object.entries(Array.from(sizeSelect.options))) {
+      if ((obj.value).match(main.style.fontSize)) {
+        sizeSelect.selectedIndex = key;
+      }
     }
+
     // メニュー制御
     const open = document.getElementById("open");
     const menu = document.getElementById("menu");
@@ -53,8 +64,6 @@
 
     // 操作パネルの制御
     const operationMenu = document.getElementById("operationMenu");
-    const sizeSelect = document.getElementById("sizeSelect");
-    const fontSelect = document.getElementById("fontSelect");
     const pageSlide = document.getElementById("pageSlide");
     const pageTop = document.getElementById("pageTop");
     const pageBottom = document.getElementById("pageBottom");
@@ -68,10 +77,12 @@
     sizeSelect.addEventListener("change", () => {
       main.style.fontSize = sizeSelect.value;
       pageSlide.max = document.documentElement.scrollHeight;
+      storage.setItem(config.SYSTEM_KEY.MAIN_FONT_SIZE, sizeSelect.value);
     });
     fontSelect.addEventListener("change", () => {
       main.style.fontFamily = fontSelect.value;
       pageSlide.max = document.documentElement.scrollHeight;
+      storage.setItem(config.SYSTEM_KEY.MAIN_FONT_FAMILY, fontSelect.value);
     });
     pageSlide.addEventListener("input", () => {
       window.scrollTo({
