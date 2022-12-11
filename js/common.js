@@ -70,26 +70,31 @@
     pageSlide.value = 0;
     pageSlide.max = document.documentElement.scrollHeight;
     main.addEventListener("click", (e) => {
+      setlog('main click.\n');
       if (!e.path[0].className.match("operationMenuParts")) {
         operationMenu.classList.toggle("hidden");
       }
     });
     sizeSelect.addEventListener("change", () => {
+      setlog('sizeSelect change.\n');
       main.style.fontSize = sizeSelect.value;
       pageSlide.max = document.documentElement.scrollHeight;
       storage.setItem(config.SYSTEM_KEY.MAIN_FONT_SIZE, sizeSelect.value);
     });
     fontSelect.addEventListener("change", () => {
+      setlog('fontSelect change.\n');
       main.style.fontFamily = fontSelect.value;
       pageSlide.max = document.documentElement.scrollHeight;
       storage.setItem(config.SYSTEM_KEY.MAIN_FONT_FAMILY, fontSelect.value);
     });
     pageSlide.addEventListener("input", () => {
+      setlog('pageSlide input.\n');
       window.scrollTo({
         top: pageSlide.value,
       });
     });
     pageTop.addEventListener("click", (e) => {
+      setlog('pageTop click.\n');
       e.preventDefault();
       window.scrollTo({
         top: -500,
@@ -97,6 +102,7 @@
       });
     });
     pageBottom.addEventListener("click", (e) => {
+      setlog('pageBottom click.\n');
       e.preventDefault();
       window.scrollTo({
         top: document.documentElement.scrollHeight,
@@ -107,7 +113,7 @@
     // ログを設定
     // param text ログに設定するテキスト(\nで改行が可能)
     // return void
-    // use) setlog('mvShow');
+    // use) setlog('mvShow\n');
     function setlog(text) {
         const log = document.getElementById("log");
         log.innerText += `${text}`;
