@@ -271,16 +271,12 @@ main .applicationBox > figure {
 
 #operationMenuShow {
     position: fixed;
-    bottom: 0px;
+    bottom: 32px;
     right: 32px;
-    border: solid 1px #333;
-    padding: 0 30px;
     height: 15px;
-    font-size: 12px;
+    font-size: 32px;
     cursor: pointer;
     opacity: 1;
-    background: rgba(255, 255, 255, .95);
-    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
 }
 
 #operationMenuShow.hidden {
