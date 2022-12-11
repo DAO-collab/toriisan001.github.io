@@ -108,7 +108,7 @@
       storage.setItem(config.SYSTEM_KEY.MAIN_FONT_FAMILY, fontSelect.value);
     });
     pageSlide.addEventListener("input", () => {
-      setlog('pageSlide input.\n');
+      // setlog('pageSlide input.\n');
       window.scrollTo({
         top: pageSlide.value,
       });
