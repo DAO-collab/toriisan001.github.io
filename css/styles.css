@@ -298,6 +298,7 @@ main .applicationBox > figure {
 }
 
 #operationMenu {
+    font-size: 10px;
     margin: 0 20px;
     position: fixed;
     bottom: 32px;
@@ -321,6 +322,15 @@ main .applicationBox > figure {
 #pageSlide {
     width: calc(100% - 100px);
     cursor: pointer;
+    margin-top: 10px;
+}
+
+#fontSelect {
+    font-size: inherit;
+}
+
+#sizeSelect {
+    font-size: inherit;
 }
 
 #pageTop, #pageBottom {
