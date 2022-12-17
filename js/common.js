@@ -20,9 +20,7 @@
       }
     }
     for (const [key, obj] of Object.entries(Array.from(sizeSelect.options))) {
-      if ((obj.value).match(main.style.fontSize)) {
         sizeSelect.selectedIndex = key;
-      }
     }
 
     // メニュー制御
