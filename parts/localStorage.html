@@ -50,6 +50,7 @@
 
         // データを保存する
         function set() {
+            setlog('set start.\n');
             var k = document.getElementById("k").value;
             if (k === '') return;
             var v = document.getElementById("v").value;
@@ -59,24 +60,28 @@
 
         // データを全てクリアする
         function cle() {
+            setlog('cle start.\n');
             storage.clear();
             show_result();
         }
 
         // 対象キーのデータをクリアする
         function keyCle(k) {
+            setlog('keyCle start.\n');
             storage.removeItem(k);
             show_result();
         }
 
         // キー情報を取得
         function keyCopy(k, v) {
+            setlog('keyCopy start.\n');
             document.getElementById("k").value = k;
             document.getElementById("v").value = v;
         }
 
         // キー情報を取得
         function show_result() {
+            setlog('show_result start.\n');
             // 子要素を全て削除
             var textboxElement = document.getElementById('textbox');
             while (textboxElement.firstChild) {
