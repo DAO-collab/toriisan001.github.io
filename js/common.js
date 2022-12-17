@@ -15,9 +15,7 @@
     const fontSelect = document.getElementById("fontSelect");
     const sizeSelect = document.getElementById("sizeSelect");
     for (const [key, obj] of Object.entries(Array.from(fontSelect.options))) {
-      console.log(obj.value);
-      console.log(main.style.fontSize);
-      if ((obj.value).match(main.style.fontFamily)) {
+      if (obj.value.replaceAll('"', '') === main.style.fontFamily.replaceAll('"', '')) {
         fontSelect.selectedIndex = key;
       }
     }
