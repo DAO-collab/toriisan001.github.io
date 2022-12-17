@@ -1,9 +1,8 @@
 <main>
   <h1>Fetch</h1>
   <p id="lastModified"></p>
-
-  <h2>hogehoge</h2>
-  <p>hogehoge</p>
+  <p>URL：<input type="text" id="url"/></p>
+  <button type="button" id="exec">実行</button>
 </main>
 <div id="log"></div>
 <script src="../js/util.js"></script>
@@ -12,8 +11,8 @@
 <script>
   "use strict";
   {
-    async function getFetch() {
-      const result = await fetch("http://localhost:8080/page/fetch.html", {
+    async function getFetch($url) {
+      const result = await fetch($url, {
         method: "GET",
       })
         .then(function (response) {
@@ -27,6 +26,10 @@
         //   return message;
         });
     }
-    getFetch();
+    const url = document.getElementById('url');
+    const exec = document.getElementById('exec');
+    exec.addEventListener('click', () => {
+        getFetch(url.value);
+    })
   }
 </script>
