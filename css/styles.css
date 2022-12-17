@@ -147,7 +147,7 @@ main img.apl {
 }
 
 main input[type="text"] {
-    width:70px;
+    width:300px;
 }
 
 main video {
@@ -268,6 +268,20 @@ main .applicationBox > figure {
 #youtubeParts main .del {
     margin-top: 10px;
     margin-left: auto;
+}
+
+/* WebStorage */
+#localStorageParts main .box {
+    display: flex;
+    cursor: pointer;
+    border: solid 1px #333;
+    margin: 2px;
+    padding: 5px 5px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
+}
+
+#localStorageParts main .del {
+    margin: auto 0 auto auto;
 }
 
 /* operationMenu */

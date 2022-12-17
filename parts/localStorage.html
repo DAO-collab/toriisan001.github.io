@@ -10,9 +10,9 @@
     <hr>
 
     <div id="textbox"></div>
-    <div style="display: flex;">
+    <div>
         <p>キー：<input id="k" type="text" onfocus="this.select();"></p>
-        <p style="margin-left: 10px;">値：<input id="v" type="text" onfocus="this.select();"></p>
+        <p>値：<input id="v" type="text" onfocus="this.select();"></p>
     </div>
     <button type="button" id="set">新規・更新</button>
     <button type="button" id="cle">全クリア</button>
@@ -21,15 +21,12 @@
 <script src="../js/util.js"></script>
 <script src="../js/common.js"></script>
 <script src="../js/config.js"></script>
-<script type="module" src="../js/commonModule.js"></script>
-<script type="module">
-    import Storage from "../js/webStrage/storage.js"
-    import config from "../js/configModule.js"
+<script>
     {
         'use strict';
 
         // 変数storageにlocalStorageを格納
-        var storage = localStorage;
+        const storage = localStorage;
 
         // エンターキーでイベント発火
         document.getElementById('k').onkeydown = function () {
@@ -91,17 +88,19 @@
                 const k = storage.key(i);
                 // ボックスdiv作成
                 const boxElement = document.createElement('div');
-                boxElement.style = "display: flex; justify-content: space-between; width: 330px; border-bottom: solid 1px #333;";
-                boxElement.style.paddingTop = "10px";
+                // boxElement.style = "display: flex; justify-content: space-between; width: 330px; border-bottom: solid 1px #333;";
+                // boxElement.style.paddingTop = "10px";
+                boxElement.classList.add('box');
                 // テキストdiv作成
                 const textElement = document.createElement('div');
-                textElement.textContent = k + "：" + storage.getItem(k);
+                textElement.innerText = 'No:' + i + '\nkey: '+ k + '\nid: ' + storage.getItem(k);
                 textElement.addEventListener('click', () => {
                     keyCopy(k, storage.getItem(k));
                 });
                 boxElement.appendChild(textElement);
                 // 削除div作成
                 const deleteElement = document.createElement('div');
+                deleteElement.classList.add('del');
                 deleteElement.textContent = '×';
                 const message = 'テキスト(id:' + k + ')を削除してよいですか？';
                 deleteElement.addEventListener('click', () => {
