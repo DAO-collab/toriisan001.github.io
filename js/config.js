@@ -1,8 +1,8 @@
 function getConfig() {
     return {
         SYSTEM_KEY: {
-            MAIN_FONT_FAMILY: 'SYSTEM_KEY_MAIN_FONT_FAMILY',
-            MAIN_FONT_SIZE: 'SYSTEM_KEY_MAIN_FONT_SIZE',
+            FONT_FAMILY: 'SYSTEM_KEY_FONT_FAMILY',
+            FONT_SIZE: 'SYSTEM_KEY_FONT_SIZE',
         },
         INDEX_DB: {
             TEST: {
@@ -15,8 +15,8 @@ function getConfig() {
             }
         },
         INITIALIZATION: {
-            MAIN_FONT_FAMILY: 'Verdana, sans-serif',
-            MAIN_FONT_SIZE: '12px',
+            FONT_FAMILY: 'Verdana, sans-serif',
+            FONT_SIZE: '12px',
         },
     };
 }

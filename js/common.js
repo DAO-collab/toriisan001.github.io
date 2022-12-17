@@ -6,21 +6,21 @@
     // 変数storageにlocalStorageを格納
     const storage = localStorage;
     const config = getConfig();
-    const main = document.getElementsByTagName("main")[0];
+    const body = document.getElementsByTagName("body")[0];
     // 初期設定関係
-    const mainFontFamily = storage.getItem(config.SYSTEM_KEY.MAIN_FONT_FAMILY);
-    main.style.fontFamily = (mainFontFamily === null) ? config.INITIALIZATION.MAIN_FONT_FAMILY: mainFontFamily;
-    const mainFontSize = storage.getItem(config.SYSTEM_KEY.MAIN_FONT_SIZE);
-    main.style.fontSize = (mainFontSize === null) ? config.INITIALIZATION.MAIN_FONT_SIZE: mainFontSize;
+    const mainFontFamily = storage.getItem(config.SYSTEM_KEY.FONT_FAMILY);
+    body.style.fontFamily = (mainFontFamily === null) ? config.INITIALIZATION.FONT_FAMILY: mainFontFamily;
+    const mainFontSize = storage.getItem(config.SYSTEM_KEY.FONT_SIZE);
+    body.style.fontSize = (mainFontSize === null) ? config.INITIALIZATION.FONT_SIZE: mainFontSize;
     const fontSelect = document.getElementById("fontSelect");
     const sizeSelect = document.getElementById("sizeSelect");
     for (const [key, obj] of Object.entries(Array.from(fontSelect.options))) {
-      if (obj.value.replaceAll('"', '') === main.style.fontFamily.replaceAll('"', '')) {
+      if (obj.value.replaceAll('"', '') === body.style.fontFamily.replaceAll('"', '')) {
         fontSelect.selectedIndex = key;
       }
     }
     for (const [key, obj] of Object.entries(Array.from(sizeSelect.options))) {
-      if (obj.value === main.style.fontSize) {
+      if (obj.value === body.style.fontSize) {
         sizeSelect.selectedIndex = key;
       }
     }
@@ -97,15 +97,15 @@
     });
     sizeSelect.addEventListener("change", () => {
       setlog('sizeSelect change.\n');
-      main.style.fontSize = sizeSelect.value;
+      body.style.fontSize = sizeSelect.value;
       pageSlide.max = document.documentElement.scrollHeight;
-      storage.setItem(config.SYSTEM_KEY.MAIN_FONT_SIZE, sizeSelect.value);
+      storage.setItem(config.SYSTEM_KEY.FONT_SIZE, sizeSelect.value);
     });
     fontSelect.addEventListener("change", () => {
       setlog('fontSelect change.\n');
-      main.style.fontFamily = fontSelect.value;
+      body.style.fontFamily = fontSelect.value;
       pageSlide.max = document.documentElement.scrollHeight;
-      storage.setItem(config.SYSTEM_KEY.MAIN_FONT_FAMILY, fontSelect.value);
+      storage.setItem(config.SYSTEM_KEY.FONT_FAMILY, fontSelect.value);
     });
     pageSlide.addEventListener("input", () => {
       // setlog('pageSlide input.\n');
