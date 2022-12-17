@@ -1,5 +1,5 @@
 <main>
-  <h1>WebStorage(ver0.07)</h1>
+  <h1>WebStorage(ver0.08)</h1>
   <p id="lastModified"></p>
 
   <hr />
@@ -84,40 +84,42 @@
 
     // キー情報を取得
     function show_result() {
-      setlog("show_result start.\n");
-      // 子要素を全て削除
-      var textboxElement = document.getElementById("textbox");
-      while (textboxElement.firstChild) {
-        textboxElement.removeChild(textboxElement.firstChild);
-      }
-      // 保存されているデータの数だけループ
-      for (var i = 0; i < storage.length; i++) {
-        // i番目のキーを取得
-        const k = storage.key(i);
-        // ボックスdiv作成
-        const boxElement = document.createElement("div");
-        boxElement.classList.add("box");
-        // テキストdiv作成
-        const textElement = document.createElement("div");
-        textElement.innerText =
-          "No:" + i + "\nkey: " + k + "\nid: " + storage.getItem(k);
-        textElement.addEventListener("click", () => {
-          keyCopy(k, storage.getItem(k));
-        });
-        boxElement.appendChild(textElement);
-        // 削除div作成
-        const deleteElement = document.createElement("div");
-        deleteElement.classList.add("del");
-        deleteElement.textContent = "×";
-        const message = "テキスト(id:" + k + ")を削除してよいですか？";
-        deleteElement.addEventListener("click", () => {
-          if (confirm(message)) keyCle(k);
-          return false;
-        });
-        boxElement.appendChild(deleteElement);
-        // 指定した要素の中の末尾に挿入
-        textboxElement.appendChild(boxElement);
-      }
+      setTimeout(function () {
+        setlog("show_result start.\n");
+        // 子要素を全て削除
+        var textboxElement = document.getElementById("textbox");
+        while (textboxElement.firstChild) {
+          textboxElement.removeChild(textboxElement.firstChild);
+        }
+        // 保存されているデータの数だけループ
+        for (var i = 0; i < storage.length; i++) {
+          // i番目のキーを取得
+          const k = storage.key(i);
+          // ボックスdiv作成
+          const boxElement = document.createElement("div");
+          boxElement.classList.add("box");
+          // テキストdiv作成
+          const textElement = document.createElement("div");
+          textElement.innerText =
+            "No:" + i + "\nkey: " + k + "\nid: " + storage.getItem(k);
+          textElement.addEventListener("click", () => {
+            keyCopy(k, storage.getItem(k));
+          });
+          boxElement.appendChild(textElement);
+          // 削除div作成
+          const deleteElement = document.createElement("div");
+          deleteElement.classList.add("del");
+          deleteElement.textContent = "×";
+          const message = "テキスト(id:" + k + ")を削除してよいですか？";
+          deleteElement.addEventListener("click", () => {
+            if (confirm(message)) keyCle(k);
+            return false;
+          });
+          boxElement.appendChild(deleteElement);
+          // 指定した要素の中の末尾に挿入
+          textboxElement.appendChild(boxElement);
+        }
+      }, 100);
     }
 
     show_result();
