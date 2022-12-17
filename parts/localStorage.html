@@ -1,5 +1,5 @@
 <main>
-  <h1>WebStorage(ver0.08)</h1>
+  <h1>WebStorage(ver0.09)</h1>
   <p id="lastModified"></p>
 
   <hr />
@@ -25,6 +25,7 @@
 <script src="../js/util.js"></script>
 <script src="../js/common.js"></script>
 <script src="../js/config.js"></script>
+<script type="module" src="../js/commonModule.js"></script>
 <script>
   {
     ("use strict");
@@ -84,7 +85,7 @@
 
     // キー情報を取得
     function show_result() {
-      setTimeout(function () {
+      // setTimeout(function () {
         setlog("show_result start.\n");
         // 子要素を全て削除
         var textboxElement = document.getElementById("textbox");
@@ -119,7 +120,7 @@
           // 指定した要素の中の末尾に挿入
           textboxElement.appendChild(boxElement);
         }
-      }, 100);
+      // }, 100);
     }
 
     show_result();
