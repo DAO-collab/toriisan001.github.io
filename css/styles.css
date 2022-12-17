@@ -266,8 +266,7 @@ main .applicationBox > figure {
 }
 
 #youtubeParts main .del {
-    margin-top: 10px;
-    margin-left: auto;
+    margin: auto 0 auto auto;
 }
 
 /* WebStorage */
