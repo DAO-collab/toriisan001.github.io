@@ -1,8 +1,37 @@
 <main>
   <h1>Fetch</h1>
   <p id="lastModified"></p>
-  <p>URL：<input type="text" id="url"/></p>
+
+  <hr />
+  <details>
+    <summary>参考サイト</summary>
+    <p>
+      <a href="https://www.codit.work/notes/ld2h3c2k1coufqauzydl/"
+        >JavaScriptのfetch API&DOM Parserで外部HTMLを解析する（参考）</a
+      >
+    </p>
+    <p>
+      <a href="https://www.webdesignleaves.com/pr/jquery/fetch-api-basic.html"
+        >Fetch API fetch() の使い方（参考）</a
+      >
+    </p>
+  </details>
+  <hr />
+
+  <h2>DOM取得</h2>
+  <p>
+    URL：<input
+      type="text"
+      id="url"
+      value="https://toriisan001.github.io/page/home.html"
+    />
+  </p>
   <button type="button" id="exec">実行</button>
+  <button type="button" id="clear">クリア</button>
+  <pre>
+    <code id="dom">
+    </code>
+</pre>
 </main>
 <div id="log"></div>
 <script src="../js/util.js"></script>
@@ -11,25 +40,33 @@
 <script>
   "use strict";
   {
+    const url = document.getElementById("url");
+    const exec = document.getElementById("exec");
+    const clear = document.getElementById("clear");
+    const dom = document.getElementById("dom");
+    // DOM取得
     async function getFetch($url) {
-      const result = await fetch($url, {
-        method: "GET",
-      })
-        .then(function (response) {
-          return response.text();
+      try {
+        const result = await fetch($url, {
+          method: "GET",
         })
-        .then(function (data) {
-            console.log(data);
-        //   const parser = new DOMParser();
-        //   const doc = parser.parseFromString(data, "text/html");
-        //   const message = doc.getElementById("message").innerHTML;
-        //   return message;
-        });
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (data) {
+            dom.textContent = data;
+          });
+      } catch (error) {
+        console.log(error);
+        dom.textContent = error.toString();
+      }
     }
-    const url = document.getElementById('url');
-    const exec = document.getElementById('exec');
-    exec.addEventListener('click', () => {
-        getFetch(url.value);
-    })
+    exec.addEventListener("click", () => {
+      getFetch(url.value);
+    });
+    clear.addEventListener("click", () => {
+      dom.textContent = "";
+      url.value = "";
+    });
   }
 </script>
