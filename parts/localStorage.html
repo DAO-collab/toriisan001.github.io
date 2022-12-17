@@ -1,5 +1,5 @@
 <main>
-  <h1>WebStorage(ver0.07)</h1>
+  <h1>WebStorage(ver0.08)</h1>
   <p id="lastModified"></p>
 
   <hr>
@@ -91,15 +91,17 @@
               const boxElement = document.createElement('div');
             //   boxElement.style = "display: flex; justify-content: space-between; width: 330px; border-bottom: solid 1px #333;";
             //   boxElement.style.paddingTop = "10px";
+              boxElement.classList.add('box');
               // テキストdiv作成
               const textElement = document.createElement('div');
-              textElement.textContent = k + "：" + storage.getItem(k);
+              textElement.innerText = 'id: '+ i + '\nkey: ' + k + "：" + '\nvalue: ' + storage.getItem(k);
               textElement.addEventListener('click', () => {
                   keyCopy(k, storage.getItem(k));
               });
               boxElement.appendChild(textElement);
               // 削除div作成
               const deleteElement = document.createElement('div');
+              deleteElement.classList.add('del');
               deleteElement.textContent = '×';
               const message = 'テキスト(id:' + k + ')を削除してよいですか？';
               deleteElement.addEventListener('click', () => {
