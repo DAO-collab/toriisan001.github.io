@@ -36,8 +36,6 @@
             if (event.key === 'Enter') set();
         };
 
-        show_result();
-
         // 新規・更新ボタンにイベントを追加
         const setElement = document.getElementById('set');
         setElement.addEventListener('click', set);
@@ -114,5 +112,7 @@
                 textboxElement.appendChild(boxElement);
             }
         }
+
+        show_result();
     };
 </script>
