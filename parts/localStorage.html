@@ -1,5 +1,5 @@
 <main>
-  <h1>WebStorage(ver0.06)</h1>
+  <h1>WebStorage(ver0.07)</h1>
   <p id="lastModified"></p>
 
   <hr>
@@ -11,8 +11,8 @@
 
   <div id="textbox"></div>
   <div style="display: flex;">
-      <p>キー：<input id="k" type="text" onfocus="this.select();"></p>
-      <p style="margin-left: 10px;">値：<input id="v" type="text" onfocus="this.select();"></p>
+      <p>キー：<input id="k" type="text"></p>
+      <p>値：<input id="v" type="text"></p>
   </div>
   <button type="button" id="set">新規・更新</button>
   <button type="button" id="cle">全クリア</button>
@@ -89,8 +89,8 @@
               const k = storage.key(i);
               // ボックスdiv作成
               const boxElement = document.createElement('div');
-              boxElement.style = "display: flex; justify-content: space-between; width: 330px; border-bottom: solid 1px #333;";
-              boxElement.style.paddingTop = "10px";
+            //   boxElement.style = "display: flex; justify-content: space-between; width: 330px; border-bottom: solid 1px #333;";
+            //   boxElement.style.paddingTop = "10px";
               // テキストdiv作成
               const textElement = document.createElement('div');
               textElement.textContent = k + "：" + storage.getItem(k);
