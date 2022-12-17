@@ -19,6 +19,43 @@
   <hr />
 
   <h2>DOM取得</h2>
+  <hr />
+  <details>
+    <summary>ソース</summary>
+    <pre>
+        <code>
+const url = document.getElementById("url");
+const exec = document.getElementById("exec");
+const clear = document.getElementById("clear");
+const dom = document.getElementById("dom");
+// DOM取得
+async function getFetch($url) {
+    try {
+    const result = await fetch($url, {
+        method: "GET",
+    })
+        .then(function (response) {
+        return response.text();
+        })
+        .then(function (data) {
+        dom.textContent = data;
+        });
+    } catch (error) {
+    console.log(error);
+    dom.textContent = error.toString();
+    }
+}
+exec.addEventListener("click", () => {
+    getFetch(url.value);
+});
+clear.addEventListener("click", () => {
+    dom.textContent = "";
+    url.value = "";
+});
+        </code>
+    </pre>
+  </details>
+  <hr />
   <p>
     URL：<input
       type="text"
