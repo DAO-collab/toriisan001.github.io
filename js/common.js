@@ -15,12 +15,16 @@
     const fontSelect = document.getElementById("fontSelect");
     const sizeSelect = document.getElementById("sizeSelect");
     for (const [key, obj] of Object.entries(Array.from(fontSelect.options))) {
+      console.log(obj.value);
+      console.log(main.style.fontSize);
       if ((obj.value).match(main.style.fontFamily)) {
         fontSelect.selectedIndex = key;
       }
     }
     for (const [key, obj] of Object.entries(Array.from(sizeSelect.options))) {
+      if (obj.value === main.style.fontSize) {
         sizeSelect.selectedIndex = key;
+      }
     }
 
     // メニュー制御
