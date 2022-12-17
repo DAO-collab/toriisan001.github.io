@@ -1,22 +1,18 @@
 <main>
-  <h1>WebStorage(ver0.10)</h1>
+  <h1>WebStorage(ver0.05)</h1>
   <p id="lastModified"></p>
 
-  <hr />
+  <hr>
   <details>
-    <h2>使い方参考サイト</h2>
-    <p>
-      <a href="http://www.htmq.com/webstorage/"
-        >Web Storage－HTML5のAPI - HTMLクイックリファレンス（参考）</a
-      >
-    </p>
+      <h2>使い方参考サイト</h2>
+      <p><a href="http://www.htmq.com/webstorage/">Web Storage－HTML5のAPI - HTMLクイックリファレンス（参考）</a></p>
   </details>
-  <hr />
+  <hr>
 
   <div id="textbox"></div>
-  <div>
-    <p>キー：<input id="k" type="text" /></p>
-    <p>値：<input id="v" type="text" /></p>
+  <div style="display: flex;">
+      <p>キー：<input id="k" type="text" onfocus="this.select();"></p>
+      <p style="margin-left: 10px;">値：<input id="v" type="text" onfocus="this.select();"></p>
   </div>
   <button type="button" id="set">新規・更新</button>
   <button type="button" id="cle">全クリア</button>
@@ -26,103 +22,95 @@
 <script src="../js/common.js"></script>
 <script src="../js/config.js"></script>
 <script type="module" src="../js/commonModule.js"></script>
-<script>
+<script type="module">
+  import Storage from "../js/webStrage/storage.js"
+  import config from "../js/configModule.js"
   {
-    ("use strict");
+      'use strict';
 
-    // 変数storageにlocalStorageを格納
-    const storage = localStorage;
+      // 変数storageにlocalStorageを格納
+      var storage = localStorage;
 
-    // エンターキーでイベント発火
-    document.getElementById("k").onkeydown = function () {
-      if (event.key === "Enter") set();
-    };
-    document.getElementById("v").onkeydown = function () {
-      if (event.key === "Enter") set();
-    };
+      // エンターキーでイベント発火
+      document.getElementById('k').onkeydown = function () {
+          if (event.key === 'Enter') set();
+      };
+      document.getElementById('v').onkeydown = function () {
+          if (event.key === 'Enter') set();
+      };
 
-    // 新規・更新ボタンにイベントを追加
-    const setElement = document.getElementById("set");
-    setElement.addEventListener("click", set);
-
-    // 全クリアボタンにイベントを追加
-    const cleElement = document.getElementById("cle");
-    cleElement.addEventListener("click", () => {
-      if (confirm("テキストを全て削除してよいですか？")) cle();
-      return false;
-    });
-
-    // データを保存する
-    function set() {
-      setlog("set start.\n");
-      var k = document.getElementById("k").value;
-      if (k === "") return;
-      var v = document.getElementById("v").value;
-      storage.setItem(k, v);
       show_result();
-    }
 
-    // データを全てクリアする
-    function cle() {
-      setlog("cle start.\n");
-      storage.clear();
-      show_result();
-    }
+      // 新規・更新ボタンにイベントを追加
+      const setElement = document.getElementById('set');
+      setElement.addEventListener('click', set);
 
-    // 対象キーのデータをクリアする
-    function keyCle(k) {
-      setlog("keyCle start.\n");
-      storage.removeItem(k);
-      show_result();
-    }
+      // 全クリアボタンにイベントを追加
+      const cleElement = document.getElementById('cle');
+      cleElement.addEventListener('click', () => {
+          if (confirm('テキストを全て削除してよいですか？')) cle(); return false;
+      });
 
-    // キー情報を取得
-    function keyCopy(k, v) {
-      setlog("keyCopy start.\n");
-      document.getElementById("k").value = k;
-      document.getElementById("v").value = v;
-    }
+      // データを保存する
+      function set() {
+          var k = document.getElementById("k").value;
+          if (k === '') return;
+          var v = document.getElementById("v").value;
+          storage.setItem(k, v);
+          show_result();
+      }
 
-    // キー情報を取得
-    function show_result() {
-      setTimeout(function () {
-        setlog("show_result start.\n");
-        // 子要素を全て削除
-        var textboxElement = document.getElementById("textbox");
-        while (textboxElement.firstChild) {
-          textboxElement.removeChild(textboxElement.firstChild);
-        }
-        // 保存されているデータの数だけループ
-        for (var i = 0; i < storage.length; i++) {
-          // i番目のキーを取得
-          const k = storage.key(i);
-          // ボックスdiv作成
-          const boxElement = document.createElement("div");
-          boxElement.classList.add("box");
-          // テキストdiv作成
-          const textElement = document.createElement("div");
-          textElement.innerText =
-            "No:" + i + "\nkey: " + k + "\nid: " + storage.getItem(k);
-          textElement.addEventListener("click", () => {
-            keyCopy(k, storage.getItem(k));
-          });
-          boxElement.appendChild(textElement);
-          // 削除div作成
-          const deleteElement = document.createElement("div");
-          deleteElement.classList.add("del");
-          deleteElement.textContent = "×";
-          const message = "テキスト(id:" + k + ")を削除してよいですか？";
-          deleteElement.addEventListener("click", () => {
-            if (confirm(message)) keyCle(k);
-            return false;
-          });
-          boxElement.appendChild(deleteElement);
-          // 指定した要素の中の末尾に挿入
-          textboxElement.appendChild(boxElement);
-        }
-      }, 100);
-    }
+      // データを全てクリアする
+      function cle() {
+          storage.clear();
+          show_result();
+      }
 
-    show_result();
-  }
+      // 対象キーのデータをクリアする
+      function keyCle(k) {
+          storage.removeItem(k);
+          show_result();
+      }
+
+      // キー情報を取得
+      function keyCopy(k, v) {
+          document.getElementById("k").value = k;
+          document.getElementById("v").value = v;
+      }
+
+      // キー情報を取得
+      function show_result() {
+          // 子要素を全て削除
+          var textboxElement = document.getElementById('textbox');
+          while (textboxElement.firstChild) {
+              textboxElement.removeChild(textboxElement.firstChild);
+          }
+          // 保存されているデータの数だけループ
+          for (var i = 0; i < storage.length; i++) {
+              // i番目のキーを取得
+              const k = storage.key(i);
+              // ボックスdiv作成
+              const boxElement = document.createElement('div');
+              boxElement.style = "display: flex; justify-content: space-between; width: 330px; border-bottom: solid 1px #333;";
+              boxElement.style.paddingTop = "10px";
+              // テキストdiv作成
+              const textElement = document.createElement('div');
+              textElement.textContent = k + "：" + storage.getItem(k);
+              textElement.addEventListener('click', () => {
+                  keyCopy(k, storage.getItem(k));
+              });
+              boxElement.appendChild(textElement);
+              // 削除div作成
+              const deleteElement = document.createElement('div');
+              deleteElement.textContent = '×';
+              const message = 'テキスト(id:' + k + ')を削除してよいですか？';
+              deleteElement.addEventListener('click', () => {
+                  if (confirm(message)) keyCle(k); return false;
+              });
+              boxElement.appendChild(deleteElement);
+              // 指定した要素の中の末尾に挿入
+              textboxElement.appendChild(boxElement);
+          }
+      }
+  };
 </script>
