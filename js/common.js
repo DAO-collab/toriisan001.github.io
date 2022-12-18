@@ -139,6 +139,5 @@
         log.innerText += `${text}`;
         console.log(text);
       }
-
   }, 100);
 }
