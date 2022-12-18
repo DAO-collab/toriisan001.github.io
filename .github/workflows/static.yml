@@ -26,6 +26,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+      SECRET_HOGE_1: ${{secrets.SECRET_HOGE_1}}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
