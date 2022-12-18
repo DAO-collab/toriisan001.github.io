@@ -1,0 +1,69 @@
+<main>
+    <h1>dragAndDrop</h1>
+    <p id="lastModified"></p>
+
+    <hr />
+    <details>
+        <summary>引用</summary>
+        <a href="https://qiita.com/yonedaco/items/ea234e95473d739c7447">Javascript でドラック＆ドロップを実装 (ライブラリ使わない)</a>
+    </details>
+    <hr />
+
+    <div id="app" style="height:350px">
+        <img src="../img/gomibako.png" id="gomibako" width="50px"><br>
+        <img src="../img/ball.png" id="ball" width="30px">
+    </div>
+
+</main>
+<div id="log"></div>
+<script src="../js/util.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/config.js"></script>
+<script type="module" src="../js/commonModule.js"></script>
+<script>
+
+    var gomibako = document.getElementById("gomibako");
+    gomibako.style.zIndex = "1";
+    var ball = document.getElementById("ball");
+    ball.style.position = "absolute";
+    ball.style.cursor = "pointer";
+    ball.style.zIndex = "2";
+    ball.ondragstart = function(e){
+      return false;
+    }
+
+    function onMouseMove(event){
+      var x = event.clientX;
+      var y = event.clientY;
+      var width = ball.offsetWidth;
+      var height = ball.offsetHeight;
+      ball.style.top = (y-height/2) + "px";
+      ball.style.left = (x-width/2) + "px";
+      var gomibakoRect = gomibako.getBoundingClientRect();
+      if((x>=gomibakoRect.left && x<=(gomibakoRect.left+gomibakoRect.width)) && (y>=gomibakoRect.top && y<=(gomibakoRect.top+gomibakoRect.height))){
+        gomibako.style.backgroundColor = "pink";
+      }
+      else{
+        gomibako.style.backgroundColor = "white";
+      }
+    }
+
+    ball.onmousedown = function(event){
+      document.addEventListener("mousemove",onMouseMove);
+    }
+
+    ball.onmouseup = function(event){
+      var x = event.clientX;
+      var y = event.clientY;
+      var width = ball.offsetWidth;
+      var height = ball.offsetHeight;
+      var gomibakoRect = gomibako.getBoundingClientRect();
+      if((x>=gomibakoRect.left && x<=(gomibakoRect.left+gomibakoRect.width)) && (y>=gomibakoRect.top && y<=(gomibakoRect.top+gomibakoRect.height))){
+        var app = document.getElementById("app");
+        gomibako.style.backgroundColor = "white";
+        app.removeChild(ball);
+      }
+      document.removeEventListener("mousemove",onMouseMove);
+    }
+
+  </script>
