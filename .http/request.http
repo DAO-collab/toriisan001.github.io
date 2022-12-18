@@ -1,0 +1,9 @@
+GET https://toriisan001.github.io/page/home.html
+
+###
+POST https://www.muryou-tools.com/test/posttestutf8.php HTTP/1.1
+content-type: text/xml
+
+param1=123
+param2=abc
+param2=あいう

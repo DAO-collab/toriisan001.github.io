@@ -103,7 +103,7 @@ getclear.addEventListener("click", () => {
 <button type="button" id="postExec">実行</button>
 <button type="button" id="postClear">クリア</button>
 <pre>
-  <code id="getdom">
+  <code id="postDom">
   </code>
 </pre>
 
@@ -120,10 +120,11 @@ getclear.addEventListener("click", () => {
     const getexec = document.getElementById("getexec");
     const getclear = document.getElementById("getclear");
     const getdom = document.getElementById("getdom");
-    // GETDOM取得
-    async function getFetch($geturl) {
+    // GETリクエスト
+    async function getFetch(geturl) {
+      setlog('getFetch start');
       try {
-        const result = await fetch($geturl, {
+        const result = await fetch(geturl, {
           method: "GET",
         })
           .then(function (response) {
@@ -148,21 +149,24 @@ getclear.addEventListener("click", () => {
     const postExec = document.getElementById("postExec");
     const postClear = document.getElementById("postClear");
     const postDom = document.getElementById("postDom");
-    // POSTDOM取得
-    async function postFetch($geturl) {
+    // POSTリクエスト
+    async function postFetch(postUrl) {
+      setlog('postFetch start');
+      console.log(postUrl);
       try {
-        const result = await fetch($geturl, {
+        const result = await fetch(postUrl, {
           method: "POST",
         })
           .then(function (response) {
-            console.log(response);
-            return response.text();
+            setlog(response);
+            // return response.text();
           })
           .then(function (data) {
-            getdom.textContent = data;
+            setlog(data);
+            // getdom.textContent = data;
           });
       } catch (error) {
-        console.log(error);
+        setlog(error);
         postDom.textContent = error.toString();
       }
     }
