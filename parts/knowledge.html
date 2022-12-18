@@ -404,6 +404,43 @@
     <h3>JMeter</h3>
     <p>Apacheソフトウェア財団が開発しているオープンソースの負荷検証ツール</p>
 
+    <h2>Heroku - add-on</h2>
+    <h3>Heroku Scheduler</h3>
+    <p>定時バッチの実行</p>
+    <h3>Heroku Redis</h3>
+    <p>キーバリューで値を持つ。postgresより高速らしい</p>
+    <h3>SendGrid</h3>
+    <p>メール送信</p>
+    <h3>Papertrail</h3>
+    <p>ログ閲覧</p>
+    <h3>Heroku Postgres</h3>
+    <p>Postgres</p>
+    <h3>New Relic</h3>
+    <p>負荷監視ツールらしい</p>
+
+    <h2>AWS</h2>
+    <h3>Amazon S3(Amazon Simple Storage Service)</h3>
+    <p>ストレージサービス</p>
+    <h3>Amazon API Gateway</h3>
+    <p>リクエストを受け付けて後続の処理を呼び出している。API作成。呼び出しが有れば、Lamdaを呼び出したり出来る</p>
+    <h3>AWS Lambda</h3>
+    <p>サーバーレスで呼び出しがあったタイミングだけ動作するため、EC2より安く済むらしい。</p>
+    <p>あらゆる機能からのトリガーで呼び出すことが出来るらしい。(S3・API Gateway・Simple Queue Service・DynnoDB・Alexa Skills Kitなど)</p>
+    <p>Node Jsで記述する。(Pythonとかでも動くらしい)</p>
+    <p>Node Jsの場合、レスポンスを指定するため、Expressを使用しているらしい</p>
+    <h3>SQS(Amazon Simple Queue Service)</h3>
+    <p>LamdaからSQSにリクエストを貯めて、キューからLamdaを1件ずつ実行するような動きが出来るらしい。</p>
+    <h3>Amazon DynamoDB</h3>
+    <p>key-value。NoSQL データベースらしい。</p>
+    <h3>Alexa Skills Kit</h3>
+    <p>Alexa搭載機器から発話を読み取り、Lamdaを呼び出すらしい</p>
+    <p>Amazon Developer Consoleでスキルを作成してLamdaを呼び出す。(EndpointにLamdaを指定)</p>
+    <p>
+        <a href="https://www.amazon.com/ap/signin?openid.pape.max_auth_age=3600&openid.return_to=https%3A%2F%2Fdeveloper.amazon.com%2Fsettings%2Fconsole%2Fhome&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=mas_dev_portal&openid.mode=checkid_setup&language=ja_JP&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&pageId=amzn_developer_portal&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&language=ja_JP">
+        【参考】Amazon Developer Console
+        </a>
+    </p>
+
 </main>
 <div id="log"></div>
 <script src="../js/util.js"></script>
