@@ -7,7 +7,7 @@
     <summary>参考サイト</summary>
     <p>
       <a href="https://www.codit.work/notes/ld2h3c2k1coufqauzydl/"
-        >JavaScriptのfetch API&DOM Parserで外部HTMLを解析する（参考）</a
+        >JavaScriptのfetch API&GETDOM Parserで外部HTMLを解析する（参考）</a
       >
     </p>
     <p>
@@ -17,8 +17,23 @@
     </p>
   </details>
   <hr />
+  <hr />
+  <details>
+    <summary>リクエストの確認(Chome)</summary>
+    <figure>
+      <p>F12キー(開発用コンソール)を開く</p>
+      <p>ネットワークタブを選択</p>
+      <p>Fetch/XHRタブを選択</p>
+      <p>Fetchでリクエストを実行</p>
+      <p>タイムライン?から該当のリクエストを選択</p>
+      <p>名前から該当の名前を選択</p>
+      <img class="beside" src="../img/screenShot/fetchのリクエスト内容を確認(Chome).PNG" alt="fetchのリクエスト内容を確認(Chome).PNG">
+      <figcaption>fetchのリクエスト内容を確認(Chome).PNG</figcaption>
+    </figure>
+  </details>
+  <hr />
 
-  <h2>fetch(get)</h2>
+  <h2>fetch(GET)</h2>
   <p>対策されているサイト(Youtubeとか)は「TypeError: Failed to fetch」となる。CORS (Cross-Origin Resource Sharing)で対策されているらしい。</p>
   <p>DOM(Document Object Model)の操作とかも出来るらしい。</p>
   <hr />
@@ -26,33 +41,33 @@
     <summary>ソース</summary>
     <pre>
         <code>
-const url = document.getElementById("url");
-const exec = document.getElementById("exec");
-const clear = document.getElementById("clear");
-const dom = document.getElementById("dom");
-// DOM取得
-async function getFetch($url) {
+const geturl = document.getElementById("geturl");
+const getexec = document.getElementById("getexec");
+const getclear = document.getElementById("getclear");
+const getdom = document.getElementById("getdom");
+// GETDOM取得
+async function getFetch($geturl) {
     try {
-    const result = await fetch($url, {
+    const result = await fetch($geturl, {
         method: "GET",
     })
         .then(function (response) {
         return response.text();
         })
         .then(function (data) {
-        dom.textContent = data;
+        getdom.textContent = data;
         });
     } catch (error) {
     console.log(error);
-    dom.textContent = error.toString();
+    getdom.textContent = error.toString();
     }
 }
-exec.addEventListener("click", () => {
-    getFetch(url.value);
+getexec.addEventListener("click", () => {
+    getFetch(geturl.value);
 });
-clear.addEventListener("click", () => {
-    dom.textContent = "";
-    url.value = "";
+getclear.addEventListener("click", () => {
+    getdom.textContent = "";
+    geturl.value = "";
 });
         </code>
     </pre>
@@ -61,16 +76,32 @@ clear.addEventListener("click", () => {
   <p>
     URL：<input
       type="text"
-      id="url"
+      id="geturl"
       value="https://toriisan001.github.io/page/home.html"
     />
   </p>
-  <button type="button" id="exec">実行</button>
-  <button type="button" id="clear">クリア</button>
+  <button type="button" id="getexec">実行</button>
+  <button type="button" id="getclear">クリア</button>
   <pre>
-    <code id="dom">
+    <code id="getdom">
     </code>
 </pre>
+
+<h2>fetch(POST)</h2>
+<p>
+  URL：<input
+    type="text"
+    id="geturl"
+    value="https://www.muryou-tools.com/test/posttestutf8.php"
+  />
+</p>
+<button type="button" id="postExec">実行</button>
+<button type="button" id="postClear">クリア</button>
+<pre>
+  <code id="getdom">
+  </code>
+</pre>
+
 </main>
 <div id="log"></div>
 <script src="../js/util.js"></script>
@@ -80,33 +111,61 @@ clear.addEventListener("click", () => {
 <script>
   "use strict";
   {
-    const url = document.getElementById("url");
-    const exec = document.getElementById("exec");
-    const clear = document.getElementById("clear");
-    const dom = document.getElementById("dom");
-    // DOM取得
-    async function getFetch($url) {
+    const geturl = document.getElementById("geturl");
+    const getexec = document.getElementById("getexec");
+    const getclear = document.getElementById("getclear");
+    const getdom = document.getElementById("getdom");
+    // GETDOM取得
+    async function getFetch($geturl) {
       try {
-        const result = await fetch($url, {
+        const result = await fetch($geturl, {
           method: "GET",
         })
           .then(function (response) {
             return response.text();
           })
           .then(function (data) {
-            dom.textContent = data;
+            getdom.textContent = data;
           });
       } catch (error) {
         console.log(error);
-        dom.textContent = error.toString();
+        getdom.textContent = error.toString();
       }
     }
-    exec.addEventListener("click", () => {
-      getFetch(url.value);
+    getexec.addEventListener("click", () => {
+      getFetch(geturl.value);
     });
-    clear.addEventListener("click", () => {
-      dom.textContent = "";
-      url.value = "";
+    getclear.addEventListener("click", () => {
+      getdom.textContent = "";
+      geturl.value = "";
+    });
+    const postUrl = document.getElementById("postUrl");
+    const postExec = document.getElementById("postExec");
+    const postClear = document.getElementById("postClear");
+    const postDom = document.getElementById("postDom");
+    // POSTDOM取得
+    async function postFetch($geturl) {
+      try {
+        const result = await fetch($geturl, {
+          method: "POST",
+        })
+          .then(function (response) {
+            return response.text();
+          })
+          .then(function (data) {
+            getdom.textContent = data;
+          });
+      } catch (error) {
+        console.log(error);
+        postDom.textContent = error.toString();
+      }
+    }
+    postExec.addEventListener("click", () => {
+      postFetch(postUrl.value);
+    });
+    postClear.addEventListener("click", () => {
+      postDom.textContent = "";
+      postUrl.value = "";
     });
   }
 </script>
