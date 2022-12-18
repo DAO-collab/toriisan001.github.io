@@ -20,17 +20,12 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
-# env
-env:
-  SECRET_HOGE_1: ${{secrets.SECRET_HOGE_1}}
-
 jobs:
   # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-      SECRET_HOGE_2: ${{secrets.SECRET_HOGE_2}}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
