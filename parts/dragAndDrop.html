@@ -8,10 +8,67 @@
         <a href="https://qiita.com/yonedaco/items/ea234e95473d739c7447">Javascript でドラック＆ドロップを実装 (ライブラリ使わない)</a>
     </details>
     <hr />
+    <details>
+        <summary>ソース</summary>
+        <pre>
+            <code>
+=====HTML=====
+&lt;div id=&quot;app&quot; style=&quot;height:350px&quot;&gt;
+    &lt;img src=&quot;../img/gomibako.png&quot; id=&quot;gomibako&quot; width=&quot;50px&quot;&gt;&lt;br&gt;
+    &lt;img src=&quot;../img/ball.png&quot; id=&quot;ball&quot; width=&quot;30px&quot;&gt;
+&lt;/div&gt;
+=====JavaScript=====
+var gomibako = document.getElementById("gomibako");
+gomibako.style.zIndex = "1";
+var ball = document.getElementById("ball");
+ball.style.position = "absolute";
+ball.style.cursor = "pointer";
+ball.style.zIndex = "2";
+ball.ondragstart = function(e){
+  return false;
+}
+
+function onMouseMove(event){
+  var x = event.clientX;
+  var y = event.clientY;
+  var width = ball.offsetWidth;
+  var height = ball.offsetHeight;
+  ball.style.top = (y-height/2) + "px";
+  ball.style.left = (x-width/2) + "px";
+  var gomibakoRect = gomibako.getBoundingClientRect();
+  if((x>=gomibakoRect.left && x<=(gomibakoRect.left+gomibakoRect.width)) && (y>=gomibakoRect.top && y<=(gomibakoRect.top+gomibakoRect.height))){
+    gomibako.style.backgroundColor = "pink";
+  }
+  else{
+    gomibako.style.backgroundColor = "white";
+  }
+}
+
+ball.onmousedown = function(event){
+  document.addEventListener("mousemove",onMouseMove);
+}
+
+ball.onmouseup = function(event){
+  var x = event.clientX;
+  var y = event.clientY;
+  var width = ball.offsetWidth;
+  var height = ball.offsetHeight;
+  var gomibakoRect = gomibako.getBoundingClientRect();
+  if((x>=gomibakoRect.left && x<=(gomibakoRect.left+gomibakoRect.width)) && (y>=gomibakoRect.top && y<=(gomibakoRect.top+gomibakoRect.height))){
+    var app = document.getElementById("app");
+    gomibako.style.backgroundColor = "white";
+    app.removeChild(ball);
+  }
+  document.removeEventListener("mousemove",onMouseMove);
+}
+            </code>
+        </pre>
+    </details>
+    <hr />
 
     <div id="app" style="height:350px">
-        <img src="../img/gomibako.png" id="gomibako" width="50px"><br>
-        <img src="../img/ball.png" id="ball" width="30px">
+        <img src="../img/gomibako.png" id="gomibako" style="width:50px"><br>
+        <img src="../img/ball.png" id="ball" style="width:30px">
     </div>
 
 </main>
@@ -23,7 +80,7 @@
 <script>
 
     var gomibako = document.getElementById("gomibako");
-    gomibako.style.zIndex = "1";
+    gomibako.style.zIndex = "0";
     var ball = document.getElementById("ball");
     ball.style.position = "absolute";
     ball.style.cursor = "pointer";
