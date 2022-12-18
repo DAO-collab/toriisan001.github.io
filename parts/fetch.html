@@ -30,6 +30,11 @@
       <img class="beside" src="../img/screenShot/fetchのリクエスト内容を確認(Chome).PNG" alt="fetchのリクエスト内容を確認(Chome).PNG">
       <figcaption>fetchのリクエスト内容を確認(Chome).PNG</figcaption>
     </figure>
+    <p>
+      <a href="https://www.tsukimi.net/chrome-developer-tools_post.html"
+        >ChromeデべロッパーツールでPOSTされたパラメータの中身を確認する（参考）</a
+      >
+    </p>
   </details>
   <hr />
 
@@ -91,7 +96,7 @@ getclear.addEventListener("click", () => {
 <p>
   URL：<input
     type="text"
-    id="geturl"
+    id="postUrl"
     value="https://www.muryou-tools.com/test/posttestutf8.php"
   />
 </p>
@@ -150,6 +155,7 @@ getclear.addEventListener("click", () => {
           method: "POST",
         })
           .then(function (response) {
+            console.log(response);
             return response.text();
           })
           .then(function (data) {
