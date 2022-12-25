@@ -97,29 +97,6 @@ C:\workspace\toriisan001.github.io\parts\youtube.html
     </pre>
     <p><a href="https://miffy252lion.hatenablog.com/entry/2021/02/18/140014">Windowsコマンドプロンプトでフォルダ配下の全ファイル内の文字列検索を行うコマンド</a></p>
 
-    <h2>フォルダ配下の全ファイル内の文字列検索を行うコマンド</h2>
-    <pre>
-    <code>
-=====コマンド=====
-for /f "usebackq" %i in (`dir /a-d /s /b ${検索対象パス}`) do findstr /i /m "${検索文字列}" %i
-=====使用例=====
-C:\workspace\toriisan001.github.io>@echo off
-for /f "usebackq" %i in (`dir /a-d /s /b C:\workspace\toriisan001.github.io\parts`) do findstr /i /m "JavaScript" %i
-C:\workspace\toriisan001.github.io\parts\batch.html
-C:\workspace\toriisan001.github.io\parts\bookMark.html
-C:\workspace\toriisan001.github.io\parts\fetch.html
-C:\workspace\toriisan001.github.io\parts\hamburgerMenu.html
-C:\workspace\toriisan001.github.io\parts\javaScript.html
-C:\workspace\toriisan001.github.io\parts\knowledge.html
-C:\workspace\toriisan001.github.io\parts\menu.html
-C:\workspace\toriisan001.github.io\parts\modal.html
-C:\workspace\toriisan001.github.io\parts\output.csv
-C:\workspace\toriisan001.github.io\parts\pip.html
-C:\workspace\toriisan001.github.io\parts\youtube.html
-    </code>
-    </pre>
-    <p><a href="https://miffy252lion.hatenablog.com/entry/2021/02/18/140014">Windowsコマンドプロンプトでフォルダ配下の全ファイル内の文字列検索を行うコマンド</a></p>
-
     <h2>フォルダ配下の全ファイル名を文字列検索を行うコマンド</h2>
     <pre>
     <code>
