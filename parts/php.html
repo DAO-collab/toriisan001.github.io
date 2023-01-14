@@ -186,6 +186,7 @@
     <p>「ctl + shift + d」を押す。「C:\xampp8.2\htdocs\toriisanPHP001\.vscode\launch.json」ファイルを作成</p>
 <pre>
 <code>
+=====launch.json=====
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
@@ -243,6 +244,18 @@
         <img class="beside" src="../img/PHP/Monolog/complete.PNG" alt="complete.PNG">
         <figcaption>Finishを選択</figcaption>
     </figure>
+    <p>cmdで「cd C:\xampp8.2\htdocs\toriisanPHP001」で移動</p>
+    <p>「composer require monolog/monolog」でmonologのインストール。composer.json、composer.lockが作成される。</p>
+<pre>
+<code>
+=====composer.json=====
+{
+    "require": {
+        "monolog/monolog": "^3.2"
+    }
+}
+</code>
+</pre>
 
     <h2>CURL実行時にファイルを添付</h2>
     <p><a href="https://www.php.net/manual/ja/class.curlfile.php">CURLFile クラス【参考】</a></p>
