@@ -128,7 +128,11 @@
     <h3>「C:\xampp8.2\apache\conf\httpd.conf」を編集する</h3>
     <p>60行目を修正。<br>「Listen 80」→「Listen 8089」</p>
     <p>228行目を修正。<br>「ServerName localhost:80」→「ServerName localhost:8089」</p>
-    <p>環境変数を使用する場合はDocumentRootの上に追加するらしい。今回は追加しない。<br>例<br>SetEnv DATABASE_URL postgres://ID:パスワード@localhost:5432/DB名</p>
+    <p>
+        Herokuの環境変数を使用する場合はDocumentRootの上に追加するらしい。今回は追加しない。<br>
+        例<br>
+        SetEnv DATABASE_URL postgres://ID:パスワード@localhost:5432/DB名
+    </p>
     <h3>「C:\xampp8.2\apache\conf\extra\httpd-ssl.conf」を編集する</h3>
     <p>36,121,125行目の443を4433に変更する。</p>
     <p>DocumentRootを変更したいときは124行目を修正する。例「DocumentRoot "C:/xampp8.2/htdocs"」→「DocumentRoot "C:/xampp8.2/htdocs/toriisanPHP001"」</p>
@@ -139,7 +143,12 @@
     </figure>
     <figure>
         <img class="beside" src="../img/PHP/XAMPPコントロールのポートを変更/ポートを変更.PNG" alt="ポートを変更.PNG">
-        <figcaption>xampp-controlを起動。<br>config → Service and Port Settingsを開く。<br>Main Portを「80」→「8089」に変更。<br>SSL Portを「443」→「4433」に変更。</figcaption>
+        <figcaption>
+            xampp-controlを起動。<br>
+            config → Service and Port Settingsを開く。<br>
+            Main Portを「80」→「8089」に変更。<br>
+            SSL Portを「443」→「4433」に変更。
+        </figcaption>
     </figure>
     <h3>プログラム実行ディレクトリ・ファイルを作成</h3>
     <p>例「C:\xampp8.2\htdocs」にディレクトリ「toriisanPHP001」を作成</p>
