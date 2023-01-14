@@ -121,7 +121,7 @@
         xdebug.client_port=9000<br>
         xdebug.idekey=VSCODE<br>
         xdebug.mode=debug.coverage<br>
-        xdebug.start_with_request=Yes<br>
+        ;xdebug.start_with_request=Yes<br>
         xdebug.var_display_max_children=-1<br>
         xdebug.var_display_max_data=-1<br>
     </p>
@@ -218,6 +218,7 @@
     </figure>
     <h3>ログ出力のため「Monolog」ライブラリを使用する</h3>
     <p><a href="https://getcomposer.org/doc/00-intro.md#installation-windows">Composerをダウンロード</a></p>
+    <p><a href="https://reffect.co.jp/php/monolog-to-understand#monolog">PHPのロギングmonologを理解する</a></p>
     <p>Composer-Setup.exeをダブルクリック</p>
     <figure>
         <img class="beside" src="../img/PHP/Monolog/SettingCheck.PNG" alt="SettingCheck.PNG">
@@ -254,6 +255,28 @@
         "monolog/monolog": "^3.2"
     }
 }
+</code>
+</pre>
+    <p>「C:\xampp8.2\php\logs」ディレクトリを作成</p>
+    <p>「C:\xampp8.2\htdocs\toriisanPHP001\public\index.php」を修正</p>
+<pre>
+<code>
+=====index.php=====
+<?php
+
+require '../vendor/autoload.php';
+
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
+// create a log channel
+$log = new Logger('name');
+
+$log->pushHandler(new StreamHandler('C:\xampp8.2\php\logs\log.log', Logger::WARNING));
+
+// add records to the log
+$log->warning('Foo');
+$log->error('Bar');
 </code>
 </pre>
 
