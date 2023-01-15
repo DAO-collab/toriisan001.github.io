@@ -259,21 +259,21 @@
 <pre>
 <code>
 =====index.php=====
-<?php
+&lt;?php
 
-require '../vendor/autoload.php';
+require &#039;../vendor/autoload.php&#039;;
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
 // create a log channel
-$log = new Logger('name');
+$log = new Logger(&#039;name&#039;);
 
-$log->pushHandler(new StreamHandler('C:\xampp8.2\php\logs\log.log', Logger::WARNING));
+$log-&gt;pushHandler(new StreamHandler(&#039;C:\xampp8.2\php\logs\log.log&#039;, Logger::WARNING));
 
 // add records to the log
-$log->warning('Foo');
-$log->error('Bar');
+$log-&gt;warning(&#039;Foo&#039;);
+$log-&gt;error(&#039;Bar&#039;);
 </code>
 </pre>
 
