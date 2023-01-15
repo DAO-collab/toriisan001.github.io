@@ -539,14 +539,67 @@
     </p>
     <p>導入コストが低いらしい</p>
     <p>RDBMS本体の機能としては商用に匹敵らしい</p>
+    <h3>Microsoft SQL Server</h3>
+    <p>
+        <a href="https://www.winserver.ne.jp/column/sql-server/">
+        【参考】Microsoft SQL Serverとは。他DBとの違いを解説
+        </a>
+    </p>
     <p>PostgreSQLと比べてSQLの実装レベルが高く、より複雑なアプリケーションに最適らしい</p>
-    <p>PostgreSQLと比べて障害対応のためのバックアップの対応レベルが高いらしい</p>
-    <h3>SQL Server</h3>
+    <p>SQL Serverは、Microsoftが開発、リリースしているデータベース製品</p>
+    <p>Windows OSとの相性が良いため、Windows Serverを使用してサーバー構築する場合は、データベース製品としてSQL Serverが使われることが多いらしい</p>
+    <p>リレーショナルデータベース管理システム(RDBMS)</p>
+    <p>Windows ServerなどWindows OSとの相性が良く、マウスでの作業が出来るなど操作性が高いことから、企業での利用実績も多いらしい</p>
+    <p>中規模〜大規模</p>
+    <p>比較的高価</p>
+    <p>OSにWindows Serverを選択する場合、RDBMSの選択肢にはSQL Serverを必ず入れるべきであるらしい</p>
     <h3>Oracle Database</h3>
+    <p>
+        <a href="https://www.fenet.jp/dotnet/column/database/9366/">
+        【参考】Oracle Databaseの4つの特徴とは？他データベースとの違いも解説
+        </a>
+    </p>
+    <p>Oracle社が開発したデータベース</p>
+    <p>比較的大規模</p>
+    <p>高価</p>
+    <p>柔軟性があり、高い堅牢性があるらしい</p>
     <h3>MongoDB</h3>
-    <h3>DynamoDB</h3>
+    <p>
+        <a href="https://kinsta.com/jp/blog/mongodb-vs-mysql/">
+        【参考】【データベース管理システム】MongoDBとMySQLの違い
+        </a>
+    </p>
+    <p>大容量データの保存に強さを発揮する無料オープンソース非リレーショナルデータベースシステムらしい</p>
+    <p>データを行と列で保存するのではなく、複数のJSONに似たドキュメントやコレクションでデータを表示</p>
+    <p>世界中の何千もの企業でデータストレージ、またはアプリケーションのデータベースサービスとして使用されています。その用途はさまざまらしい。</p>
+    <p>使用例：<br>
+        Aadhaar（アドハー）─インドの国民IDシステムで、世界最大の生体認証データベース。12億人以上の生体情報および人口統計データの保存にMongoDBが使用されている。<br>
+        eBay─B2CとC2Cとして機能するアメリカのEC企業。サイト内検索のサジェスト機能、クラウド管理、メタデータ保存など、さまざまな用途でMongoDBを使用している。<br>
+        Shutterfly─人気の写真共有プラットフォーム。MongoDBを使って60億枚以上の画像を保存・管理し、1秒に10万件のトランザクション処理を行っている。
+    </p>
     <h3>IBM Db2</h3>
+    <p>
+        <a href="https://gozal.cc/basics/db-rdb-hikaku">
+        【参考】【比較表有り】おすすめのRDB一覧を徹底比較！NoSQLとの違いやメリットも解説
+        </a>
+    </p>
+    <p>クラウドとオンプレミスどちらでも利用可能らしい</p>
+    <p>レスポンスの早さが定評らしい</p>
+    <p>同時アクセスの制御など高いセキュリティ性能らしい</p>
+    <p>シェアが下がっているらしい</p>
+    <p>IBMのAS400の専門知識がなければ扱いは難しいらしい</p>
     <h3>Redis</h3>
+    <p>
+        <a href="https://prograshi.com/platform/database/concept-when-selecting-db/">
+        【参考】データベース(DB)の種類や選択時の考え方｜MySQLやPostgreSQLとRedisの違い、MemcachedやBigQueryとの違い・メリット・デメリット
+        </a>
+    </p>
+    <p>大事なデータはサーバー使用料は高いが高機能なMySQLやposgreSQLを使い、さほど重要でもないデータはより高速で大容量を処理できる簡易的なRedisを使うらしい</p>
+    <p>NoSQL(Key-Value型)。Redisはデータ保存に、一対になったキーと値を使う(Key-Value型)。RDBに比べるとかなりシンプルな作りになる。</p>
+    <p>PostgreSQLやMySQLは他のRDBMSと同じく、保存領域（ストレージ）に物理ディスクを使用。データは永続的に保存され信頼性も高い。メモリに比べ処理速度は遅い。Redisはメモリを使うため、処理速度が早い（数千〜数万倍早い）</p>
+    <p>一時保存（一定時間後に消える）(データバックアップ機能もある)</p>
+    <p>サーバー費用を抑えられる</p>
+    <p>Redisの表はRDBではないため言語はSQLではない。これらのSQLを使わないDBをNoSQLと呼ぶ。ちなみに、NoはNotではなく、Not Onlyの略。</p>
 
 </main>
 <div id="log"></div>
