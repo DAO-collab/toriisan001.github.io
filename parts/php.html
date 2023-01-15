@@ -119,12 +119,13 @@
         zend_extension=php_xdebug-3.2.0-8.2-vs16-x86_64.dll<br>
         xdebug.client_host=127.0.0.1<br>
         xdebug.client_port=9000<br>
-        xdebug.idekey=VSCODE<br>
-        xdebug.mode=debug.coverage<br>
-        ;xdebug.start_with_request=Yes<br>
-        xdebug.var_display_max_children=-1<br>
-        xdebug.var_display_max_data=-1<br>
+        ;xdebug.idekey=VSCODE<br>
+        ;xdebug.mode=debug.coverage<br>
+        xdebug.start_with_request=Yes<br>
+        ;xdebug.var_display_max_children=-1<br>
+        ;xdebug.var_display_max_data=-1<br>
     </p>
+    <p>idekey,mode,var_display_max_children,var_display_max_dataは無くても動く？</p>
     <h3>「C:\xampp8.2\apache\conf\httpd.conf」を編集する</h3>
     <p>60行目を修正。<br>「Listen 80」→「Listen 8089」</p>
     <p>228行目を修正。<br>「ServerName localhost:80」→「ServerName localhost:8089」</p>
