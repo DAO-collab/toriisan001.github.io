@@ -598,6 +598,30 @@ if (!e.path[0].className.match("operationMenuParts")) {
 </pre>
 <a href="https://magazine.techacademy.jp/magazine/38326">【JavaScript】HTMLでbodyタグにonLoad属性を使う方法を現役エンジニアが解説【初心者向け】【参考】</a>
 
+<h2>【JavaScript】楽譜を表示する</h2>
+<pre>
+<code>
+=====HTML=====
+&lt;div id=&quot;paper&quot;&gt;&lt;/div&gt;
+=====JavaScript=====
+&lt;script src=&quot;../js/musicTheory/abcjs-basic-min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var abc = &quot;T: Cooley&#039;s\n&quot; +
+        &quot;M: 4/4\n&quot; +
+        &quot;L: 1/8\n&quot; +
+        &quot;R: reel\n&quot; +
+        &quot;K: Emin\n&quot; +
+        &quot;|:D2|EB{c}BA B2 EB|~B2 AB dBAG|FDAD BDAD|FDAD dAFD|\n&quot; +
+        &quot;EBBA B2 EB|B2 AB defg|afe^c dBAF|DEFD E2:|\n&quot; +
+        &quot;|:gf|eB B2 efge|eB B2 gedB|A2 FA DAFA|A2 FA defg|\n&quot; +
+        &quot;eB B2 eBgB|eB B2 defg|afe^c dBAF|DEFD E2:|&quot;;
+        ABCJS.renderAbc(&quot;paper&quot;, abc);
+&lt;/script&gt;
+</script>
+</code>
+</pre>
+<div id="paper"></div>
+
 </div>
 </main>
 <div id="log"></div>
