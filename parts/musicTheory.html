@@ -97,6 +97,16 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
         '"ド"[c]"レ"[d]"ミ"[e]"ファ"[f]"ソ"[g]"ラ"[a]"シ"[b]"ド"[c\']|]';
         ABCJS.renderAbc("paper", abc);
 </script>
+<div id="paper"></div>
+<div id="midi"></div>
+<script type="text/javascript">
+    var abc =
+        "L: 1/8\n" +
+        "K: C\n" +
+        '"ド"[c]"レ"[d]"ミ"[e]"ファ"[f]"ソ"[g]"ラ"[a]"シ"[b]"ド"[c\']|]';
+        ABCJS.renderAbc("paper", abc);
+        ABCJS.renderMidi("midi", abc);
+</script>
     <h3>ニ長調(Key D)</h3>
     <p>レミファ#ソラシド#レ</p>
     <h3>ホ長調(Key E)</h3>
