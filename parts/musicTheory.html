@@ -33,6 +33,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
 <p><a href="https://www.m3tech.blog/entry/piano">【参考】Web Bluetooth API と Bluetooth MIDI を使って子供向けの音符学習アプリを作る</a></p>
 <p><a href="http://7th-chord.jp/sara_tsukiyono/index.php?cl=rp&rp=200105">【参考】第1回 abcjs 楽譜作成・演奏スクリプト</a></p>
 <p><a href="https://www.abcjs.net/#what">【参考】abcjs What is this?</a></p>
+<p><a href="https://www.ne.jp/asahi/music/marinkyo/ml/abc-regulo.html.ja#special_symbols">【参考】abc 記譜法 2.2 版</a></p>
 
     <h2>コード</h2>
     <p>和音(複数の音の重なり)のことらしい</p>
@@ -287,6 +288,18 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <p>３つの音で構成</p>
     <p>明るく安定した響き</p>
     <p>※最初に覚えたい</p>
+    <pre>
+        <span id="paperKeyMagerC"></span>
+        <span id="midiKeyMagerC"></span>
+        <script>
+            var keyMagerC =
+                "L: 1/8\n" +
+                "Q: 1/4=80\n" +
+                '"C"[CEG]"D"[DFA]"E"[EGB]"F"[FAc]"G"[GBd]"A"[Ace]"B"[ceg]"C"[egb]|]';
+            ABCJS.renderAbc("paperKeyMagerC", keyMagerC);
+            ABCJS.renderMidi("midiKeyMagerC", keyMagerC);
+        </script>
+    </pre>
     <h3>マイナーコード</h3>
     <p>表記例 Cm, Dmなど</p>
     <p>構成:メジャーコードから3度の音を1音低くする</p>
@@ -295,6 +308,18 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <p>メジャーコードと対で存在</p>
     <p>３つの音で構成</p>
     <p>暗い響き</p>
+    <pre>
+        <span id="paperKeyMinerC"></span>
+        <span id="midiKeyMinerC"></span>
+        <script>
+            var keyMinerC =
+                "L: 1/8\n" +
+                "Q: 1/4=80\n" +
+                '"Cm"[CDG]"Dm"[DFA]"Em"[EGB]"Fm"[FAc]"Gm"[GBd]"Am"[Ace]"Bm"[ceg]"Cm"[egb]|]';
+            ABCJS.renderAbc("paperKeyMinerC", keyMinerC);
+            ABCJS.renderMidi("midiKeyMinerC", keyMinerC);
+        </script>
+    </pre>
     <h3>7th(セブンス)</h3>
     <p>表記例:C7, D7など</p>
     <p>構成:メジャーコードまたはマイナーコード ＋ 1度の音の1オクターブ上の音から2音低くした音</p>
