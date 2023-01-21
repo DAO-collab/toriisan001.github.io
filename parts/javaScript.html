@@ -603,7 +603,9 @@ if (!e.path[0].className.match("operationMenuParts")) {
 <pre>
 <code>
 =====HTML=====
-&lt;div id=&quot;paper&quot;&gt;&lt;/div&gt;
+&lt;pre&gt;
+&lt;span id=&quot;paper&quot;&gt;&lt;/span&gt;
+&lt;/pre&gt;
 =====JavaScript=====
 &lt;script src=&quot;../js/musicTheory/abcjs-basic-min.js&quot;&gt;&lt;/script&gt;
 &lt;script&quot;&gt;
@@ -621,7 +623,9 @@ if (!e.path[0].className.match("operationMenuParts")) {
 </script>
 </code>
 </pre>
-<div id="paper"></div>
+<pre>
+<span id="paper"></span>
+</pre>
 
 </div>
 </main>
@@ -630,3 +634,16 @@ if (!e.path[0].className.match("operationMenuParts")) {
 <script src="../js/common.js"></script>
 <script src="../js/config.js"></script>
 <script type="module" src="../js/commonModule.js"></script>
+<script src="../js/musicTheory/abcjs-basic-min.js"></script>
+<script>
+    var abc = "T: Cooley's\n" +
+        "M: 4/4\n" +
+        "L: 1/8\n" +
+        "R: reel\n" +
+        "K: Emin\n" +
+        "|:D2|EB{c}BA B2 EB|~B2 AB dBAG|FDAD BDAD|FDAD dAFD|\n" +
+        "EBBA B2 EB|B2 AB defg|afe^c dBAF|DEFD E2:|\n" +
+        "|:gf|eB B2 efge|eB B2 gedB|A2 FA DAFA|A2 FA defg|\n" +
+        "eB B2 eBgB|eB B2 defg|afe^c dBAF|DEFD E2:|";
+        ABCJS.renderAbc("paper", abc);
+</script>
