@@ -10,15 +10,28 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css"
     />
-    <script src="../js/musicTheory/abcjs-basic-min.js"></script>
+    <link href="../css/abcjs/abcjs-midi.css" media="all" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="../js/abcjs/abcjs_basic_2.3-min.js" ></script>
+    <script type="text/javascript" src="../js/abcjs/abcjs_basic_midi_3.0-min.js" ></script>
+    <script type="text/javascript" src="../js/abcjs/acoustic_grand_piano-ogg.js" ></script>
 </head>
 <body>
+    <div id="score" style="display:none;">
+        L:1/4
+        CDEFGABc
+    </div>
+    <div id="player" style="width:500px;"></div>
     <div id="headerParts"></div>
     <div id="menuParts"></div>
     <div id="musicTheoryParts"></div>
     <div id="operationParts"></div>
     <div id="footerParts"></div>
     <script src="../js/jquery-3.6.1.min.js"></script>
+    <script>
+        ABCJS.midi.soundfontUrl="./abcjs/";
+        ABCJS.renderMidi( "player", document.getElementById("score").innerHTML, {}, { generateInline: true }, {} );
+    </script>
     <script>
         'use strict';
         {
