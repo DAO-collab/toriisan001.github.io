@@ -98,11 +98,38 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
         ABCJS.renderMidi("midiKeyC", keyC);
 </script>
     <h3>ニ長調(Key D)</h3>
-    <p>レミファ#ソラシド#レ</p>
+<div id="paperKeyD"></div>
+<div id="midiKeyD"></div>
+<script>
+    var keyD =
+        "L: 1/8\n" +
+        "K: D\n" +
+        '"レ"[d]"ミ"[e]"ファ#"[f]"ソ"[g]"ラ"[a]"シ"[b]"ド#"[c\']"レ"[d\']|]';
+        ABCJS.renderAbc("paperKeyD", keyD);
+        ABCJS.renderMidi("midiKeyD", keyD);
+</script>
     <h3>ホ長調(Key E)</h3>
-    <p>ミファ#ソ#ラシド#レ#ミ</p>
+<div id="paperKeyE"></div>
+<div id="midiKeyE"></div>
+<script>
+    var keyE =
+        "L: 1/8\n" +
+        "K: E\n" +
+        '"ミ"[e]"ファ#"[f]"ソ#"[g]"ラ"[a]"シ"[b]"ド#"[c\']"レ#"[d\']"ミ"[e\']|]';
+        ABCJS.renderAbc("paperKeyE", keyE);
+        ABCJS.renderMidi("midiKeyE", keyE);
+</script>
     <h3>ヘ長調(Key F)</h3>
-    <p>ファソラシbドレミファ</p>
+<div id="paperKeyF"></div>
+<div id="midiKeyF"></div>
+<script>
+    var keyF =
+        "L: 1/8\n" +
+        "K: F\n" +
+        '"ファ"[f]"ソ"[g]"ラ"[a]"シ♭"[b]"ド"[c\']"レ"[d\']"ミ"[e\']"ファ"[f\']|]';
+        ABCJS.renderAbc("paperKeyF", keyF);
+        ABCJS.renderMidi("midiKeyF", keyF);
+</script>
     <h3>ト長調(Key G)</h3>
     <p>ソラシドレミファ#ソ</p>
     <h3>イ長調(Key A)</h3>
