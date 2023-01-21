@@ -2,6 +2,31 @@
     <h1>MusicTheory</h1>
     <p id="lastModified"></p>
 
+    <h2>ABC記譜法</h2>
+    <p>パソコン等で使われる音楽記述言語の一つで、イギリスの Chris Walshaw によって考案された。単に「ABC」とも、また小文字で「abc」とも言う。音高を表すアルファベットと、音長を表す数字、その他の若干の記号を組み合わせて表記する。</p>
+    <pre>
+X:1
+T:sooranbushi
+M:2/4
+L:1/8
+K:F
+C2 DF | A2 GF | A2 GF | G2 FC | D2 FC | D2 D2 | z2 z2 ||
+zG AA | GA AA | GA AA | GF D2 | zA, CA, | CD GF | zG AF | DC FD | D z CC |
+DF A2| A3 c | G F2 C | D2 D2 | D2 z2||
+=====以下引用=====
+X:1　は、ファイルナンバーの1、を表す。
+T:sooranbushi　は、タイトルが「ソーランブシ」であることを表す。
+M:2/4　は、4分の2拍子であることを表す。
+L:1/8　は、1文字の長さを8分音符とすることを表す。
+K:F　は、調がヘ長調（Fメジャー）であることを示す。
+「CDEFGAB」はそれぞれ「ドレミファソラシ(ドの絶対音高をCとした場合)」。
+「z」は休符。
+1オクターブ高い音は小文字で、さらにそれより高い音は右上に「'」を付けて表す。
+1オクターブ低い音は文字の直後に「,」を打って表す。
+各英字の後ろの数字（整数・分数いずれも可）は、音符の長さを示す。例:「L:1/8」のとき、「D2」＝「D」の2倍の長さ（レの4分音符）、「D1/2」＝「D」の半分の長さ（レの16分音符）
+「|」は小節の区切り。スペースは意味を成さないが、通常見やすいように一拍を数える箇所に挿入する。
+    </pre>
+
     <h2>コード</h2>
     <p>和音(複数の音の重なり)のことらしい</p>
     <table border="5">
@@ -56,6 +81,9 @@
     <p><a href="https://youtu.be/Qud-rJ9_X0U">【参考】初心者必須！調を理解してスケールを日々の練習に取り入れよう！</a></p>
     <h3>ハ長調(Key C)</h3>
     <p>ドレミファソラシド</p>
+<pre>
+<span id="paper"></span>
+</pre>
     <h3>ニ長調(Key D)</h3>
     <p>レミファ#ソラシド#レ</p>
     <h3>ホ長調(Key E)</h3>
@@ -167,15 +195,10 @@
 <div id="log"></div>
 <script src="../js/musicTheory/abcjs-basic-min.js"></script>
 <script>
-    var abc = "T: Cooley's\n" +
-        "M: 4/4\n" +
+    var abc = "T: Key C Scale\n" +
         "L: 1/8\n" +
-        "R: reel\n" +
-        "K: Emin\n" +
-        "|:D2|EB{c}BA B2 EB|~B2 AB dBAG|FDAD BDAD|FDAD dAFD|\n" +
-        "EBBA B2 EB|B2 AB defg|afe^c dBAF|DEFD E2:|\n" +
-        "|:gf|eB B2 efge|eB B2 gedB|A2 FA DAFA|A2 FA defg|\n" +
-        "eB B2 eBgB|eB B2 defg|afe^c dBAF|DEFD E2:|";
+        "K: C\n" +
+        "cdefgabc'";
         ABCJS.renderAbc("paper", abc);
 </script>
 <script src="../js/util.js"></script>
