@@ -466,7 +466,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
                 "T: フラット5(マイナーコード)\n" +
                 "M: 1/1\n" +
                 "L: 1/1\n" +
-                '"Cm-5"[C_E_G]|"D♭m-5"[_D_E_G]|"Dm-5"[DE_A]|"E♭m-5"[_EFA]|"Em-5"[E_G_B]|"Fm-5"[F_AB]|"G♭m-5"[_GAc]|"Gm-5"[G_B_d]|"A♭m-5"[_A_Bd]|"Am-5"[A_c_e]|"Bm-5"[B_de]|"Bm-5"[B_de]|"Cm-5"[c_e_g]|]';
+                '"Cm-5"[C_E_G]|"D♭m-5"[_D_E_G]|"Dm-5"[DE_A]|"E♭m-5"[_EFA]|"Em-5"[E_G_B]|"Fm-5"[F_AB]|"G♭m-5"[_GAc]|"Gm-5"[G_B_d]|"A♭m-5"[_A_Bd]|"Am-5"[A_c_e]|"B♭m-5"[_BC_e]|"Bm-5"[B_de]|"Cm-5"[c_e_g]|]';
             ABCJS.renderAbc("paperKeyMinerFlat5", keyMinerFlat5);
             ABCJS.renderMidi("midiKeyMinerFlat5", keyMinerFlat5);
         </script>
@@ -597,7 +597,19 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <h2>ダイアトニックコード</h2>
     <p>その曲の調のスケールの各音に対応する7つのコード</p>
     <p>調のスケールで構成されている</p>
-    <p>Key C	C	Dm	Em	F	G	Am	Bm-5</p>
+    <h3>Key C</h3>
+    <p>C	Dm	Em	F	G	Am	Bm-5</p>
+    <span id="paperDiatonicChordKeyC"></span>
+    <span id="midiDiatonicChordKeyC"></span>
+    <script>
+        var abcDiatonicChordKeyC =
+            "T: ダイアトニックコード(Key C)\n" +
+            "M: 1/1\n" +
+            "L: 1/1\n" +
+            '"C"[CEG]"Dm"[DEA]"Em"[E_GB]"F"[FAc]|"G"[GBd]"Am"[ABe]"Bm-5"[GBd]|]';
+        ABCJS.renderAbc("paperDiatonicChordKeyC", abcDiatonicChordKeyC);
+        ABCJS.renderMidi("midiDiatonicChordKeyC", abcDiatonicChordKeyC);
+    </script>
     <p>Key D	D	Em	F#m	G	A	Bm	C#m-5</p>
     <p>度数	I	IIm	三m	四	五	六m	七m-5</p>
     
