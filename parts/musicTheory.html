@@ -455,7 +455,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
                 "T: フラット5(メジャーコード)\n" +
                 "M: 1/1\n" +
                 "L: 1/1\n" +
-                '"C"[CE_G]|"D"[DF_A]|"E"[EG_B]|"F"[FAB]|"G"[GB_d]|"A"[Ac_e]|"B"[Bde]|"C"[ce_g]|]';
+                '"C-5"[CE_G]|"D-5"[DF_A]|"E-5"[EG_B]|"F-5"[FAB]|"G-5"[GB_d]|"A-5"[Ac_e]|"B-5"[Bde]|"C-5"[ce_g]|]';
             ABCJS.renderAbc("paperKeyMagerCFlat5", keyMagerCFlat5);
             ABCJS.renderMidi("midiKeyMagerCFlat5", keyMagerCFlat5);
         </script>
@@ -466,7 +466,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
                 "T: フラット5(マイナーコード)\n" +
                 "M: 1/1\n" +
                 "L: 1/1\n" +
-                '"Cm"[C_E_G]|"Dm"[DE_A]|"Em"[E_G_B]|"Fm"[F_AB]|"Gm"[G_B_d]|"Am"[A_c_e]|"Bm"[B_de]|"Cm"[c_e_g]|]';
+                '"Cm-5"[C_E_G]|"Dm-5"[DE_A]|"Em-5"[E_G_B]|"Fm-5"[F_AB]|"Gm-5"[G_B_d]|"Am-5"[A_c_e]|"Bm-5"[B_de]|"Cm-5"[c_e_g]|]';
             ABCJS.renderAbc("paperKeyMinerCFlat5", keyMinerCFlat5);
             ABCJS.renderMidi("midiKeyMinerCFlat5", keyMinerCFlat5);
         </script>
@@ -476,6 +476,19 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <p>怪しげな響き</p>
     <p>4和音だけど3和音でもOK(7度の音を削ってもいいらしい)</p>
     <p>例 Cdimドミbソbラ</p>
+    <pre>
+        <span id="paperKeyMagerDim"></span>
+        <span id="midiKeyMagerDim"></span>
+        <script>
+            var keyMagerC =
+                "T: ディミニッシュ(メジャーコード)\n" +
+                "M: 1/1\n" +
+                "L: 1/1\n" +
+                '"C"[CEG]|"D"[DFA]|"E"[EGB]|"F"[FAc]|"G"[GBd]|"A"[Ace]|"B"[Bdf]|"C"[ceg]|]';
+            ABCJS.renderAbc("paperKeyMagerC", keyMagerC);
+            ABCJS.renderMidi("midiKeyMagerC", keyMagerC);
+        </script>
+    </pre>
     <h3>sus4(サスフォー)</h3>
     <p>構成:3度の音を一つ上の音にする</p>
     <p>曲の節目で良い仕事するらしい</p>
