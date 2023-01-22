@@ -422,12 +422,23 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
         <span id="midiKeyFractionChord"></span>
         <script>
             var keyFractionChord =
-                "T: 分数コード(例 メジャーコード)\n" +
+                "T: 分数コード(メジャーコード)\n" +
                 "M: 1/1\n" +
                 "L: 1/1\n" +
                 '"C/E"[E,CG]|"C/G"[G,CE]|"D/F"[F,DA]|"D/A"[A,DF]|"E/G"[G,EB]|"E/B"[B,EG]|"F/A"[A,Fc]|"F/C"[CFA]|"G/B"[B,Gd]|"G/D"[DGB]|"A/C"[CAe]|"A/E"[EAc]|"B/D"[DBf]|"B/F"[FBd]|"C/E"[Ecg]|"C/G"[Gce]|]';
             ABCJS.renderAbc("paperKeyFractionChord", keyFractionChord);
             ABCJS.renderMidi("midiKeyFractionChord", keyFractionChord);
+        </script>
+        <span id="paperKeyFractionChordMiner"></span>
+        <span id="midiKeyFractionChordMiner"></span>
+        <script>
+            var keyFractionChordMiner =
+                "T: 分数コード(マイナーコード)\n" +
+                "M: 1/1\n" +
+                "L: 1/1\n" +
+                '"Cm/Em"[_E,CG]|"Cm/G"[G,C_E]|"Dm/E"[E,DA]|"Dm/A"[A,DE]|"Em/Gm"[_G,EB]|"Em/B"[B,E_G]|"Fm/Am"[_A,Fc]|"Fm/C"[CF_A]|"Gm/Bm"[_B,Gd]|"Gm/D"[DG_B]|"Am/Cm"[_c,Ae]|"Am/E"[EA_c]|"Bm/Dm"[_D,Bf]|"Bm/F"[FB_d]|"Cm/Em"[_E,cg]|"Cm/G"[Gc_e]|]';
+            ABCJS.renderAbc("paperKeyFractionChordMiner", keyFractionChordMiner);
+            ABCJS.renderMidi("midiKeyFractionChordMiner", keyFractionChordMiner);
         </script>
     </pre>
     <p><a href="http://music-theory.info/chordprogression/bunsuuchord/%E5%88%86%E6%95%B0%E3%82%B3%E3%83%BC%E3%83%89%E3%81%A8%E3%81%AF/">【参考】分数コードとは</a></p>
