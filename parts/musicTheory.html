@@ -345,7 +345,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
                 "T: マイナーコード\n" +
                 "M: 1/1\n" +
                 "L: 1/1\n" +
-                '"Cm"[C_EG]|"D♭m"[_D_E_A]|"Dm"[DEA]|"E♭m"[_EF_B]|"Em"[E_GB]|"Fm"[F_Ac]|"G♭m"[_GA_d]|"Gm"[G_Bd]|"A♭m"[_A_B_e]|"Am"[Ace]|"B♭m"[_Bce]|"Bm"[B_df]|"Cm"[c_eg]|]';
+                '"Cm"[C_EG]|"D♭m"[_D_E_A]|"Dm"[DEA]|"E♭m"[_EF_B]|"Em"[E_GB]|"Fm"[F_Ac]|"G♭m"[_GA_d]|"Gm"[G_Bd]|"A♭m"[_A_B_e]|"Am"[ABe]|"B♭m"[_Bce]|"Bm"[B_df]|"Cm"[c_eg]|]';
             ABCJS.renderAbc("paperKeyMiner", keyMiner);
             ABCJS.renderMidi("midiKeyMiner", keyMiner);
         </script>
@@ -567,6 +567,19 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <h2>コード進行例(循環コード)</h2>
     <h3>王道進行</h3>
     <p>F G Fm Am</p>
+    <pre>
+        <span id="paperRoyalRoad"></span>
+        <span id="midiRoyalRoad"></span>
+        <script>
+            var abcRoyalRoad =
+                "T: 王道進行\n" +
+                "M: 1/1\n" +
+                "L: 1/1\n" +
+                '"F"[FAc]|"G"[GBd]|"Fm"[F_Ac]|"Am"[ABe]|"F"[FAc]|"G"[GBd]|"Fm"[F_Ac]|"Am"[ABe]|]';
+            ABCJS.renderAbc("paperRoyalRoad", abcRoyalRoad);
+            ABCJS.renderMidi("midiRoyalRoad", abcRoyalRoad);
+        </script>
+    </pre>
     <h3>小室進行</h3>
     <p>Am F G C</p>
     
