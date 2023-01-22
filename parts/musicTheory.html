@@ -602,7 +602,6 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <p>5番目はドミナント。(クライマックス。緊張、不安。トニックに進みたい（＝解決したい）。)</p>
     <p><a href="https://nomadial.com/diatonic/">【参考】全12キーのダイアトニックコード一覧と解説</a></p>
     <h3>Key C</h3>
-    <p>C	Dm	Em	F	G	Am	Bm-5</p>
     <span id="paperDiatonicChordKeyC"></span>
     <span id="midiDiatonicChordKeyC"></span>
     <script>
@@ -610,9 +609,21 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
             "T: ダイアトニックコード(Key C)\n" +
             "M: 1/1\n" +
             "L: 1/1\n" +
-            '"CM7"[CEGB]|"D7"[DFAc]|"E7"[EGBd]|"FM7"[FAce]|"G7"[GBdf]|"A7"[Aceg]|"CM7"[cegb]|]';
+            '"C(T)"[CEG]|"D(SD)"[DFA]|"E(T)"[EGB]|"F(SD)"[FAc]|"G(D)"[GBd]|"A(T)"[Ace]|"B(T)"[Bdf]|"C(T)"[ceg]|]';
         ABCJS.renderAbc("paperDiatonicChordKeyC", abcDiatonicChordKeyC);
         ABCJS.renderMidi("midiDiatonicChordKeyC", abcDiatonicChordKeyC);
+    </script>
+    <h3>Key C(7th)</h3>
+    <span id="paperDiatonicChordKeyC7th"></span>
+    <span id="midiDiatonicChordKeyC7th"></span>
+    <script>
+        var abcDiatonicChordKeyC7th =
+            "T: ダイアトニックコード(Key C + 7th)\n" +
+            "M: 1/1\n" +
+            "L: 1/1\n" +
+            '"CM7"[CEGB]|"D7"[DFAc]|"E7"[EGBd]|"FM7"[FAce]|"G7"[GBdf]|"A7"[Aceg]|"B7"[Bdfa]|"CM7"[cegb]|]';
+        ABCJS.renderAbc("paperDiatonicChordKeyC7th", abcDiatonicChordKeyC7th);
+        ABCJS.renderMidi("midiDiatonicChordKeyC7th", abcDiatonicChordKeyC7th);
     </script>
     <p>Key D	D	Em	F#m	G	A	Bm	C#m-5</p>
     <p>度数	I	IIm	三m	四	五	六m	七m-5</p>
