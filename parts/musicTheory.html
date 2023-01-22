@@ -317,16 +317,16 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <p>明るく安定した響き</p>
     <p>※最初に覚えたい</p>
     <pre>
-        <span id="paperKeyMagerC"></span>
-        <span id="midiKeyMagerC"></span>
+        <span id="paperKeyMager"></span>
+        <span id="midiKeyMager"></span>
         <script>
-            var keyMagerC =
+            var keyMager =
                 "T: メジャーコード\n" +
                 "M: 1/1\n" +
                 "L: 1/1\n" +
                 '"C"[CEG]|"D"[DFA]|"E"[EGB]|"F"[FAc]|"G"[GBd]|"A"[Ace]|"B"[Bdf]|"C"[ceg]|]';
-            ABCJS.renderAbc("paperKeyMagerC", keyMagerC);
-            ABCJS.renderMidi("midiKeyMagerC", keyMagerC);
+            ABCJS.renderAbc("paperKeyMager", keyMager);
+            ABCJS.renderMidi("midiKeyMager", keyMager);
         </script>
     </pre>
     <h3>マイナーコード</h3>
@@ -338,16 +338,16 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <p>３つの音で構成</p>
     <p>暗い響き</p>
     <pre>
-        <span id="paperKeyMinerC"></span>
-        <span id="midiKeyMinerC"></span>
+        <span id="paperKeyMiner"></span>
+        <span id="midiKeyMiner"></span>
         <script>
-            var keyMinerC =
+            var keyMiner =
                 "T: マイナーコード\n" +
                 "M: 1/1\n" +
                 "L: 1/1\n" +
                 '"Cm"[C_EG]|"Dm"[DEA]|"Em"[E_GB]|"Fm"[F_Ac]|"Gm"[G_Bd]|"Am"[A_ce]|"Bm"[B_df]|"Cm"[c_eg]|]';
-            ABCJS.renderAbc("paperKeyMinerC", keyMinerC);
-            ABCJS.renderMidi("midiKeyMinerC", keyMinerC);
+            ABCJS.renderAbc("paperKeyMiner", keyMiner);
+            ABCJS.renderMidi("midiKeyMiner", keyMiner);
         </script>
     </pre>
     <h3>7th(セブンス)</h3>
@@ -448,27 +448,27 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <p>セブンス等でも良いらしい</p>
     <p>例 Am7-5 ラドミbソ</p>
     <pre>
-        <span id="paperKeyMagerCFlat5"></span>
-        <span id="midiKeyMagerCFlat5"></span>
+        <span id="paperKeyMagerFlat5"></span>
+        <span id="midiKeyMagerFlat5"></span>
         <script>
-            var keyMagerCFlat5 =
+            var keyMagerFlat5 =
                 "T: フラット5(メジャーコード)\n" +
                 "M: 1/1\n" +
                 "L: 1/1\n" +
                 '"C-5"[CE_G]|"D-5"[DF_A]|"E-5"[EG_B]|"F-5"[FAB]|"G-5"[GB_d]|"A-5"[Ac_e]|"B-5"[Bde]|"C-5"[ce_g]|]';
-            ABCJS.renderAbc("paperKeyMagerCFlat5", keyMagerCFlat5);
-            ABCJS.renderMidi("midiKeyMagerCFlat5", keyMagerCFlat5);
+            ABCJS.renderAbc("paperKeyMagerFlat5", keyMagerFlat5);
+            ABCJS.renderMidi("midiKeyMagerFlat5", keyMagerFlat5);
         </script>
-        <span id="paperKeyMinerCFlat5"></span>
-        <span id="midiKeyMinerCFlat5"></span>
+        <span id="paperKeyMinerFlat5"></span>
+        <span id="midiKeyMinerFlat5"></span>
         <script>
-            var keyMinerCFlat5 =
+            var keyMinerFlat5 =
                 "T: フラット5(マイナーコード)\n" +
                 "M: 1/1\n" +
                 "L: 1/1\n" +
                 '"Cm-5"[C_E_G]|"Dm-5"[DE_A]|"Em-5"[E_G_B]|"Fm-5"[F_AB]|"Gm-5"[G_B_d]|"Am-5"[A_c_e]|"Bm-5"[B_de]|"Cm-5"[c_e_g]|]';
-            ABCJS.renderAbc("paperKeyMinerCFlat5", keyMinerCFlat5);
-            ABCJS.renderMidi("midiKeyMinerCFlat5", keyMinerCFlat5);
+            ABCJS.renderAbc("paperKeyMinerFlat5", keyMinerFlat5);
+            ABCJS.renderMidi("midiKeyMinerFlat5", keyMinerFlat5);
         </script>
     </pre>
     <h3>dim(ディミニッシュ)</h3>
@@ -494,6 +494,30 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <p>曲の節目で良い仕事するらしい</p>
     <p>例 Csus4 ドファソ</p>
     <p>例 Dsus4 ドソラ</p>
+    <pre>
+        <span id="paperKeyMager"></span>
+        <span id="midiKeyMager"></span>
+        <script>
+            var keyMager =
+                "T: メジャーコード\n" +
+                "M: 1/1\n" +
+                "L: 1/1\n" +
+                '"C"[CEG]|"D"[DFA]|"E"[EGB]|"F"[FAc]|"G"[GBd]|"A"[Ace]|"B"[Bdf]|"C"[ceg]|]';
+            ABCJS.renderAbc("paperKeyMager", keyMager);
+            ABCJS.renderMidi("midiKeyMager", keyMager);
+        </script>
+        <span id="paperKeyMiner"></span>
+        <span id="midiKeyMiner"></span>
+        <script>
+            var keyMiner =
+                "T: マイナーコード\n" +
+                "M: 1/1\n" +
+                "L: 1/1\n" +
+                '"Cm"[C_EG]|"Dm"[DEA]|"Em"[E_GB]|"Fm"[F_Ac]|"Gm"[G_Bd]|"Am"[A_ce]|"Bm"[B_df]|"Cm"[c_eg]|]';
+            ABCJS.renderAbc("paperKeyMiner", keyMiner);
+            ABCJS.renderMidi("midiKeyMiner", keyMiner);
+        </script>
+    </pre>
     <h3>aug(オーギュメント)</h3>
     <p>構成:メジャーコードの5度の音を半音上げたもの</p>
     <p>例 Caug ドミソ#</p>
