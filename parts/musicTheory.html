@@ -365,18 +365,20 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
                 "T: セブンスコード(メジャーコード)\n" +
                 "M: 1/1\n" +
                 "L: 1/1\n" +
-                '"C7th"[CEG_B]|"D7th"[DFAc]|"E7th"[EGBd]|"F7th"[FAc_e]|"G7th"[GBdf]|"A7th"[Aceg]|"B7th"[Bdfa]|"C7th"[ceg_b]|]';
+                '"C7"[CEG_B]|"D7"[DFAc]|"E7"[EGBd]|"F7"[FAc_e]|"G7"[GBdf]|"A7"[Aceg]|"B7"[Bdfa]|"C7"[ceg_b]|]';
             ABCJS.renderAbc("paperKey7th", key7th);
             ABCJS.renderMidi("midiKey7th", key7th);
         </script>
+        <span id="paperKey7thMiner"></span>
+        <span id="midiKey7thMiner"></span>
         <script>
-            var key7th =
+            var key7thMiner =
                 "T: セブンスコード(マイナーコード)\n" +
                 "M: 1/1\n" +
                 "L: 1/1\n" +
-                '"Cm7th"[C_EG_B]|"Dm7th"[DEAc]|"Em7th"[E_GBd]|"Fm7th"[F_Ac_e]|"Gm7th"[G_Bdf]|"Am7th"[A_ceg]|"Bm7th"[B_dfa]|"Cm7th"[c_eg_b]|]';
-            ABCJS.renderAbc("paperKey7th", key7th);
-            ABCJS.renderMidi("midiKey7th", key7th);
+                '"C7"[C_EG_B]|"D7"[DEAc]|"E7"[E_GBd]|"F7"[F_Ac_e]|"G7"[G_Bdf]|"A7"[A_ceg]|"B7"[B_dfa]|"C7"[c_eg_b]|]';
+            ABCJS.renderAbc("paperKey7thMiner", key7thMiner);
+            ABCJS.renderMidi("midiKey7thMiner", key7thMiner);
         </script>
     </pre>
     <h3>メジャー7th(セブンス)</h3>
@@ -385,6 +387,30 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <p>例 CM7:ドミソシ</p>
     <p>例 DM7:レファ#ラド#</p>
     <p>4つの音で構成(メジャーコードやマイナーコードに1音追加)</p>
+    <pre>
+        <span id="paperKey7th"></span>
+        <span id="midiKey7th"></span>
+        <script>
+            var key7th =
+                "T: セブンスコード(メジャーコード)\n" +
+                "M: 1/1\n" +
+                "L: 1/1\n" +
+                '"C7"[CEG_B]|"D7"[DFAc]|"E7"[EGBd]|"F7"[FAc_e]|"G7"[GBdf]|"A7"[Aceg]|"B7"[Bdfa]|"C7"[ceg_b]|]';
+            ABCJS.renderAbc("paperKey7th", key7th);
+            ABCJS.renderMidi("midiKey7th", key7th);
+        </script>
+        <span id="paperKey7thMiner"></span>
+        <span id="midiKey7thMiner"></span>
+        <script>
+            var key7thMiner =
+                "T: セブンスコード(マイナーコード)\n" +
+                "M: 1/1\n" +
+                "L: 1/1\n" +
+                '"Cm7"[C_EG_B]|"Dm7"[DEAc]|"Em7"[E_GBd]|"Fm7"[F_Ac_e]|"Gm7"[G_Bdf]|"Am7"[A_ceg]|"Bm7"[B_dfa]|"Cm7"[c_eg_b]|]';
+            ABCJS.renderAbc("paperKey7thMiner", key7thMiner);
+            ABCJS.renderMidi("midiKey7thMiner", key7thMiner);
+        </script>
+    </pre>
     <h3>分数コード</h3>
     <p>表記例:ConEまたはC/E, GonDまたはG/Dなど</p>
     <p>構成:右側に記載される音をルート音(一番低い音)とする</p>
