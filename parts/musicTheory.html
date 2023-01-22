@@ -539,7 +539,31 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <p>例 Cadd9thドレミソ(オクターブ上のレでも良いらしい)</p>
     <p>例 Dadd9th レファ#ラ</p>
     <p>9thの音というのは,1度の音の鍵盤を2つ音を高くした音</p>
-    
+    <pre>
+        <span id="paperKeyMagerAdd9"></span>
+        <span id="midiKeyMagerAdd9"></span>
+        <script>
+            var keyMagerAdd9 =
+                "T: アドナインス(メジャーコード)\n" +
+                "M: 1/1\n" +
+                "L: 1/1\n" +
+                '"Cadd9"[CEGd]|"D♭add9"[_DE_A^d]|"Dadd9"[DFAe]|"E♭add9"[_E_G_Bf]|"Eadd9"[EGB^f]|"Fadd9"[FAcg]|"G♭add9"[_G_B_d^f]|"Gadd9"[GBda]|"A♭add9"[_A_c_e^a]|"Aadd9"[Aceb]|"B♭add9"[_B_dec\']|"Badd9"[Bdf^c\']|"Cadd9"[cegd\']|]';
+            ABCJS.renderAbc("paperKeyMagerAdd9", keyMagerAdd9);
+            ABCJS.renderMidi("midiKeyMagerAdd9", keyMagerAdd9);
+        </script>
+        <span id="paperKeyMinerAdd9"></span>
+        <span id="midiKeyMinerAdd9"></span>
+        <script>
+            var keyMinerAdd9 =
+                "T: アドナインス(マイナーコード)\n" +
+                "M: 1/1\n" +
+                "L: 1/1\n" +
+                '"Cm"[C_EG]|"D♭m"[_D_E_A]|"Dm"[DEA]|"E♭m"[_EF_B]|"Em"[E_GB]|"Fm"[F_Ac]|"G♭m"[_GA_d]|"Gm"[G_Bd]|"A♭m"[_A_B_e]|"Am"[Ace]|"B♭m"[_Bce]|"Bm"[B_df]|"Cm"[c_eg]|]';
+            ABCJS.renderAbc("paperKeyMinerAdd9", keyMinerAdd9);
+            ABCJS.renderMidi("midiKeyMinerAdd9", keyMinerAdd9);
+        </script>
+    </pre>
+
     <h2>コード進行例(循環コード)</h2>
     <h3>王道進行</h3>
     <p>F G Fm Am</p>
