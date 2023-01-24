@@ -34,6 +34,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
 <p><a href="http://7th-chord.jp/sara_tsukiyono/index.php?cl=rp&rp=200105">【参考】第1回 abcjs 楽譜作成・演奏スクリプト</a></p>
 <p><a href="https://www.abcjs.net/#what">【参考】abcjs What is this?</a></p>
 <p><a href="https://www.ne.jp/asahi/music/marinkyo/ml/abc-regulo.html.ja#special_symbols">【参考】abc 記譜法 2.2 版</a></p>
+<p><a href="https://www.asahi-net.or.jp/~mf4n-nmr/abc_notation.html">【参考】実用abc譜</a></p>
 
     <h2>コード</h2>
     <p>和音(複数の音の重なり)のことらしい</p>
@@ -104,6 +105,22 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
             '"ド"[c]"レ"[d]"ミ"[e]"ファ"[f]|"ソ"[g]"ラ"[a]"シ"[b]"ド"[c\']|]';
         ABCJS.renderAbc("paperKeyC", keyC);
         ABCJS.renderMidi("midiKeyC", keyC);
+    </script>
+    </pre>
+    <h3>長調</h3>
+    <h4>嬰ニ(えいニ)長調(Key D♭)</h4>
+    <pre>
+    <span id="paperKeyDFlat"></span>
+    <span id="midiKeyDFlat"></span>
+    <script>
+        var keyDFlat =
+            "T: KeyD♭\n" +
+            "M: 4/4\n" +
+            "L: 1/4\n" +
+            "K: _D\n" +
+            '"レ♭"[_d]"ミ♭"[_e]"ファ"[f]"ソ♭"[_g]|"ラ♭"[_a]"シ♭"[_b]"ド"[c\']"レ♭"[_d\']|]';
+        ABCJS.renderAbc("paperKeyDFlat", keyDFlat);
+        ABCJS.renderMidi("midiKeyDFlat", keyDFlat);
     </script>
     </pre>
     <h4>ニ長調(Key D)</h4>
