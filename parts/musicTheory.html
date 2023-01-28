@@ -1178,7 +1178,21 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
         </script>
     </pre>
     <h3>4つの音</h3>
-    <p>1度3度5度の音 + 1オクターブ上の根音を1音1音弾く
+    <p>1度3度5度の音 + 1オクターブ上の根音を1音1音弾く</p>
+    <pre>
+        <span id="paperProgressionKomuroFourSounds"></span>
+        <span id="midiProgressionKomuroFourSounds"></span>
+        <script>
+            var abcProgressionKomuroFourSounds =
+                "T: 小室進行(4つの音)\n" +
+                "M: 1/4\n" +
+                "L: 1/4\n" +
+                "Q: 120\n" +
+                '(Acea)|(FAcf)|(GBdg)|(CEGc)|(Acea)|(FAcf)|(GBdg)|(CEGc)|]';
+            ABCJS.renderAbc("paperProgressionKomuroFourSounds", abcProgressionKomuroFourSounds);
+            ABCJS.renderMidi("midiProgressionKomuroFourSounds", abcProgressionKomuroFourSounds);
+        </script>
+    </pre>
     <h3>3度を最後に</h3>
     <p>3度の音を最後にして1音1音弾く</p>
     <p>例 D レラファ#</p>
