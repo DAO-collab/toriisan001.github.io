@@ -1381,8 +1381,9 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <p>9thの音を足して1音1音弾く。根音より2度の音と、その音より2度高い音らしい。</p>
     <p>例 D レラレミファ#</p>
     <pre>
-        <span id="paperProgressionKomuroAdd9th"></span>
-        <span id="midiProgressionKomuroAdd9th"></span>
+<span id="paperProgressionKomuroAdd9th"></span>
+<span id="midiProgressionKomuroAdd9th"></span>
+<span id="abcProgressionKomuroAdd9th"></span>
         <script>
             var abcProgressionKomuroAdd9th =
                 "T: 小室進行(9thを入れる)\n" +
@@ -1392,6 +1393,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
                 '(Aceb^c\'2)|(FAcde2)|(GBdab2)|(CEGde2)|(Aceb^c\'2)|(FAcde2)|(GBdab2)|(CEGde2)|]';
             ABCJS.renderAbc("paperProgressionKomuroAdd9th", abcProgressionKomuroAdd9th);
             ABCJS.renderMidi("midiProgressionKomuroAdd9th", abcProgressionKomuroAdd9th);
+            document.getElementById('abcProgressionKomuroAdd9th').innerText = abcProgressionKomuroAdd9th;
         </script>
     </pre>
 
