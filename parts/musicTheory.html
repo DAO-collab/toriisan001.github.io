@@ -1156,7 +1156,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
                 "T: 小室進行(基本形)\n" +
                 "M: 1/1\n" +
                 "L: 1/1\n" +
-                '"Am"[Ace]"F"[FAc]"G"[GBd]"C"[CEG]|"Am"[Ace]"F"[FAc]"G"[GBd]"C"[CEG]|]';
+                '[Ace][FAc][GBd][CEG]|[Ace][FAc][GBd][CEG]|]';
             ABCJS.renderAbc("paperProgressionKomuroBasicForm", abcProgressionKomuroBasicForm);
             ABCJS.renderMidi("midiProgressionKomuroBasicForm", abcProgressionKomuroBasicForm);
         </script>
@@ -1215,6 +1215,20 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <p>弾く時の移動の幅を近くする為に使用することもあるらしい</p>
     <p>例 A ドミラ</p>
     <p>例 G シレソ</p>
+    <pre>
+        <span id="paperProgressionKomuroTurningSystem"></span>
+        <span id="midiProgressionKomuroTurningSystem"></span>
+        <script>
+            var abcProgressionKomuroTurningSystem =
+                "T: 小室進行(転回系)\n" +
+                "M: 1/4\n" +
+                "L: 1/4\n" +
+                "Q: 120\n" +
+                '(EAc2)|(CFA2)|(DGB2)|(Gce2)|(EAc2)|(CFA2)|(DGB2)|(Gce2)|]';
+            ABCJS.renderAbc("paperProgressionKomuroTurningSystem", abcProgressionKomuroTurningSystem);
+            ABCJS.renderMidi("midiProgressionKomuroTurningSystem", abcProgressionKomuroTurningSystem);
+        </script>
+    </pre>
     <h3>9thを入れる</h3>
     <p>9thの音を足して1音1音弾く</p>
     <p>例 D レラレミファ#</p>
