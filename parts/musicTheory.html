@@ -796,7 +796,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
             ABCJS.renderMidi("midiProgressionKomuro", abcProgressionKomuro);
         </script>
     </pre>
-    
+
     <h2>ダイアトニックコード</h2>
     <p>その曲の調のスケールの各音に対応する7つのコード</p>
     <p>調のスケールで構成されている</p>
@@ -1055,8 +1055,8 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
             "M: 1/1\n" +
             "L: 1/1\n" +
             '"FM7"[FAce]|"Gm7"[G_Bdf]|"Am7"[Aceg]|"B♭M7"[_Bdfa]|"C7"[ceg_b]|"Dm7"[deac\']|"Em7-5"[eg^ad\']|"FM7"[fac\'e\']|]';
-        ABCJS.renderAbc("paperDiatonicChordKeyE7th", abcDiatonicChordKeyE7th);
-        ABCJS.renderMidi("midiDiatonicChordKeyE7th", abcDiatonicChordKeyE7th);
+        ABCJS.renderAbc("paperDiatonicChordKeyF7th", abcDiatonicChordKeyE7th);
+        ABCJS.renderMidi("midiDiatonicChordKeyF7th", abcDiatonicChordKeyE7th);
     </script>
     </pre>
     <h3>Key F#(7th)</h3>
@@ -1148,6 +1148,19 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <p>組み合わせたりして音を装飾するのに使うらしい</p>
     <h3>基本形</h3>
     <p>3つの音を同時に弾く</p>
+    <pre>
+        <span id="paperProgressionKomuro"></span>
+        <span id="midiProgressionKomuro"></span>
+        <script>
+            var abcProgressionKomuro =
+                "T: 小室進行\n" +
+                "M: 1/1\n" +
+                "L: 1/1\n" +
+                '"Am"[Ace]"F"[FAc]"G"[GBd]"C"[CEG]|"Am"[Ace]"F"[FAc]"G"[GBd]"C"[CEG]|]';
+            ABCJS.renderAbc("paperProgressionKomuro", abcProgressionKomuro);
+            ABCJS.renderMidi("midiProgressionKomuro", abcProgressionKomuro);
+        </script>
+    </pre>
     <h3>1音1音弾く</h3>
     <p>1度3度5度の音を順番に1音1音弾く</p>
     <h3>4つの音</h3>
