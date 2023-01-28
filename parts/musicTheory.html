@@ -838,8 +838,9 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
         </script>
     </pre>
     <pre>
-        <span id="paperKeyMinerAdd9"></span>
-        <span id="midiKeyMinerAdd9"></span>
+<span id="paperKeyMinerAdd9"></span>
+<span id="midiKeyMinerAdd9"></span>
+<span id="abcKeyMinerAdd9"></span>
         <script>
             var keyMinerAdd9 =
                 "T: アドナインス(マイナーコード)\n" +
@@ -848,14 +849,16 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
                 '"CmAdd9"[CD_EG]|"D♭mAdd9"[_D_EE_A]|"DmAdd9"[DEFA]|"E♭mAdd9"[_EF_G_B]|"EmAdd9"[E^FGB]|"Fm"[FG_Ac]|"G♭mAdd9"[_G_AA_d]|"GmAdd9"[GA_Bd]|"A♭mAdd9"[_A_BB_e]|"AmAdd9"[ABce]|"B♭mAdd9"[_Bc_df]|"BmAdd9"[B^cd^f]|"CmAdd9"[cd_eg]|]';
             ABCJS.renderAbc("paperKeyMinerAdd9", keyMinerAdd9);
             ABCJS.renderMidi("midiKeyMinerAdd9", keyMinerAdd9);
+            document.getElementById('abcKeyMinerAdd9').innerText = keyMinerAdd9;
         </script>
     </pre>
 
     <h2>コード進行例(循環コード)</h2>
     <h3>王道進行</h3>
     <pre>
-        <span id="paperRoyalRoad"></span>
-        <span id="midiRoyalRoad"></span>
+<span id="paperRoyalRoad"></span>
+<span id="midiRoyalRoad"></span>
+<span id="abcKeyRoyalRoad"></span>
         <script>
             var abcRoyalRoad =
                 "T: 王道進行\n" +
@@ -864,12 +867,14 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
                 '"F"[FAc]|"G"[GBd]|"Fm"[F_Ac]|"Am"[Ace]|"F"[FAc]|"G"[GBd]|"Fm"[F_Ac]|"Am"[Ace]|]';
             ABCJS.renderAbc("paperRoyalRoad", abcRoyalRoad);
             ABCJS.renderMidi("midiRoyalRoad", abcRoyalRoad);
+            document.getElementById('abcKeyRoyalRoad').innerText = abcRoyalRoad;
         </script>
     </pre>
     <h3>小室進行</h3>
     <pre>
-        <span id="paperProgressionKomuro"></span>
-        <span id="midiProgressionKomuro"></span>
+<span id="paperProgressionKomuro"></span>
+<span id="midiProgressionKomuro"></span>
+<span id="abcProgressionKomuro"></span>
         <script>
             var abcProgressionKomuro =
                 "T: 小室進行\n" +
@@ -878,6 +883,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
                 '"Am"[Ace]|"F"[FAc]|"G"[GBd]|"C"[CEG]|"Am"[Ace]|"F"[FAc]|"G"[GBd]|"C"[CEG]|]';
             ABCJS.renderAbc("paperProgressionKomuro", abcProgressionKomuro);
             ABCJS.renderMidi("midiProgressionKomuro", abcProgressionKomuro);
+            document.getElementById('abcProgressionKomuro').innerText = abcProgressionKomuro;
         </script>
     </pre>
 
@@ -892,8 +898,9 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <h3>3和音</h3>
     <h4>Key C</h4>
     <pre>
-    <span id="paperDiatonicChordKeyC"></span>
-    <span id="midiDiatonicChordKeyC"></span>
+<span id="paperDiatonicChordKeyC"></span>
+<span id="midiDiatonicChordKeyC"></span>
+<span id="abcDiatonicChordKeyC"></span>
     <script>
         var abcDiatonicChordKeyC =
             "T: ダイアトニックコード(Key C)\n" +
@@ -902,26 +909,30 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
             '"C"[CEG]|"Dm"[DFA]|"Em"[EGB]|"F"[FAc]|"G"[GBd]|"Am"[Ace]|"Bm-5"[Bdf]|"C"[ceg]|]';
         ABCJS.renderAbc("paperDiatonicChordKeyC", abcDiatonicChordKeyC);
         ABCJS.renderMidi("midiDiatonicChordKeyC", abcDiatonicChordKeyC);
+        document.getElementById('abcDiatonicChordKeyC').innerText = abcDiatonicChordKeyC;
     </script>
     </pre>
     <h4>Key D♭</h4>
     <pre>
-    <span id="paperDiatonicChordKeyDflat"></span>
-    <span id="midiDiatonicChordKeyDflat"></span>
+<span id="paperDiatonicChordKeyDflat"></span>
+<span id="midiDiatonicChordKeyDflat"></span>
+<span id="abcDiatonicChordKeyC"></span>
     <script>
-        var abcDiatonicChordKeyDflat =
+        var abcDiatonicChordKeyC =
             "T: ダイアトニックコード(Key D♭)\n" +
             "M: 1/1\n" +
             "L: 1/1\n" +
             '"D♭"[_DF_A]|"E♭m"[_E_G_B]|"Fm"[F_Ac]|"G♭"[_GA_d]|"A♭"[_Ac_e]|"B♭m"[_B_df]|"Cm-5"[c_e_g]|"D♭"[_df_a]|]';
         ABCJS.renderAbc("paperDiatonicChordKeyDflat", abcDiatonicChordKeyDflat);
         ABCJS.renderMidi("midiDiatonicChordKeyDflat", abcDiatonicChordKeyDflat);
+        document.getElementById('abcDiatonicChordKeyC').innerText = abcDiatonicChordKeyC;
     </script>
     </pre>
     <h4>Key D</h4>
     <pre>
-    <span id="paperDiatonicChordKeyD"></span>
-    <span id="midiDiatonicChordKeyD"></span>
+<span id="paperDiatonicChordKeyD"></span>
+<span id="midiDiatonicChordKeyD"></span>
+<span id="abcDiatonicChordKeyC"></span>
     <script>
         var abcDiatonicChordKeyD =
             "T: ダイアトニックコード(Key D)\n" +
@@ -930,12 +941,14 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
             '"D"[D^FA]|"Em"[EGB]|"F#m"[_GA_d]|"G"[GBd]|"A"[A^ce]|"Bm"[Bd^f]|"C#m-5"[_deg]|"D"[d^fa]|]';
         ABCJS.renderAbc("paperDiatonicChordKeyD", abcDiatonicChordKeyD);
         ABCJS.renderMidi("midiDiatonicChordKeyD", abcDiatonicChordKeyD);
+        document.getElementById('abcDiatonicChordKeyC').innerText = abcDiatonicChordKeyC;
     </script>
     </pre>
     <h4>Key E♭</h4>
     <pre>
-    <span id="paperDiatonicChordKeyEflat"></span>
-    <span id="midiDiatonicChordKeyEflat"></span>
+<span id="paperDiatonicChordKeyEflat"></span>
+<span id="midiDiatonicChordKeyEflat"></span>
+<span id="abcDiatonicChordKeyC"></span>
     <script>
         var abcDiatonicChordKeyEflat =
             "T: ダイアトニックコード(Key E♭)\n" +
@@ -944,12 +957,14 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
             '"E♭"[_EG_B]|"Fm"[F_Ac]|"Gm"[G_Bd]|"A♭"[_Ac_e]|"B♭"[_Bdf]|"Cm"[c_eg]|"Dm-5"[df_a]|"E♭"[_eg_b]|]';
         ABCJS.renderAbc("paperDiatonicChordKeyEflat", abcDiatonicChordKeyEflat);
         ABCJS.renderMidi("midiDiatonicChordKeyEflat", abcDiatonicChordKeyEflat);
+        document.getElementById('abcDiatonicChordKeyC').innerText = abcDiatonicChordKeyC;
     </script>
     </pre>
     <h4>Key E</h4>
     <pre>
-    <span id="paperDiatonicChordKeyE"></span>
-    <span id="midiDiatonicChordKeyE"></span>
+<span id="paperDiatonicChordKeyE"></span>
+<span id="midiDiatonicChordKeyE"></span>
+<span id="abcDiatonicChordKeyE"></span>
     <script>
         var abcDiatonicChordKeyE =
             "T: ダイアトニックコード(Key E)\n" +
@@ -958,12 +973,14 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
             '"E"[E^GB]|"F#m"[_GA_d]|"G#m"[_AB_e]|"A"[A^ce]|"B"[B^d^f]|"C#m"[_de_a]|"D#m-5"[_e_ga]|"E"[e^gb]|]';
         ABCJS.renderAbc("paperDiatonicChordKeyE", abcDiatonicChordKeyE);
         ABCJS.renderMidi("midiDiatonicChordKeyE", abcDiatonicChordKeyE);
+        document.getElementById('abcDiatonicChordKeyE').innerText = abcDiatonicChordKeyE;
     </script>
     </pre>
     <h4>Key F</h4>
     <pre>
-    <span id="paperDiatonicChordKeyF"></span>
-    <span id="midiDiatonicChordKeyF"></span>
+<span id="paperDiatonicChordKeyF"></span>
+<span id="midiDiatonicChordKeyF"></span>
+<span id="abcDiatonicChordKeyE"></span>
     <script>
         var abcDiatonicChordKeyF =
             "T: ダイアトニックコード(Key F)\n" +
@@ -972,12 +989,14 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
             '"F"[FAc]|"Gm"[G_Bd]|"Am"[Ace]|"B♭"[_Bdf]|"C"[ceg]|"Dm"[dfa]|"Em-5"[eg_b]|"F"[fac\']|]';
         ABCJS.renderAbc("paperDiatonicChordKeyF", abcDiatonicChordKeyF);
         ABCJS.renderMidi("midiDiatonicChordKeyF", abcDiatonicChordKeyF);
+        document.getElementById('abcDiatonicChordKeyE').innerText = abcDiatonicChordKeyE;
     </script>
     </pre>
     <h4>Key F#</h4>
     <pre>
-    <span id="paperDiatonicChordKeyFSharp"></span>
-    <span id="midiDiatonicChordKeyFSharp"></span>
+<span id="paperDiatonicChordKeyFSharp"></span>
+<span id="midiDiatonicChordKeyFSharp"></span>
+<span id="abcDiatonicChordKeyFSharp"></span>
     <script>
         var abcDiatonicChordKeyFSharp =
             "T: ダイアトニックコード(Key F#)\n" + 
@@ -986,12 +1005,14 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
             '"F#"[_G_B_d]|"G#m"[_AB_e]|"A#m"[_B_df]|"B"[B^d^f]|"C#"[_df_a]|"D#m"[_e_g_b]|"E#m-5"[f_ab]|"F#"[fac\']|]';
         ABCJS.renderAbc("paperDiatonicChordKeyFSharp", abcDiatonicChordKeyFSharp);
         ABCJS.renderMidi("midiDiatonicChordKeyFSharp", abcDiatonicChordKeyFSharp);
+        document.getElementById('abcDiatonicChordKeyFSharp').innerText = abcDiatonicChordKeyFSharp;
     </script>
     </pre>
     <h4>Key G</h4>
     <pre>
-    <span id="paperDiatonicChordKeyG"></span>
-    <span id="midiDiatonicChordKeyG"></span>
+<span id="paperDiatonicChordKeyG"></span>
+<span id="midiDiatonicChordKeyG"></span>
+<span id="abcDiatonicChordKeyG"></span>
     <script>
         var abcDiatonicChordKeyG =
             "T: ダイアトニックコード(Key G)\n" + 
@@ -1000,12 +1021,14 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
             '"G"[GBd]|"Am"[Ace]|"Bm"[Bd^f]|"C"[B^d^f]|"C"[ceg]|"D"[d^fa]|"Em"[egb]|"F#m-5"[_gac\']|"G"[gbd\']|]';
         ABCJS.renderAbc("paperDiatonicChordKeyG", abcDiatonicChordKeyG);
         ABCJS.renderMidi("midiDiatonicChordKeyG", abcDiatonicChordKeyG);
+        document.getElementById('abcDiatonicChordKeyG').innerText = abcDiatonicChordKeyG;
     </script>
     </pre>
     <h4>Key A♭</h4>
     <pre>
-    <span id="paperDiatonicChordKeyAFlat"></span>
-    <span id="midiDiatonicChordKeyAFlat"></span>
+<span id="paperDiatonicChordKeyAFlat"></span>
+<span id="midiDiatonicChordKeyAFlat"></span>
+<span id="abcDiatonicChordKeyAFlat"></span>
     <script>
         var abcDiatonicChordKeyAFlat =
             "T: ダイアトニックコード(Key A♭)\n" + 
@@ -1014,12 +1037,14 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
             '"A♭"[_Ac_e]|"B♭m"[_B_df]|"Cm"[c_eg]|"D♭"[_df_a]|"E♭"[_eg_b]|"Fm"[f_ac\']|"Gm-5"[g_b_d\']|"A♭"[_ac\'_e\']|]';
         ABCJS.renderAbc("paperDiatonicChordKeyAFlat", abcDiatonicChordKeyAFlat);
         ABCJS.renderMidi("midiDiatonicChordKeyAFlat", abcDiatonicChordKeyAFlat);
+        document.getElementById('abcDiatonicChordKeyAFlat').innerText = abcDiatonicChordKeyAFlat;
     </script>
     </pre>
     <h4>Key A</h4>
     <pre>
-    <span id="paperDiatonicChordKeyA"></span>
-    <span id="midiDiatonicChordKeyA"></span>
+<span id="paperDiatonicChordKeyA"></span>
+<span id="midiDiatonicChordKeyA"></span>
+<span id="abcDiatonicChordKeyA"></span>
     <script>
         var abcDiatonicChordKeyA =
             "T: ダイアトニックコード(Key A)\n" + 
@@ -1028,12 +1053,14 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
             '"A"[A^ce]|"Bm"[Bd^f]|"C#m"[_de_a]|"D"[d^fa]|"E"[e^gb]|"F#m"[_ga_d\']|"G#m-5"[_abd\']|"A"[a^c\'e\']|]';
         ABCJS.renderAbc("paperDiatonicChordKeyA", abcDiatonicChordKeyA);
         ABCJS.renderMidi("midiDiatonicChordKeyA", abcDiatonicChordKeyA);
+        document.getElementById('abcDiatonicChordKeyA').innerText = abcDiatonicChordKeyA;
     </script>
     </pre>
     <h4>Key B♭</h4>
     <pre>
-    <span id="paperDiatonicChordKeyBflat"></span>
-    <span id="midiDiatonicChordKeyBflat"></span>
+<span id="paperDiatonicChordKeyBflat"></span>
+<span id="midiDiatonicChordKeyBflat"></span>
+<span id="abcDiatonicChordKeyBflat"></span>
     <script>
         var abcDiatonicChordKeyBflat =
             "T: ダイアトニックコード(Key B♭)\n" + 
@@ -1042,12 +1069,14 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
             '"B♭"[_Bdf]|"Cm"[c_eg]|"Dm"[dfa]|"E♭"[_eg_b]|"F"[fac\']|"Gm"[g_bd\']|"Am-5"[ac\'_e\']|"B♭"[_bd\'f\']|]';
         ABCJS.renderAbc("paperDiatonicChordKeyBflat", abcDiatonicChordKeyBflat);
         ABCJS.renderMidi("midiDiatonicChordKeyBflat", abcDiatonicChordKeyBflat);
+        document.getElementById('abcDiatonicChordKeyBflat').innerText = abcDiatonicChordKeyBflat;
     </script>
     </pre>
     <h4>Key B</h4>
     <pre>
-    <span id="paperDiatonicChordKeyB"></span>
-    <span id="midiDiatonicChordKeyB"></span>
+<span id="paperDiatonicChordKeyB"></span>
+<span id="midiDiatonicChordKeyB"></span>
+<span id="abcDiatonicChordKeyB"></span>
     <script>
         var abcDiatonicChordKeyB =
             "T: ダイアトニックコード(Key B)\n" + 
@@ -1056,6 +1085,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
             '"B"[B^d^f]|"C#m"[_de_a]|"D#m"[_e_g_b]|"E"[e^gb]|"F#"[_g_b_d\']|"G#m"[_ab_e\']|"A#m-5"[_b_d\'e\']|"B"[b^d\'^f\']|]';
         ABCJS.renderAbc("paperDiatonicChordKeyB", abcDiatonicChordKeyB);
         ABCJS.renderMidi("midiDiatonicChordKeyB", abcDiatonicChordKeyB);
+        document.getElementById('abcDiatonicChordKeyB').innerText = abcDiatonicChordKeyB;
     </script>
     </pre>
     <h3>4和音</h3>
