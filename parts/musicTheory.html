@@ -649,8 +649,9 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
         </script>
     </pre>
     <pre>
-        <span id="paperKeyFractionChordMiner"></span>
-        <span id="midiKeyFractionChordMiner"></span>
+<span id="paperKeyFractionChordMiner"></span>
+<span id="midiKeyFractionChordMiner"></span>
+<span id="abcKeyFractionChordMiner"></span>
         <script>
             var keyFractionChordMiner =
                 "T: 分数コード(マイナーコード)\n" +
@@ -659,6 +660,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
                 '"Cm/E♭"[_E,CG]|"Cm/G"[G,C_E]|"D♭m/E"[E,_D_A]|"D♭m/A♭"[_A,_DE]|"Dm/F"[F,DA]|"Dm/A"[A,DF]|"E♭m/G♭"[_G,_E_B]|"E♭m/B♭"[_B,_E_G]|"Em/G"[G,EB]|"Em"[B,EG]|"Fm/A♭"[_A,Fc]|"Fm/C"[CF_A]|"G♭m/A"[A,_G_d]|"G♭m/D"[_D_GA]|"Gm/B♭"[_B,Gd]|"Gm/D"[DG_B]|"A♭m/B"[B_A_e]|"A♭m/E♭"[_E_AB]|"Am/B"[C,Ae]|"Am/E"[EAC]|"B♭m/D♭"[_D,_Bf]|"B♭m/F"[F_B_d]|"Bm/D"[DB^f]|"Bm/F#"[^FBd]|"Cm/E♭"[_Ecg]|"Cm/G"[Gc_e]|]';
             ABCJS.renderAbc("paperKeyFractionChordMiner", keyFractionChordMiner);
             ABCJS.renderMidi("midiKeyFractionChordMiner", keyFractionChordMiner);
+            document.getElementById('abcKeyFractionChordMiner').innerText = keyFractionChordMiner;
         </script>
     </pre>
     <p><a href="http://music-theory.info/chordprogression/bunsuuchord/%E5%88%86%E6%95%B0%E3%82%B3%E3%83%BC%E3%83%89%E3%81%A8%E3%81%AF/">【参考】分数コードとは</a></p>
