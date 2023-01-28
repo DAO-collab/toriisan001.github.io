@@ -334,6 +334,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     </script>
     </pre>
     <h4>ニ短調(Key Dm)</h4>
+    <span id="abcKeyDm"></span>
     <pre>
     <span id="paperKeyDm"></span>
     <span id="midiKeyDm"></span>
@@ -346,9 +347,11 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
             '"レ"[d]"ミ"[e]"ファ"[f]"ソ"[g]|"ラ"[a]"シ♭"[b]"ド"[c\']"レ"[d\']|]';
         ABCJS.renderAbc("paperKeyDm", keyDm);
         ABCJS.renderMidi("midiKeyDm", keyDm);
+        document.getElementById('abcKeyDm').innerText = keyDm;
     </script>
     </pre>
     <h4>嬰(えい)ホ短調(Key E♭m)</h4>
+    <span id="abcKeyEmFlat"></span>
     <pre>
     <span id="paperKeyEmFlat"></span>
     <span id="midiKeyEmFlat"></span>
@@ -361,6 +364,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
             '"ミ♭"[e]"ファ"[f]"ソ♭"[g]"ラ♭"[a]|"シ♭"[b]"ド♭"[c\']"レ♭"[d\']"ミ♭"[e\']|]';
         ABCJS.renderAbc("paperKeyEmFlat", keyEmFlat);
         ABCJS.renderMidi("midiKeyEmFlat", keyEmFlat);
+        document.getElementById('abcKeyEmFlat').innerText = keyEmFlat;
     </script>
     </pre>
     <h4>ホ短調(Key Em)</h4>
