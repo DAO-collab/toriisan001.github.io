@@ -1196,6 +1196,20 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <h3>3度を最後に</h3>
     <p>3度の音を最後にして1音1音弾く</p>
     <p>例 D レラファ#</p>
+    <pre>
+        <span id="paperProgressionKomuroThreeTimesLast"></span>
+        <span id="midiProgressionKomuroThreeTimesLast"></span>
+        <script>
+            var abcProgressionKomuroThreeTimesLast =
+                "T: 小室進行(3度を最後に)\n" +
+                "M: 1/4\n" +
+                "L: 1/4\n" +
+                "Q: 120\n" +
+                '(Aec\'2)|(Fca2)|(Gdb2)|(CGe2)|(Aec\'2)|(Fca2)|(Gdb2)|(CGe2)|]';
+            ABCJS.renderAbc("paperProgressionKomuroThreeTimesLast", abcProgressionKomuroThreeTimesLast);
+            ABCJS.renderMidi("midiProgressionKomuroThreeTimesLast", abcProgressionKomuroThreeTimesLast);
+        </script>
+    </pre>
     <h3>転回系</h3>
     <p>1度3度5度の音を順番を変えて1音1音弾く</p>
     <p>弾く時の移動の幅を近くする為に使用することもあるらしい</p>
