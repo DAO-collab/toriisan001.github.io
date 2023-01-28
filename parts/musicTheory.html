@@ -1231,7 +1231,21 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     </pre>
     <h3>9thを入れる</h3>
     <p>9thの音を足して1音1音弾く</p>
-    <p>例 D レラレミファ#</p>
+    <p>例 D レファ#レミファ#</p>
+    <pre>
+        <span id="paperProgressionKomuroAdd9th"></span>
+        <span id="midiProgressionKomuroAdd9th"></span>
+        <script>
+            var abcProgressionKomuroAdd9th =
+                "T: 小室進行(9thを入れる)\n" +
+                "M: 1/4\n" +
+                "L: 1/4\n" +
+                "Q: 120\n" +
+                '(ABceb)|(FAcg)|(GBda)|(CEGd)|(Aceb)|(FAcg)|(GBda)|(CEGd)|]';
+            ABCJS.renderAbc("paperProgressionKomuroAdd9th", abcProgressionKomuroAdd9th);
+            ABCJS.renderMidi("midiProgressionKomuroAdd9th", abcProgressionKomuroAdd9th);
+        </script>
+    </pre>
 
 </main>
 <div id="log"></div>
