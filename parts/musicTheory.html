@@ -517,8 +517,9 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <p>明るく安定した響き</p>
     <p>※最初に覚えたい</p>
     <pre>
-        <span id="paperKeyMager"></span>
-        <span id="midiKeyMager"></span>
+<span id="paperKeyMager"></span>
+<span id="midiKeyMager"></span>
+<span id="abcKeyMager"></span>
         <script>
             var keyMager =
                 "T: メジャーコード\n" +
@@ -527,6 +528,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
                 '"C"[CEG]|"D♭"[_DF_A]|"D"[D^FA]|"E♭"[_EG_B]|"E"[E^GB]|"F"[FAc]|"G♭"[_G_B_d]|"G"[GBd]|"A♭"[_Ac_e]|"A"[A^ce]|"B♭"[_Bdf]|"B"[B^d^f]|"C"[ceg]|]';
             ABCJS.renderAbc("paperKeyMager", keyMager);
             ABCJS.renderMidi("midiKeyMager", keyMager);
+            document.getElementById('abcKeyMager').innerText = keyMager;
         </script>
     </pre>
     <h3>マイナーコード</h3>
@@ -538,8 +540,9 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <p>３つの音で構成</p>
     <p>暗い響き</p>
     <pre>
-        <span id="paperKeyMiner"></span>
-        <span id="midiKeyMiner"></span>
+<span id="paperKeyMiner"></span>
+<span id="midiKeyMiner"></span>
+<span id="abcKeyMiner"></span>
         <script>
             var keyMiner =
                 "T: マイナーコード\n" +
@@ -548,6 +551,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
                 '"Cm"[C_EG]|"D♭m"[_DE_A]|"Dm"[DFA]|"E♭m"[_E_G_B]|"Em"[EGB]|"Fm"[F_Ac]|"G♭m"[_GA_d]|"Gm"[G_Bd]|"A♭m"[_AB_e]|"Am"[Ace]|"B♭m"[_B_df]|"Bm"[Bd^f]|"Cm"[c_eg]|]';
             ABCJS.renderAbc("paperKeyMiner", keyMiner);
             ABCJS.renderMidi("midiKeyMiner", keyMiner);
+            document.getElementById('abcKeyMiner').innerText = keyMiner;
         </script>
     </pre>
     <h3>7th(セブンス)</h3>
@@ -558,8 +562,9 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <p>4つの音で構成(メジャーコードやマイナーコードに1音追加)</p>
     <p>音が複雑で大人っぽい,おしゃれな響き</p>
     <pre>
-        <span id="paperKey7th"></span>
-        <span id="midiKey7th"></span>
+<span id="paperKey7th"></span>
+<span id="midiKey7th"></span>
+<span id="abcKey7th"></span>
         <script>
             var key7th =
                 "T: セブンスコード(メジャーコード)\n" +
@@ -568,11 +573,13 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
                 '"C7"[CEG_B]|"D♭7"[_DE_AB]|"D7"[D^FAc]|"E♭7"[_EG_B_d]|"E7"[E^GBd]|"F7"[FAc_e]|"G♭7"[_G_B_de]|"G7"[GBdf]|"A♭7"[_Ac_e_g]|"A7"[A^ceg]|"B♭7"[_Bdf_a]|"B7"[B^d^fa]|"C7"[ceg_b]|]';
             ABCJS.renderAbc("paperKey7th", key7th);
             ABCJS.renderMidi("midiKey7th", key7th);
+            document.getElementById('abcKey7th').innerText = key7th;
         </script>
     </pre>
     <pre>
-        <span id="paperKeyMiner7th"></span>
-        <span id="midiKeyMiner7th"></span>
+<span id="paperKeyMiner7th"></span>
+<span id="midiKeyMiner7th"></span>
+<span id="abcKeyMiner7th"></span>
         <script>
             var keyMiner7th =
                 "T: セブンスコード(マイナーコード)\n" +
@@ -581,6 +588,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
                 '"Cm7"[C_EG_B]|"D♭m7"[_D_E_AB]|"Dm7"[DEAc]|"E♭m7"[_E_G_B_d]|"Em7"[EGBd]|"Fm7"[F_Ac_e]|"G♭m7"[_GA_de]|"Gm7"[G_Bdf]|"A♭m7"[_AB_e_g]|"Am7"[Aceg]|"B♭m7"[_B_df_a]|"Bm7"[Bd^fa]|"Cm7"[c_eg_b]|]';
             ABCJS.renderAbc("paperKeyMiner7th", keyMiner7th);
             ABCJS.renderMidi("midiKeyMiner7th", keyMiner7th);
+            document.getElementById('abcKeyMiner7th').innerText = keyMiner7th;
         </script>
     </pre>
     <h3>メジャー7th(セブンス)</h3>
@@ -590,8 +598,9 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     <p>例 DM7:レファ#ラド#</p>
     <p>4つの音で構成(メジャーコードやマイナーコードに1音追加)</p>
     <pre>
-        <span id="paperKeyMager7th"></span>
-        <span id="midiKeyMager7th"></span>
+<span id="paperKeyMager7th"></span>
+<span id="midiKeyMager7th"></span>
+<span id="abcKeyMager7th"></span>
         <script>
             var keyMager7th =
                 "T: メジャーセブンスコード(メジャーコード)\n" +
@@ -600,6 +609,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
                 '"CM7"[CEGB]|"D♭M7"[_DF_Ac]|"DM7"[D^FA^c]|"E♭M7"[_EG_Bd]|"EM7"[E^GB^d]|"FM7"[FAce]|"G♭M7"[_G_B_df]|"GM7"[GBd_g]|"A♭M7"[_Ac_eg]|"AM7"[A^ce^g]|"B♭M7"[_Bdfa]|"BM7"[B^d^f^a]|"CM7"[cegb]|]';
             ABCJS.renderAbc("paperKeyMager7th", keyMager7th);
             ABCJS.renderMidi("midiKeyMager7th", keyMager7th);
+            document.getElementById('abcKeyMager7th').innerText = keyMager7th;
         </script>
     </pre>
     <pre>
