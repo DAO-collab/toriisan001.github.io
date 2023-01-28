@@ -791,7 +791,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
                 "T: 小室進行\n" +
                 "M: 1/1\n" +
                 "L: 1/1\n" +
-                '"Am"[Ace]"F"[FAc]"G"[GBd]"C"[CEG]|"Am"[Ace]"F"[FAc]"G"[GBd]"C"[CEG]|]';
+                '"Am"[Ace]|"F"[FAc]|"G"[GBd]|"C"[CEG]|"Am"[Ace]|"F"[FAc]|"G"[GBd]|"C"[CEG]|]';
             ABCJS.renderAbc("paperProgressionKomuro", abcProgressionKomuro);
             ABCJS.renderMidi("midiProgressionKomuro", abcProgressionKomuro);
         </script>
@@ -1163,6 +1163,19 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     </pre>
     <h3>1音1音弾く</h3>
     <p>1度3度5度の音を順番に1音1音弾く</p>
+    <pre>
+        <span id="paperProgressionKomuroBasicForm"></span>
+        <span id="midiProgressionKomuroBasicForm"></span>
+        <script>
+            var abcProgressionKomuroBasicForm =
+                "T: 小室進行(基本形)\n" +
+                "M: 1/1\n" +
+                "L: 1/1\n" +
+                '"Am"[Ace]"F"[FAc]"G"[GBd]"C"[CEG]|"Am"[Ace]"F"[FAc]"G"[GBd]"C"[CEG]|]';
+            ABCJS.renderAbc("paperProgressionKomuroBasicForm", abcProgressionKomuroBasicForm);
+            ABCJS.renderMidi("midiProgressionKomuroBasicForm", abcProgressionKomuroBasicForm);
+        </script>
+    </pre>
     <h3>4つの音</h3>
     <p>1度3度5度の音 + 1オクターブ上の根音を1音1音弾く
     <h3>3度を最後に</h3>
