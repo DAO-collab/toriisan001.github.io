@@ -948,9 +948,13 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
             <script>
                 var abcPopPANK =
                     "T: ポップパンク進行\n" +
-                    "M: 1/1\n" +
-                    "L: 1/1\n" +
-                    '"C"[Ace]|"G"[GBd]|"Am"[Ace]|"F"[FAc]|"C"[Ace]|"G"[GBd]|"Am"[Ace]|"F"[FAc]|]';
+                    "M: 1/4\n" +
+                    "L: 1/4\n" +
+                    "Q: 120\n" +
+                    "V:1\n" +
+                    '[Ace]2[GBd]2|[Ace]2[FAc]2|z2[Ace]2|z2[GBd]2|z2[Ace]2|z2[FAc]2|Z|Z|Z|Z|z3(Ace)|z3(FAc)|z3(Ace)|z3(FAc)|(fac\'f\'a\'c\'\')z2|[FAc]4|]\n' +
+                    "V:2\n" +
+                    'Z|Z|[A,CE]2z2|[G,B,D]2z2|[A,CE]2z2|[F,A,C]2z2|(A,CE)2|(G,B,D)2|(A,CE)2|(F,A,C)2|(A,CE)z3|(G,B,D)z3|(A,CE)z3|(F,A,C)z3|Z|Z|[F,A,C]4|]';
                 ABCJS.renderAbc("paperPopPANK", abcPopPANK);
                 ABCJS.renderMidi("midiPopPANK", abcPopPANK);
                 document.getElementById('abcPopPANK').innerText = abcPopPANK;
