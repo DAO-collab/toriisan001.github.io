@@ -1920,6 +1920,7 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
     </details>
 
     <h2>右手のメロディをゴージャスに弾く方法【コードでピアノ】初心者向け</h2>
+    <p>メロディーが1音だと物足りない場合に使用する</p>
     <p>メロディーの音とメロディーの音より低いコードの音を一緒に弾く</p>
     <p><a href="https://www.youtube.com/watch?v=WktZjEjmKa0">【参考】右手のメロディをゴージャスに弾く方法【コードでピアノ】初心者向け</a></p>
     <details open>
@@ -1949,21 +1950,19 @@ K:F　は、調がヘ長調（Fメジャー）であることを示す。
 <span id="abcCherryMultipleSounds"></span>
         <script>
             var abcMultipleSounds =
-                "T: チェリー/スピッツ(1つの音)\n" +
+                "T: チェリー/スピッツ(複数の音)\n" +
                 "M: 4/4\n" +
                 "L: 1/4\n" +
                 "K: C\n" +
                 "Q: 97\n" +
                 "V:1\n" +
-                '[Ace]2[FAc]2|[GBd]2[CEG]2|z2[Ace]2|z2[FAc]2|z2[GBd]2|z2[CEG]2|Z|Z|Z|Z|z3(Ace)|z3(FAc)|z3(GBd)|z3(CEG)|(cegc\'e\'\'g\'\')z2|[CEG]4|]\n' +
-                "V:2\n" +
-                'Z|Z|[A,CE]2z2|[F,A,C]2z2|[G,B,D]2z2|[C,E,G,]2z2|(A,CE)2|(F,A,C)2|(G,B,D)2|(C,E,G,)2|(A,CE)z3|(F,A,C)z3|(G,B,D)z3|(C,E,G,)z3|Z|Z|[C,E,G,]4|]';
+                'ed/2c/2[Ac]z/2c/2|[Be]g([CFa]g/2f/2)|[CEg]e/2d/2[EAc]z/2c/2|[GBe]g([CAf]/2e/2d/2)(f/2|[Ce]/2)z/2z3|]\n' +
+                "V:2 bass\n" +
+                'z2[A,CE]2|[E,G,B,]2[F,A,C]2|[C,E,G,]2[A,CE]2|[E,G,B,]2[F,A,C]2|[C,E,G,]2z2|]';
             ABCJS.renderAbc("paperCherryMultipleSounds", abcMultipleSounds);
             ABCJS.renderMidi("midiCherryMultipleSounds", abcMultipleSounds);
             document.getElementById('abcMultipleSounds').innerText = abcMultipleSounds;
         </script>
-        </pre>
-        <pre>
     </details>
 
 </main>
