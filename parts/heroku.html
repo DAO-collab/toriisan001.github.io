@@ -133,7 +133,28 @@ Salesforce Authenticator、Google Authenticator、またはお気に入りのア
     <figcaption>ローカルリポジトリ.PNG</figcaption>
 </figure>
 <h3>試しにソースをデプロイしてみる</h3>
-
+<p>例「C:\xampp8.2\htdocs\toriisan-php-001」ディレクトリに「index.php」を作成。「add」でgitに追加。コミット。プッシュ先「Heroku git URL」へプッシュ。</p>
+<pre>
+<code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;?php echo &#039;Helo World!&#039; ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code>
+</pre>
+<p>環境へアクセスしてみると、ソースが反映されている。何も入れなくてもPHPが動いている？？？</p>
+<figure>
+    <img class="beside" src="../img/Heroku/Heroku環境作成(20230204時点)/HelloWorld.PNG" alt="HelloWorld.PNG">
+    <figcaption>HelloWorld.PNG</figcaption>
+</figure>
 
     <h2>Heroku Command Line Interface (CLI) </h2>
     <p>Heroku Command Line Interface (CLI) を使用すると、Heroku アプリをターミナルから直接、作成および管理できます。Heroku CLI は、Heroku を利用する際に必要なツールです。</p>
