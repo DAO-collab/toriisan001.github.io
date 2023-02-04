@@ -176,13 +176,13 @@ main button {
 
 /* menu */
 
-#menu.hidden {
+/* #menu.hidden {
     opacity: 0;
     pointer-events: none;
     transform: translate(-500px, 0);
-}
+} */
 
-#menu {
+#menu.hidden {
     opacity: 1;
     pointer-events: auto;
     position: fixed;
@@ -215,6 +215,12 @@ main button {
     margin: 5px 5px 5px 20px;
     padding: 5px;
     box-shadow: 0 0 3px rgb(26, 19, 19);
+}
+#menu .menuHeader {
+    text-indent: 1em;
+    border-left: 5px solid #dd1010;
+    margin-left: 5px;
+    font-weight: bold;
 }
 
 /* application */
