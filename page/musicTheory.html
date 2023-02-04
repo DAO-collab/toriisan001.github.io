@@ -17,6 +17,7 @@
 	<script src="../js/abcjs/abcjs_midi_5.6.5-min.js" type="text/javascript"></script>
 </head>
 <body>
+     <div id="statusBarParts"></div>
     <div id="headerParts"></div>
     <div id="menuParts"></div>
     <div id="musicTheoryParts"></div>
@@ -30,6 +31,7 @@
     <script>
         'use strict';
         {
+            $("#statusBarParts").load("../parts/statusBar.html");
             $("#headerParts").load("../parts/header.html");
             $("#menuParts").load("../parts/menu.html");
             $("#musicTheoryParts").load("../parts/musicTheory.html");

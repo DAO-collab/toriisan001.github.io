@@ -18,6 +18,7 @@
     </py-env>
 </head>
 <body>
+     <div id="statusBarParts"></div>
     <div id="headerParts"></div>
     <div id="menuParts"></div>
     <div id="pyScriptParts"></div>
@@ -27,6 +28,7 @@
     <script>
         'use strict';
         {
+            $("#statusBarParts").load("../parts/statusBar.html");
             $("#headerParts").load("../parts/header.html");
             $("#menuParts").load("../parts/menu.html");
             $("#pyScriptParts").load("../parts/pyScript.html");

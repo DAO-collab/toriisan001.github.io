@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/sample/boxSwapSample.css"/>
 </head>
 <body>
+     <div id="statusBarParts"></div>
     <div id="headerParts"></div>
     <div id="menuParts"></div>
     <div id="dragSwapParts"></div>
@@ -19,6 +20,7 @@
     <script>
         'use strict';
         {
+            $("#statusBarParts").load("../parts/statusBar.html");
             $("#headerParts").load("../parts/header.html");
             $("#menuParts").load("../parts/menu.html");
             $("#dragSwapParts").load("../parts/dragSwap.html");

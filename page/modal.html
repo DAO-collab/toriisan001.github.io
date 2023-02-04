@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../css/sample/modalSample.css">
 </head>
 <body>
+     <div id="statusBarParts"></div>
     <div id="headerParts"></div>
     <div id="menuParts"></div>
     <div id="modalParts"></div>
@@ -23,6 +24,7 @@
     <script>
         'use strict';
         {
+            $("#statusBarParts").load("../parts/statusBar.html");
             $("#headerParts").load("../parts/header.html");
             $("#menuParts").load("../parts/menu.html");
             $("#modalParts").load("../parts/modal.html");

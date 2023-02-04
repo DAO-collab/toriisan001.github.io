@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../css/sample/hamburgerMenuSample.css">
 </head>
 <body>
+     <div id="statusBarParts"></div>
     <div id="headerParts"></div>
     <div id="menuParts"></div>
     <div id="hamburgerMenuParts"></div>
@@ -23,6 +24,7 @@
     <script>
         'use strict';
         {
+            $("#statusBarParts").load("../parts/statusBar.html");
             $("#headerParts").load("../parts/header.html");
             $("#menuParts").load("../parts/menu.html");
             $("#hamburgerMenuParts").load("../parts/hamburgerMenu.html");
