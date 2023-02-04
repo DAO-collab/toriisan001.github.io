@@ -212,8 +212,8 @@ main button {
 #menu li {
     cursor: pointer;
     border: solid 1px #333;
-    margin: 1px 1px 1px 20px;
-    padding: 5px;
+    margin: 1px 5px 1px 15px;
+    padding: 8px 0px;
     box-shadow: 0 0 3px rgb(26, 19, 19);
 }
 #menu .menuHeader {
