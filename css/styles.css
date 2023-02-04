@@ -212,7 +212,7 @@ main button {
 #menu li {
     cursor: pointer;
     border: solid 1px #333;
-    margin: 5px 5px 5px 20px;
+    margin: 1px 1px 1px 20px;
     padding: 5px;
     box-shadow: 0 0 3px rgb(26, 19, 19);
 }
