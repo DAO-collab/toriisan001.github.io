@@ -176,13 +176,13 @@ main button {
 
 /* menu */
 
-/* #menu.hidden {
+#menu.hidden {
     opacity: 0;
     pointer-events: none;
     transform: translate(-500px, 0);
-} */
+}
 
-#menu.hidden {
+#menu {
     opacity: 1;
     pointer-events: auto;
     position: fixed;
@@ -191,7 +191,6 @@ main button {
     left: 0;
     width: 180px;
     background: rgba(255, 255, 255, .95);
-    /* text-align: center; */
     transition: transform .2s;
     z-index: 2;
     overflow: scroll;
