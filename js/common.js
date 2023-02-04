@@ -7,6 +7,27 @@
     const storage = localStorage;
     const config = getConfig();
     const body = document.getElementsByTagName("body")[0];
+    // 最終アクセスを保持
+    storage.setItem(config.SYSTEM_KEY.LAST_HREF, location.href);
+    // ログを表示させるか判定関数
+    function logShowSet() {
+      const log = document.getElementById('log');
+      const logShoFlag = document.getElementById('logShoFlag');
+      if (storage.getItem(config.SYSTEM_KEY.LOG_SHO_FLAG) === '1') {
+          log.classList.remove('hidden');
+          logShoFlag.checked = true;
+      } else {
+          log.classList.add('hidden');
+          logShoFlag.checked = false;
+      }
+    }
+    logShowSet();
+    // ログを表示させるか切り替え
+    logShoFlag.addEventListener('click', () => {
+        // フラグ設定
+        storage.setItem(config.SYSTEM_KEY.LOG_SHO_FLAG, Number(logShoFlag.checked));
+        logShowSet();
+    });
     // 初期設定関係
     const mainFontFamily = storage.getItem(config.SYSTEM_KEY.FONT_FAMILY);
     body.style.fontFamily = (mainFontFamily === null) ? config.INITIALIZATION.FONT_FAMILY: mainFontFamily;

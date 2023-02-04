@@ -17,23 +17,23 @@ export default class storage {
         return this.storage.getItem(k);
     }
 
-    // 最終アクセスパス名を設定
-    setLastAcssesHref(config, location) {
-        this.setItem(config.SYSTEM_KEY.LAST_HREF, location.href);
-    }
+    // // 最終アクセスパス名を設定
+    // setLastAcssesHref(config, location) {
+    //     this.setItem(config.SYSTEM_KEY.LAST_HREF, location.href);
+    // }
 
-    // 最終アクセスパス名を取得
-    getLastAcssesHref(config) {
-        return this.getItem(config.SYSTEM_KEY.LAST_HREF);
-    }
+    // // 最終アクセスパス名を取得
+    // getLastAcssesHref(config) {
+    //     return this.getItem(config.SYSTEM_KEY.LAST_HREF);
+    // }
 
     // ログ表示フラグを設定
-    setLogShowFlag(config, flag) {
-        this.setItem(config.SYSTEM_KEY.LOG_SHO_FLAG, flag);
-    }
+    // setLogShowFlag(config, flag) {
+    //     this.setItem(config.SYSTEM_KEY.LOG_SHO_FLAG, flag);
+    // }
 
-    // ログ表示フラグを取得
-    getLogShowFlag(config) {
-        return this.getItem(config.SYSTEM_KEY.LOG_SHO_FLAG);
-    }
+    // // ログ表示フラグを取得
+    // getLogShowFlag(config) {
+    //     return this.getItem(config.SYSTEM_KEY.LOG_SHO_FLAG);
+    // }
 }

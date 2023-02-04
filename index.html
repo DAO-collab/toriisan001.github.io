@@ -7,17 +7,12 @@
     <title>鳥居涼太のポートフォリオサイト</title>
 </head>
 <body>
-    <script type="module">
-        import storage from "./js/webStrage/storage.js"
-        import config from "./js/configModule.js"
-        'use strict';
-        {
-            // 最終アクセスを取得
-            var storageObj = new storage(localStorage);
-            const lastAccessHref = storageObj.getLastAcssesHref(config);
-            // 遷移を実行
-            window.location.href = (lastAccessHref === null) ? config.PAGE.HOME : lastAccessHref;
-        }
+    <script>
+        // 変数storageにlocalStorageを格納
+        const storage = localStorage;
+        const lastAccessHref = storage.getItem(config.SYSTEM_KEY.LAST_HREF);
+        // 遷移を実行
+        window.location.href = (lastAccessHref === null) ? config.PAGE.HOME : lastAccessHref;
     </script>
 </body>
 </html>
