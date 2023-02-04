@@ -176,13 +176,13 @@ main button {
 
 /* menu */
 
-/* #menu.hidden {
+#menu.hidden {
     opacity: 0;
     pointer-events: none;
     transform: translate(-500px, 0);
-} */
+}
 
-#menu.hidden {
+#menu {
     opacity: 1;
     pointer-events: auto;
     position: fixed;
