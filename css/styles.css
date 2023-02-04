@@ -176,22 +176,22 @@ main button {
 
 /* menu */
 
-#menu.hidden {
+/* #menu.hidden {
     opacity: 0;
     pointer-events: none;
     transform: translate(-500px, 0);
-}
+} */
 
-#menu {
+#menu.hidden {
     opacity: 1;
     pointer-events: auto;
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
-    width: 250px;
+    width: 180px;
     background: rgba(255, 255, 255, .95);
-    text-align: center;
+    /* text-align: center; */
     transition: transform .2s;
     z-index: 2;
     overflow: scroll;
@@ -213,9 +213,9 @@ main button {
 #menu li {
     cursor: pointer;
     border: solid 1px #333;
-    margin: 3px 2px;
-    padding: 20px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
+    margin: 5px 5px 5px 20px;
+    padding: 5px;
+    box-shadow: 0 0 3px rgb(26, 19, 19);
 }
 
 /* application */
