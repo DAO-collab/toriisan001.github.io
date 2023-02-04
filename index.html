@@ -7,9 +7,11 @@
     <title>鳥居涼太のポートフォリオサイト</title>
 </head>
 <body>
+    <script src="./js/config.js"></script>
     <script>
         // 変数storageにlocalStorageを格納
         const storage = localStorage;
+        const config = getConfig();
         const lastAccessHref = storage.getItem(config.SYSTEM_KEY.LAST_HREF);
         // 遷移を実行
         window.location.href = (lastAccessHref === null) ? config.PAGE.HOME : lastAccessHref;
