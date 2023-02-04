@@ -28,11 +28,11 @@ body {
     background-color: #45454bd3;
     color: white;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-    font-size: 10px;
+    font-size: 13px;
     top: 0;
-    height: 10px;
+    height: 20px;
     width: 100%;
-    line-height: 1.6;
+    line-height: 2;
     z-index: 1;
 }
 
@@ -41,7 +41,7 @@ body {
 header {
     display: flex;
     background: #efefef;
-    margin: 15px 5px 5px 5px;
+    margin: 25px 5px 5px 5px;
     padding: 1px 16px;
     box-shadow: 0 0 3px rgba(0, 0, 0, 1);
 }
