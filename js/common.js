@@ -142,6 +142,10 @@
         behavior: "smooth",
       });
     });
+    const statusBarParts = document.getElementById("statusBarParts");
+    statusBarParts.addEventListener("click", () => {
+      pageTop.click();
+    });
     pageBottom.addEventListener("click", (e) => {
       setlog('pageBottom click.\n');
       e.preventDefault();
