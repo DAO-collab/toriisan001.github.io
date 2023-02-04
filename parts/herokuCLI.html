@@ -9,13 +9,6 @@ heroku loign
         </code>
     </pre>
 
-    <h2>postgres接続</h2>
-    <pre>
-        <code>
-heroku pg:psql -app ${アプリ名}
-        </code>
-    </pre>
-
     <h2>bash参照</h2>
     <pre>
         <code>
@@ -37,30 +30,42 @@ heroku config -a ${アプリ名}
         </code>
     </pre>
 
-    <h2>DBから取得</h2>
-    <pre>
-        <code>
+    <h2>postgres</h2>
+    <h3>postgres接続</h3>
+<pre>
+<code>
+heroku pg:psql -app ${アプリ名}
+</code>
+</pre>
+    <h3>DBから取得</h3>
+<pre>
+<code>
 \o output.csv // 記録開始
 \a // エンコードだっけ
 \f ',' // 区切り文字の設定
 \i ${ファイル名} // ファイル読み込み。そのままsql書いてもいい
 \o // ファイル出力
-        </code>
-    </pre>
-
-    <h2>UTF-8に変換(変換しないとDB取得が出来ないことがあった)</h2>
-    <pre>
-        <code>
+</code>
+</pre>
+    <h3>UTF-8に変換(変換しないとDB取得が出来ないことがあった)</h3>
+<pre>
+<code>
 chcp 65001
-        </code>
-    </pre>
+</code>
+</pre>
+    <h3>テーブル定義の確認</h3>
+<pre>
+<code>
+\d ${テーブル名}
+</code>
+</pre>
 
     <h2>スタックの確認</h2>
-    <pre>
-        <code>
+<pre>
+<code>
 heroku stack --ap ${アプリ名}
-        </code>
-    </pre>
+</code>
+</pre>
 
 </main>
 <div id="log"></div>
