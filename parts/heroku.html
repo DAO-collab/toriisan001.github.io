@@ -1,43 +1,45 @@
 <main>
-    <h1>HerokuCLI</h1>
+    <h1>Heroku</h1>
     <p id="lastModified"></p>
 
-    <h2>ログイン</h2>
-    <pre>
-        <code>
+    <h2>Heroku Command Line Interface (CLI) </h2>
+    <p>Heroku Command Line Interface (CLI) を使用すると、Heroku アプリをターミナルから直接、作成および管理できます。Heroku CLI は、Heroku を利用する際に必要なツールです。</p>
+    <h3>ログイン</h3>
+<pre>
+<code>
 heroku loign
-        </code>
-    </pre>
+</code>
+</pre>
 
-    <h2>bash参照</h2>
-    <pre>
-        <code>
+    <h3>bash参照</h3>
+<pre>
+<code>
 heroku run bash -a ${アプリ名}
-        </code>
-    </pre>
+</code>
+</pre>
 
-    <h2>REDISインスタンスの情報を確認</h2>
-    <pre>
-        <code>
+    <h3>REDISインスタンスの情報を確認</h3>
+<pre>
+<code>
 heroku redis:info -a ${アプリ名}
-        </code>
-    </pre>
+</code>
+</pre>
 
-    <h2>環境情報を確認</h2>
-    <pre>
-        <code>
+    <h3>環境情報を確認</h3>
+<pre>
+<code>
 heroku config -a ${アプリ名}
-        </code>
-    </pre>
+</code>
+</pre>
 
-    <h2>postgres</h2>
-    <h3>postgres接続</h3>
+    <h3>postgres</h3>
+    <h4>postgres接続</h4>
 <pre>
 <code>
 heroku pg:psql -app ${アプリ名}
 </code>
 </pre>
-    <h3>DBから取得</h3>
+    <h4>DBから取得</h4>
 <pre>
 <code>
 \o output.csv // 記録開始
@@ -47,20 +49,20 @@ heroku pg:psql -app ${アプリ名}
 \o // ファイル出力
 </code>
 </pre>
-    <h3>UTF-8に変換(変換しないとDB取得が出来ないことがあった)</h3>
+    <h4>UTF-8に変換(変換しないとDB取得が出来ないことがあった)</h4>
 <pre>
 <code>
 chcp 65001
 </code>
 </pre>
-    <h3>テーブル定義の確認</h3>
+    <h4>テーブル定義の確認</h4>
 <pre>
 <code>
 \d ${テーブル名}
 </code>
 </pre>
 
-    <h2>スタックの確認</h2>
+    <h3>スタックの確認</h3>
 <pre>
 <code>
 heroku stack --ap ${アプリ名}
