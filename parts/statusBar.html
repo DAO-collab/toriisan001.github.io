@@ -10,11 +10,10 @@
     const day = date.getDate();
     const  hour = date.getHours();
     const  minute = date.getMinutes();
-    const  second = zeroPadding(date.getSeconds(), 2);
     const dayOfWeek = date.getDay();
     const dayOfWeekStr = ["日", "月", "火", "水", "木", "金", "土"][dayOfWeek];
     const options = { year: 'numeric' };
     const japaneseCalender = new Intl.DateTimeFormat('ja-JP-u-ca-japanese', options).format(date);
-    statusBarYmdHis.innerHTML = '('+ japaneseCalender + ")" +year + "/" + month + "/" + day + ' ('+ dayOfWeekStr + ')' + hour + ":" + minute + ":" + second;
+    statusBarYmdHis.innerHTML = '('+ japaneseCalender + ")" +year + "/" + month + "/" + day + ' ('+ dayOfWeekStr + ')' + hour + ":" + minute;
   }, 1000);
 </script>
