@@ -216,6 +216,10 @@ main button {
     padding: 0;
 }
 
+#menu a {
+    text-indent: 1em;
+}
+
 #menu li {
     cursor: pointer;
     border: solid 1px #333;
