@@ -250,16 +250,15 @@ CLEARDB_DATABASE_URL: mysql://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST}/${DB_DATA
 <pre>
 <code>
 =====cod=====
-mysql -u toriisan -D test -p
-toriisanmysqlpass
+mysql -u ${ユーザー名} -D ${DB名} -p
+Enter password:${パスワード}
 </code>
 </pre>
     <h4>heroku</h4>
 <pre>
 <code>
-heroku config --app toriisan-php-001
-=== toriisan-php-001 Config Vars
-CLEARDB_DATABASE_URL: mysql://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST}/${DB_DATABASE}?reconnect=true
+mysql -u ${DB_USERNAME} -p -h ${DB_HOST} ${DB_DATABASE}
+Enter password:${DB_PASSWORD}
 </code>
 </pre>
 </main>
