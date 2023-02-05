@@ -223,6 +223,25 @@ heroku stack --ap ${アプリ名}
 </code>
 </pre>
 
+    <h3>アドオンを確認</h3>
+<pre>
+<code>
+heroku addons
+>Owning App        Add-on                       Plan            Price  State
+>────────────────  ───────────────────────────  ──────────────  ─────  ───────
+>toriisan-php-001  cleardb-perpendicular-xxxxx  cleardb:ignite  free   created
+</code>
+</pre>
+
+    <h3>アプリのコンフィグを確認</h3>
+<pre>
+<code>
+heroku config --app toriisan-php-001
+=== toriisan-php-001 Config Vars
+CLEARDB_DATABASE_URL: mysql://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST}/${DB_DATABASE}?reconnect=true
+</code>
+</pre>
+
 </main>
 <div id="log"></div>
 <script src="../js/util.js"></script>
