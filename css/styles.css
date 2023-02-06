@@ -131,6 +131,7 @@ main h6 {
 }
 
 main code {
+    padding: 0.2em 0.3em;/* 内側の余白 */
     margin: 0 0.2em;/* 外側の余白 */
     border-radius: 5px;/* 角の丸み */
     background: #f1f2f3;/* 背景色 */
