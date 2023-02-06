@@ -3,6 +3,22 @@
 
   // 画面読み込み前に実行されてエラーになったので100ミリ秒遅延させた。
   setTimeout(function () {
+    // ステータスバー
+    const statusBarYmdHis = document.getElementById("statusBarYmdHis");
+    setInterval(() => {
+      // 現在日時取得
+      const date = new Date();
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
+      const day = date.getDate();
+      const  hour = date.getHours();
+      const  minute = date.getMinutes();
+      const dayOfWeek = date.getDay();
+      const dayOfWeekStr = ["日", "月", "火", "水", "木", "金", "土"][dayOfWeek];
+      const options = { year: 'numeric' };
+      const japaneseCalender = new Intl.DateTimeFormat('ja-JP-u-ca-japanese', options).format(date);
+      statusBarYmdHis.innerHTML = '('+ japaneseCalender + ')' +year + '/' + month + '/' + day + '&nbsp;('+ dayOfWeekStr + ')&nbsp;&nbsp;' + zeroPadding(hour, 2) + ":" + zeroPadding(minute, 2);
+    }, 1000);
     // 変数storageにlocalStorageを格納
     const storage = localStorage;
     const config = getConfig();
