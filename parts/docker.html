@@ -207,9 +207,14 @@ workディレクトリが同期されるよという設定が書かれている�
         <figcaption>環境にアクセス.PNG</figcaption>
     </figure>
 
+    <h2>Ubuntuの環境にMysqlをインストール</h2>
+    <p>「sudo apt update」でapt update</p>
+    <p>「sudo apt install mysql-server -y」でmysqlをインストール</p>
+    <p><a href="https://blackbird-blog.com/install-apt-mysql57">【参考】MySQL 5.7をインストールする</a></p>
+
     <h2>MySQLにログイン</h2>
     <p>「docker-compose exec db bash」でdbコンテナにログイン</p>
-    <p>「mysql -u」</p>
+    <p>「mysql -u myappuser -p myapp」でmysqlにアクセス。パスワードが求められるので「myapppass」と打ち込む。</p>
 
 </main>
 <div id="log"></div>
