@@ -117,6 +117,7 @@ Password:myapppass
 
 <h2>Docker + PHP 開発環境構築</h2>
 <pre>
+=====フォルダ構成=====
 root/
     ├ mysql/
     │       ├ Dockerfile
@@ -131,6 +132,38 @@ root/
     │       └ public/
     │           └ index.php
     └ docker-compose.yml
+
+=====docker-compose.yml=====
+---
+
+version: '3.8'
+services:
+  db:
+    build: ./mysql
+    environment:
+      TZ: "Asia/Tokyo"
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: myapp
+      MYSQL_USER: myappuser
+      MYSQL_PASSWORD: myapppass
+    volumes:
+    - db-data:/var/lib/mysql
+  php:
+    build: ./php
+    depends_on:
+    - db
+    ports:
+    - 8562:8000
+    volumes:
+    - ./work:/work
+
+volumes:
+  db-data:
+==========
+DBとPHPというコンテナが設定が書かれている。
+MySQLの設定情報が書かれている。
+ブラウザからアクセスする際の8562番ポートを使う。
+workディレクトリが同期されるよという設定が書かれている。
 </pre>
 
 </main>
