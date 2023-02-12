@@ -116,6 +116,22 @@ Password:myapppass
 </pre>
 
 <h2>Docker + PHP 開発環境構築</h2>
+<pre>
+root/
+    ├ mysql/
+    │       ├ Dockerfile
+    │       └ docker-compose.yml
+    ├ php/
+    │       ├ Dockerfile
+    │       └ php.ini-development
+    ├ work/
+    │       ├ app/
+    │       │   ├ .gitkeep
+    │       │   └ php.ini-development
+    │       └ public/
+    │           └ index.php
+    └ docker-compose.yml
+</pre>
 
 </main>
 <div id="log"></div>
