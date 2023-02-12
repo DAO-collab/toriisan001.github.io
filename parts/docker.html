@@ -6,12 +6,24 @@
     <p>Dockerは、OSレベルの仮想化を用いて、コンテナと呼ばれるパッケージでソフトウェアを提供するPaaS製品群である。</p>
     <p>手元のPCとサーバー側のDockerのコンテナを展開できる。環境の差異を気にすることなく開発することが出来る。</p>
 
-    <h2>開発環境構築</h2>
+    <h2>Docker環境構築(20230212時点)</h2>
     <h3>Docker Desktopをインストール</h3>
     <p>以下より「Docker Desktop Installer.exe」をダウンロードしてクリック</p>
     <p><a href="https://www.docker.com/products/docker-desktop/">docker-desktopダウンロード</a></p>
     <p>Windows上でLinuxを動かすことが出来る機能である「WSL2」のインストールが促されるらしいが。私の環境では促されなかった。インストールが必要らしい。既に入っているのかな。以下のurlからダウンロードするらしい。(x64 マシン用 WSL2 Linux カーネル更新プログラム パッケージ)</p>
     <p><a href="https://aka.ms/wsl2kernel">手順 4 - Linux カーネル更新プログラム パッケージをダウンロードする</a></p>
+    <p>インストールが終わったらリスタートを押してdockerを再起動するらしい。</p>
+    <h3>DockerDesktopを起動</h3>
+    <p>DockerDesktopを起動すると以下のような文言が出てきた。個人は無料とのこと。同意をクリック</p>
+    <figure>
+        <img class="beside" src="../img/Docker/Docker環境構築(20230212時点)/DockerDesktopを起動.PNG" alt="HerokuSetYourPassword.PNG">
+        <figcaption>HerokuSetYourPassword.PNG</figcaption>
+    </figure>
+<pre>
+    Docker サブスクリプション サービス契約
+    [同意する] を選択すると、サブスクリプション サービス契約、Docker データ処理契約、およびデータ プライバシー ポリシーに同意したことになります。    
+    注: Docker Desktop は、中小企業 (従業員 250 人未満かつ年間売上高 1,000 万ドル未満)、個人使用、教育、および非営利のオープン ソース プロジェクトには無料です。 それ以外の場合は、プロ向けの有料サブスクリプションが必要です。 政府機関にも有料サブスクリプションが必要です。 詳細については、FAQ をお読みください。
+</pre>
 
 </main>
 <div id="log"></div>
