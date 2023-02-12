@@ -95,6 +95,26 @@ WSL 2 との主な違いについては、https://aka.ms/wsl2 を参照してく
     </figure>
     <p>Dockerを使って開発する時はLinuxのコマンドを使えたほうがいいらしい。</p>
 
+    <h2>Docker上で動く仮想マシンの名前をコンテナと呼ぶ</h2>
+
+    <h2>PHPのコンテナについて</h2>
+<pre>
+work/
+  ├ app/
+  ├ public/
+public・・・ブラウザからアクセスできるファイル
+app・・・ブラウザからアクセスして欲しくないファイル
+localhostの8562番を使用する。
+</pre>
+
+<h2>Mysqlのコンテナ</h2>
+<pre>
+Host:db
+Database:myapp
+User:myappuser
+Password:myapppass
+</pre>
+
 </main>
 <div id="log"></div>
 <script src="../js/util.js"></script>
