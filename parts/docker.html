@@ -11,7 +11,6 @@
     <p>以下より「Docker Desktop Installer.exe」をダウンロードしてクリック</p>
     <p><a href="https://www.docker.com/products/docker-desktop/">docker-desktopダウンロード</a></p>
     <p>Windows上でLinuxを動かすことが出来る機能である「WSL2」のインストールが促されるらしいが。私の環境では促されなかった。インストールが必要らしい。既に入っているのかな。以下のurlからダウンロードするらしい。(x64 マシン用 WSL2 Linux カーネル更新プログラム パッケージ)</p>
-    <p><a href="https://aka.ms/wsl2kernel">手順 4 - Linux カーネル更新プログラム パッケージをダウンロードする</a></p>
     <p>インストールが終わったらリスタートを押してdockerを再起動するらしい。</p>
     <h3>DockerDesktopを起動</h3>
     <p>DockerDesktopを起動すると以下のような文言が出てきた。個人は無料とのこと。同意をクリック</p>
@@ -35,6 +34,19 @@
         <img class="beside" src="../img/Docker/Docker環境構築(20230212時点)/Dockerが起動しているか.PNG" alt="Dockerが起動しているか.PNG">
         <figcaption>Dockerが起動しているか.PNG</figcaption>
     </figure>
+    <h3>Ubuntuの導入</h3>
+    <p>「Windows PowerShell」を起動</p>
+    <p>「wsl --set-default-version 2」を実行</p>
+    <p>これをしておけば、WSL2対応のLinuxを導入できるようになるらしい。</p>
+    <p>WSL2とは。WSLとは、Windows上でLinuxを動作させるための実行環境です。新しいバージョンである「WSL2」ではWindows上で「完全なLinux」が動かせるようになり、できることが大幅に増えました。</p>
+    <p><a href="https://www.kagoya.jp/howto/it-glossary/develop/wsl2_linux/">WindowsでWSL2を使って「完全なLinux」環境を作ろう！</a>
+<pre>
+<code>
+PS C:\Users\*****> wsl --set-default-version 2
+WSL 2 との主な違いについては、https://aka.ms/wsl2 を参照してください
+この操作を正しく終了しました。
+</code>
+</pre>
 
 </main>
 <div id="log"></div>
