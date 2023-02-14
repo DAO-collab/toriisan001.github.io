@@ -208,9 +208,14 @@ heroku pg:psql -app ${アプリ名}
     <h4>UTF-8に変換(変換しないとDB取得が出来ないことがあった)</h4>
 <pre>
 <code>
+=====コマンドプロンプトで使用する文字コードが UTF-8 に変更されました。 =====
 chcp 65001
+=====以下も良いらしい???文字化けは出ているが落ちなくはなった。=====
+set client_encoding TO 'UTF8';
 </code>
 </pre>
+<p><a href="https://esthersoftware.hatenablog.com/entry/utf8_has_no_equivalent_in_encoding_win1252">【参考】コマンドラインのPostgreSQL操作でcharacter with byte sequence XXXが出たときの対応</a></p>
+
     <h4>テーブル定義の確認</h4>
 <pre>
 <code>
