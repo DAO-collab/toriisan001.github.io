@@ -509,6 +509,98 @@ echo isLeapYear(2021); // false
 </pre>
 </details>
 
+<h4>コードのドキュメント生成</h4>
+<details>
+    <summary>JavaScript例</summary>
+<pre>
+鳥居
+以下の関数のドキュメントを日本語でJSDoc形式で出力して
+/**
+* 指定された年が閏年かどうかを判定します。
+* @param {number} year - 判定する年。
+* @returns {boolean} 指定された年が閏年の場合は true、そうでない場合は false。
+*/
+function isLeapYear(year) {
+if (year % 4 !== 0) {
+return false;
+} else if (year % 100 !== 0) {
+return true;
+} else if (year % 400 !== 0) {
+return false;
+} else {
+return true;
+}
+}
+</pre>
+</details>
+<details>
+    <summary>Java例</summary>
+<pre>
+以下の関数のドキュメントを日本語でJSDoc形式で出力して
+public static boolean isLeapYear(int year) {
+    if (year % 4 != 0) {
+    return false;
+    } else if (year % 100 != 0) {
+    return true;
+    } else if (year % 400 != 0) {
+    return false;
+    } else {
+    return true;
+    }
+}
+/**
+* 指定された年が閏年かどうかを判定します。
+* @param {number} year - 判定する年。
+* @returns {boolean} 指定された年が閏年の場合は true、そうでない場合は false。
+*/
+function isLeapYear(year) {
+if (year % 4 != 0) {
+return false;
+} else if (year % 100 != 0) {
+return true;
+} else if (year % 400 != 0) {
+return false;
+} else {
+return true;
+}
+}
+</pre>
+</details>
+<details>
+    <summary>PHP例</summary>
+<pre>
+鳥居
+以下の関数のドキュメントを日本語でJSDoc形式で出力して
+function isLeapYear($year) {
+    if ($year % 4 != 0) {
+    return false;
+    } else if ($year % 100 != 0) {
+    return true;
+    } else if ($year % 400 != 0) {
+    return false;
+    } else {
+    return true;
+    }
+}
+/**
+* 指定された年が閏年かどうかを判定します。
+* @param {number} $year - 判定する年。
+* @returns {boolean} 指定された年が閏年の場合は true、そうでない場合は false。
+*/
+function isLeapYear($year) {
+if ($year % 4 != 0) {
+return false;
+} else if ($year % 100 != 0) {
+return true;
+} else if ($year % 400 != 0) {
+return false;
+} else {
+return true;
+}
+}
+</pre>
+</details>
+
 </main>
 <div id="log"></div>
 <script src="../js/util.js"></script>
