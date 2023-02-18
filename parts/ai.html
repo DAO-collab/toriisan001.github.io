@@ -514,6 +514,17 @@ echo isLeapYear(2021); // false
 <pre>
 鳥居
 以下の関数のドキュメントを日本語でJSDoc形式で出力して
+function isLeapYear(year) {
+    if (year % 4 !== 0) {
+      return false;
+    } else if (year % 100 !== 0) {
+      return true;
+    } else if (year % 400 !== 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 /**
 * 指定された年が閏年かどうかを判定します。
 * @param {number} year - 判定する年。
