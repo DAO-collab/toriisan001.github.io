@@ -691,6 +691,90 @@ Copy code
 入力データのバリデーションやサニタイズ、SQLインジェクション対策などを実装する必要があります。
 </pre>
 </details>
+<details>
+    <summary>Reactでお問い合わせ画面のコード書いて</summary>
+<pre>
+鳥居
+Reactでお問い合わせ画面のコード書いて
+Reactでお問い合わせ画面のコードを書くには、まずReactコンポーネントを作成する必要があります。以下は、基本的なお問い合わせフォームを持つContactFormコンポーネントの例です。
+
+jsx
+Copy code
+import React, { useState } from 'react';
+
+function ContactForm() {
+  // ステート変数を定義する
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  // フォームが送信されたときの処理を定義する
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // TODO: お問い合わせの送信処理を実装する
+  }
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;label&gt;
+        お名前:
+        &lt;input
+          type=&quot;text&quot;
+          value={name}
+          onChange={(event) =&gt; setName(event.target.value)}
+          required
+        /&gt;
+      &lt;/label&gt;
+      &lt;br /&gt;
+      &lt;label&gt;
+        メールアドレス:
+        &lt;input
+          type=&quot;email&quot;
+          value={email}
+          onChange={(event) =&gt; setEmail(event.target.value)}
+          required
+        /&gt;
+      &lt;/label&gt;
+      &lt;br /&gt;
+      &lt;label&gt;
+        お問い合わせ内容:
+        &lt;textarea
+          value={message}
+          onChange={(event) =&gt; setMessage(event.target.value)}
+          required
+        /&gt;
+      &lt;/label&gt;
+      &lt;br /&gt;
+      &lt;button type=&quot;submit&quot;&gt;送信&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}
+
+export default ContactForm;
+このコードでは、useStateフックを使用して、フォームの各入力項目に関連するステート変数を定義しています。そして、フォームが送信されたときに実行されるhandleSubmit関数を定義し、その中でお問い合わせの送信処理を実装することができます。
+
+また、フォームの各入力項目には、valueプロパティに対応するステート変数をバインドし、onChangeイベントでステート変数を更新することで、ユーザーが入力した値をステート変数に反映するようにしています。
+
+これで、ContactFormコンポーネントを他のコンポーネントで使用することができます。例えば、AppコンポーネントでContactFormをレンダリングするには、以下のようにします。
+
+jsx
+Copy code
+import React from 'react';
+import ContactForm from './ContactForm';
+
+function App() {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;お問い合わせフォーム&lt;/h1&gt;
+      &lt;ContactForm /&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+これで、Reactを使用して簡単なお問い合わせフォームを実装することができました。ただし、このコードはセキュリティ上の問題があるため、実際のWebアプリケーションで使用する
+</pre>
+</details>
     <h4>リファクタリング</h4>
 <details>
     <summary>JavaScript例</summary>
