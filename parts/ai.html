@@ -633,6 +633,64 @@ return true;
 }
 </pre>
 </details>
+<details>
+    <summary>PHPで登録機能</summary>
+<pre>
+鳥居
+PHPで登録機能のあるコードを書いて
+PHPで登録機能のあるコードを書くには、まずデータベースに接続する必要があります。以下は、MySQLデータベースに接続するためのサンプルコードです。
+
+php
+Copy code
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// データベースに接続する
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// 接続エラーがあるかどうか確認する
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+次に、ユーザーが送信したフォームデータを取得する必要があります。以下は、ユーザーが送信したフォームデータを処理するサンプルコードです。
+
+php
+Copy code
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // フォームデータを取得する
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $email = $_POST["email"];
+
+    // データベースにユーザーを追加する
+    $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "ユーザーが登録されました。";
+    } else {
+        echo "エラー: " . $sql . "<br>" . $conn->error;
+    }
+}
+最後に、HTMLフォームを作成し、上記のPHPコードと組み合わせて使用します。以下は、基本的なHTMLフォームの例です。
+
+html
+Copy code
+&lt;form method=&quot;post&quot; action=&quot;&lt;?php echo htmlspecialchars($_SERVER[&quot;PHP_SELF&quot;]);?&gt;&quot;&gt;
+    &lt;label&gt;ユーザー名:&lt;/label&gt;
+    &lt;input type=&quot;text&quot; name=&quot;username&quot; required&gt;&lt;br&gt;&lt;br&gt;
+    &lt;label&gt;パスワード:&lt;/label&gt;
+    &lt;input type=&quot;password&quot; name=&quot;password&quot; required&gt;&lt;br&gt;&lt;br&gt;
+    &lt;label&gt;Eメール:&lt;/label&gt;
+    &lt;input type=&quot;email&quot; name=&quot;email&quot; required&gt;&lt;br&gt;&lt;br&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;登録&quot;&gt;
+&lt;/form&gt;
+これで、ユーザーがフォームに入力した情報をデータベースに保存できるようになりました。
+ただし、このコードはセキュリティ上の問題があるため、実際のWebアプリケーションで使用する場合は、
+入力データのバリデーションやサニタイズ、SQLインジェクション対策などを実装する必要があります。
+</pre>
+</details>
     <h4>リファクタリング</h4>
 <details>
     <summary>JavaScript例</summary>
@@ -773,63 +831,6 @@ function isLeapYear(int $year): bool {
 年数が400で割り切れない場合は閏年ではないため、falseを返します。
 早期リターンを使うことで、ネストされた if-else 文が削減され、コードがシンプルになりました。
 また、関数の引数に型を指定し、関数の利用者に対して引数が整数であることを明示し、エラーを回避できます。
-</pre>
-<details>
-    <summary>PHPで登録機能</summary>
-<pre>
-鳥居
-PHPで登録機能のあるコードを書いて
-PHPで登録機能のあるコードを書くには、まずデータベースに接続する必要があります。以下は、MySQLデータベースに接続するためのサンプルコードです。
-
-php
-Copy code
-$servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "myDB";
-
-// データベースに接続する
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// 接続エラーがあるかどうか確認する
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-次に、ユーザーが送信したフォームデータを取得する必要があります。以下は、ユーザーが送信したフォームデータを処理するサンプルコードです。
-
-php
-Copy code
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // フォームデータを取得する
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    $email = $_POST["email"];
-
-    // データベースにユーザーを追加する
-    $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "ユーザーが登録されました。";
-    } else {
-        echo "エラー: " . $sql . "<br>" . $conn->error;
-    }
-}
-最後に、HTMLフォームを作成し、上記のPHPコードと組み合わせて使用します。以下は、基本的なHTMLフォームの例です。
-
-html
-Copy code
-&lt;form method=&quot;post&quot; action=&quot;&lt;?php echo htmlspecialchars($_SERVER[&quot;PHP_SELF&quot;]);?&gt;&quot;&gt;
-    &lt;label&gt;ユーザー名:&lt;/label&gt;
-    &lt;input type=&quot;text&quot; name=&quot;username&quot; required&gt;&lt;br&gt;&lt;br&gt;
-    &lt;label&gt;パスワード:&lt;/label&gt;
-    &lt;input type=&quot;password&quot; name=&quot;password&quot; required&gt;&lt;br&gt;&lt;br&gt;
-    &lt;label&gt;Eメール:&lt;/label&gt;
-    &lt;input type=&quot;email&quot; name=&quot;email&quot; required&gt;&lt;br&gt;&lt;br&gt;
-    &lt;input type=&quot;submit&quot; value=&quot;登録&quot;&gt;
-&lt;/form&gt;
-これで、ユーザーがフォームに入力した情報をデータベースに保存できるようになりました。
-ただし、このコードはセキュリティ上の問題があるため、実際のWebアプリケーションで使用する場合は、
-入力データのバリデーションやサニタイズ、SQLインジェクション対策などを実装する必要があります。
 </pre>
 </details>
     <h4>単体テスト</h4>
