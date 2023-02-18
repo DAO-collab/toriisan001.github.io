@@ -1594,6 +1594,78 @@ G D Em C (2回)
 鳥居
 以下についてABC記譜法で書いてください。abcjsで動く書き方でお願いします。
 
+ABC記譜法で書いた楽譜は以下のようになります。abcjsで表示するには、
+以下のコードをHTMLファイルに追加して、abcjsのライブラリを読み込んでください。
+&lt;div class=&quot;abcjs&quot; style=&quot;width: 500px;&quot;&gt;&lt;/div&gt;
+
+&lt;script src=&quot;https://paulrosen.github.io/abcjs/abcjs_basic_7.1.1-min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+var abc = `
+X:1
+T:メイドさんはいつも
+C:Unknown
+M:4/4
+L:1/4
+K:G
+(イントロ)
+G D Em C |
+(1番)
+G D Em C |
+おはようございます ご主人様 |
+G D Em C |
+新しい一日が始まります |
+G D Em C |
+窓を開けたら 心地よい風 |
+G D Em C |
+お庭で咲くお花も 微笑んでいます |
+(サビ)
+G D Em C |
+メイドさんはいつも 微笑んでいる |
+G D Em C |
+どんなことがあっても 心は変えない |
+G D Em C |
+お掃除も料理も 精一杯頑張る |
+G D Em C |
+ご主人様が笑顔なら それでいいんです |
+(2番)
+G D Em C |
+お昼の時間が近づいてきました |
+G D Em C |
+美味しいお食事を 用意します |
+G D Em C |
+ご主人様の好きなもの 知っています |
+G D Em C |
+笑顔で召し上がって 嬉しいです |
+(サビ)
+G D Em C |
+メイドさんはいつも 微笑んでいる |
+G D Em C |
+どんなことがあっても 心は変えない |
+G D Em C |
+お掃除も料理も 精一杯頑張る |
+G D Em C |
+ご主人様が笑顔なら それでいいんです |
+(ブリッジ)
+Em C G D |
+たまにはちょっと疲れてしまうこともあるけど |
+Em C G D |
+明日もまた笑顔で 頑張ります |
+(サビ)
+G D Em C |
+メイドさんはいつも 微笑んでいる |
+G D Em C |
+どんなことがあっても 心は変えない |
+G D Em C |
+お掃除も料理も 精一杯頑張る |
+G D Em C |
+ご主人様が笑顔なら それでいいんです |
+(アウトロ)
+G D Em C | G D Em C ||
+`;
+
+ABCJS.renderAbc(&quot;abctune&quot;, abc, { responsive: &quot;resize&quot; });
+&lt;/script&gt;
 </pre>
     </details>
     <h4>返信を考えてもらう</h4>
