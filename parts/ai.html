@@ -1592,6 +1592,78 @@ G D Em C
 G D Em C (2回)
 
 鳥居
+歌詞に曲を付けてください。曲の構成に変化を入れてください。
+以下は、ポップで明るい雰囲気の楽曲です。
+
+（イントロ）
+キラキラ…キラキラ…（2回）
+
+（1番）
+C Am F G
+おはようございます ご主人様
+C Am F G
+新しい一日が始まります
+C Am F G
+窓を開けたら 心地よい風
+C Am F G
+お庭で咲くお花も 微笑んでいます
+
+（サビ）
+F G C Am
+メイドさんはいつも 微笑んでいる
+F G C Am
+どんなことがあっても 心は変えない
+F G Am Em
+お掃除も料理も 精一杯頑張る
+F G C
+ご主人様が笑顔なら それでいいんです
+
+（2番）
+C Am F G
+お昼の時間が近づいてきました
+C Am F G
+美味しいお食事を 用意します
+C Am F G
+ご主人様の好きなもの 知っています
+C Am F G
+笑顔で召し上がって 嬉しいです
+
+（サビ）
+F G C Am
+メイドさんはいつも 微笑んでいる
+F G C Am
+どんなことがあっても 心は変えない
+F G Am Em
+お掃除も料理も 精一杯頑張る
+F G C
+ご主人様が笑顔なら それでいいんです
+
+（ブリッジ）
+Am G F G
+たまにはちょっと疲れてしまうこともあるけど
+Am G F G
+明日もまた笑顔で 頑張ります
+
+（サビ）
+F G C Am
+メイドさんはいつも 微笑んでいる
+F G C Am
+どんなことがあっても 心は変えない
+F G Am Em
+お掃除も料理も 精一杯頑張る
+F G C
+ご主人様が笑顔なら それでいいんです
+
+（アウトロ）
+キラキラ…キラキラ…（2回）
+
+この楽曲は、イントロとアウトロにキラキラした音色を用い、
+1番と2番の間に明るいサビを置くことで、メイドさんの明るい性格や、
+毎日一生懸命頑張っている様子を表現しています。
+また、ブリッジではメイドさんの疲れを表現し、
+明日も頑張る姿勢を示しています。
+
+鳥居
 以下についてABC記譜法で書いてください。abcjsで動く書き方でお願いします。
 
 ABC記譜法で書いた楽譜は以下のようになります。abcjsで表示するには、
@@ -1667,28 +1739,13 @@ G D Em C | G D Em C ||
 ABCJS.renderAbc(&quot;abctune&quot;, abc, { responsive: &quot;resize&quot; });
 &lt;/script&gt;
 </pre>
-<h4>ニ長調(Key D)</h4>
+<h4>メイドさんはいつも</h4>
 <pre>
-<span id="paperKeyD"></span>
-<span id="midiKeyD"></span>
-<span id="abcKeyD"></span>
+<span id="paperMaidIsAlways"></span>
+<span id="midiMaidIsAlways"></span>
+<span id="abcMaidIsAlways"></span>
 <script>
-    var keyD =
-        "T: KeyD\n" +
-        "M: 4/4\n" +
-        "L: 1/4\n" +
-        "K: D\n" +
-        "Q: 300\n" +
-        '"レ"[D]"ミ"[E]"ファ#"[F]"ソ"[G]|"ラ"[A]"シ"[B]"ド#"[c]"レ"[d]"ミ"[e]"ファ#"[f]"ソ"[g]|"ラ"[a]"シ"[b]"ド#"[c\']"レ"[d\']"ミ"[e\']"ファ#"[f\']"ソ"[g\']|"ラ"[a\']"シ"[b\']"ド#"[c\'\']"レ"[d\'\']|]';
-    ABCJS.renderAbc("paperKeyD", keyD);
-    ABCJS.renderMidi("midiKeyD", keyD);
-    document.getElementById('abcKeyD').innerText = keyD;
-</script>
-</pre>
-<div class="abcjs" style="width: 500px;"></div>
-
-<script>
-var abc = `
+    var MaidIsAlways =`
 X:1
 T:メイドさんはいつも
 C:Unknown
@@ -1748,9 +1805,10 @@ G D Em C |
 G D Em C |
 ご主人様が笑顔なら それでいいんです |
 (アウトロ)
-G D Em C | G D Em C ||
-`;
-ABCJS.renderAbc("abctune", abc, { responsive: "resize" });
+G D Em C | G D Em C ||`
+    ABCJS.renderAbc("paperMaidIsAlways", MaidIsAlways);
+    ABCJS.renderMidi("midiMaidIsAlways", MaidIsAlways);
+    document.getElementById('abcMaidIsAlways').innerText = MaidIsAlways;
 </script>
     </details>
     <h4>返信を考えてもらう</h4>
