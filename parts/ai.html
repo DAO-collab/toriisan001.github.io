@@ -1677,8 +1677,6 @@ F G C
     </details>
     <details>
         <summary>完成品</summary>
-    ABCJS.renderAbc(&quot;abctune&quot;, abc, { responsive: &quot;resize&quot; });
-    &lt;/script&gt;
     </pre>
     <h4>笑顔のメイドさん</h4>
     <pre>
@@ -1725,10 +1723,10 @@ F G C
     [F,4A,4] [G,4B,4] [C,4E4] z2 |
     %アウトロ
     z2 z2 | z2 z2 | 
-    `
-        ABCJS.renderAbc("paperMaidIsAlways", MaidIsAlways);
-        ABCJS.renderMidi("midiMaidIsAlways", MaidIsAlways);
-        document.getElementById('abcMaidIsAlways').innerText = MaidIsAlways;
+    `;
+    ABCJS.renderAbc("paperMaidIsAlways", MaidIsAlways);
+    ABCJS.renderMidi("midiMaidIsAlways", MaidIsAlways);
+    document.getElementById('abcMaidIsAlways').innerText = MaidIsAlways;
     </script>
     </details>
     <h4>返信を考えてもらう</h4>
