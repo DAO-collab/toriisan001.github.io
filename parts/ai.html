@@ -535,113 +535,6 @@ echo isLeapYear(2021); // false
 false が出力されます。3番目と4番目の呼び出しでは、それぞれうるう年であるかどうかが判定され、結果が出力されます。
 </pre>
 </details>
-<h4>コードのドキュメント生成</h4>
-<details>
-    <summary>JavaScript例</summary>
-<pre>
-鳥居
-以下の関数のドキュメントを日本語でJSDoc形式で出力して
-function isLeapYear(year) {
-    if (year % 4 !== 0) {
-      return false;
-    } else if (year % 100 !== 0) {
-      return true;
-    } else if (year % 400 !== 0) {
-      return false;
-    } else {
-      return true;
-    }
-  }
-/**
-* 指定された年が閏年かどうかを判定します。
-* @param {number} year - 判定する年。
-* @returns {boolean} 指定された年が閏年の場合は true、そうでない場合は false。
-*/
-function isLeapYear(year) {
-if (year % 4 !== 0) {
-return false;
-} else if (year % 100 !== 0) {
-return true;
-} else if (year % 400 !== 0) {
-return false;
-} else {
-return true;
-}
-}
-</pre>
-</details>
-<details>
-    <summary>Java例</summary>
-<pre>
-以下の関数のドキュメントを日本語でJSDoc形式で出力して
-public static boolean isLeapYear(int year) {
-    if (year % 4 != 0) {
-    return false;
-    } else if (year % 100 != 0) {
-    return true;
-    } else if (year % 400 != 0) {
-    return false;
-    } else {
-    return true;
-    }
-}
-/**
-
-与えられた年がうるう年であるかどうかを判定します。
-/**
-* @param {number} year - 判定する年（西暦）
-* @returns {boolean} うるう年の場合はtrue、そうでない場合はfalseを返します。
-* @example
-* isLeapYear(2020); // true
-* isLeapYear(2100); // false
-*/
-public static boolean isLeapYear(int year) {
-if (year % 4 != 0) {
-return false;
-} else if (year % 100 != 0) {
-return true;
-} else if (year % 400 != 0) {
-return false;
-} else {
-return true;
-}
-}
-</pre>
-</details>
-<details>
-    <summary>PHP例</summary>
-<pre>
-鳥居
-以下の関数のドキュメントを日本語でJSDoc形式で出力して
-function isLeapYear($year) {
-    if ($year % 4 != 0) {
-    return false;
-    } else if ($year % 100 != 0) {
-    return true;
-    } else if ($year % 400 != 0) {
-    return false;
-    } else {
-    return true;
-    }
-}
-/**
-* 指定された年が閏年かどうかを判定します。
-* @param {number} $year - 判定する年。
-* @returns {boolean} 指定された年が閏年の場合は true、そうでない場合は false。
-*/
-function isLeapYear($year) {
-if ($year % 4 != 0) {
-return false;
-} else if ($year % 100 != 0) {
-return true;
-} else if ($year % 400 != 0) {
-return false;
-} else {
-return true;
-}
-}
-</pre>
-</details>
 <details>
     <summary>PHPで登録機能</summary>
 <pre>
@@ -826,6 +719,113 @@ End Sub
 このVBAを実行すると、ListObject「Table1」の「単価」列と「数量」列の各行において、
 積が自動的に計算されて「金額」列に書き込まれます。
 ただし、このVBAは単価と数量が数値であることを前提としています。必要に応じてエラー処理を追加してください。
+</pre>
+</details>
+<h4>コードのドキュメント生成</h4>
+<details>
+    <summary>JavaScript例</summary>
+<pre>
+鳥居
+以下の関数のドキュメントを日本語でJSDoc形式で出力して
+function isLeapYear(year) {
+    if (year % 4 !== 0) {
+      return false;
+    } else if (year % 100 !== 0) {
+      return true;
+    } else if (year % 400 !== 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+/**
+* 指定された年が閏年かどうかを判定します。
+* @param {number} year - 判定する年。
+* @returns {boolean} 指定された年が閏年の場合は true、そうでない場合は false。
+*/
+function isLeapYear(year) {
+if (year % 4 !== 0) {
+return false;
+} else if (year % 100 !== 0) {
+return true;
+} else if (year % 400 !== 0) {
+return false;
+} else {
+return true;
+}
+}
+</pre>
+</details>
+<details>
+    <summary>Java例</summary>
+<pre>
+以下の関数のドキュメントを日本語でJSDoc形式で出力して
+public static boolean isLeapYear(int year) {
+    if (year % 4 != 0) {
+    return false;
+    } else if (year % 100 != 0) {
+    return true;
+    } else if (year % 400 != 0) {
+    return false;
+    } else {
+    return true;
+    }
+}
+/**
+
+与えられた年がうるう年であるかどうかを判定します。
+/**
+* @param {number} year - 判定する年（西暦）
+* @returns {boolean} うるう年の場合はtrue、そうでない場合はfalseを返します。
+* @example
+* isLeapYear(2020); // true
+* isLeapYear(2100); // false
+*/
+public static boolean isLeapYear(int year) {
+if (year % 4 != 0) {
+return false;
+} else if (year % 100 != 0) {
+return true;
+} else if (year % 400 != 0) {
+return false;
+} else {
+return true;
+}
+}
+</pre>
+</details>
+<details>
+    <summary>PHP例</summary>
+<pre>
+鳥居
+以下の関数のドキュメントを日本語でJSDoc形式で出力して
+function isLeapYear($year) {
+    if ($year % 4 != 0) {
+    return false;
+    } else if ($year % 100 != 0) {
+    return true;
+    } else if ($year % 400 != 0) {
+    return false;
+    } else {
+    return true;
+    }
+}
+/**
+* 指定された年が閏年かどうかを判定します。
+* @param {number} $year - 判定する年。
+* @returns {boolean} 指定された年が閏年の場合は true、そうでない場合は false。
+*/
+function isLeapYear($year) {
+if ($year % 4 != 0) {
+return false;
+} else if ($year % 100 != 0) {
+return true;
+} else if ($year % 400 != 0) {
+return false;
+} else {
+return true;
+}
+}
 </pre>
 </details>
     <h4>リファクタリング</h4>
@@ -1667,6 +1667,91 @@ G D Em C | G D Em C ||
 ABCJS.renderAbc(&quot;abctune&quot;, abc, { responsive: &quot;resize&quot; });
 &lt;/script&gt;
 </pre>
+<h4>ニ長調(Key D)</h4>
+<pre>
+<span id="paperKeyD"></span>
+<span id="midiKeyD"></span>
+<span id="abcKeyD"></span>
+<script>
+    var keyD =
+        "T: KeyD\n" +
+        "M: 4/4\n" +
+        "L: 1/4\n" +
+        "K: D\n" +
+        "Q: 300\n" +
+        '"レ"[D]"ミ"[E]"ファ#"[F]"ソ"[G]|"ラ"[A]"シ"[B]"ド#"[c]"レ"[d]"ミ"[e]"ファ#"[f]"ソ"[g]|"ラ"[a]"シ"[b]"ド#"[c\']"レ"[d\']"ミ"[e\']"ファ#"[f\']"ソ"[g\']|"ラ"[a\']"シ"[b\']"ド#"[c\'\']"レ"[d\'\']|]';
+    ABCJS.renderAbc("paperKeyD", keyD);
+    ABCJS.renderMidi("midiKeyD", keyD);
+    document.getElementById('abcKeyD').innerText = keyD;
+</script>
+</pre>
+<div class="abcjs" style="width: 500px;"></div>
+
+<script>
+var abc = `
+X:1
+T:メイドさんはいつも
+C:Unknown
+M:4/4
+L:1/4
+K:G
+(イントロ)
+G D Em C |
+(1番)
+G D Em C |
+おはようございます ご主人様 |
+G D Em C |
+新しい一日が始まります |
+G D Em C |
+窓を開けたら 心地よい風 |
+G D Em C |
+お庭で咲くお花も 微笑んでいます |
+(サビ)
+G D Em C |
+メイドさんはいつも 微笑んでいる |
+G D Em C |
+どんなことがあっても 心は変えない |
+G D Em C |
+お掃除も料理も 精一杯頑張る |
+G D Em C |
+ご主人様が笑顔なら それでいいんです |
+(2番)
+G D Em C |
+お昼の時間が近づいてきました |
+G D Em C |
+美味しいお食事を 用意します |
+G D Em C |
+ご主人様の好きなもの 知っています |
+G D Em C |
+笑顔で召し上がって 嬉しいです |
+(サビ)
+G D Em C |
+メイドさんはいつも 微笑んでいる |
+G D Em C |
+どんなことがあっても 心は変えない |
+G D Em C |
+お掃除も料理も 精一杯頑張る |
+G D Em C |
+ご主人様が笑顔なら それでいいんです |
+(ブリッジ)
+Em C G D |
+たまにはちょっと疲れてしまうこともあるけど |
+Em C G D |
+明日もまた笑顔で 頑張ります |
+(サビ)
+G D Em C |
+メイドさんはいつも 微笑んでいる |
+G D Em C |
+どんなことがあっても 心は変えない |
+G D Em C |
+お掃除も料理も 精一杯頑張る |
+G D Em C |
+ご主人様が笑顔なら それでいいんです |
+(アウトロ)
+G D Em C | G D Em C ||
+`;
+ABCJS.renderAbc("abctune", abc, { responsive: "resize" });
+</script>
     </details>
     <h4>返信を考えてもらう</h4>
     <details>
