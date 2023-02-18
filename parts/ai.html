@@ -339,6 +339,8 @@ console.log(isLeapYear(2024)); // true
 console.log(isLeapYear(2021)); // false
 この場合、最初の呼び出しでは2000年がうるう年であるため、 true が出力されます。2番目の呼び出しでは1900年がうるう年ではないため、 false が出力されます。3番目と4番目の呼び出しでは、それぞれうるう年であるかどうかが判定され、結果が出力されます。
 </pre>
+</details>
+<details>
 <pre>
 鳥居
 うるう年を判定するJavaの関数を出力して
@@ -373,40 +375,6 @@ System.out.println(isLeapYear(2021)); // false
 この場合、最初の呼び出しでは2000年がうるう年であるため、 true が出力されます。2番目の呼び出しでは1900年がうるう年ではないため、 false が出力されます。3番目と4番目の呼び出しでは、それぞれうるう年であるかどうかが判定され、結果が出力されます。
 </pre>
 </details>
-<details>
-<pre>
-鳥居
-うるう年を判定するJavaScriptの関数を出力して
-以下はJavaScriptでうるう年を判定する関数です。
-
-javascript
-Copy code
-function isLeapYear(year) {
-  if (year % 4 !== 0) {
-    return false;
-  } else if (year % 100 !== 0) {
-    return true;
-  } else if (year % 400 !== 0) {
-    return false;
-  } else {
-    return true;
-  }
-}
-この関数は、引数として与えられた年がうるう年かどうかを判定し、うるう年であれば true を、そうでなければ false を返します。うるう年の定義については、以下のようになっています。
-
-4で割り切れる年はうるう年
-ただし、100で割り切れる年はうるう年ではない
-ただし、400で割り切れる年はうるう年
-例えば、以下のようにして関数を呼び出すことができます。
-
-javascript
-Copy code
-console.log(isLeapYear(2000)); // true
-console.log(isLeapYear(1900)); // false
-console.log(isLeapYear(2024)); // true
-console.log(isLeapYear(2021)); // false
-この場合、最初の呼び出しでは2000年がうるう年であるため、 true が出力されます。2番目の呼び出しでは1900年がうるう年ではないため、 false が出力されます。3番目と4番目の呼び出しでは、それぞれうるう年であるかどうかが判定され、結果が出力されます。
-</pre>
 <details>
 <pre>
 鳥居
