@@ -559,6 +559,125 @@ public static boolean isLeapYear(int year) {
     }
 }
 /**
+
+与えられた年がうるう年であるかどうかを判定します。
+/**
+* @param {number} year - 判定する年（西暦）
+* @returns {boolean} うるう年の場合はtrue、そうでない場合はfalseを返します。
+* @example
+* isLeapYear(2020); // true
+* isLeapYear(2100); // false
+*/
+public static boolean isLeapYear(int year) {
+if (year % 4 != 0) {
+return false;
+} else if (year % 100 != 0) {
+return true;
+} else if (year % 400 != 0) {
+return false;
+} else {
+return true;
+}
+}
+</pre>
+</details>
+<details>
+    <summary>PHP例</summary>
+<pre>
+鳥居
+以下の関数のドキュメントを日本語でJSDoc形式で出力して
+function isLeapYear($year) {
+    if ($year % 4 != 0) {
+    return false;
+    } else if ($year % 100 != 0) {
+    return true;
+    } else if ($year % 400 != 0) {
+    return false;
+    } else {
+    return true;
+    }
+}
+/**
+* 指定された年が閏年かどうかを判定します。
+* @param {number} $year - 判定する年。
+* @returns {boolean} 指定された年が閏年の場合は true、そうでない場合は false。
+*/
+function isLeapYear($year) {
+if ($year % 4 != 0) {
+return false;
+} else if ($year % 100 != 0) {
+return true;
+} else if ($year % 400 != 0) {
+return false;
+} else {
+return true;
+}
+}
+</pre>
+</details>
+<h4>リファクタリング</h4>
+<details>
+    <summary>JavaScript例</summary>
+<pre>
+鳥居
+以下をリファクタリングして
+/**
+* 指定された年が閏年かどうかを判定します。
+
+* @param {number} year - 判定する年。
+
+* @returns {boolean} 指定された年が閏年の場合は true、そうでない場合は false。
+*/
+function isLeapYear(year) {
+
+if(year % 4 !== 0){      
+return false;
+} elseif (year % 100 !== 0){
+return true
+} elseif (year % 400 !== 0) {
+        return false
+} else {
+        return true;
+}
+}
+以下はリファクタリングしたコードです。主に、条件分岐の見た目を改善し、冗長な else 句を削除しました。また、関数名に is を追加し、年数が整数であることを明示するために引数の型を指定しました。
+
+sql
+Copy code
+/**
+ * 指定された年が閏年かどうかを判定します。
+ *
+ * @param {number} year - 判定する年。
+ *
+ * @returns {boolean} 指定された年が閏年の場合は true、そうでない場合は false。
+ */
+function isLeapYear(year: number): boolean {
+  if (year % 4 === 0) {
+    if (year % 100 === 0) {
+      if (year % 400 === 0) {
+        return true;
+      }
+      return false;
+    }
+    return true;
+  }
+  return false;
+}
+このコードでは、最初に年が 4 で割り切れるかどうかを判定します。
+割り切れない場合は閏年ではないため、falseを返します。
+年が 4 で割り切れる場合は、次に年が 100 で割り切れるかどうかを判定します。
+100で割り切れない場合は閏年であるため、trueを返します。
+100で割り切れる場合は、さらに年が 400 で割り切れるかどうかを判定します。
+400で割り切れる場合は閏年であるため、trueを返します。
+400で割り切れない場合は閏年ではないため、falseを返します。
+</pre>
+</details>
+<details>
+    <summary>Java例</summary>
+<pre>
+鳥居
+以下をリファクタリングして
+/**
 * 指定された年が閏年かどうかを判定します。
 * @param {number} year - 判定する年。
 * @returns {boolean} 指定された年が閏年の場合は true、そうでない場合は false。
@@ -574,6 +693,188 @@ return false;
 return true;
 }
 }
+以下はリファクタリングしたコードです。主に、if-else文をシンプルにするために早期リターンを使いました。
+
+sql
+Copy code
+public static boolean isLeapYear(int year) {
+    if (year % 4 != 0) {
+        return false;
+    }
+    if (year % 100 != 0) {
+        return true;
+    }
+    if (year % 400 != 0) {
+        return false;
+    }
+    return true;
+}
+このコードでは、年数が4で割り切れない場合は、閏年ではないため、falseを返します。
+年数が4で割り切れる場合は、年数が100で割り切れない場合は閏年であるため、trueを返します。
+年数が100で割り切れる場合は、年数が400で割り切れる場合に限り閏年であるため、trueを返します。
+年数が400で割り切れない場合は閏年ではないため、falseを返します。
+早期リターンを使うことで、ネストされた if-else 文が削減され、コードがシンプルになりました。
+</pre>
+</details>
+<details>
+    <summary>PHP例</summary>
+<pre>
+鳥居
+以下をリファクタリングして
+function isLeapYear($year) {
+if ($year % 4 != 0) {
+return false;
+} else if ($year % 100 != 0) {
+return true;
+} else if ($year % 400 != 0) {
+return false;
+} else {
+return true;
+}
+}
+以下はリファクタリングしたコードです。主に、if-else文をシンプルにするために早期リターンを使いました。
+
+php
+Copy code
+function isLeapYear(int $year): bool {
+    if ($year % 4 !== 0) {
+        return false;
+    }
+    if ($year % 100 !== 0) {
+        return true;
+    }
+    if ($year % 400 !== 0) {
+        return false;
+    }
+    return true;
+}
+このコードでは、年数が4で割り切れない場合は、閏年ではないため、falseを返します。
+年数が4で割り切れる場合は、年数が100で割り切れない場合は閏年であるため、trueを返します。
+年数が100で割り切れる場合は、年数が400で割り切れる場合に限り閏年であるため、trueを返します。
+年数が400で割り切れない場合は閏年ではないため、falseを返します。
+早期リターンを使うことで、ネストされた if-else 文が削減され、コードがシンプルになりました。
+また、関数の引数に型を指定し、関数の利用者に対して引数が整数であることを明示し、エラーを回避できます。
+</pre>
+<h4>単体テスト</h4>
+<details>
+    <summary>JavaScript例</summary>
+<pre>
+鳥居
+以下の単体テストをJestを使わないで書いて
+/**
+* 指定された年が閏年かどうかを判定します。
+* @param {number} year - 判定する年。
+* @returns {boolean} 指定された年が閏年の場合は true、そうでない場合は false。
+*/
+function isLeapYear(year) {
+if (year % 4 !== 0) {
+return false;
+} else if (year % 100 !== 0) {
+return true;
+} else if (year % 400 !== 0) {
+return false;
+} else {
+return true;
+}
+}
+Jestを使わない単体テストの例を以下に示します。
+
+javascript
+Copy code
+// Test case 1
+let year = 2000;
+let expected = true;
+let result = isLeapYear(year);
+if (result === expected) {
+  console.log(`Test case 1 passed.`);
+} else {
+  console.error(`Test case 1 failed. Expected ${expected}, but got ${result}.`);
+}
+
+// Test case 2
+year = 2001;
+expected = false;
+result = isLeapYear(year);
+if (result === expected) {
+  console.log(`Test case 2 passed.`);
+} else {
+  console.error(`Test case 2 failed. Expected ${expected}, but got ${result}.`);
+}
+
+// Test case 3
+year = 1900;
+expected = false;
+result = isLeapYear(year);
+if (result === expected) {
+  console.log(`Test case 3 passed.`);
+} else {
+  console.error(`Test case 3 failed. Expected ${expected}, but got ${result}.`);
+}
+
+// Test case 4
+year = 2024;
+expected = true;
+result = isLeapYear(year);
+if (result === expected) {
+  console.log(`Test case 4 passed.`);
+} else {
+  console.error(`Test case 4 failed. Expected ${expected}, but got ${result}.`);
+}
+
+// Test case 5
+year = 2022;
+expected = false;
+result = isLeapYear(year);
+if (result === expected) {
+  console.log(`Test case 5 passed.`);
+} else {
+  console.error(`Test case 5 failed. Expected ${expected}, but got ${result}.`);
+}
+このテストでは、異なる年数を引数にして isLeapYear 関数を呼び出し、
+関数が期待どおりの結果を返すかどうかを確認しています。
+各テストは if-else 文を使って定義されており、期待する結果を expected 変数に格納し、
+関数の実際の結果を result 変数に格納して、それらを比較しています。
+各テストがパスすれば、関数が正しく動作することが保証されます。
+</pre>
+</details>
+<details>
+    <summary>Java例</summary>
+<pre>
+鳥居
+以下の単体テストをJestを使わないで書いて
+/**
+* @param {number} year - 判定する年（西暦）
+* @returns {boolean} うるう年の場合はtrue、そうでない場合はfalseを返します。
+* @example
+* isLeapYear(2020); // true
+* isLeapYear(2100); // false
+*/
+public static boolean isLeapYear(int year) {
+if (year % 4 != 0) {
+return false;
+} else if (year % 100 != 0) {
+return true;
+} else if (year % 400 != 0) {
+return false;
+} else {
+return true;
+}
+}
+以下はJestを使用しないで、isLeapYear関数の単体テストを記述した例です。
+
+javascript
+Copy code
+// うるう年の場合
+console.assert(isLeapYear(2020) === true, "2020年はうるう年であるべきです。");
+console.assert(isLeapYear(2000) === true, "2000年はうるう年であるべきです。");
+
+// うるう年ではない場合
+console.assert(isLeapYear(2021) === false, "2021年はうるう年ではないべきです。");
+console.assert(isLeapYear(2100) === false, "2100年はうるう年ではないべきです。");
+上記のテストでは、console.assert()関数を使用しています。
+第一引数には条件式を指定し、第二引数にはエラーメッセージを指定しています。
+条件式がfalseの場合、エラーメッセージがコンソールに出力されます。
+テストが全て成功した場合は、何も表示されません。
 </pre>
 </details>
 <details>
