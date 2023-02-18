@@ -1475,6 +1475,7 @@ NISAは、個人が年間40万円まで非課税で投資できる制度でご�
     </details>
     <h4>歌詞・曲・楽譜を作成</h4>
     <details>
+        <summary>歌詞の作成</summary>
 <pre>
 鳥居
 かわいい曲の歌詞を作成してください。メイドさん視点が良いですね。
@@ -1524,7 +1525,11 @@ NISAは、個人が年間40万円まで非課税で投資できる制度でご�
 鳥居
 この歌のタイトルを付けてください
 「笑顔のメイドさん」
-
+</pre>
+    </details>
+    <details>
+        <summary>曲の作成</summary>
+<pre>
 鳥居
 歌詞に曲を付けてください。曲の構成に変化を入れてください。
 以下は、ポップで明るい雰囲気の楽曲です。
@@ -1596,9 +1601,16 @@ F G C
 毎日一生懸命頑張っている様子を表現しています。
 また、ブリッジではメイドさんの疲れを表現し、
 明日も頑張る姿勢を示しています。
-
+</pre>
+    </details>
+    <details>
+        <summary>楽譜の作成</summary>
+<pre>
 鳥居
-以下についてABC記譜法で書いてください。abcjsで動く書き方でお願いします。テンポも指定してください。ベースは1つでお願いします。
+以下についてABC記譜法で書いてください。
+abcjsで動く書き方でお願いします。
+テンポも指定してください。
+ベースは1つでお願いします。
 
 （イントロ）
 キラキラ…キラキラ…（2回）
@@ -1661,60 +1673,63 @@ F G C
 
 （アウトロ）
 キラキラ…キラキラ…（2回）
-
-ABCJS.renderAbc(&quot;abctune&quot;, abc, { responsive: &quot;resize&quot; });
-&lt;/script&gt;
 </pre>
-<h4>笑顔のメイドさん</h4>
-<pre>
-<span id="paperMaidIsAlways"></span>
-<span id="midiMaidIsAlways"></span>
-<span id="abcMaidIsAlways"></span>
-<script>
-    var MaidIsAlways =`
-X:1
-T:笑顔のメイドさん
-M:4/4
-L:1/4
-Q:1/4=120
-K:C
-%イントロ
-z2 z2 | z2 z2 | 
-%1番
-[C,4E4] [A,4C4] [F,4A,4] [G,4B,4] |
-[C,4E4] [A,4C4] [F,4A,4] [G,4B,4] |
-[C,4E4] [A,4C4] [F,4A,4] [G,4B,4] |
-[C,4E4] [A,4C4] [F,4A,4] [G,4B,4] |
-%サビ
-[F,4A,4] [G,4B,4] [C,4E4] [A,4C4] |
-[F,4A,4] [G,4B,4] [C,4E4] [A,4C4] |
-[F,4A,4] [G,4B,4] [A,4C4] [E4G4] |
-[F,4A,4] [G,4B,4] [C,4E4] z2 |
-%2番
-[C,4E4] [A,4C4] [F,4A,4] [G,4B,4] |
-[C,4E4] [A,4C4] [F,4A,4] [G,4B,4] |
-[C,4E4] [A,4C4] [F,4A,4] [G,4B,4] |
-[C,4E4] [A,4C4] [F,4A,4] [G,4B,4] |
-%サビ
-[F,4A,4] [G,4B,4] [C,4E4] [A,4C4] |
-[F,4A,4] [G,4B,4] [C,4E4] [A,4C4] |
-[F,4A,4] [G,4B,4] [A,4C4] [E4G4] |
-[F,4A,4] [G,4B,4] [C,4E4] z2 |
-%ブリッジ
-[A,4C4] [G,4B,4] [F,4A,4] [G,4B,4] |
-[A,4C4] [G,4B,4] [F,4A,4] [G,4B,4] |
-%サビ
-[F,4A,4] [G,4B,4] [C,4E4] [A,4C4] |
-[F,4A,4] [G,4B,4] [C,4E4] [A,4C4] |
-[F,4A,4] [G,4B,4] [A,4C4] [E4G4] |
-[F,4A,4] [G,4B,4] [C,4E4] z2 |
-%アウトロ
-z2 z2 | z2 z2 | 
-`
-    ABCJS.renderAbc("paperMaidIsAlways", MaidIsAlways);
-    ABCJS.renderMidi("midiMaidIsAlways", MaidIsAlways);
-    document.getElementById('abcMaidIsAlways').innerText = MaidIsAlways;
-</script>
+    </details>
+    <details>
+        <summary>完成品</summary>
+    ABCJS.renderAbc(&quot;abctune&quot;, abc, { responsive: &quot;resize&quot; });
+    &lt;/script&gt;
+    </pre>
+    <h4>笑顔のメイドさん</h4>
+    <pre>
+    <span id="paperMaidIsAlways"></span>
+    <span id="midiMaidIsAlways"></span>
+    <span id="abcMaidIsAlways"></span>
+    <script>
+        var MaidIsAlways =`
+    X:1
+    T:笑顔のメイドさん
+    M:4/4
+    L:1/4
+    Q:1/4=120
+    K:C
+    %イントロ
+    z2 z2 | z2 z2 | 
+    %1番
+    [C,4E4] [A,4C4] [F,4A,4] [G,4B,4] |
+    [C,4E4] [A,4C4] [F,4A,4] [G,4B,4] |
+    [C,4E4] [A,4C4] [F,4A,4] [G,4B,4] |
+    [C,4E4] [A,4C4] [F,4A,4] [G,4B,4] |
+    %サビ
+    [F,4A,4] [G,4B,4] [C,4E4] [A,4C4] |
+    [F,4A,4] [G,4B,4] [C,4E4] [A,4C4] |
+    [F,4A,4] [G,4B,4] [A,4C4] [E4G4] |
+    [F,4A,4] [G,4B,4] [C,4E4] z2 |
+    %2番
+    [C,4E4] [A,4C4] [F,4A,4] [G,4B,4] |
+    [C,4E4] [A,4C4] [F,4A,4] [G,4B,4] |
+    [C,4E4] [A,4C4] [F,4A,4] [G,4B,4] |
+    [C,4E4] [A,4C4] [F,4A,4] [G,4B,4] |
+    %サビ
+    [F,4A,4] [G,4B,4] [C,4E4] [A,4C4] |
+    [F,4A,4] [G,4B,4] [C,4E4] [A,4C4] |
+    [F,4A,4] [G,4B,4] [A,4C4] [E4G4] |
+    [F,4A,4] [G,4B,4] [C,4E4] z2 |
+    %ブリッジ
+    [A,4C4] [G,4B,4] [F,4A,4] [G,4B,4] |
+    [A,4C4] [G,4B,4] [F,4A,4] [G,4B,4] |
+    %サビ
+    [F,4A,4] [G,4B,4] [C,4E4] [A,4C4] |
+    [F,4A,4] [G,4B,4] [C,4E4] [A,4C4] |
+    [F,4A,4] [G,4B,4] [A,4C4] [E4G4] |
+    [F,4A,4] [G,4B,4] [C,4E4] z2 |
+    %アウトロ
+    z2 z2 | z2 z2 | 
+    `
+        ABCJS.renderAbc("paperMaidIsAlways", MaidIsAlways);
+        ABCJS.renderMidi("midiMaidIsAlways", MaidIsAlways);
+        document.getElementById('abcMaidIsAlways').innerText = MaidIsAlways;
+    </script>
     </details>
     <h4>返信を考えてもらう</h4>
     <details>
