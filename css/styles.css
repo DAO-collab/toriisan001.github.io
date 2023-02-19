@@ -157,6 +157,11 @@ main img.beside {
     width: 300px;
 }
 
+main img.small {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
+    width: 100px;
+}
+
 main img.apl {
     width: 50px;
     height: 50px;
