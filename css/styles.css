@@ -148,10 +148,12 @@ main pre {
 }
 
 main img.vertical {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
     width: 100px;
 }
 
 main img.beside {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 1);
     width: 300px;
 }
 
