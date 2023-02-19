@@ -25,6 +25,18 @@
     const body = document.getElementsByTagName("body")[0];
     // 最終アクセスを保持
     storage.setItem(config.SYSTEM_KEY.LAST_HREF, location.href);
+    // スクロールした時の処理
+    $(window).scroll(function() {
+      // windowがスクロールされた時に実行する処理
+      storage.setItem(config.SYSTEM_KEY.LAST_PAGEY_OFFSET, window.pageYOffset);
+    });
+    // ページ読み込み時、前回のスクロール箇所があれば移動
+    if (storage.getItem(config.SYSTEM_KEY.LAST_PAGEY_OFFSET) !== null) {
+      window.scrollTo({
+        top: storage.getItem(config.SYSTEM_KEY.LAST_PAGEY_OFFSET),
+        behavior: "auto",
+      });
+    }
     // ログを表示させるか判定関数
     function logShowSet() {
       const log = document.getElementById('log');

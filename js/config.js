@@ -2,6 +2,7 @@ function getConfig() {
     return {
         SYSTEM_KEY: {
             LAST_HREF: 'SYSTEM_KEY_LAST_HREF',
+            LAST_PAGEY_OFFSET: 'SYSTEM_KEY_LAST_PAGEY_OFFSET',
             LOG_SHO_FLAG: 'SYSTEM_KEY_LOG_SHO_FLAG',
             FONT_FAMILY: 'SYSTEM_KEY_FONT_FAMILY',
             FONT_SIZE: 'SYSTEM_KEY_FONT_SIZE',
