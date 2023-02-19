@@ -32,10 +32,12 @@
     });
     // ページ読み込み時、前回のスクロール箇所があれば移動
     if (storage.getItem(config.SYSTEM_KEY.LAST_PAGEY_OFFSET) !== null) {
-      window.scrollTo({
-        top: storage.getItem(config.SYSTEM_KEY.LAST_PAGEY_OFFSET),
-        behavior: "auto",
-      });
+      setTimeout(function () {
+        window.scrollTo({
+          top: storage.getItem(config.SYSTEM_KEY.LAST_PAGEY_OFFSET),
+          behavior: "auto",
+        });
+      }, 100);
     }
     // ログを表示させるか判定関数
     function logShowSet() {
