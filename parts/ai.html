@@ -2469,12 +2469,36 @@ negative prompt: flat color, flat shading, nsfw, retro style, poor quality, bad 
       Successfully installed prettytable-3.6.0
     </pre>
     <p>「control_openpose-fp16.safetensors」をダウンロード。「E:\workspace\AUTOMATIC1111\webui\extensions\sd-webui-controlnet\models」に配置</p>
-    <p><a href="https://huggingface.co/webui/ControlNet-modules-safetensors/tree/main">control_openpose-fp16.safetensors</a></p>
+    <p><a href="https://huggingface.co/webui/ControlNet-modules-safetensors/tree/main">webui - ControlNet-modules-safetensors</a></p>
     <figure>
       <img class="beside" src="../img/AI/ControlNet/環境/control_openpose-fp16.safetensors.jpg" alt="control_openpose-fp16.safetensors.jpg">
       <figcaption>control_openpose-fp16.safetensors.jpg</figcaption>
     </figure>
-    
+    <p>以前インストールした「wd-1-4-anime」は「ControlNet」を利用できないらしい。Stable Diffusion 1.5をベースにしたモデルでないといけないため。「waifu-diffusion-v1-3」なら問題ないらしい。以下から「model-epoch05-full.ckpt」をダウンロード。</p>
+    <p><a href="https://huggingface.co/hakurei/waifu-diffusion-v1-3/tree/main">hakurei - waifu-diffusion-v1-3 Copied</a></p>
+    <figure>
+      <img class="beside" src="../img/AI/ControlNet/環境/model-epoch05-full.ckpt.jpg" alt="model-epoch05-full.ckpt.jpg">
+      <figcaption>model-epoch05-full.ckpt.jpg</figcaption>
+    </figure>
+    <p>「E:\workspace\AUTOMATIC1111\webui\models\Stable-diffusion」に配置</p>
+    <figure>
+      <img class="beside" src="../img/AI/ControlNet/環境/model-epoch05-full.ckpt配置.jpg" alt="model-epoch05-full.ckpt配置.jpg">
+      <figcaption>model-epoch05-full.ckpt配置.jpg</figcaption>
+    </figure>
+    <p>「Stable Diffusion」を起動。以下のように設定して生成を実行。画像はフリーのものを使用。</p>
+    <figure>
+      <img class="beside" src="../img/AI/ControlNet/環境/設定1.jpg" alt="設定1.jpg">
+      <figcaption>設定1.jpg</figcaption>
+    </figure>
+    <figure>
+      <img class="beside" src="../img/AI/ControlNet/環境/設定2.jpg" alt="設定2.jpg">
+      <figcaption>設定2.jpg</figcaption>
+    </figure>
+    <p>以下出力結果。「E:\workspace\AUTOMATIC1111\webui\outputs\txt2img-images」出力した絵「C:\Users\${ユーザー名}\AppData\Local\Temp」に姿勢制御用のカラフル棒人間の画像が出力される。</p>
+    <figure>
+      <img class="beside" src="../img/AI/ControlNet/環境/出力.jpg" alt="出力.jpg">
+      <figcaption>出力.jpg</figcaption>
+    </figure>
   </details>
   
   <h2>NMKD Stable Diffusion GUI</h2>
