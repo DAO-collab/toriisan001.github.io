@@ -2153,6 +2153,8 @@ ChatGPT
     <h3>環境</h3>
     <h4>Stable Diffusion webui(AUTOMATIC1111版)の導入(20230219時点)</h4>
     <details>
+      <p>途中pipコマンドを使用する必要が出てくるので事前にPythonをインストールする必要がある。</p>
+      <p><a href="https://rikei-danshi.work/entry/windows-pip">【参考】windowsでpipコマンドを使う方法｜インストール〜環境変数の設定まで</a></p>
       <p><a href="https://kurokumasoft.com/2023/02/06/stable-diffusion-web-ui/">【参考】「Stable Diffusion web UI」のインストール方法・日本語化・使い方まとめ（AUTOMATIC1111版）</a></p>
       <p><a href="https://webbigdata.jp/post-16891/">【参考】Waifu Diffusion 1.4 Animeのダウンロード方法と使い方の解説</a></p>
       <p>画像生成AIの代表格であるStable Diffusionは無料で使うことができるのですが、自力でインストールしようとすると面倒な環境構築作業を行わないといけない。画像を生成する際はコマンドラインをたたく必要がある。など初心者の方にはハードルが高い操作が必要です。しかしそのような中で、Stable Diffusionを簡単に使えるツールがいくつか登場しています。今回ご紹介する「Stable Diffusion web UI」もそのうちの一つで、簡単に環境を構築することができ、しかもブラウザを介して手軽に画像を生成できるので初心者の方にはオススメです。とのこと</p>
@@ -2570,7 +2572,20 @@ negative prompt: flat color, flat shading, nsfw, retro style, poor quality, bad 
       <figcaption>出力.jpg</figcaption>
     </figure>
   </details>
-
+  <h4>カラフル棒人間画像を自作する</h4>
+  <details>
+    <p><a href="https://economylife.net/controlnet-pose-image-posex/">ControlNet「棒人間画像」作成スクリプトで好きなポーズの姿勢制御用画像を作る方法</a></p>
+    <p>cmdで適当なディレクトリ「cd E:\workspace」に移動して「git clone https://github.com/hnmr293/posex」でPosexをダウンロード。</p>
+    <figure>
+      <img class="beside" src="../img/AI/ControlNet/環境/Posexをダウンロード.jpg" alt="Posexをダウンロード.jpg">
+      <figcaption>Posexをダウンロード.jpg</figcaption>
+    </figure>
+    <p>「E:\workspace」にダウンロードされている。</p>
+    <figure>
+      <img class="beside" src="../img/AI/ControlNet/環境/PosexをダウンロードOK.jpg" alt="PosexをダウンロードOK.jpg">
+      <figcaption>PosexをダウンロードOK.jpg</figcaption>
+    </figure>
+  </details>
 
   <h2>NMKD Stable Diffusion GUI</h2>
   <h3>環境(20230220時点)</h3>
