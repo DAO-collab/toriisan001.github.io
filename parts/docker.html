@@ -247,6 +247,89 @@ SELECT * FROM todos;
         <figcaption>作成したSQLをMySQLに流す.jpg</figcaption>
     </figure>
 
+    <h2>PHPからデータを取得して表示</h2>
+<pre>
+=====css/styles.css=====
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #ccc;
+}
+=====index.php=====
+&lt;?php
+// 定数：DSN(データソースネーム)
+define(&#039;DSN&#039;, &#039;mysql:host=db;dbname=myapp;charset=utf8mb4&#039;);
+// 定数：ユーザー
+define(&#039;DB_USER&#039;, &#039;myappuser&#039;);
+// 定数：パス
+define(&#039;DB_PASS&#039;, &#039;myapppass&#039;);
+
+try {
+  $pdo = new PDO(
+    DSN,
+    DB_USER,
+    DB_PASS,
+    [
+      PDO::ATTR_ERRMODE =&gt; PDO:: ERRMODE_EXCEPTION, // エラーが起きた時は例外を投げてねという設定
+      PDO::ATTR_DEFAULT_FETCH_MODE =&gt; PDO::FETCH_OBJ, // オブジェクト形式で結果を取得する設定
+      PDO::ATTR_EMULATE_PREPARES =&gt; false, // 取得したデータの型を SQL で定義した型に合わせて取得したいのでfalseにする
+    ]
+  );
+} catch(PDOException $e) {
+  echo $e-&gt;getMessage();
+  exit;
+}
+
+// 特殊文字をHTMLエンティティに変換
+function h($str)
+{
+  return htmlspecialchars($str, ENT_QUOTES, &#039;UTF-8&#039;);
+}
+
+// Todoを取得
+function getTodos($pdo)
+{
+  $stmt = $pdo-&gt;query(&quot;SELECT * FROM todos ORDER BY id DESC&quot;);
+  $todos = $stmt-&gt;fetchAll();
+  return $todos;
+}
+
+$todos = getTodos($pdo);
+// var_dump($todos);
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;My Todos&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Todos&lt;/h1&gt;
+  &lt;ul&gt;
+    &lt;?php foreach ($todos as $todo):?&gt;
+      &lt;li&gt;
+        &lt;input type=&quot;checkbox&quot; &lt;?= $todo-&gt;is_done ? &#039;checked&#039; : &#039;&#039;?&gt;&gt;
+        &lt;span class=&quot;&lt;?= $todo-&gt;is_done ? &#039;done&#039; : &#039;&#039;?&gt;&quot;&gt;
+        &lt;?= h($todo-&gt;title); ?&gt;
+      &lt;/span&gt;
+      &lt;/li&gt;
+    &lt;?php endforeach; ?&gt;
+  &lt;/ul&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<figure>
+    <img class="beside" src="../img/Docker/Docker環境構築(20230212時点)/PHPからデータを取得して表示.jpg" alt="PHPからデータを取得して表示.jpg">
+    <figcaption>PHPからデータを取得して表示.jpg</figcaption>
+</figure>
+
 </main>
 <div id="log"></div>
 <script src="../js/util.js"></script>
