@@ -220,6 +220,27 @@ workディレクトリが同期されるよという設定が書かれている�
         <figcaption>MySQLにログイン.jpg</figcaption>
     </figure>
 
+    <h2>「app」ディレクトリに「main.sql」を作成</h2>
+    <p>見られたくないファイルなのでappに配置</p>
+<pre>
+CREATE TABLE todos (
+    id INT NOT NULL AUTO_INCREMENT,
+    is_done BOOL DEFAULT false,
+    title TEXT,
+    PRIMARY KEY(id)
+);
+
+INSERT INTO todos (title) VALUES ('aaa');
+INSERT INTO todos (title, is_done) VALUES ('bbb', true);
+INSERT INTO todos (title) VALUES ('ccc');
+
+SELECT * FROM todos;
+</pre>
+    <figure>
+        <img class="beside" src="../img/Docker/Docker環境構築(20230212時点)/main.sql.jpg" alt="main.sql.jpg">
+        <figcaption>main.sql.jpg</figcaption>
+    </figure>
+
 </main>
 <div id="log"></div>
 <script src="../js/util.js"></script>
