@@ -2511,66 +2511,66 @@ negative prompt: flat color, flat shading, nsfw, retro style, poor quality, bad 
   </tr>
 </table>
 </details>
-  <h4>ControlNet導入(controlnetをwebUI(1111)にインストールする)</h4>
-  <details>
-    <p><a href="https://self-development.info/automatic1111%E7%89%88web-ui%E3%81%AEcontrolnet/">AUTOMATIC1111版web UIのControlNet</a></p>
-    <p><a href="https://economylife.net/controlnet-install-webui1111/">ControlNet導入&使い方解説 3D人形・実写画像等から姿勢を入力し画像生成 webUI(1111)用</a></p>
-    <p>「拡張機能」タブ、「URLからインストール」タブの「拡張機能のリポジトリのURL」に「https://github.com/Mikubill/sd-webui-controlnet」を入力して「インストール」ボタンを押して「sd-webui-controlnet」をインストール</p>
-    <figure>
-      <img class="beside" src="../img/AI/ControlNet/環境/sd-webui-controlnetインストール.jpg" alt="sd-webui-controlnetインストール.jpg">
-      <figcaption>sd-webui-controlnetインストール.jpg</figcaption>
-    </figure>
-    <p>「インストール済」タブに「sd-webui-controlnet」が追加されていたらOK。「適用してUIを再起動」をクリック。</p>
-    <figure>
-      <img class="beside" src="../img/AI/ControlNet/環境/インストール済.jpg" alt="インストール済.jpg">
-      <figcaption>インストール済.jpg</figcaption>
-    </figure>
-    <p>「cmd」で「E:\workspace\AUTOMATIC1111\system\python\Scripts」へ移動。「python.exe -m pip install opencv-python」「python.exe -m pip install prettytable」を実行。</p>
-    <pre>
-      E:\workspace\AUTOMATIC1111\system\python>python.exe -m pip install opencv-python
-      Requirement already satisfied: opencv-python in e:\workspace\automatic1111\system\python\lib\site-packages (4.7.0.68)
-      Requirement already satisfied: numpy>=1.21.2 in e:\workspace\automatic1111\system\python\lib\site-packages (from opencv-python) (1.23.3)
-      
-      E:\workspace\AUTOMATIC1111\system\python>python.exe -m pip install prettytable
-      Collecting prettytable
-        Downloading prettytable-3.6.0-py3-none-any.whl (27 kB)
-      Requirement already satisfied: wcwidth in e:\workspace\automatic1111\system\python\lib\site-packages (from prettytable) (0.2.6)
-      Installing collected packages: prettytable
-      Successfully installed prettytable-3.6.0
-    </pre>
-    <p>「control_openpose-fp16.safetensors」をダウンロード。「E:\workspace\AUTOMATIC1111\webui\extensions\sd-webui-controlnet\models」に配置</p>
-    <p><a href="https://huggingface.co/webui/ControlNet-modules-safetensors/tree/main">webui - ControlNet-modules-safetensors</a></p>
-    <figure>
-      <img class="beside" src="../img/AI/ControlNet/環境/control_openpose-fp16.safetensors.jpg" alt="control_openpose-fp16.safetensors.jpg">
-      <figcaption>control_openpose-fp16.safetensors.jpg</figcaption>
-    </figure>
-    <p>以前インストールした「wd-1-4-anime」は「ControlNet」を利用できないらしい。Stable Diffusion 1.5をベースにしたモデルでないといけないため。「waifu-diffusion-v1-3」なら問題ないらしい。以下から「model-epoch05-full.ckpt」をダウンロード。</p>
-    <p><a href="https://huggingface.co/hakurei/waifu-diffusion-v1-3/tree/main">hakurei - waifu-diffusion-v1-3 Copied</a></p>
-    <figure>
-      <img class="beside" src="../img/AI/ControlNet/環境/model-epoch05-full.ckpt.jpg" alt="model-epoch05-full.ckpt.jpg">
-      <figcaption>model-epoch05-full.ckpt.jpg</figcaption>
-    </figure>
-    <p>「E:\workspace\AUTOMATIC1111\webui\models\Stable-diffusion」に配置</p>
-    <figure>
-      <img class="beside" src="../img/AI/ControlNet/環境/model-epoch05-full.ckpt配置.jpg" alt="model-epoch05-full.ckpt配置.jpg">
-      <figcaption>model-epoch05-full.ckpt配置.jpg</figcaption>
-    </figure>
-    <p>「Stable Diffusion」を起動。以下のように設定して生成を実行。画像はフリーのものを使用。</p>
-    <figure>
-      <img class="beside" src="../img/AI/ControlNet/環境/設定1.jpg" alt="設定1.jpg">
-      <figcaption>設定1.jpg</figcaption>
-    </figure>
-    <figure>
-      <img class="beside" src="../img/AI/ControlNet/環境/設定2.jpg" alt="設定2.jpg">
-      <figcaption>設定2.jpg</figcaption>
-    </figure>
-    <p>以下出力結果。「E:\workspace\AUTOMATIC1111\webui\outputs\txt2img-images」出力した絵「C:\Users\${ユーザー名}\AppData\Local\Temp」に姿勢制御用のカラフル棒人間の画像が出力される。</p>
-    <figure>
-      <img class="beside" src="../img/AI/ControlNet/環境/出力.jpg" alt="出力.jpg">
-      <figcaption>出力.jpg</figcaption>
-    </figure>
-  </details>
-  
+<h4>ControlNet導入(controlnetをwebUI(1111)にインストールする)</h4>
+<details>
+  <p><a href="https://self-development.info/automatic1111%E7%89%88web-ui%E3%81%AEcontrolnet/">AUTOMATIC1111版web UIのControlNet</a></p>
+  <p><a href="https://economylife.net/controlnet-install-webui1111/">ControlNet導入&使い方解説 3D人形・実写画像等から姿勢を入力し画像生成 webUI(1111)用</a></p>
+  <p>「拡張機能」タブ、「URLからインストール」タブの「拡張機能のリポジトリのURL」に「https://github.com/Mikubill/sd-webui-controlnet」を入力して「インストール」ボタンを押して「sd-webui-controlnet」をインストール</p>
+  <figure>
+    <img class="beside" src="../img/AI/ControlNet/環境/sd-webui-controlnetインストール.jpg" alt="sd-webui-controlnetインストール.jpg">
+    <figcaption>sd-webui-controlnetインストール.jpg</figcaption>
+  </figure>
+  <p>「インストール済」タブに「sd-webui-controlnet」が追加されていたらOK。「適用してUIを再起動」をクリック。</p>
+  <figure>
+    <img class="beside" src="../img/AI/ControlNet/環境/インストール済.jpg" alt="インストール済.jpg">
+    <figcaption>インストール済.jpg</figcaption>
+  </figure>
+  <p>「cmd」で「E:\workspace\AUTOMATIC1111\system\python\Scripts」へ移動。「python.exe -m pip install opencv-python」「python.exe -m pip install prettytable」を実行。</p>
+  <pre>
+    E:\workspace\AUTOMATIC1111\system\python>python.exe -m pip install opencv-python
+    Requirement already satisfied: opencv-python in e:\workspace\automatic1111\system\python\lib\site-packages (4.7.0.68)
+    Requirement already satisfied: numpy>=1.21.2 in e:\workspace\automatic1111\system\python\lib\site-packages (from opencv-python) (1.23.3)
+    
+    E:\workspace\AUTOMATIC1111\system\python>python.exe -m pip install prettytable
+    Collecting prettytable
+      Downloading prettytable-3.6.0-py3-none-any.whl (27 kB)
+    Requirement already satisfied: wcwidth in e:\workspace\automatic1111\system\python\lib\site-packages (from prettytable) (0.2.6)
+    Installing collected packages: prettytable
+    Successfully installed prettytable-3.6.0
+  </pre>
+  <p>「control_openpose-fp16.safetensors」をダウンロード。「E:\workspace\AUTOMATIC1111\webui\extensions\sd-webui-controlnet\models」に配置</p>
+  <p><a href="https://huggingface.co/webui/ControlNet-modules-safetensors/tree/main">webui - ControlNet-modules-safetensors</a></p>
+  <figure>
+    <img class="beside" src="../img/AI/ControlNet/環境/control_openpose-fp16.safetensors.jpg" alt="control_openpose-fp16.safetensors.jpg">
+    <figcaption>control_openpose-fp16.safetensors.jpg</figcaption>
+  </figure>
+  <p>以前インストールした「wd-1-4-anime」は「ControlNet」を利用できないらしい。Stable Diffusion 1.5をベースにしたモデルでないといけないため。「waifu-diffusion-v1-3」なら問題ないらしい。以下から「model-epoch05-full.ckpt」をダウンロード。</p>
+  <p><a href="https://huggingface.co/hakurei/waifu-diffusion-v1-3/tree/main">hakurei - waifu-diffusion-v1-3 Copied</a></p>
+  <figure>
+    <img class="beside" src="../img/AI/ControlNet/環境/model-epoch05-full.ckpt.jpg" alt="model-epoch05-full.ckpt.jpg">
+    <figcaption>model-epoch05-full.ckpt.jpg</figcaption>
+  </figure>
+  <p>「E:\workspace\AUTOMATIC1111\webui\models\Stable-diffusion」に配置</p>
+  <figure>
+    <img class="beside" src="../img/AI/ControlNet/環境/model-epoch05-full.ckpt配置.jpg" alt="model-epoch05-full.ckpt配置.jpg">
+    <figcaption>model-epoch05-full.ckpt配置.jpg</figcaption>
+  </figure>
+  <p>「Stable Diffusion」を起動。以下のように設定して生成を実行。画像はフリーのものを使用。</p>
+  <figure>
+    <img class="beside" src="../img/AI/ControlNet/環境/設定1.jpg" alt="設定1.jpg">
+    <figcaption>設定1.jpg</figcaption>
+  </figure>
+  <figure>
+    <img class="beside" src="../img/AI/ControlNet/環境/設定2.jpg" alt="設定2.jpg">
+    <figcaption>設定2.jpg</figcaption>
+  </figure>
+  <p>以下出力結果。「E:\workspace\AUTOMATIC1111\webui\outputs\txt2img-images」出力した絵「C:\Users\${ユーザー名}\AppData\Local\Temp」に姿勢制御用のカラフル棒人間の画像が出力される。</p>
+  <figure>
+    <img class="beside" src="../img/AI/ControlNet/環境/出力.jpg" alt="出力.jpg">
+    <figcaption>出力.jpg</figcaption>
+  </figure>
+</details>
+
   <h2>NMKD Stable Diffusion GUI</h2>
   <h3>環境(20230220時点)</h3>
   <details>
