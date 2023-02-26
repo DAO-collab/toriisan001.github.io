@@ -624,6 +624,19 @@ if (!e.path[0].className.match("operationMenuParts")) {
 </code>
 </pre>
 
+<h2>jsからformを送信</h2>
+<pre>
+<code>
+const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+        // 親要素のformを送信
+        checkbox.parentNode.submit();
+    });
+});
+</code>
+</pre>
+
 </main>
 <div id="log"></div>
 <script src="../js/util.js"></script>
