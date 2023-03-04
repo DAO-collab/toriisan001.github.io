@@ -637,6 +637,14 @@ checkboxes.forEach(checkbox => {
 </code>
 </pre>
 
+<h2>セレクトボックスで選択した値を取得</h2>
+<pre>
+<code>
+const category = document.getElementById('category');
+category = category.options[category.selectedIndex].value;
+</code>
+</pre>
+
 </main>
 <div id="log"></div>
 <script src="../js/util.js"></script>
