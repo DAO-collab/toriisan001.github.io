@@ -3,28 +3,10 @@
 
   // 画面読み込み前に実行されてエラーになったので100ミリ秒遅延させた。
   setTimeout(function () {
-    // ステータスバー
-    const statusBarYmdHis = document.getElementById("statusBarYmdHis");
-    setInterval(() => {
-      // 現在日時取得
-      const date = new Date();
-      const year = date.getFullYear();
-      const month = date.getMonth() + 1;
-      const day = date.getDate();
-      const  hour = date.getHours();
-      const  minute = date.getMinutes();
-      const dayOfWeek = date.getDay();
-      const dayOfWeekStr = ["日", "月", "火", "水", "木", "金", "土"][dayOfWeek];
-      const options = { year: 'numeric' };
-      const japaneseCalender = new Intl.DateTimeFormat('ja-JP-u-ca-japanese', options).format(date);
-      statusBarYmdHis.innerHTML = '('+ japaneseCalender + ')' +year + '/' + month + '/' + day + '&nbsp;('+ dayOfWeekStr + ')&nbsp;&nbsp;' + zeroPadding(hour, 2) + ":" + zeroPadding(minute, 2);
-    }, 1000);
     // 変数storageにlocalStorageを格納
     const storage = localStorage;
     const config = getConfig();
     const body = document.getElementsByTagName("body")[0];
-    // 最終アクセスを保持
-    storage.setItem(config.SYSTEM_KEY.LAST_HREF, location.href);
     // スクロールした時の処理
     $(window).scroll(function() {
       // windowがスクロールされた時に実行する処理
@@ -32,32 +14,11 @@
     });
     // ページ読み込み時、前回のスクロール箇所があれば移動
     if (storage.getItem(config.SYSTEM_KEY.LAST_PAGEY_OFFSET) !== null) {
-      setTimeout(function () {
         window.scrollTo({
           top: storage.getItem(config.SYSTEM_KEY.LAST_PAGEY_OFFSET),
           behavior: "auto",
         });
-      }, 100);
     }
-    // ログを表示させるか判定関数
-    function logShowSet() {
-      const log = document.getElementById('log');
-      const logShoFlag = document.getElementById('logShoFlag');
-      if (storage.getItem(config.SYSTEM_KEY.LOG_SHO_FLAG) === '1') {
-          log.classList.remove('hidden');
-          logShoFlag.checked = true;
-      } else {
-          log.classList.add('hidden');
-          logShoFlag.checked = false;
-      }
-    }
-    logShowSet();
-    // ログを表示させるか切り替え
-    logShoFlag.addEventListener('click', () => {
-        // フラグ設定
-        storage.setItem(config.SYSTEM_KEY.LOG_SHO_FLAG, Number(logShoFlag.checked));
-        logShowSet();
-    });
     // 初期設定関係
     const mainFontFamily = storage.getItem(config.SYSTEM_KEY.FONT_FAMILY);
     body.style.fontFamily = (mainFontFamily === null) ? config.INITIALIZATION.FONT_FAMILY: mainFontFamily;
@@ -188,11 +149,46 @@
     // ログを設定
     // param text ログに設定するテキスト(\nで改行が可能)
     // return void
-    // use) setlog('mvShow\n');
+    // use) setlog('mvShow' + '\n');
     function setlog(text) {
-        const log = document.getElementById("log");
-        log.innerText += `${text}`;
-        console.log(text);
+      const log = document.getElementById("log");
+      log.innerText += `${text}`;
+      console.log(text);
+    }
+      // 最終アクセスを保持
+      storage.setItem(config.SYSTEM_KEY.LAST_HREF, location.href);
+      // ステータスバー
+      const statusBarYmdHis = document.getElementById("statusBarYmdHis");
+      // 現在日時取得
+      const date = new Date();
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
+      const day = date.getDate();
+      const  hour = date.getHours();
+      const  minute = date.getMinutes();
+      const dayOfWeek = date.getDay();
+      const dayOfWeekStr = ["日", "月", "火", "水", "木", "金", "土"][dayOfWeek];
+      const options = { year: 'numeric' };
+      const japaneseCalender = new Intl.DateTimeFormat('ja-JP-u-ca-japanese', options).format(date);
+      statusBarYmdHis.innerHTML = '('+ japaneseCalender + ')' +year + '/' + month + '/' + day + '&nbsp;('+ dayOfWeekStr + ')&nbsp;&nbsp;' + zeroPadding(hour, 2) + ":" + zeroPadding(minute, 2);
+      logShowSet();
+      // ログを表示させるか切り替え
+      logShoFlag.addEventListener('click', () => {
+          // フラグ設定
+          storage.setItem(config.SYSTEM_KEY.LOG_SHO_FLAG, Number(logShoFlag.checked));
+          logShowSet();
+      });
+      // ログを表示させるか判定関数
+      function logShowSet() {
+        const log = document.getElementById('log');
+        const logShoFlag = document.getElementById('logShoFlag');
+        if (storage.getItem(config.SYSTEM_KEY.LOG_SHO_FLAG) === '1') {
+            log.classList.remove('hidden');
+            logShoFlag.checked = true;
+        } else {
+            log.classList.add('hidden');
+            logShoFlag.checked = false;
+        }
       }
-  }, 100);
+    }, 1000);
 }
