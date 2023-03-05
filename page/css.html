@@ -16,7 +16,647 @@
      <div id="statusBarParts"></div>
     <div id="headerParts"></div>
     <div id="menuParts"></div>
-    <div id="cssParts"></div>
+    <main>
+        <h1>CSS</h1>
+        <p id="lastModified"></p>
+
+        <h2>情報</h2>
+        <p>ページの上にほうに目立つ画像を置くエリアをヒーローエリアと呼ぶらしい</p>
+
+        <h2>とりあえず書いとくらしい</h2>
+<pre>
+<code>
+body {
+    margin: 0;
+    font-family: Verdana, sans-serif
+}
+</code>
+</pre>
+        <p>※font-family</p>
+        <p>通常のフォントや太字、イタリック体、斜体など、デザインを統一した複数のフォントをまとめたものを「フォントファミリー」といいます。</p>
+        <p>左に書いたものから優先的に適用され、OS（PC）で利用しているフォントの条件に合致したものを適用します。PCに別のフォントをインストールすればそれも適用対象になる</p>
+        <p><a href="https://www.koikikukan.com/archives/2012/08/13-023456.php">いまさら聞けないCSS font-familyのまとめ</a></p>
+
+        <h2>cssは長くなりがちなのでコメントを書いておくと便利</h2>
+<pre>
+<code>
+    /* common */
+    /* header */
+    /* main */
+    /* footer */
+    /* side */
+    /* animation */
+</code>
+</pre>
+
+        <h2>タグの中のタグを指定</h2>
+<pre>
+<code>
+header .container {
+}
+</code>
+</pre>
+        <h3>タグに続くタグに指定という方法もあるらしい</h3>
+<pre>
+<code>
+高さを調整
+p {
+    margin: 0;
+    line-height: 1.6;
+}
+pタグに続くpタグにマージンを設定
+p + p {
+    margin-top: 16px;
+}
+</code>
+</pre>
+        <h3>子要素を指定「◯ > ◯」</h3>
+<pre>
+<code>
+main .applicationBox {
+display: flex;
+flex-wrap:wrap;
+border: 1px solid #999;
+justify-content: space-around;
+margin-bottom: 20px;
+}
+
+main .applicationBox > figure {
+margin: 10px;
+text-align: center;
+}
+</code>
+</pre>
+        <h3>inputのtype属性で指定</h3>
+<pre>
+<code>
+input[type="text"] ,input[type="email"] {
+    width:70%;
+}
+</code>
+</pre>
+        <p><a href="https://itsakura.com/css-multi-selector">CSS 複数のセレクタを指定する/絞り込むサンプル【参考】</a></p>
+        <p><a href="https://saruwakakun.com/html-css/reference/selector">CSSのセレクタとは？覚えておきたい25種類と書き方【参考】</a></p>
+        <p><a href="http://www.htmq.com/tutorial/20_6.shtml">input要素のスタイルを属性値で指定し分ける【参考】</a></p>
+
+        <h2>バックグラウンド色を変更</h2>
+<pre>
+<code>
+background: #efefef;
+</code>
+</pre>
+
+        <h2>パディング・マージン関係</h2>
+        <h3>使用例）bodyタグ全体のマージンを0にする</h3>
+<pre>
+<code>
+/* common */
+body {
+    margin: 0;
+}
+</code>
+</pre>
+        <h3>使用例）画像下の余白を消す</h3>
+<pre>
+<code>
+img {
+    vertical-align: bottom;
+}
+</code>
+</pre>
+        <h3>使用例）左側に余白を入れて右寄せにする</h3>
+<pre>
+<code>
+header {
+    display: flex;
+    padding: 0 16px;
+}
+.sp-menu {
+    margin-left: auto;
+}
+</code>
+</pre>
+        <h3>使用例）左右にマージンを設定して画面中央に配置</h3>
+<pre>
+<code>
+margin: 0 auto;
+</code>
+</pre>
+        <h3>使用例）左右幅32pxを持ちつつ両側にマージンを設定した中央配置</h3>
+<pre>
+<code>
+.container {
+    width: calc(100% - 32px);
+    margin: 0 auto;
+    outline: 2px solid red;
+}
+
+※以下画像
+.hero img {
+    width: calc(100% - 32px);
+    height: auto;
+}
+</code>
+</pre>
+        <h3>使用例）間にスペースを開けて真ん中にスペースを設定して上下中央で配置。</h3>
+<pre>
+<code>
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+</code>
+</pre>
+
+        <h2>幅を指定</h2>
+<pre>
+<code>
+width: 400px;
+</code>
+</pre>
+
+        <h2>枠線を設定</h2>
+<pre>
+<code>
+■ボーダーを使う
+border: solid 1px #333;
+■アウトラインを使う
+outline: 2px solid red;
+</code>
+</pre>
+        <p>※ outlineとborderの違い</p>
+        <p>border・・・他の要素も動いてしまう。</p>
+        <p>outline・・・輪郭が出てくるだけで、他の要素に影響しない。outlineは上下左右で同じ指定しか指定できない。</p>
+
+        <h2>横並びに表示</h2>
+<pre>
+<code>
+1.divの中にdivを入れる
+&lt;div class=&quot;container&quot;&gt;
+    &lt;div&gt;
+        &lt;h1&gt;文字列１&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;h1&gt;文字列２&lt;/h1&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+2.「display: flex;」を指定する
+.container {
+display: flex;
+}
+
+※ul要素にflexを付けることもできる
+</code>
+</pre>
+
+        <h2>文字の太さを指定</h2>
+<pre>
+<code>
+font-weight:normal;
+</code>
+</pre>
+
+        <h2>文字のサイズを変更</h2>
+<pre>
+<code>
+font-size: 24px;
+</code>
+</pre>
+
+        <h2>リストのスタイルをなくす</h2>
+<pre>
+<code>
+header ul {
+    list-style: none;
+}
+</code>
+</pre>
+        <p>list-style-type: none;と書いている箇所もあった。list-style-typeが良いらしいが？？？</p>
+        <p><a href="https://note.com/yukianemone07/n/nfa8be1ce168d">listのstyle指定がイマイチよくわかってなかった件</a></p>
+
+        <h2>要素に続く要素に対して属性を指定</h2>
+<pre>
+<code>
+header ul li + li {
+    margin-left: 8px;
+}
+</code>
+</pre>
+
+        <h2>親要素に対して中央ぞろえ</h2>
+<pre>
+<code>
+align-items: center;
+text-align: center;
+※どう違うのかはよくわからん
+
+※displayプロパティがblockの要素に関しては中のテキストが中央ぞろえになるだけで
+それ自体が親要素に対して中央ぞろえにはならない。
+そんなときはmarginを両サイドに割り当てて中央ぞろえにする
+margin: 64px auto 0;
+
+以下の場合はdivに入れて「text-align: left;」すると左に寄った。
+&lt;div style=&quot;text-align: left;&quot;&gt;
+&lt;select id=&quot;strageSelect&quot; name=&quot;strageSelect&quot; style=&quot;font-size: 20px&quot;&gt;
+    &lt;option value=&quot;0&quot;&gt;0:localStorage&lt;/option&gt;
+    &lt;option value=&quot;1&quot;&gt;1:SessionStorage&lt;/option&gt;
+&lt;/select&gt;
+&lt;/div&gt;
+</code>
+</pre>
+        <p><a href="https://www-creators.com/archives/4672#:~:text=%E5%90%8C%E3%81%98%E3%82%88%E3%81%86%E3%81%AB%E3%80%81%E3%80%8Ctext%2D,%E6%96%87%E5%AD%97%E3%81%AF%E5%B7%A6%E5%AF%84%E3%81%9B%E3%81%95%E3%82%8C%E3%81%BE%E3%81%99%EF%BC%81">HTML：文字を右寄せ・左寄せ・中央寄せする方法</a></p>
+
+        <h2>要素を丸くする</h2>
+<pre>
+<code>
+&lt;img
+src=&quot;../img/tottori.jpg&quot;
+alt=&quot;鳥居涼太のアイコン&quot;
+width=&quot;120&quot;
+height=&quot;120&quot;
+class=&quot;icon&quot;&gt;
+header .icon {
+border-radius: 50%;
+}
+※画像、ボーダーラインなどに使用できる
+</code>
+</pre>
+
+        <h2>余白</h2>
+<pre>
+<code>
+margin: 0 auto;
+padding: 0 auto;
+それから margin の場合、 margin の相殺が起きると面倒なので、どちらでもいいときは padding を選ぶ人も多い
+</code>
+</pre>
+
+        <h2>boxの高さ（文字の行間を調節。文字列について、上下中央ぞろえにしたい場合にも使える）</h2>
+<pre>
+<code>
+line-height: 1.8;
+</code>
+</pre>
+
+        <h2>aタグの下線を消して、そこで設定されている文字色をそのまま継承する</h2>
+<pre>
+<code>
+a {
+    text-decoration: none;
+    color:inherit
+}
+</code>
+</pre>
+
+        <h2>ボタンに幅を持たせたい場合はdisplay blockを使用する</h2>
+<pre>
+<code>
+.btn {
+    display: block;
+    width: 160px;
+    background: #329e00;
+    color:#fff;
+}
+
+以下ボタンらしく加工した例
+.btn {
+    display: block;
+    width: 160px;
+    background: #329e00;
+    color:#fff;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 4px;
+    font-weight: bold;
+}
+</code>
+</pre>
+
+        <h2>背景に画像を設定。繰り返しの設定。配置位置の設定</h2>
+<pre>
+<code>
+.hero {
+    background-color: #99e6ff;
+    background-image: url(../img/bg.png);
+    background-repeat: repeat-x;
+    background-position: center bottom;
+}
+</code>
+</pre>
+
+        <h2>画像をはみ出さないように配置</h2>
+<pre>
+<code>
+.features img {
+    width: 100%;
+}
+</code>
+</pre>
+
+        <h2>行や列に隙間を入れる（display flexで横並びにした項目の間を開ける）</h2>
+<pre>
+<code>
+.voices .container {
+    display: flex;
+    gap:16px;
+}
+</code>
+</pre>
+
+        <h2>large screen（600ピクセルを超えたら次のスタイルにしなさい）</h2>
+<pre>
+<code>
+===HTML===
+&lt;section class=&quot;hero&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;desc&quot;&gt;
+            &lt;h1&gt;&lt;/h1&gt;
+            &lt;p&gt;&lt;/p&gt;
+            &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;ダウンロード&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;pic&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+===CSS===
+/* large screen */
+
+@media (min-width: 600px) {
+
+    .hero .container {
+        display: flex;
+    }
+
+    .hero .desc,
+    .hero .pic {
+        width: 50%;
+    }
+
+}
+</code>
+</pre>
+
+        <h2>最大サイズを指定</h2>
+<pre>
+<code>
+max-width: 800px;
+</code>
+</pre>
+
+        <h2>横並びに配置して、基数番目の位置を反転させる。</h2>
+<pre>
+<code>
+.features section {
+    display:flex;
+}
+
+.features section:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+</code>
+</pre>
+
+        <h2>縦方向にflexboxを設定して間を開ける。</h2>
+<pre>
+<code>
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+</code>
+</pre>
+
+        <h2>transformで画面外に移動させたコンテンツを非表示に（左右のスクロールバーが出てしまうのを防ぐらしい）</h2>
+<pre>
+<code>
+overflow: hidden;
+</code>
+</pre>
+
+        <h2>小数点の省略</h2>
+<pre>
+<code>
+transition-delay: .3s;
+
+background-color: rgba(255, 255, 255, .95);
+</code>
+</pre>
+
+        <h2>transitionのタイミングをずらす</h2>
+<pre>
+<code>
+===HTML===
+&lt;section class=&quot;animate delay&quot;&gt;
+
+===CSS===
+.abunate.delay {
+    transition-delay: .3s;
+}
+</code>
+</pre>
+
+        <h2>半透明な白</h2>
+        <p>rgbaを使用する</p>
+<pre>
+<code>
+background-color: rgba(255, 255, 255, .95);
+</code>
+</pre>
+
+        <h2>影を付ける</h2>
+        <p>rgbaを使用する</p>
+<pre>
+<code>
+<!-- BOXに影を付ける -->
+box-shadow: 0 0 4px rgba(0, 0, 0, .3);
+<!-- 文字等に影を付ける -->
+filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.6));
+</code>
+</pre>
+
+        <h2>z軸のindex指定（アニメーション等で描画されるときにどちらを上にするかを指定するなど）</h2>
+        <p>指定した値が大きいほど上に配置される。何も書かなければ0とみなされる</p>
+<pre>
+<code>
+z-index: 1;
+</code>
+</pre>
+
+        <h2>ポインターイベントを無効化</h2>
+<pre>
+<code>
+style="pointer-events: none;"
+</code>
+</pre>
+        <p><a href="https://kouhekikyozou.com/css_hover_cancel">CSS「:hover」を無効化するには？シーン別の対応策まとめ</a></p>
+
+        <h2>クリックできることが分かりやすいようにカーソルポインターに変更</h2>
+<pre>
+<code>
+#open, #close {
+    cursor: pointer;
+}
+</code>
+</pre>
+
+        <h2>全画面に設定</h2>
+<pre>
+<code>
+#mask {
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+</code>
+</pre>
+
+        <h2>要素を非表示に</h2>
+        <h3>displayを使用する</h3>
+<pre>
+<code>
+=====HTML=====
+&lt;div id=&quot;mask&quot; class=&quot;hidden&quot;&gt;&lt;/div&gt;
+=====CSS=====
+#mask.hidden {
+    display:none;
+}
+</code>
+</pre>
+        <h3>opacityを使用する</h3>
+<pre>
+<code>
+opacity: 0;
+</code>
+</pre>
+        <p>※逆に表示させたい場合は1を指定する</p>
+
+        <h2>移動させる(transform)</h2>
+<pre>
+<code>
+#modal.hidden {
+    transform: translate(0, -500px);
+}
+transform: translateY(16px);
+※逆にoffにしたい場合は以下を使用
+transform: none;
+※transitionをゆっくり動かす場合は以下を設定(以下の例ではopacityとtransformを0.3秒で変化させている)
+transition: opacity .3s, transform .3s;
+※以下li要素の1番目の要素をディレイさせる例
+.overlay.show li:nth-child(1) {
+    transition-delay: .1s;
+}
+</code>
+</pre>
+
+        <h2>項目が重なった場合、ポインターイベントをnoneにすれば、下の要素を選択できるようになる。</h2>
+<pre>
+<code>
+pointer-events: none;
+</code>
+</pre>
+        <p>※有効にしたい場合はautoを指定する</p>
+        <p>pointer-events: auto;</p>
+
+        <h2>はみ出した部分をどう扱うか</h2>
+        <h3>「overflow: visible;」</h3>
+        <p>領域をはみ出して表示する</p>
+        <h3>「overflow: hidden;」</h3>
+        <p>はみ出た部分を表示しない</p>
+        <h3>「overflow: scroll;」</h3>
+        <p>	スクロールで表示する</p>
+        <h3>「overflow: auto;」</h3>
+        <p>自動</p>
+        <p><a href="https://developer.mozilla.org/ja/docs/Web/CSS/overflow">overflow</a></p>
+        <p><a href="https://cra.jp/blog/skill/1503_skill_overflow/">いろいろと便利なoverflow:hidden;についてのあれこれ</a></p>
+
+        <h2>スマホ用サイトで左右にぶれないようにする</h2>
+<pre>
+<code>
+body {
+    overflow-x: hidden;
+}
+</code>
+</pre>
+        <p><a href="https://tamoc.com/deviated-smartphone-screen/">【CSS】スマホで見ると微妙に左右にズレる現象 → １行で速攻解決します。</a></p>
+
+        <h2>justify-contentで要素を等間隔に</h2>
+<pre>
+<code>
+main .applicationBox {
+    display: flex;
+    flex-wrap:wrap;
+    border: 1px solid #999;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+main .applicationBox > figure {
+    margin: 10px;
+    text-align: center;
+}
+</code>
+</pre>
+        <p><a href="https://csshtml.work/flex-justify-content/#justify-contentspace-between">【CSS】flexで子要素の間隔を調整する方法。【参考】</a></p>
+
+        <h2>【Font】Google Web Fonts で日本語フォントの［Noto Sans Japanese］を使う。</h2>
+<pre>
+<code>
+    =====HTML=====
+    &lt;link
+    rel=&quot;stylesheet&quot;
+    href=&quot;https://fonts.googleapis.com/earlyaccess/notosansjapanese.css&quot;
+    /&gt;
+    =====CSS=====
+    main {
+        font-family: 'Noto Sans Japanese';
+    }
+</code>
+</pre>
+
+        <h2>【Font】IPAフォントを使用する。</h2>
+<pre>
+<code>
+/*IPAexゴシック(Ver.004.01)*/
+@font-face {
+    font-family: ipaexg;
+    src: url('../font/ipaexg.ttf');
+}
+/*IPAex明朝(Ver.004.01)*/
+@font-face {
+    font-family: ipaexm;
+    src: url('../font/ipaexm.ttf');
+}
+main {
+    font-family: 'ipaexg';
+}
+main {
+    font-family: 'ipaexm';
+}
+</code>
+</pre>
+
+        <h2>フォントサイズを継承する</h2>
+        <p>inherit は CSS のキーワードで、要素のプロパティの計算値を親要素から取得するよう指定</p>
+    <pre>
+    <code>
+font-size: inherit;
+    </code>
+    </pre>
+
+    <h2>テキストにインデントを付ける</h2>
+    <pre>
+    <code>
+text-indent: 1em;
+    </code>
+    </pre>
+
+    </main>
+    <div id="log"></div>
     <div id="operationParts"></div>
     <div id="footerParts"></div>
     <script src="../js/jquery-3.6.1.min.js"></script>
@@ -26,10 +666,12 @@
             $("#statusBarParts").load("../parts/statusBar.html");
             $("#headerParts").load("../parts/header.html");
             $("#menuParts").load("../parts/menu.html");
-            $("#cssParts").load("../parts/css.html");
             $("#operationParts").load("../parts/operation.html");
             $("#footerParts").load("../parts/footer.html");
         }
     </script>
+    <script src="../js/util.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
 </body>
 </html>

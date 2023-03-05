@@ -16,7 +16,15 @@
      <div id="statusBarParts"></div>
     <div id="headerParts"></div>
     <div id="menuParts"></div>
-    <div id="ExcelParts"></div>
+    <main>
+        <h1>Excel</h1>
+        <p id="lastModified"></p>
+    
+        <h2>【EXCEL】ブックを共有して複数の人と共同で同時に編集する方法(レガシー）</h2>
+        <p><a href="https://mugendennou.net/excel/excel-tips/excelcommonlegacy/">【参考】【EXCEL】ブックを共有して複数の人と共同で同時に編集する方法(レガシー）</a></p>
+    
+    </main>
+    <div id="log"></div>
     <div id="operationParts"></div>
     <div id="footerParts"></div>
     <script src="../js/jquery-3.6.1.min.js"></script>
@@ -26,10 +34,12 @@
             $("#statusBarParts").load("../parts/statusBar.html");
             $("#headerParts").load("../parts/header.html");
             $("#menuParts").load("../parts/menu.html");
-            $("#ExcelParts").load("../parts/Excel.html");
             $("#operationParts").load("../parts/operation.html");
             $("#footerParts").load("../parts/footer.html");
         }
     </script>
+    <script src="../js/util.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
 </body>
 </html>

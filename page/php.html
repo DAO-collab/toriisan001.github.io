@@ -16,7 +16,340 @@
      <div id="statusBarParts"></div>
     <div id="headerParts"></div>
     <div id="menuParts"></div>
-    <div id="phpParts"></div>
+    <main>
+        <h1>PHP</h1>
+        <p id="lastModified"></p>
+    
+        <h2>ローカル開発環境構築(20230114時点)</h2>
+        <h3>Postgresの最新版をインストール。Postgresを使用しない場合は不要</h3>
+        <p><a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads">Download PostgreSQL</a></p>
+        <p>postgresql-15.1-1-windows-x64.exeをクリック</p>
+        <figure>
+            <img class="beside" src="../img/PHP/Postgres/Welcome to the PostgresSQL Setup Wizard.jpg" alt="Welcome to the PostgresSQL Setup Wizard.jpg">
+            <figcaption>NEXTを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/Postgres/Installation Directory.jpg" alt="Installation Directory.jpg">
+            <figcaption>「C:\Program Files\PostgreSQL\15」のままNextを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/Postgres/Select Components.jpg" alt="Select Components.jpg">
+            <figcaption>Nextを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/Postgres/Data Directory.jpg" alt="Data Directory.jpg">
+            <figcaption>Nextを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/Postgres/Password.jpg" alt="Password.jpg">
+            <figcaption>どちらにも「postgres」を入力してNextを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/Postgres/Port.jpg" alt="Port.jpg">
+            <figcaption>「5432」のままNextを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/Postgres/Advance Option.jpg" alt="Advance Option.jpg">
+            <figcaption>「Default local」のままNextを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/Postgres/Pre Installation Summary.jpg" alt="Pre Installation Summary.jpg">
+            <figcaption>Nextを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/Postgres/Ready To Install.jpg" alt="Ready To Install.jpg">
+            <figcaption>Nextを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/Postgres/Completeting the PostgresSQL Setup Wizard.jpg" alt="Completeting the PostgresSQL Setup Wizard.jpg">
+            <figcaption>Finishを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/Postgres/スタックビルダ.jpg" alt="スタックビルダ.jpg">
+            <figcaption>スタックビルダは不要らしい。良く知らない。「キャンセル」を選択</figcaption>
+        </figure>
+        <h3>XAMPの最新版をインストール</h3>
+        <p><a href="https://www.apachefriends.org/jp/download.html">XAMPP ダウンロード</a></p>
+        <p>xampp-windows-x64-8.2.0-0-VS16-installer.exeをクリック</p>
+        <figure>
+            <img class="beside" src="../img/PHP/XAMPP/Warning.jpg" alt="Warning.jpg">
+            <figcaption>OKを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/XAMPP/Setup.jpg" alt="Setup.jpg">
+            <figcaption>Nextを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/XAMPP/Select Components.jpg" alt="Select Components.jpg">
+            <figcaption>Nextを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/XAMPP/InstallationFolder.jpg" alt="InstallationFolder.jpg">
+            <figcaption>
+                「C:\xampp」から「C:\xampp8.2」に変更してNextを選択。<br>
+                PHPバージョンごとにフォルダを切ったほうが良いらしい。<br>
+                xampp8.2だとファイル名ダブルクリックで全選択できないのでxampp82の方が良い？？？
+            </figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/XAMPP/Language.jpg" alt="Language.jpg">
+            <figcaption>「English」のままNextを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/XAMPP/ReadyToInstall.jpg" alt="ReadyToInstall.jpg">
+            <figcaption>Nextを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/XAMPP/CompletingTheXAMPPSetupWizard.jpg" alt="CompletingTheXAMPPSetupWizard.jpg">
+            <figcaption>Finishを選択</figcaption>
+        </figure>
+        <h3>システム環境変数にPATHを通す</h3>
+        <figure>
+            <img class="beside" src="../img/PHP/PATH/Path.jpg" alt="Path.jpg">
+            <figcaption>Pathに「C:\xampp8.2\php」を追記</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/PATH/CMD.jpg" alt="CMD.jpg">
+            <figcaption>cmdで「php -i|clip」でphp -iの内容をクリップボードに保持</figcaption>
+        </figure>
+        <h3>xdebug.dllを取得</h3>
+        <p><a href="https://xdebug.org/wizard">xdebugにアクセス</a></p>
+        <figure>
+            <img class="beside" src="../img/PHP/xdebug/xdebug.jpg" alt="xdebug.jpg">
+            <figcaption>cmdで「php -i|clip」でphp -iの内容をクリップボードに保持</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/xdebug/InstallationWizard.jpg" alt="InstallationWizard.jpg">
+            <figcaption>保持した文字列をテキストエリアに張り付けて「Analyse my phpinfo() output」を選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/xdebug/Download.jpg" alt="Download.jpg">
+            <figcaption>php_xdebug-3.2.0-8.2-vs16-x86_64.dllをダウンロードしてC:\xampp8.2\php\extに移動</figcaption>
+        </figure>
+        <h3>「C:\xampp8.2\php\php.ini」を編集する</h3>
+        <p>937行目のコメントを外す。<br>「;extension=pdo_pgsql」→「extension=pdo_pgsql」</p>
+        <p>939行目のコメントを外す。<br>「;extension=pgsql」→「extension=pgsql」</p>
+        <p>shmopを使用する場合は940行目のコメントを外すらしい。今回は使わないので修正しない。<br>
+            「;extension=shmop」→「;extension=shmop」
+        </p>
+        <p>ファイルの一番下に追記<br>
+            [xdebug]<br>
+            zend_extension=php_xdebug-3.2.0-8.2-vs16-x86_64.dll<br>
+            xdebug.client_host=127.0.0.1<br>
+            xdebug.client_port=9000<br>
+            ;xdebug.idekey=VSCODE<br>
+            ;xdebug.mode=debug.coverage<br>
+            xdebug.start_with_request=Yes<br>
+            ;xdebug.var_display_max_children=-1<br>
+            ;xdebug.var_display_max_data=-1<br>
+            ;xdebug.var_display_max_depth=-1<br>
+            xdebug.log_level=0
+        </p>
+        <p>※idekey,mode,var_display_max_children,var_display_max_data,var_display_max_depthは無くても動く？？？</p>
+        <p>※log_levelを入れないと、「Could not connect to debugging client.」エラーが出てきた。monologのログに。</p>
+        <p><a href="https://stackoverflow.com/questions/65059303/xdebug-could-not-connect-to-debugging-client-tried-localhost9000">Xdebug Could not connect to debugging client. Tried: localhost:9000</a></p>
+        <h3>「C:\xampp8.2\apache\conf\httpd.conf」を編集する</h3>
+        <p>60行目を修正。<br>「Listen 80」→「Listen 8089」</p>
+        <p>228行目を修正。<br>「ServerName localhost:80」→「ServerName localhost:8089」</p>
+        <p>
+            Herokuの環境変数を使用する場合はDocumentRootの上に追加するらしい。今回は追加しない。<br>
+            例<br>
+            SetEnv DATABASE_URL postgres://ID:パスワード@localhost:5432/DB名
+        </p>
+        <h3>「C:\xampp8.2\apache\conf\extra\httpd-ssl.conf」を編集する</h3>
+        <p>36,121,125行目の443を4433に変更する。</p>
+        <p>DocumentRootを変更したいときは124行目を修正する。例「DocumentRoot "C:/xampp8.2/htdocs"」→「DocumentRoot "C:/xampp8.2/htdocs/toriisanPHP001"」</p>
+        <p>DocumentRootについては、Webサーバで表示するコンテンツ(htmlファイルやphpファイル等)が配置された最上位のディレクトリなので、環境によって異なるかもしれない。</p>
+        <h3>「xampp-control.ini」のアクセス権を変更する</h3>
+        <figure>
+            <img class="beside" src="../img/PHP/XAMPPコントロールのポートを変更/アクセス権の変更.jpg" alt="アクセス権の変更.jpg">
+            <figcaption>「xampp-control.ini」のプロパティ - セキュリティタブを開く。オブジェクト名Everyoneをフルコントロールに編集する。</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/XAMPPコントロールのポートを変更/ポートを変更.jpg" alt="ポートを変更.jpg">
+            <figcaption>
+                xampp-controlを起動。<br>
+                config → Service and Port Settingsを開く。<br>
+                Main Portを「80」→「8089」に変更。<br>
+                SSL Portを「443」→「4433」に変更。
+            </figcaption>
+        </figure>
+        <h3>プログラム実行ディレクトリ・ファイルを作成</h3>
+        <p>例「C:\xampp8.2\htdocs\toriisanPHP001\public」を作成</p>
+        <p>例「C:\xampp8.2\htdocs\toriisanPHP001\public」ディレクトリに「index.php」を作成</p>
+    <pre>
+    <code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;ja&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;?php echo &#039;Helo World!&#039; ?&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+    </code>
+    </pre>
+        <h3>ローカル実行環境にアクセス</h3>
+        <figure>
+            <img class="beside" src="../img/PHP/Access/Start.jpg" alt="Start.jpg">
+            <figcaption>xampp-controlを起動。Apacheを起動する。</figcaption>
+        </figure>
+        <p>例「C:\xampp8.2\htdocs\toriisanPHP001\public」ディレクトリを作成</p>
+        <p>「index.php」ファイルを作成</p>
+        <p>例「http://127.0.0.1:8089/toriisanPHP001/public/」にアクセス</p>
+        <figure>
+            <img class="beside" src="../img/PHP/ローカル実行環境にアクセス/起動.jpg" alt="起動.jpg">
+            <figcaption>アクセス結果。PHPが実行できていることが確認できる。</figcaption>
+        </figure>
+    
+        <h3>デバッグ実行</h3>
+        <p>「ctl + shift + d」を押す。「C:\xampp8.2\htdocs\toriisanPHP001\.vscode\launch.json」ファイルを作成</p>
+    <pre>
+    <code>
+    =====launch.json=====
+    {
+        // Use IntelliSense to learn about possible attributes.
+        // Hover to view descriptions of existing attributes.
+        // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "Listen for Xdebug",
+                "type": "php",
+                "request": "launch",
+                "port": 9000
+            },
+            {
+                "name": "Launch currently open script",
+                "type": "php",
+                "request": "launch",
+                "program": "${file}",
+                "cwd": "${fileDirname}",
+                "port": 9000
+            }
+        ]
+    }
+    </code>
+    </pre>
+        <p><a href="https://atmarkit.itmedia.co.jp/ait/articles/1707/21/news030_3.html">第1回　Visual Studio Codeでデバッグをするための基礎知識</a></p>
+        <figure>
+            <img class="beside" src="../img/PHP/xdebug/動作例.jpg" alt="動作例.jpg">
+            <figcaption>デバッグ実行動作例</figcaption>
+        </figure>
+        <h3>ログ出力のため「Monolog」ライブラリを使用する</h3>
+        <p><a href="https://getcomposer.org/doc/00-intro.md#installation-windows">Composerをダウンロード</a></p>
+        <p><a href="https://reffect.co.jp/php/monolog-to-understand#monolog">PHPのロギングmonologを理解する</a></p>
+        <p>Composer-Setup.exeをダブルクリック</p>
+        <figure>
+            <img class="beside" src="../img/PHP/Monolog/SettingCheck.jpg" alt="SettingCheck.jpg">
+            <figcaption>Nextを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/Monolog/Proxy.jpg" alt="Proxy.jpg">
+            <figcaption>Nextを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/Monolog/ReadyToInstall.jpg" alt="ReadyToInstall.jpg">
+            <figcaption>Installを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/Monolog/Infomation.jpg" alt="Infomation.jpg">
+            <figcaption>Nextを選択</figcaption>
+        </figure>
+        <figure>
+            <img class="beside" src="../img/PHP/Monolog/complete.jpg" alt="complete.jpg">
+            <figcaption>Finishを選択</figcaption>
+        </figure>
+        <p>cmdで「cd C:\xampp8.2\htdocs\toriisanPHP001」で移動</p>
+        <p>「composer require monolog/monolog」でmonologのインストール。composer.json、composer.lockが作成される。</p>
+    <pre>
+    <code>
+    =====composer.json=====
+    {
+        "require": {
+            "monolog/monolog": "^3.2"
+        }
+    }
+    </code>
+    </pre>
+        <p>「C:\xampp8.2\php\logs」ディレクトリを作成</p>
+        <p>「C:\xampp8.2\htdocs\toriisanPHP001\public\index.php」を修正</p>
+    <pre>
+    <code>
+    =====index.php=====
+    &lt;?php
+    
+    require &#039;../vendor/autoload.php&#039;;
+    
+    use Monolog\Logger;
+    use Monolog\Handler\StreamHandler;
+    
+    // create a log channel
+    $log = new Logger(&#039;name&#039;);
+    
+    $log-&gt;pushHandler(new StreamHandler(&#039;C:\xampp8.2\php\logs\log.log&#039;, Logger::WARNING));
+    
+    // add records to the log
+    $log-&gt;warning(&#039;Foo&#039;);
+    $log-&gt;error(&#039;Bar&#039;);
+    </code>
+    </pre>
+    
+        <h2>CURL実行時にファイルを添付</h2>
+        <p><a href="https://www.php.net/manual/ja/class.curlfile.php">CURLFile クラス【参考】</a></p>
+    
+        <h2>fputcsvでShiftJisで出力</h2>
+        <p><a href="https://meteoricstream.com/blog/archives/186">【PHP】続：fputcsv関数の改行コード【参考】</a></p>
+    
+        <h2>文字エンコーディングの文字列を、別の文字エンコーディングに変換</h2>
+        <p><a href="https://www.php.net/manual/ja/function.mb-convert-encoding.php">PHP.net mb_convert_encoding【参考】</a></p>
+        
+        <h2>アクセスできないプロパティにアクセスした場合に起動するメソッドを定義する事ができます。</h2>
+        <p><a href="https://www.php.net/manual/ja/language.oop5.magic.php">マジックメソッド【参考】</a></p>
+    
+        <h2>URL エンコードされたクエリ文字列を生成する(PHP http_build_query)</h2>
+        <p><a href="https://www.php.net/manual/ja/function.http-build-query.php">URL エンコードされたクエリ文字列を生成する【参考】</a></p>
+    
+        <h2>LaravelのBlade(view)について</h2>
+        <p><a href="https://codelikes.com/laravel-blade/">【入門】LaravelのBlade(view)についてまとめ【参考】</a></p>
+    
+        <h2>preg_match</h2>
+        <p>pattern で指定した正規表現により subject を検索します。</p>
+        <p><a href="https://tips.recatnap.info/laboratory/detail/regular_expression_php">PHPでの正規表現【参考】</a></p>
+        <p><a href="https://qiita.com/ka_to/items/450cac6ab34c64e6a0e1">全角かどうか、半角カナかどうかチェック【参考】</a></p>
+        <h3>全角のみの繰り返しである</h3>
+        <p>/^[^ -~｡-ﾟ]+$/u</p>
+        <h3>半角のみの繰り返しである</h3>
+        <p>/^[ -~｡-ﾟ]+$/u</p>
+        <h3>空白を含まない文字列であること</h3>
+        <p>/^\S+$/u</p>
+    
+        <h2>exit</h2>
+        <p>メッセージを出力し、現在のスクリプトを終了する</p>
+        <p>exit(0)が正常終了。exit(255)が異常終了らしい。</p>
+        <p><a href="https://www.php.net/manual/ja/function.exit.php">PHP Documentation exit【参考】</a></p>
+        <p>必要ないのでは？と言っている人も居るらしい。</p>
+        <p><a href="https://ja.stackoverflow.com/questions/4995/php%E3%81%A7exit%E3%81%99%E3%82%8B%E5%BF%85%E8%A6%81%E3%81%AF%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8B#:~:text=exit%E3%81%AF%E5%BF%85%E8%A6%81%E3%81%82%E3%82%8A%E3%81%BE%E3%81%9B%E3%82%93%E3%80%82,%E3%81%99%E3%82%8B%E3%81%A0%E3%81%91%E3%81%A7OK%E3%81%A7%E3%81%99%E3%80%82">phpでexitする必要はありますか？【参考】</a></p>
+    
+        <h2>BoxAPIを使ってPHPでファイルをアップロード</h2>
+        <p><a href="https://zenn.dev/3104/articles/bd7afd4856a7e2">BoxAPIを使ってPHPでファイルをアップロード【参考】</a></p>
+    
+        <h2>PHPDocコメントについて</h2>
+        <p>書かないとメンバ変数が見当たらない警告が出ることあるらしい</p>
+        <p><a href="https://qiita.com/kouki_o9/items/49d34d347bde730f4a30">PHPDocコメント　まとめ【参考】</a></p>
+    
+        <h2>PHPのイテレータとは</h2>
+        <p>「◯◯を繰り返す」という意味らしい？？？</p>
+        <p>ジェネレータというものもあるらしい？？？</p>
+    
+        <h2>BoxAPIを使ってPHPでファイルをアップロード</h2>
+        <p><a href="https://zenn.dev/3104/articles/bd7afd4856a7e2">BoxAPIを使ってPHPでファイルをアップロード【参考】</a></p>
+    </main>
+    <div id="log"></div>
     <div id="operationParts"></div>
     <div id="footerParts"></div>
     <script src="../js/jquery-3.6.1.min.js"></script>
@@ -26,10 +359,12 @@
             $("#statusBarParts").load("../parts/statusBar.html");
             $("#headerParts").load("../parts/header.html");
             $("#menuParts").load("../parts/menu.html");
-            $("#phpParts").load("../parts/php.html");
             $("#operationParts").load("../parts/operation.html");
             $("#footerParts").load("../parts/footer.html");
         }
     </script>
+    <script src="../js/util.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
 </body>
 </html>

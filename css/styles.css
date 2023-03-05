@@ -266,15 +266,15 @@ main .applicationBox > figure {
     text-align: center;
 }
 
-#youtubeParts main input[type="text"]#pYoutubeId {
+#input[type="text"]#pYoutubeId {
     width: 100px;
 }
 
-#youtubeParts main input[type="text"]#pTitle {
+#input[type="text"]#pTitle {
     width: 300px;
 }
 
-#youtubeParts main .mv {
+#mvBox .mv {
     display: flex;
     cursor: pointer;
     border: solid 1px #333;
@@ -283,24 +283,24 @@ main .applicationBox > figure {
     box-shadow: 0 0 3px rgba(0, 0, 0, 1);
 }
 
-#youtubeParts main img {
+#mvBox img {
     height: 30px;
     width: 40px;
     margin-top: auto;
     margin-bottom: auto;
 }
 
-#youtubeParts main .text {
+#mvBox .text {
     margin-top: 5px;
     margin-left: 5px;
 }
 
-#youtubeParts main .del {
+#mvBox .del {
     margin: auto 0 auto auto;
 }
 
 /* WebStorage */
-#localStorageParts main .box {
+#textbox .box {
     display: flex;
     cursor: pointer;
     border: solid 1px #333;
@@ -309,7 +309,7 @@ main .applicationBox > figure {
     box-shadow: 0 0 3px rgba(0, 0, 0, 1);
 }
 
-#localStorageParts main .del {
+#textbox .del {
     margin: auto 0 auto auto;
 }
 

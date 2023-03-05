@@ -16,7 +16,62 @@
      <div id="statusBarParts"></div>
     <div id="headerParts"></div>
     <div id="menuParts"></div>
-    <div id="gitHubPagesParts"></div>
+    <main>
+        <h1>gitHubPages</h1>
+        <p id="lastModified"></p>
+        
+        <h2>概要</h2>
+        <p><a href="https://dotinstall.com/lessons/basic_githubpages">GitHub Pagesでウェブサイトを公開しよう</a></p>
+        <p>ユーザーページとプロジェクトページがあるらしい</p>
+        <p>ユーザーページ</p>
+        <p><a href="https://github.com/toriisan001/toriisan001.github.io">https://github.com/toriisan001/toriisan001.github.io</a></p>
+        <p><a href="https://toriisan001.github.io">https://toriisan001.github.io</a></p>
+        <p>プロジェクトページ</p>
+        <p><a href="https://github.com/toriisan001/MineSweeper">https://github.com/toriisan001/MineSweeper</a></p>
+        <p><a href="https://toriisan001.github.io/MineSweeper">https://toriisan001.github.io/MineSweeper</a></p>
+        <br>
+        <p>ユーザーページは1アカウント1つまで、プロジェクトページは複数作ることが出来るらしい</p>
+        
+        <h2>アカウントの作成</h2>
+        <p><a href="https://github.com/">https://github.com</a>でアカウントの作成</p>
+        
+        <h2>リポジトリの作成</h2>
+        <p><a href="https://github.com/new">https://github.com/new</a></p>
+        <br>
+        <p>リポジトリ名「ユーザーネーム + github.io」は固定</p>
+        <p>>toriisan001.github.io</p>
+        <br>
+        <p>なお、ユーザーサイトとプロジェクトサイトの違いはこちらのリポジトリ名の指定だけになる。</p>
+        <p>ユーザーサイトの場合はルールがありましたが、プロジェクトサイトの場合は自由に名前を決めることができる。</p>
+        
+        <h2>更新の仕方</h2>
+        <p>「<>Code」タブでAdd Fileから「Upload files」ファイルをアップロードして「Commit Change」</p>
+        <br>
+        <p>「<>Code」タブ「・・・」Setting下のほうの</p>
+        <p>Select BranghをNoneからmainに修正</p>
+        <p>rootのままSaveを選択</p>
+        <p>※ 反映が遅い場合</p>
+        <p>Environments - github-pagesから最新の履歴の更新idを確認</p>
+        <p>urlの末尾にidを付けてアクセスすると何故か反映された。</p>
+        <p>例：「https://toriisan001.github.io/?dcdcc96」</p>
+        
+        <h2>リポジトリの削除</h2>
+        <p>「<>Code」タブ「・・・」Setting下のほうの「Delete this repository」</p>
+        <p>文字列を書き込んで削除ボタンを押す</p>
+        
+        <h2>環境にアクセス</h2>
+        <p>Environments - github-pages を押して「View deployment」を選択</p>
+        
+        <h2>ローカルにクローン。コミットプッシュ</h2>
+        <p>「<>Code」タブ、緑の「Code▼」ボタンからHttpsの内容をコピー</p>
+        <p>右クリック、git clone。URLに上記内容をコピーしてOK「toriisan001.github.io」ディレクトリが出来る。中に「.git」ファイルも出来ている。</p>
+        <p>削除したいときはこのディレクトリごと削除すればいいらしい。</p>
+        <p>更新後、右クリック。「Git Commit -> main」メッセージを追加して「Commit」でコミット</p>
+        <p>「toriisan001.github.io」ディレクトリを右クリック。TortosGit→push。OKをクリック</p>
+        <p>ログインした時のメールアドレス。パスワード、ユーザー名。Personal access tokens (classic)を入力するとpushが完了する。以下参照</p>
+        <p><a href="https://qiita.com/setonao/items/28749762c0bc1fbbf502">【Windows】Gitでリモートにアクセスができない時の解決方法（Support for password authentication was removed on August 13, 2021.）</a></p>
+    </main>
+    <div id="log"></div>
     <div id="operationParts"></div>
     <div id="footerParts"></div>
     <script src="../js/jquery-3.6.1.min.js"></script>
@@ -26,10 +81,12 @@
             $("#statusBarParts").load("../parts/statusBar.html");
             $("#headerParts").load("../parts/header.html");
             $("#menuParts").load("../parts/menu.html");
-            $("#gitHubPagesParts").load("../parts/gitHubPages.html");
             $("#operationParts").load("../parts/operation.html");
             $("#footerParts").load("../parts/footer.html");
         }
     </script>
+    <script src="../js/util.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
 </body>
 </html>
