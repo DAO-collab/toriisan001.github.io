@@ -19,7 +19,7 @@
     <main>
         <h1>API</h1>
         <p id="lastModified"></p>
-    
+
         <h2>APIの種類</h2>
         <h3>Google YouTube Data API</h3>
         <p>Google が提供する YouTube の API。 検索だけでなく、アップロードやメタデータの更新などができる。 </p>
@@ -29,8 +29,139 @@
 
         <h2>Google YouTube Data API</h2>
         <h3>環境(20230305時点)</h3>
-        <p>GCPのアカウントを作成</p>
+        <details>
 
+            <p><a href="https://qiita.com/koki_develop/items/4cd7de3898dae2c33f20">【参考】YouTube Data API v3 を使って YouTube 動画を検索する</a></p>
+            <p>Google API Consoleにログイン。(グーグルアカウントを事前に作成しておく)</p>
+            <p><a href="https://console.developers.google.com/apis">【参考】Google API Console</a></p>
+            <p>プロジェクトの作成をクリック</p>
+            <figure>
+                <img class="beside" src="../img/API/GoogleYouTubeDataAPI/環境20230305時点/プロジェクトの作成をクリック.jpg" alt="プロジェクトの作成をクリック.jpg">
+                <figcaption>プロジェクトの作成をクリック.jpg</figcaption>
+            </figure>
+            <p>プロジェクト名を記入し、作成をクリック</p>
+            <figure>
+                <img class="beside" src="../img/API/GoogleYouTubeDataAPI/環境20230305時点/プロジェクトの作成をクリック.jpg" alt="プロジェクトの作成をクリック.jpg">
+                <figcaption>プロジェクトの作成をクリック.jpg</figcaption>
+            </figure>
+            <p>APIとサービスの有効化をクリック</p>
+            <figure>
+                <img class="beside" src="../img/API/GoogleYouTubeDataAPI/環境20230305時点/APIとサービスの有効化をクリック.jpg" alt="APIとサービスの有効化をクリック.jpg">
+                <figcaption>プロジェクトの作成をクリック.jpg</figcaption>
+            </figure>
+            <p>APIライブラリで「YouTube Data API」を検索してクリック</p>
+            <figure>
+                <img class="beside" src="../img/API/GoogleYouTubeDataAPI/環境20230305時点/YouTubeDataAPI検索.jpg" alt="YouTubeDataAPI検索.jpg">
+                <figcaption>YouTubeDataAPI検索.jpg</figcaption>
+            </figure>
+            <p>認証情報タブで「認証情報を作成」をクリック、プルダウンから「APIキー」を選択</p>
+            <figure>
+                <img class="beside" src="../img/API/GoogleYouTubeDataAPI/環境20230305時点/YouTubeDataAPI検索.jpg" alt="YouTubeDataAPI検索.jpg">
+                <figcaption>YouTubeDataAPI検索.jpg</figcaption>
+            </figure>
+            <p>APIキーを確認。閉じるをクリック。</p>
+            <figure>
+                <img class="beside" src="../img/API/GoogleYouTubeDataAPI/環境20230305時点/API キー確認.jpg" alt="API キー確認.jpg">
+                <figcaption>API キー確認.jpg</figcaption>
+            </figure>
+            <p>作成完了。「鍵を確認します」を押すと再度確認可能。</p>
+            <figure>
+                <img class="beside" src="../img/API/GoogleYouTubeDataAPI/環境20230305時点/API キー確認.jpg" alt="API キー確認.jpg">
+                <figcaption>API キー確認.jpg</figcaption>
+            </figure>
+            <p>「APIキーを編集」をクリック。</p>
+            <figure>
+                <img class="beside" src="../img/API/GoogleYouTubeDataAPI/環境20230305時点/APIキーを編集.jpg" alt="APIキーを編集.jpg">
+                <figcaption>APIキーを編集.jpg</figcaption>
+            </figure>
+            <p>「名前」を「for youtube data api v3」に変更。キーの制限を「YouTube Data API v3」に設定。保存をクリック。</p>
+            <figure>
+                <img class="beside" src="../img/API/GoogleYouTubeDataAPI/環境20230305時点/APIキー設定変更.jpg" alt="APIキー設定変更.jpg">
+                <figcaption>APIキー設定変更.jpg</figcaption>
+            </figure>
+        </details>
+        <h3>使用例</h3>
+        <h4>Videos: list</h4>
+        <details>
+            <p><a href="https://developers.google.com/youtube/v3/docs/videos/list?hl=ja">【参考】Youtube - Data API -Videos: list</a></p>
+            <p>idから動画情報を取得</p>
+<pre>
+C:\Users\*****>curl "https://www.googleapis.com/youtube/v3/videos?key=${APIKey(YouTubeDataAPI)}&part=snippet&id=JUbU6VLV6yI"
+{
+    "kind": "youtube#videoListResponse",
+    "etag": "PDmO9j6BJunbWiFImjZxSmc_3TI",
+    "items": [
+    {
+        "kind": "youtube#video",
+        "etag": "YiY8Y60P46wVv39Uu0D0jJ-ana4",
+        "id": "JUbU6VLV6yI",
+        "snippet": {
+        "publishedAt": "2021-12-08T11:00:13Z",
+        "channelId": "UCxjXU89x6owat9dA8Z-bzdw",
+        "title": "【MV full】 365日の紙飛行機/ AKB48 [公式]",
+        "description": "AKB48 42ndシングルc/w「365日の紙飛行機」\n作詞：秋元 康　作曲：角野 寿和・青葉 紘季　編曲：清水 哲平\n\n2015.12.9 ON SALE\n\n\n【MV】365 nichi no kamihikouki / AKB48 [Official]\nAKB48 42nd Single c/w “365 nichi no kamihikouki”\nLyrics: Yasushi Akimoto / Composer: Toshikazu Kadono , Hiroki Aoba / Arranger: Teppei Shimizu\n\n2015.12.9 ON SALE\n\n\n------------------------\nAKB48 Official Site\nhttp://www.akb48.co.jp/\n\nKING RECORDS OFFICIAL SITE\nhttp://goo.gl/qhQbBG\n------------------------ #カップリングリクアワ対象曲",
+        "thumbnails": {
+            "default": {
+            "url": "https://i.ytimg.com/vi/JUbU6VLV6yI/default.jpg",
+            "width": 120,
+            "height": 90
+            },
+            "medium": {
+            "url": "https://i.ytimg.com/vi/JUbU6VLV6yI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+            },
+            "high": {
+            "url": "https://i.ytimg.com/vi/JUbU6VLV6yI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+            },
+            "standard": {
+            "url": "https://i.ytimg.com/vi/JUbU6VLV6yI/sddefault.jpg",
+            "width": 640,
+            "height": 480
+            },
+            "maxres": {
+            "url": "https://i.ytimg.com/vi/JUbU6VLV6yI/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+            }
+        },
+        "channelTitle": "AKB48",
+        "tags": [
+            "AKB",
+            "アイドル",
+            "劇場",
+            "公演",
+            "idol",
+            "JAPAN",
+            "Tokyo",
+            "エンターテインメント",
+            "秋葉原",
+            "akihabara",
+            "entertainment",
+            "日本",
+            "BNK",
+            "アジア",
+            "Asia"
+        ],
+        "categoryId": "24",
+        "liveBroadcastContent": "none",
+        "localized": {
+            "title": "【MV full】 365日の紙飛行機/ AKB48 [公式]",
+            "description": "AKB48 42ndシングルc/w「365日の紙飛行機」\n作詞：秋元 康　作曲：角野 寿和・青葉 紘季　編曲：清水 哲平\n\n2015.12.9 ON SALE\n\n\n【MV】365 nichi no kamihikouki / AKB48 [Official]\nAKB48 42nd Single c/w “365 nichi no kamihikouki”\nLyrics: Yasushi Akimoto / Composer: Toshikazu Kadono , Hiroki Aoba / Arranger: Teppei Shimizu\n\n2015.12.9 ON SALE\n\n\n------------------------\nAKB48 Official Site\nhttp://www.akb48.co.jp/\n\nKING RECORDS OFFICIAL SITE\nhttp://goo.gl/qhQbBG\n------------------------ #カップリングリクアワ対象曲"
+        },
+        "defaultAudioLanguage": "ja"
+        }
+    }
+    ],
+    "pageInfo": {
+    "totalResults": 1,
+    "resultsPerPage": 1
+    }
+}
+</pre>
+        </details>
     </main>
     <div id="log"></div>
     <div id="operationParts"></div>
