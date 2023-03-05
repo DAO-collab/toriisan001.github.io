@@ -18,6 +18,7 @@ body {
     font-size: 12px; */
     overflow-x: hidden;
     word-break: break-all;
+    font-weight: 900;
 }
 
 /* statusBar */
@@ -144,7 +145,6 @@ main pre {
     background: #f3f6fc;/* 背景色 */
     color: #54687c;/* 文字色 */
     overflow-x: scroll;
-    font-weight: 900;
 }
 
 main img.vertical {
