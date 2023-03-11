@@ -655,6 +655,19 @@ text-indent: 1em;
     </code>
     </pre>
 
+    <h2>必須マークを付ける(:afterでcssで文字を付けられるらしい)</h2>
+<pre>
+<code>
+=====HTML=====
+<p><span class="required">youtubeId</span> : <input name="pYoutubeId" type="text"></p>
+=====CSS=====
+.required:after {
+    color: #E00;
+    content: " *";
+}
+</code>
+</pre>
+
     </main>
     <div id="log"></div>
     <div id="operationParts"></div>
