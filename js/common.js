@@ -156,7 +156,7 @@
       console.log(text);
     }
       // 最終アクセスを保持
-      storage.setItem(config.SYSTEM_KEY.LAST_HREF, location.href);
+      storage.setItem(config.SYSTEM_KEY.LAST_HREF, decodeURI(location.href));
       // ステータスバー
       const statusBarYmdHis = document.getElementById("statusBarYmdHis");
       logShowSet();
