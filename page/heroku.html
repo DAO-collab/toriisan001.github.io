@@ -20,7 +20,8 @@
         <h1>Heroku</h1>
         <p id="lastModified"></p>
     
-        <h2>Heroku環境作成(20230204時点)</h2>
+        <h2>Heroku環境作成</h2>
+        <h3>Heroku環境作成(20230204時点)</h3>
         <details>
             <h3>以下でアカウントを作成</h3>
             <p><a href="https://signup.heroku.com/login">Heroku| Sign up</a></p>
@@ -175,7 +176,74 @@
                 <figcaption>HelloWorld.jpg</figcaption>
             </figure>
         </details>
+        <h3>Papertrailを使用する(20230311時点)</h3>
+        <details>
+
+            <p>Herokuで使用できる無料からあるログ機能</p>
+            <p>「Configure Add-ons」をクリック</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/Papertrailを使用する(20230311時点)/ConfigureAddonsをクリック.jpg" alt="ConfigureAddonsをクリック.jpg">
+                <figcaption>ConfigureAddonsをクリック.jpg</figcaption>
+            </figure>
+            <p>「PaperTrail」で検索してクリック</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/Papertrailを使用する(20230311時点)/「PaperTrail」で検索してクリック.jpg" alt="「PaperTrail」で検索してクリック.jpg">
+                <figcaption>「PaperTrail」で検索してクリック.jpg</figcaption>
+            </figure>
+            <p>「Submit Order Form」で検索してクリック</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/Papertrailを使用する(20230311時点)/SubmitOrderFormをクリック.jpg" alt="SubmitOrderFormをクリック.jpg">
+                <figcaption>SubmitOrderFormをクリック.jpg</figcaption>
+            </figure>
+            <p>「Submit Order Form」で検索してクリック</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/Papertrailを使用する(20230311時点)/追加されたことを確認.jpg" alt="追加されたことを確認.jpg">
+                <figcaption>追加されたことを確認.jpg</figcaption>
+            </figure>
+            <p>「Submit Order Form」で検索してクリック</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/Papertrailを使用する(20230311時点)/アイコンをクリックしてPapertrailを参照.jpg" alt="アイコンをクリックしてPapertrailを参照.jpg">
+                <figcaption>アイコンをクリックしてPapertrailを参照.jpg</figcaption>
+            </figure>
+            <p>初回アクセス。同意しますにクリックして「Continue」をクリック。</p>
+    <pre>
+    更新されたソフトウェア サービス契約
+    ソフトウェア サービス契約を更新し、お客様との連携方法をより適切に文書化しました。 続行するには、更新されたバージョンを読んで同意してください:
     
+    ソフトウェア サービス契約に同意します
+    </pre>
+            <figure>
+                <img class="beside" src="../img/Heroku/Papertrailを使用する(20230311時点)/初回アクセス.jpg" alt="初回アクセス.jpg">
+                <figcaption>初回アクセス.jpg</figcaption>
+            </figure>
+            <p>ログが見えている</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/Papertrailを使用する(20230311時点)/ログが見えている.jpg" alt="ログが見えている.jpg">
+                <figcaption>ログが見えている.jpg</figcaption>
+            </figure>
+            <p>ログを埋め込んでみる。stdoutは標準の出力、stderrはエラーの出力先らしい</p>
+            <p><a href="http://nanoappli.com/blog/archives/5212">【参考】[PHP]標準エラー出力、標準出力に文字列を出力する</a></p>
+            <p><a href="https://tooljp.com/bat_qa/67A8B7E5F919DE47492573780059BFF7.html#:~:text=stdout%E3%81%AF%E6%A8%99%E6%BA%96%E3%81%AE%E5%87%BA%E5%8A%9B,%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AE%E5%87%BA%E5%8A%9B%E5%85%88%E3%81%A7%E3%81%99%E3%80%82">【参考】stdoutとstderrの違いをサンプルで確実に理解する | Windows バッチファイル</a></p>
+<pre>
+&lt;?php
+$stdout= fopen( &#039;php://stdout&#039;, &#039;w&#039; );
+fwrite( $stdout, &quot;hello world to stdout\n&quot; );
+
+$stderr = fopen( &#039;php://stderr&#039;, &#039;w&#039; );
+fwrite( $stderr, &quot;hello world to stderr\n&quot; );
+</pre>
+            <figure>
+                <img class="beside" src="../img/Heroku/Papertrailを使用する(20230311時点)/ログを埋め込んでみる.jpg" alt="ログを埋め込んでみる.jpg">
+                <figcaption>ログを埋め込んでみる.jpg</figcaption>
+            </figure>
+            <p>埋め込んだログが出力されていることを確認</p>
+            <p><a href="http://nanoappli.com/blog/archives/5212">【参考】[PHP]標準エラー出力、標準出力に文字列を出力する</a></p>
+            <figure>
+                <img class="beside" src="../img/Heroku/Papertrailを使用する(20230311時点)/埋め込んだログが出力されていることを確認.jpg" alt="埋め込んだログが出力されていることを確認.jpg">
+                <figcaption>埋め込んだログが出力されていることを確認.jpg</figcaption>
+            </figure>
+        </details>
+
         <h2>Heroku Command Line Interface (CLI) </h2>
         <p>Heroku Command Line Interface (CLI) を使用すると、Heroku アプリをターミナルから直接、作成および管理できます。Heroku CLI は、Heroku を利用する際に必要なツールです。</p>
         <h3>ログイン</h3>
