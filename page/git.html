@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鳥居涼太のポートフォリオサイト</title>
+    <link rel="icon" href="../img/tottori.jpg">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css"
+    />
+</head>
+<body>
+     <div id="statusBarParts"></div>
+    <div id="headerParts"></div>
+    <div id="menuParts"></div>
+    <main>
+        <h1>Git</h1>
+        <p id="lastModified"></p>
+    
+        <h2>環境構築_20230319</h2>
+        <p>Gitをダウンロード及びインストール。オプション等はデフォルトで良いと思うけど良く知らない。(Git-2.40.0-64-bit.exe)</p>
+        <p><a href="https://gitforwindows.org/">Git公式</a></p>
+        <figure>
+            <img class="beside" src="../img/Git/環境構築_20230319/Gitをダウンロード及びインストール.jpg" alt="Gitをダウンロード及びインストール.jpg">
+            <figcaption>ログを埋め込んでみる.jpg</figcaption>
+        </figure>
+        <p>TortoiseGitをダウンロード及びインストール。オプション等はデフォルトで良いと思うけど良く知らない。(TortoiseGit-2.14.0.0-64bit.msi)</p>
+        <p><a href="https://tortoisegit.org/download/">TortoiseGit公式</a></p>
+        <figure>
+            <img class="beside" src="../img/Git/環境構築_20230319/TortoiseGitをダウンロード及びインストール.jpg" alt="TortoiseGitをダウンロード及びインストール.jpg">
+            <figcaption>TortoiseGitをダウンロード及びインストール.jpg</figcaption>
+        </figure>
+
+        <h2>TortoiseGit使い方</h2>
+        <h3>urlを指定してclone</h3>
+        <p>「git URL」を確認。例としてherokuのものを使用</p>
+        <figure>
+            <img class="beside" src="../img/Git/TortoiseGit使い方/gitURL.jpg" alt="gitURL.jpg">
+            <figcaption>gitURL.jpg</figcaption>
+        </figure>
+        <p>既存のリポジトリをローカル環境に複製する</p>
+        <p>環境を作成したいディレクトリで右クリック「Git clone」を選択</p>
+        <figure>
+            <img class="beside" src="../img/Git/TortoiseGit使い方/GitClone.jpg" alt="GitClone.jpg">
+            <figcaption>GitClone.jpg</figcaption>
+        </figure>
+        <p>URLに「git URL」を設定。Directoryに複製するパスを指定。OKをクリック。</p>
+        <figure>
+            <img class="beside" src="../img/Git/TortoiseGit使い方/GitCloneTortoiseGit設定.jpg" alt="GitCloneTortoiseGit設定.jpg">
+            <figcaption>GitCloneTortoiseGit設定.jpg</figcaption>
+        </figure>
+        <p>「close」を選択</p>
+        <figure>
+            <img class="beside" src="../img/Git/TortoiseGit使い方/close.jpg" alt="close.jpg">
+            <figcaption>close.jpg</figcaption>
+        </figure>
+        <p>Directoryに指定したディレクトリにgitの内容が複製されていることを確認。隠しファイルを表示にすると「.git」が作成されているが、これはGitの情報を格納する隠しディレクトリらしい。複製を削除する場合はこのディレクトリごと削除すれば良いらしい。</p>
+        <figure>
+            <img class="beside" src="../img/Git/TortoiseGit使い方/CloneOK.jpg" alt="CloneOK.jpg">
+            <figcaption>CloneOK.jpg</figcaption>
+        </figure>
+
+    </main>
+    <div id="log"></div>
+    <div id="operationParts"></div>
+    <div id="footerParts"></div>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script>
+        'use strict';
+        {
+            $("#statusBarParts").load("../parts/statusBar.html");
+            $("#headerParts").load("../parts/header.html");
+            $("#menuParts").load("../parts/menu.html");
+            $("#operationParts").load("../parts/operation.html");
+            $("#footerParts").load("../parts/footer.html");
+        }
+    </script>
+    <script src="../js/util.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
+</body>
+</html>
