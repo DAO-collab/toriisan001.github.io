@@ -21,103 +21,110 @@
         <p id="lastModified"></p>
     
         <h2>環境構築_20230319</h2>
-        <p>Gitをダウンロード及びインストール。オプション等はデフォルトで良いと思うけど良く知らない。(Git-2.40.0-64-bit.exe)</p>
-        <p><a href="https://gitforwindows.org/">Git公式</a></p>
-        <figure>
-            <img class="beside" src="../img/Git/環境構築_20230319/Gitをダウンロード及びインストール.jpg" alt="Gitをダウンロード及びインストール.jpg">
-            <figcaption>ログを埋め込んでみる.jpg</figcaption>
-        </figure>
-        <p>TortoiseGitをダウンロード及びインストール。オプション等はデフォルトで良いと思うけど良く知らない。(TortoiseGit-2.14.0.0-64bit.msi)</p>
-        <p><a href="https://tortoisegit.org/download/">TortoiseGit公式</a></p>
-        <figure>
-            <img class="beside" src="../img/Git/環境構築_20230319/TortoiseGitをダウンロード及びインストール.jpg" alt="TortoiseGitをダウンロード及びインストール.jpg">
-            <figcaption>TortoiseGitをダウンロード及びインストール.jpg</figcaption>
-        </figure>
+        <details>
+            <p>Gitをダウンロード及びインストール。オプション等はデフォルトで良いと思うけど良く知らない。(Git-2.40.0-64-bit.exe)</p>
+            <p><a href="https://gitforwindows.org/">Git公式</a></p>
+            <figure>
+                <img class="beside" src="../img/Git/環境構築_20230319/Gitをダウンロード及びインストール.jpg" alt="Gitをダウンロード及びインストール.jpg">
+                <figcaption>ログを埋め込んでみる.jpg</figcaption>
+            </figure>
+            <p>TortoiseGitをダウンロード及びインストール。オプション等はデフォルトで良いと思うけど良く知らない。(TortoiseGit-2.14.0.0-64bit.msi)</p>
+            <p><a href="https://tortoisegit.org/download/">TortoiseGit公式</a></p>
+            <figure>
+                <img class="beside" src="../img/Git/環境構築_20230319/TortoiseGitをダウンロード及びインストール.jpg" alt="TortoiseGitをダウンロード及びインストール.jpg">
+                <figcaption>TortoiseGitをダウンロード及びインストール.jpg</figcaption>
+            </figure>
+        </details>
 
         <h2>TortoiseGit使い方</h2>
         <h3>既存のリポジトリのgit urlを指定してローカル環境に複製する【git clone】</h3>
-        <p>「git URL」を確認。例としてherokuのものを使用</p>
-        <figure>
-            <img class="beside" src="../img/Git/TortoiseGit使い方/gitURL.jpg" alt="gitURL.jpg">
-            <figcaption>gitURL.jpg</figcaption>
-        </figure>
-        <p>環境を作成したいディレクトリで右クリック「Git clone」を選択</p>
-        <figure>
-            <img class="beside" src="../img/Git/TortoiseGit使い方/GitClone.jpg" alt="GitClone.jpg">
-            <figcaption>GitClone.jpg</figcaption>
-        </figure>
-        <p>URLに「git URL」を設定。Directoryに複製するパスを指定。OKをクリック。</p>
-        <figure>
-            <img class="beside" src="../img/Git/TortoiseGit使い方/GitCloneTortoiseGit設定.jpg" alt="GitCloneTortoiseGit設定.jpg">
-            <figcaption>GitCloneTortoiseGit設定.jpg</figcaption>
-        </figure>
-        <p>「close」を選択</p>
-        <figure>
-            <img class="beside" src="../img/Git/TortoiseGit使い方/close.jpg" alt="close.jpg">
-            <figcaption>close.jpg</figcaption>
-        </figure>
-        <p>Directoryに指定したディレクトリにgitの内容が複製されていることを確認。隠しファイルを表示にすると「.git」が作成されているが、これはGitの情報を格納する隠しディレクトリらしい。複製を削除する場合はこのディレクトリごと削除すれば良いらしい。</p>
-        <figure>
-            <img class="beside" src="../img/Git/TortoiseGit使い方/CloneOK.jpg" alt="CloneOK.jpg">
-            <figcaption>CloneOK.jpg</figcaption>
-        </figure>
+        <details>
+            <p>「git URL」を確認。例としてherokuのものを使用</p>
+            <figure>
+                <img class="beside" src="../img/Git/TortoiseGit使い方/gitURL.jpg" alt="gitURL.jpg">
+                <figcaption>gitURL.jpg</figcaption>
+            </figure>
+            <p>環境を作成したいディレクトリで右クリック「Git clone」を選択</p>
+            <figure>
+                <img class="beside" src="../img/Git/TortoiseGit使い方/GitClone.jpg" alt="GitClone.jpg">
+                <figcaption>GitClone.jpg</figcaption>
+            </figure>
+            <p>URLに「git URL」を設定。Directoryに複製するパスを指定。OKをクリック。</p>
+            <figure>
+                <img class="beside" src="../img/Git/TortoiseGit使い方/GitCloneTortoiseGit設定.jpg" alt="GitCloneTortoiseGit設定.jpg">
+                <figcaption>GitCloneTortoiseGit設定.jpg</figcaption>
+            </figure>
+            <p>「close」を選択</p>
+            <figure>
+                <img class="beside" src="../img/Git/TortoiseGit使い方/close.jpg" alt="close.jpg">
+                <figcaption>close.jpg</figcaption>
+            </figure>
+            <p>Directoryに指定したディレクトリにgitの内容が複製されていることを確認。隠しファイルを表示にすると「.git」が作成されているが、これはGitの情報を格納する隠しディレクトリらしい。複製を削除する場合はこのディレクトリごと削除すれば良いらしい。</p>
+            <figure>
+                <img class="beside" src="../img/Git/TortoiseGit使い方/CloneOK.jpg" alt="CloneOK.jpg">
+                <figcaption>CloneOK.jpg</figcaption>
+            </figure>
+        </details>
         <h3>ファイルを追加する。add</h3>
-        <p>適当なファイルを作成する</p>
-        <figure>
-            <img class="beside" src="../img/Git/TortoiseGit使い方/適当なファイルを作成する.jpg" alt="適当なファイルを作成する.jpg">
-            <figcaption>適当なファイルを作成する.jpg</figcaption>
-        </figure>
-        <p>ファイルを右クリックファイルをadd(作業ディレクトリ内の変更をステージングエリアに追加)する</p>
-        <figure>
-            <img class="beside" src="../img/Git/TortoiseGit使い方/ファイルをadd.jpg" alt="ファイルをadd.jpg">
-            <figcaption>ファイルをadd.jpg</figcaption>
-        </figure>
-        <p>OKをクリックする</p>
-        <figure>
-            <img class="beside" src="../img/Git/TortoiseGit使い方/ファイルをaddしてOK.jpg" alt="ファイルをaddしてOK.jpg">
-            <figcaption>ファイルをaddしてOK.jpg</figcaption>
-        </figure>
-        <p>ファイルを右クリック。Git Commit(変更を確定)する</p>
-        <figure>
-            <img class="beside" src="../img/Git/TortoiseGit使い方/addGitCommit.jpg" alt="addGitCommit.jpg">
-            <figcaption>addGitCommit.jpg</figcaption>
-        </figure>
-        <p>メッセージを記載。Commitをクリックする。コミットする対象が合っているかどうかを見ておく。</p>
-        <figure>
-            <img class="beside" src="../img/Git/TortoiseGit使い方/addGitCommitOK.jpg" alt="addGitCommitOK.jpg">
-            <figcaption>addGitCommitOK.jpg</figcaption>
-        </figure>
-        <p>closeをクリックする。</p>
-        <p>上記の手順でローカル環境からローカルリポジトリ(自分のパソコン・マシン内に存在するリポジトリ)に追加した状態になる。</p>
-        <figure>
-            <img class="beside" src="../img/Git/TortoiseGit使い方/addGitCommitOKClose.jpg" alt="addGitCommitOKClose.jpg">
-            <figcaption>addGitCommitOKClose.jpg</figcaption>
-        </figure>
-        <p>試しに「https://toriisan-php-001.herokuapp.com/test.html」にアクセスしてもファイルが見つからないとなる。</p>
-        <figure>
-            <img class="beside" src="../img/Git/TortoiseGit使い方/addGitファイルが見つからない.jpg" alt="addGitファイルが見つからない.jpg">
-            <figcaption>addGitファイルが見つからない.jpg</figcaption>
-        </figure>
-        <p>追加したファイルのディレクトリを右クリックしてpush(ローカルリポジトリコンテンツをリモートリポジトリにアップロード)する。</p>
-        <figure>
-            <img class="beside" src="../img/Git/TortoiseGit使い方/addGitCommitPush.jpg" alt="addGitCommitPush.jpg">
-            <figcaption>addGitCommitPush.jpg</figcaption>
-        </figure>
-        <p>OKを選択する。</p>
-        <figure>
-            <img class="beside" src="../img/Git/TortoiseGit使い方/addGitCommitPush設定.jpg" alt="addGitCommitPush設定.jpg">
-            <figcaption>addGitCommitPush設定.jpg</figcaption>
-        </figure>
-        <p>closeを選択する。</p>
-        <figure>
-            <img class="beside" src="../img/Git/TortoiseGit使い方/addGitCommitPushClose.jpg" alt="addGitCommitPushClose.jpg">
-            <figcaption>addGitCommitPushClose.jpg</figcaption>
-        </figure>
-        <p>再度「https://toriisan-php-001.herokuapp.com/test.html」にアクセス。リモートリポジトリにアップロードされていることが確認出来る。</p>
-        <figure>
-            <img class="beside" src="../img/Git/TortoiseGit使い方/リモートリポジトリにアップロードOK.jpg" alt="リモートリポジトリにアップロードOK.jpg">
-            <figcaption>リモートリポジトリにアップロードOK.jpg</figcaption>
-        </figure>
+        <details>
+
+            <p>適当なファイルを作成する</p>
+            <figure>
+                <img class="beside" src="../img/Git/TortoiseGit使い方/適当なファイルを作成する.jpg" alt="適当なファイルを作成する.jpg">
+                <figcaption>適当なファイルを作成する.jpg</figcaption>
+            </figure>
+            <p>ファイルを右クリックファイルをadd(作業ディレクトリ内の変更をステージングエリアに追加)する</p>
+            <figure>
+                <img class="beside" src="../img/Git/TortoiseGit使い方/ファイルをadd.jpg" alt="ファイルをadd.jpg">
+                <figcaption>ファイルをadd.jpg</figcaption>
+            </figure>
+            <p>OKをクリックする</p>
+            <figure>
+                <img class="beside" src="../img/Git/TortoiseGit使い方/ファイルをaddしてOK.jpg" alt="ファイルをaddしてOK.jpg">
+                <figcaption>ファイルをaddしてOK.jpg</figcaption>
+            </figure>
+            <p>ファイルを右クリック。Git Commit(変更を確定)する</p>
+            <figure>
+                <img class="beside" src="../img/Git/TortoiseGit使い方/addGitCommit.jpg" alt="addGitCommit.jpg">
+                <figcaption>addGitCommit.jpg</figcaption>
+            </figure>
+            <p>メッセージを記載。Commitをクリックする。コミットする対象が合っているかどうかを見ておく。</p>
+            <figure>
+                <img class="beside" src="../img/Git/TortoiseGit使い方/addGitCommitOK.jpg" alt="addGitCommitOK.jpg">
+                <figcaption>addGitCommitOK.jpg</figcaption>
+            </figure>
+            <p>closeをクリックする。</p>
+            <p>上記の手順でローカル環境からローカルリポジトリ(自分のパソコン・マシン内に存在するリポジトリ)に追加した状態になる。</p>
+            <figure>
+                <img class="beside" src="../img/Git/TortoiseGit使い方/addGitCommitOKClose.jpg" alt="addGitCommitOKClose.jpg">
+                <figcaption>addGitCommitOKClose.jpg</figcaption>
+            </figure>
+            <p>試しに「https://toriisan-php-001.herokuapp.com/test.html」にアクセスしてもファイルが見つからないとなる。</p>
+            <figure>
+                <img class="beside" src="../img/Git/TortoiseGit使い方/addGitファイルが見つからない.jpg" alt="addGitファイルが見つからない.jpg">
+                <figcaption>addGitファイルが見つからない.jpg</figcaption>
+            </figure>
+            <p>追加したファイルのディレクトリを右クリックしてpush(ローカルリポジトリコンテンツをリモートリポジトリにアップロード)する。</p>
+            <figure>
+                <img class="beside" src="../img/Git/TortoiseGit使い方/addGitCommitPush.jpg" alt="addGitCommitPush.jpg">
+                <figcaption>addGitCommitPush.jpg</figcaption>
+            </figure>
+            <p>OKを選択する。</p>
+            <figure>
+                <img class="beside" src="../img/Git/TortoiseGit使い方/addGitCommitPush設定.jpg" alt="addGitCommitPush設定.jpg">
+                <figcaption>addGitCommitPush設定.jpg</figcaption>
+            </figure>
+            <p>closeを選択する。</p>
+            <figure>
+                <img class="beside" src="../img/Git/TortoiseGit使い方/addGitCommitPushClose.jpg" alt="addGitCommitPushClose.jpg">
+                <figcaption>addGitCommitPushClose.jpg</figcaption>
+            </figure>
+            <p>再度「https://toriisan-php-001.herokuapp.com/test.html」にアクセス。リモートリポジトリにアップロードされていることが確認出来る。</p>
+            <figure>
+                <img class="beside" src="../img/Git/TortoiseGit使い方/リモートリポジトリにアップロードOK.jpg" alt="リモートリポジトリにアップロードOK.jpg">
+                <figcaption>リモートリポジトリにアップロードOK.jpg</figcaption>
+            </figure>
+        </details>
 
     </main>
     <div id="log"></div>
