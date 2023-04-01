@@ -362,6 +362,19 @@
         <h2>html埋め込み・省略形</h2>
         <p><a href="https://tamoc.com/php-tag-ellipsis/">【参考】【PHP】PHP開始表現の省略方法。楽チンで便利すぎる…何故今まで知らなかったんだと後悔。</a></p>
 
+        <h2>PHPで型を意識し安全なプログラムを書く</h2>
+        <p><a href="https://qiita.com/minato-naka/items/cc9da5fc1bc8cc4240a8">【参考】PHPで型を意識し安全なプログラムを書く</a></p>
+<pre>
+<code>
+// UTC → JST
+function comvertUtcJst(string $str, string $format): string {
+    $datetime = new DateTime($str);
+    $datetime->setTimeZone(new DateTimeZone('Asia/Tokyo'));
+    return $datetime->format($format);
+}
+</code>
+</pre>
+
     </main>
     <div id="log"></div>
     <div id="operationParts"></div>
