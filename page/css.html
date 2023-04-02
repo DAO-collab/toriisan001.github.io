@@ -668,15 +668,21 @@ text-indent: 1em;
 </code>
 </pre>
 
-    <h2>必須マークを付ける(:afterでcssで文字を付けられるらしい)</h2>
+    <h2>ツールチップ</h2>
     <p><a href="https://sunliblog.com/2022/04/09/tooltip/">スマホ対応のツールチップ（Tooltip）をHTML・CSSで表示する方法【参考】</a></p>
 <pre>
 <code>
 =====HTML=====
-&lt;div class=&quot;tooltip1&quot;&gt;
-    &lt;p&gt;🛈&lt;/p&gt;
-    &lt;div class=&quot;description1&quot;&gt;youtubeIdについて、「https://youtu.be/」を空文字に置き換えます。&lt;/div&gt;
-&lt;/div&gt;
+&lt;span&gt;
+&lt;button id=&quot;send&quot;&gt;送信&lt;/button&gt;
+&lt;span class=&quot;tooltip1&quot;&gt;
+    &lt;span class=&quot;mark&quot;&gt;？&lt;/span&gt;
+    &lt;span class=&quot;description1&quot;&gt;
+        1日に送信出来る制限は10件です。&lt;br&gt;
+        今日はあと10回送信可能です。
+    &lt;/span&gt;
+&lt;/span&gt;
+&lt;/span&gt;
 =====CSS=====
 /* ツールチップ */
 .tooltip1{
