@@ -323,6 +323,14 @@ fwrite( $stderr, &quot;hello world to stderr\n&quot; );
     heroku stack --ap ${アプリ名}
     </code>
     </pre>
+
+    <h3>Herokuでログを出力</h3>
+<pre>
+<code>
+heroku login
+heroku logs --tail
+</code>
+</pre>
     
         <h3>アドオンを確認</h3>
     <pre>
@@ -360,6 +368,7 @@ fwrite( $stderr, &quot;hello world to stderr\n&quot; );
     Enter password:${DB_PASSWORD}
     </code>
     </pre>
+
     </main>
     <div id="log"></div>
     <div id="operationParts"></div>
