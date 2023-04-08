@@ -380,35 +380,52 @@ function comvertUtcJst(string $str, string $format): string {
 
         <h2>Heroku上でmb_xxx関数を使用するとエラーが出る</h2>
         <p><a href="https://qiita.com/taro-hida/items/f677abe2bc3b689002b3">【参考】heroku環境でmb_xxx関数を使うと、Fatal error: Call to undefined function …のエラーが表示される</a></p>
-        <p>cmdで「composer require ext-mbstring」を実行</p>
+        <p>cmdで「composer init」「composer require」などで「php」「ext-mbstring」を追加。「php」を追加しないと良くアプリが落ちた。</p>
 <pre>
 <code>
-C:\xampp8.2\htdocs\toriisan-php-001>composer require ext-mbstring
-./composer.json has been created
-Running composer update ext-mbstring
-Loading composer repositories with package information
-Updating dependencies
-Nothing to modify in lock file
-Writing lock file
-Installing dependencies from lock file (including require-dev)
-Nothing to install, update or remove
-Generating autoload files
-No installed packages - skipping audit.
+=====composer.json=====
+{
+    "name": "toriisan/toriisan-php-001",
+    "require": {
+        "php": "^8.2",
+        "ext-mbstring": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Toriisan\\ToriisanPhp001\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "toriisan"
+        }
+    ]
+}
+=====composer.lock=====
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "***********************",
+    "packages": [],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^8.2",
+        "ext-mbstring": "*"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}
 </code>
 </pre>
     <p>cmdで「composer update」を実行</p>
-<pre>
-<code>
-C:\xampp8.2\htdocs\toriisan-php-001>composer update
-Loading composer repositories with package information
-Updating dependencies
-Nothing to modify in lock file
-Installing dependencies from lock file (including require-dev)
-Nothing to install, update or remove
-Generating autoload files
-No installed packages - skipping audit.
-</code>
-</pre>
     <p>「composer.json」と「composer.lock」をadd & commit & pushする。</p>
 
     </main>
