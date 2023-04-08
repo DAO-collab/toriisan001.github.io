@@ -252,8 +252,9 @@ fwrite( $stderr, &quot;hello world to stderr\n&quot; );
             </figure>
         </details>
 
-        <h3>Application Error(code=H20 desc="App boot timeout")</h3>
+        <h3>Application Error</h3>
         <details>
+            <h4>code=H20 desc="App boot timeout"</h4>
             <p>ライブラリを追加していたら、手順をミスったのかApplication Error(code=H20 desc="App boot timeout")が出てアプリが立ち上がらなくなった。</p>
             <p><a href="https://devcenter.heroku.com/ja/articles/error-codes">【参考】Heroku のエラーコード</a></p>
             <figure>
@@ -296,6 +297,16 @@ fwrite( $stderr, &quot;hello world to stderr\n&quot; );
 2023-04-08T01:51:59.785737+00:00 app[web.1]: Starting php-fpm with 4 workers...
 2023-04-08T01:51:59.958200+00:00 app[web.1]: Starting httpd...
 2023-04-08T01:52:00.187067+00:00 heroku[web.1]: State changed from starting to up
+</code>
+</pre>
+<h4> Error: Missing required flag:</h4>
+<p><a href="https://kabacho23.hatenablog.com/entry/2021/06/22/%3C_Heroku_%E3%82%A8%E3%83%A9%E3%83%BC%E7%B7%A8_%3E_Error%3A_Missing_required_flag">【参考】[Heroku エラー編]Error: Missing required flag</a></p>
+<p>アプリのあるディレクトリで「heroku git:remote -a ${アプリ名}」を実行</p>
+<pre>
+<code>
+C:\workspace\toriisan001.github.io>heroku git:remote -a toriisan-php-001
+»   Warning: heroku update available from 7.68.2 to 8.0.3.
+set git remote heroku to https://git.heroku.com/toriisan-php-001.git
 </code>
 </pre>
         </details>
