@@ -378,6 +378,29 @@ function comvertUtcJst(string $str, string $format): string {
         <h2>DateTime format</h2>
         <p>format('Y-m-d H:i:s') // 2013-10-17 19:00:00</p>
 
+        <h2>Heroku上でmb_xxx関数を使用するとエラーが出る</h2>
+        <p><a href="https://qiita.com/taro-hida/items/f677abe2bc3b689002b3">【参考】heroku環境でmb_xxx関数を使うと、Fatal error: Call to undefined function …のエラーが表示される</a></p>
+        <p>cmdで「composer require ext-mbstring」を実行</p>
+<pre>
+<code>
+C:\xampp8.2\htdocs\toriisan-php-001>composer require ext-mbstring
+Info from https://repo.packagist.org: #StandWithUkraine
+./composer.json has been created
+Running composer update ext-mbstring
+Loading composer repositories with package information
+Updating dependencies
+Nothing to modify in lock file
+Writing lock file
+Installing dependencies from lock file (including require-dev)
+Nothing to install, update or remove
+Generating autoload files
+No installed packages - skipping audit.
+
+C:\xampp8.2\htdocs\toriisan-php-001>
+</code>
+</pre>
+    <p>「composer.json」と「composer.lock」をadd & commit & pushする。</p>
+
     </main>
     <div id="log"></div>
     <div id="operationParts"></div>

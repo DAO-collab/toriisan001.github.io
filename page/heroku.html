@@ -255,6 +255,10 @@ fwrite( $stderr, &quot;hello world to stderr\n&quot; );
         <h3>Application Error(code=H20 desc="App boot timeout")</h3>
         <details>
             <p>ライブラリを追加していたら、手順をミスったのかApplication Error(code=H20 desc="App boot timeout")が出てアプリが立ち上がらなくなった。</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/ApplicationError_code=H20desc=AppBootTimeout/ApplicationError.jpg" alt="ApplicationError.jpg">
+                <figcaption>ApplicationError.jpg</figcaption>
+            </figure>
             <p>「heroku logs --tail」でログを出力した。</p>
             <p>「heroku restart」、「heroku ps:scale web=0」、「heroku ps:scale web=1」等で再起動を試した。</p>
             <p>しかし変わらなかった。その後しばらく放置していると、以下の復帰時のログが出力され、再び起動していた。</p>
