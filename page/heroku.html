@@ -379,6 +379,18 @@ heroku login
 heroku logs --tail
 </code>
 </pre>
+
+    <h3>起動・停止・再起動</h3>
+<pre>
+<code>
+=====Heroku アプリの再起動=====
+heroku restart
+=====Heroku アプリの停止=====
+heroku ps:scale web=0
+=====Heroku アプリの起動=====
+heroku ps:scale web=1
+</code>
+</pre>
     
         <h3>アドオンを確認</h3>
     <pre>
