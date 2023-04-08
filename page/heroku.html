@@ -252,6 +252,49 @@ fwrite( $stderr, &quot;hello world to stderr\n&quot; );
             </figure>
         </details>
 
+        <h3>Application Error(code=H20 desc="App boot timeout")</h3>
+        <details>
+            <p>ライブラリを追加していたら、手順をミスったのかApplication Error(code=H20 desc="App boot timeout")が出てアプリが立ち上がらなくなった。</p>
+            <p>「heroku logs --tail」でログを出力した。</p>
+            <p>「heroku restart」、「heroku ps:scale web=0」、「heroku ps:scale web=1」等で再起動を試した。</p>
+            <p>しかし変わらなかった。その後しばらく放置していると、以下の復帰時のログが出力され、再び起動していた。</p>
+<pre>
+<code>
+=====エラーログ=====
+2023-04-08T01:19:57.093360+00:00 heroku[web.1]: Restarting
+2023-04-08T01:19:57.107745+00:00 heroku[web.1]: State changed from up to starting
+2023-04-08T01:19:57.885193+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2023-04-08T01:19:57.933418+00:00 app[web.1]: SIGTERM received, attempting graceful shutdown...
+2023-04-08T01:19:57.933618+00:00 app[web.1]: Stopping httpd gracefully...
+2023-04-08T01:19:59.038084+00:00 app[web.1]: Stopping php-fpm gracefully...
+2023-04-08T01:19:59.067523+00:00 app[web.1]: Shutdown complete.
+2023-04-08T01:19:59.529926+00:00 heroku[web.1]: Process exited with status 143
+2023-04-08T01:21:20.214205+00:00 heroku[router]: at=error code=H20 desc="App boot timeout" method=POST path="/page/chatAI.php?action=send" host=toriisan-php-001.herokuapp.com request_id=ec1f1266-af42-4645-95bf-7c7d16d40b13 fwd="106.180.4.74" dyno= connect= service= status=503 bytes= protocol=https
+2023-04-08T01:22:24.546465+00:00 heroku[web.1]: State changed from starting to down
+2023-04-08T01:22:24.550119+00:00 heroku[web.1]: State changed from down to starting
+2023-04-08T01:23:27.208349+00:00 heroku[router]: at=error code=H20 desc="App boot timeout" method=GET path="/page/chatAI.php" host=toriisan-php-001.herokuapp.com request_id=d0bbb631-01b5-4b9b-a75a-e5fc851d0108 fwd="106.180.4.74" dyno= connect= service= status=503 bytes= protocol=https
+2023-04-08T01:23:32.283560+00:00 heroku[router]: at=error code=H20 desc="App boot timeout" method=GET path="/page/chatAI.php" host=toriisan-php-001.herokuapp.com request_id=68d7d654-af20-40e5-ab33-e54a3c05edd1 fwd="106.180.4.74" dyno= connect= service= status=503 bytes= protocol=https
+2023-04-08T01:24:24.868244+00:00 heroku[router]: at=error code=H20 desc="App boot timeout" method=GET path="/page/home.html" host=toriisan-php-001.herokuapp.com request_id=41568bfc-4a92-43bd-b6aa-450f70373484 fwd="106.180.4.74" dyno= connect= service= status=503 bytes= protocol=https
+2023-04-08T01:24:48.076721+00:00 heroku[router]: at=error code=H20 desc="App boot timeout" method=GET path="/page/home.html" host=toriisan-php-001.herokuapp.com request_id=21784e88-6def-42e9-9bc8-65553699c4c1 fwd="106.180.4.74" dyno= connect= service= status=503 bytes= protocol=https
+2023-04-08T01:25:31.572629+00:00 heroku[router]: at=error code=H20 desc="App boot timeout" method=GET path="/" host=toriisan-php-001.herokuapp.com request_id=3459e9b3-e23e-4760-a345-b1d7d4a94334 fwd="106.180.4.74" dyno= connect= service= status=503 bytes= protocol=https
+
+</code>
+</pre>
+<pre>
+<code>
+=====復帰時のログ=====
+2023-04-08T01:51:14.030242+00:00 heroku[web.1]: State changed from starting to down
+2023-04-08T01:51:14.034909+00:00 heroku[web.1]: State changed from down to starting
+2023-04-08T01:51:56.943209+00:00 heroku[web.1]: Starting process with command `heroku-php-apache2`
+2023-04-08T01:51:59.748287+00:00 app[web.1]: Detected 536870912 Bytes of RAM
+2023-04-08T01:51:59.768143+00:00 app[web.1]: PHP memory_limit is 128M Bytes
+2023-04-08T01:51:59.785737+00:00 app[web.1]: Starting php-fpm with 4 workers...
+2023-04-08T01:51:59.958200+00:00 app[web.1]: Starting httpd...
+2023-04-08T01:52:00.187067+00:00 heroku[web.1]: State changed from starting to up
+</code>
+</pre>
+        </details>
+
         <h2>Heroku Command Line Interface (CLI) </h2>
         <p>Heroku Command Line Interface (CLI) を使用すると、Heroku アプリをターミナルから直接、作成および管理できます。Heroku CLI は、Heroku を利用する際に必要なツールです。</p>
         <h3>ログイン</h3>
