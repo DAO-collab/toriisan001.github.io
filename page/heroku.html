@@ -313,8 +313,210 @@ set git remote heroku to https://git.heroku.com/toriisan-php-001.git
         <h3>PHPのファイルアップロードサイズの上限値を変更する</h3>
         <p><a href="https://qiita.com/katsukii/items/243d24ad81c787b14d4d">【参考】PHPのファイルアップロードサイズの上限値を変更する</a></p>
 
+        <h3>SendGrid(20230416時点)</h3>
+        <details>
+            <p><a href="https://qiita.com/tinaba/items/7266a31981ea0b137e07">【参考】PHPでSendGridを使ったメール送信サンプル</a></p>
+            <p><a href="https://sendgrid.kke.co.jp/docs/Tutorials/D_Improve_Deliverability/using_whitelabel.html">【参考】独自ドメインを利用する</a></p>
+            <p>「Resources」タブのAdd-onsでsendgridで検索してクリック</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/ResourcesでSendGridで検索.jpg" alt="ResourcesでSendGridで検索.jpg">
+                <figcaption>ResourcesでSendGridで検索.jpg</figcaption>
+            </figure>
+            <p>「Resources」タブのAdd-onsでsendgridで検索してクリック</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/StarterFreeでSubmitOrder.jpg" alt="StarterFreeでSubmitOrder.jpg">
+                <figcaption>StarterFreeでSubmitOrder.jpg</figcaption>
+            </figure>
+            <p>「Resources」タブのAdd-onsでsendgridで検索してクリック</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/追加されたことを確認.jpg" alt="追加されたことを確認.jpg">
+                <figcaption>追加されたことを確認.jpg</figcaption>
+            </figure>
+            <p>「Settings」タブの「Config Vars」で「SENDGRID_USERNAME」、「SENDGRID_PASSWORD」を確認</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/SENDGRID_USERNAMEとSENDGRID_PASSWORDを確認.jpg" alt="SENDGRID_USERNAMEとSENDGRID_PASSWORDを確認.jpg">
+                <figcaption>SENDGRID_USERNAMEとSENDGRID_PASSWORDを確認.jpg</figcaption>
+            </figure>
+            <p>SendGridにログイン。ユーザー名、パスワードは「SENDGRID_USERNAME」、「SENDGRID_PASSWORD」を使用。</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/SendGridにログイン.jpg" alt="SendGridにログイン.jpg">
+                <figcaption>SendGridにログイン.jpg</figcaption>
+            </figure>
+            <p>2要素認証用のメールが飛んでくるとのこと、指定されたメールアドレスの受信トレイを確認。</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/2要素認証.jpg" alt="2要素認証.jpg">
+                <figcaption>2要素認証.jpg</figcaption>
+            </figure>
+            <p>受信したメールから2要素認証を設定をクリック</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/2要素認証を設定.jpg" alt="2要素認証を設定.jpg">
+                <figcaption>2要素認証を設定.jpg</figcaption>
+            </figure>
+            <p>「私はロボットではありません」にクリックして「始めましょう」をクリック。</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/おかえり！.jpg" alt="おかえり！.jpg">
+                <figcaption>おかえり！.jpg</figcaption>
+            </figure>
+            <p>二要素認証選択方法を選択。</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/二要素認証選択方法.jpg" alt="二要素認証選択方法.jpg">
+                <figcaption>二要素認証選択方法.jpg</figcaption>
+            </figure>
+            <p>二要素認証構成設定。「国コード」と「携帯電話番号」を入力して「次」を選択</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/二要素認証構成設定.jpg" alt="二要素認証構成設定.jpg">
+                <figcaption>二要素認証構成設定.jpg</figcaption>
+            </figure>
+            <p>モバイル デバイスでauthy.com/downloadにアクセス</p>
+            <p>Authy アプリに電話番号を入力</p>
+            <p>SendGrid token is のコードを確認。</p>
+            <p>ブラウザ側に戻って「認証コード」に入力して保存をクリック。</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/二要素認証確認.jpg" alt="二要素認証確認.jpg">
+                <figcaption>二要素認証確認.jpg</figcaption>
+            </figure>
+            <p>IDの作成をクリック</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/IDの作成.jpg" alt="IDの作成.jpg">
+                <figcaption>IDの作成.jpg</figcaption>
+            </figure>
+            <p>新しい送信者を作成</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/新しい送信者を作成.jpg" alt="新しい送信者を作成.jpg">
+                <figcaption>新しい送信者を作成.jpg</figcaption>
+            </figure>
+            <p>項目を埋めて作成</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/項目を埋めて作成.jpg" alt="項目を埋めて作成.jpg">
+                <figcaption>項目を埋めて作成.jpg</figcaption>
+            </figure>
+            <p>送信者の作成を更新。Gmailは止めたほうがいいらしいが、Gmailしか持っていないのでGmailを送信者。返信者に設定した。</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/送信者の作成を更新.jpg" alt="送信者の作成を更新.jpg">
+                <figcaption>送信者の作成を更新.jpg</figcaption>
+            </figure>
+            <p>設定したアドレスにメールが届くので「単一の送信者を確認する」にクリック</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/単一の送信者を確認する.jpg" alt="単一の送信者を確認する.jpg">
+                <figcaption>単一の送信者を確認する.jpg</figcaption>
+            </figure>
+            <p>送信者の身元が確認されたとのこと。「単一送信者の検証に戻る」をクリック。</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/単一送信者の検証に戻る.jpg" alt="単一送信者の検証に戻る.jpg">
+                <figcaption>単一送信者の検証に戻る.jpg</figcaption>
+            </figure>
+            <p>サイドメニューの「設定 → APIキー」をクリック</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/APIキーをクリック.jpg" alt="APIキーをクリック.jpg">
+                <figcaption>APIキーをクリック.jpg</figcaption>
+            </figure>
+            <p>APIキーの作成をクリック</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/APIキーの作成をクリック.jpg" alt="APIキーの作成をクリック.jpg">
+                <figcaption>APIキーの作成をクリック.jpg</figcaption>
+            </figure>
+            <p>「作成して表示」をクリック。キーが表示されるので確認する。</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/APIキーの作成.jpg" alt="APIキーの作成.jpg">
+                <figcaption>APIキーの作成.jpg</figcaption>
+            </figure>
+            <p>サイドメニューの「設定 → 送信者認証」でドメイン認証の「始めましょう」をクリック</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/ドメイン認証.jpg" alt="ドメイン認証.jpg">
+                <figcaption>ドメイン認証.jpg</figcaption>
+            </figure>
+            <p>MessWithDnsで払い出されたドメインを設定して次へを設定(mess with dnsで試す。ここで使い続けるのは危ないのだろうか？無料っぽいけど？？？)</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/MessWithDnsで払い出されたドメインを設定.jpg" alt="MessWithDnsで払い出されたドメインを設定.jpg">
+                <figcaption>MessWithDnsで払い出されたドメインを設定.jpg</figcaption>
+            </figure>
+            <p>mess with dns 側でCNAMEレコードを追加。「これらのレコードを追加しました」にチェックを入れて「次へ」を選択</p>
+            <p><a href="https://zenn.dev/kikutaro/articles/c8de892954b867">【参考】SendGridのDomain Authenticationをmess with dnsで試す</a></p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/DNSレコードをインストール.jpg" alt="DNSレコードをインストール.jpg">
+                <figcaption>DNSレコードをインストール.jpg</figcaption>
+            </figure>
+            <p>完了していることを確認。送信者認証に戻るをクリック。</p>
+            <figure>
+                <img class="beside" src="../img/Heroku/SendGrid_20230416時点/出来た.jpg" alt="出来た.jpg">
+                <figcaption>出来た.jpg</figcaption>
+            </figure>
+            <p>「composer require sendgrid/sendgrid」を実行。凄く時間がかかったがインストールできた。タイムアウトが出てしまう場合は以下のように「process-timeout」を追記するとタイムアウトを回避出来る。</p>
+<pre>
+<code>
+{
+    "name": "toriisan/toriisan-php-001",
+    "require": {
+        "php": "^8.2",
+        "ext-mbstring": "*",
+        "sendgrid/sendgrid": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Toriisan\\ToriisanPhp001\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "toriisan"
+        }
+    ],
+    "config": {
+        "process-timeout": 0
+    }
+}    
+</code>
+</pre>
+            <p>以下のソースで実行</p>
+<pre>
+<code>
+&lt;?php
+declare(strict_types=1);
+
+require &#039;../vendor/autoload.php&#039;;
+
+define(&#039;SENDGRID_MAIL_ADDRESS_USER&#039;, getenv(&#039;SENDGRID_MAIL_ADDRESS_USER&#039;));
+define(&#039;SENDGRID_MAIL_ADDRESS_ADMINISTRATOR&#039;, getenv(&#039;SENDGRID_MAIL_ADDRESS_ADMINISTRATOR&#039;));
+define(&#039;SENDGRID_API_KEY&#039;, getenv(&#039;SENDGRID_API_KEY&#039;));
+
+use \SendGrid\Mail\Mail;
+
+$email = new Mail();
+$email-&gt;setFrom(SENDGRID_MAIL_ADDRESS_ADMINISTRATOR);
+$email-&gt;setSubject(&#039;Sending送信テスト_件名&#039;);
+$email-&gt;addTo(SENDGRID_MAIL_ADDRESS_USER);
+$email-&gt;addContent(
+    &quot;text/html&quot;, &quot;&lt;strong&gt;Sending送信テスト_本文&lt;/strong&gt;&quot;
+);
+$sendgrid = new \SendGrid(SENDGRID_API_KEY);
+try {
+    $response = $sendgrid-&gt;send($email);
+    printf(&quot;Response status: %d\n\n&quot;, $response-&gt;statusCode());
+
+    $headers = array_filter($response-&gt;headers());
+    echo &quot;Response Headers\n\n&quot;;
+    foreach ($headers as $header) {
+        echo &#039;- &#039; . $header . &quot;\n&quot;;
+    }
+    print $response-&gt;statusCode() . &quot;\n&quot;;
+    print_r($response-&gt;headers());
+    print $response-&gt;body() . &quot;\n&quot;;
+} catch (Exception $e) {
+    echo &#039;Caught exception: &#039;. $e-&gt;getMessage() .&quot;\n&quot;;
+}
+?&gt;
+</code>
+</pre>
+        <p>メール送信を確認。(ローカルから送信できなかった。herokuからなら送信できた。)</p>
+        <figure>
+            <img class="beside" src="../img/Heroku/SendGrid_20230416時点/メール送信を確認.jpg" alt="メール送信を確認.jpg">
+            <figcaption>メール送信を確認.jpg</figcaption>
+        </figure>
+        </details>
+
         <h2>Heroku Command Line Interface (CLI) </h2>
         <p>Heroku Command Line Interface (CLI) を使用すると、Heroku アプリをターミナルから直接、作成および管理できます。Heroku CLI は、Heroku を利用する際に必要なツールです。</p>
+
         <h3>ログイン</h3>
     <pre>
     <code>
