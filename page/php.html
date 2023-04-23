@@ -428,6 +428,20 @@ function comvertUtcJst(string $str, string $format): string {
     <p>cmdで「composer update」を実行</p>
     <p>「composer.json」と「composer.lock」をadd & commit & pushする。</p>
 
+    <h2>パスワードのハッシュ化とパスワードの認証をする方法</h2>
+    <p><a href="https://qiita.com/wakahara3/items/792943c1e0ed7a87e1ef">【参考】【PHP】パスワードのハッシュ化とパスワードの認証をする方法(PASSWORD_BCRYPT)</a></p>
+<pre>
+<code>
+=====ハッシュ値作成=====
+password_hash('samplePass', PASSWORD_BCRYPT)
+=====パスワードチェック=====
+if (empty(MANAGEMENT_KEY) || !password_verify('samplePass', MANAGEMENT_KEY)) {
+    setMessageBox('error', "管理キーが不正です。");
+    break;
+}
+</code>
+</pre>
+
     </main>
     <div id="log"></div>
     <div id="operationParts"></div>
