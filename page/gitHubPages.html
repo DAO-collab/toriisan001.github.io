@@ -58,10 +58,10 @@
         <h2>リポジトリの削除</h2>
         <p>「<>Code」タブ「・・・」Setting下のほうの「Delete this repository」</p>
         <p>文字列を書き込んで削除ボタンを押す</p>
-        
+
         <h2>環境にアクセス</h2>
         <p>Environments - github-pages を押して「View deployment」を選択</p>
-        
+
         <h2>ローカルにクローン。コミットプッシュ</h2>
         <p>「<>Code」タブ、緑の「Code▼」ボタンからHttpsの内容をコピー</p>
         <p>右クリック、git clone。URLに上記内容をコピーしてOK「toriisan001.github.io」ディレクトリが出来る。中に「.git」ファイルも出来ている。</p>
@@ -70,6 +70,66 @@
         <p>「toriisan001.github.io」ディレクトリを右クリック。TortosGit→push。OKをクリック</p>
         <p>ログインした時のメールアドレス。パスワード、ユーザー名。Personal access tokens (classic)を入力するとpushが完了する。以下参照</p>
         <p><a href="https://qiita.com/setonao/items/28749762c0bc1fbbf502">【Windows】Gitでリモートにアクセスができない時の解決方法（Support for password authentication was removed on August 13, 2021.）</a></p>
+
+        <h2>新しいPCに環境をclone(既存のリポジトリをローカル環境に複製)</h2>
+        <details>
+            <summary>詳細</summary>
+            <p><a href="https://code.visualstudio.com/">VSCodeのダウンロードページ</a></p>
+            <figure>
+                <img class="beside" src="../img/gitHubPages/新しいPCに環境をclone/VSCodeのダウンロード.jpg" alt="VSCodeのダウンロード.jpg">
+                <figcaption>VSCodeのダウンロード.jpg</figcaption>
+            </figure>
+            <p><a href="https://gitforwindows.org/">Git_for_Windowsをダウンロード・インストール</a></p>
+            <figure>
+                <img class="beside" src="../img/gitHubPages/新しいPCに環境をclone/Git_for_Windowsをダウンロード_インストール.jpg" alt="Git_for_Windowsをダウンロード_インストール.jpg">
+                <figcaption>Git_for_Windowsをダウンロード_インストール.jpg</figcaption>
+            </figure>
+            <p><a href="https://tortoisegit.org/download/">TortoiseGitをダウンロード・インストール</a></p>
+            <figure>
+                <img class="beside" src="../img/gitHubPages/新しいPCに環境をclone/TortoiseGitをダウンロード_インストール.jpg" alt="TortoiseGitをダウンロード_インストール.jpg">
+                <figcaption>TortoiseGitをダウンロード_インストール.jpg</figcaption>
+            </figure>
+            <p>Cドライブ直下に作業用ディレクトリ「workspace」を作成。</p>
+            <figure>
+                <img class="beside" src="../img/gitHubPages/新しいPCに環境をclone/workspaceを作成.jpg" alt="workspaceを作成.jpg">
+                <figcaption>workspaceを作成.jpg</figcaption>
+            </figure>
+            <p>自分のGitHabPagesのGitURLを確認。</p>
+            <figure>
+                <img class="beside" src="../img/gitHubPages/新しいPCに環境をclone/自分のGitHabPagesのGitURLを確認.jpg" alt="自分のGitHabPagesのGitURLを確認.jpg">
+                <figcaption>自分のGitHabPagesのGitURLを確認.jpg</figcaption>
+            </figure>
+            <p>ディレクトリ「C:\workspace\toriisan001.github.io」で右クリック → 「Clone...」をクリック。確認した「Git URL」を貼り付けて「OK」をクリック。</p>
+            <figure>
+                <img class="beside" src="../img/gitHubPages/新しいPCに環境をclone/Git_clone.jpg" alt="Git_clone.jpg">
+                <figcaption>Git_clone.jpg</figcaption>
+            </figure>
+            <p>「close」をクリック。</p>
+            <figure>
+                <img class="beside" src="../img/gitHubPages/新しいPCに環境をclone/Git_clone_close.jpg" alt="Git_clone_close.jpg">
+                <figcaption>Git_clone_close.jpg</figcaption>
+            </figure>
+            <p>Nodejsのインストーラをダウンロード・インストール</p>
+            <p><a href="https://nodejs.org/ja/download">Nodejsのダウンロードページ</a></p>
+            <figure>
+                <img class="beside" src="../img/gitHubPages/新しいPCに環境をclone/Nodejsのインストーラをダウンロード_インストール.jpg" alt="Nodejsのインストーラをダウンロード_インストール.jpg">
+                <figcaption>Nodejsのインストーラをダウンロード_インストール.jpg</figcaption>
+            </figure>
+            <p>Cmdを起動して作業用ディレクトリに移動する。「cd C:\workspace\toriisan001.github.io」</p>
+            <p>「npm install -g http-server」 で http-server をインストール</p>
+            <p>「npm install -g reload」 でホットリロードするパッケージをインストール</p>
+            <p>「reload -b」 で1分ごとにホットリロードで立ち上げ</p>
+            <figure>
+                <img class="beside" src="../img/gitHubPages/新しいPCに環境をclone/立ち上げ.jpg" alt="立ち上げ.jpg">
+                <figcaption>立ち上げ.jpg</figcaption>
+            </figure>
+            <p>ブラウザを起動して「http://localhost:8080/」をurlに入力すればアクセス出来る。</p>
+            <figure>
+                <img class="beside" src="../img/gitHubPages/新しいPCに環境をclone/アクセス.jpg" alt="アクセス.jpg">
+                <figcaption>アクセス.jpg</figcaption>
+            </figure>
+        </details>
+
     </main>
     <div id="log"></div>
     <div id="operationParts"></div>
