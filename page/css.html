@@ -770,6 +770,22 @@ text-indent: 1em;
 </code>
 </pre>
 
+<h2>例)activeクラスが付いていない要素にホバーしたとき</h2>
+<p>「.menu li a:not(.active):hover」のようにして指定可能</p>
+<pre>
+<code>
+.menu li a.active {
+    background-color: #333;
+    color: #fff;
+}
+
+.menu li a:not(.active):hover {
+    opacity: 0.5;
+    transition: opacity 0.4;
+}
+</code>
+</pre>
+
     </main>
     <div id="log"></div>
     <div id="operationParts"></div>
