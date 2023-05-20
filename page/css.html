@@ -730,6 +730,18 @@ text-indent: 1em;
     <h2>画像の四隅(角)を丸くするCSS </h2>
     <p><a href="https://www.nishishi.com/css/image-corner-round.html">画像の四隅(角)を丸くするCSS 【参考】</a></p>
 
+    <h2>aタグのwidthが効かない場合について</h2>
+    <p>a 要素の display プロパティの値がデフォルトで inline だかららしい</p>
+    <p>display プロパティの値を inline-block; とするとよいらしい</p>
+<pre>
+<code>
+.menu li a {
+    display: inline-block;
+    width: 100px;
+}
+</code>
+</pre>
+
     </main>
     <div id="log"></div>
     <div id="operationParts"></div>
