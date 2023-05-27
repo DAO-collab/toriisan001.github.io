@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鳥居涼太のポートフォリオサイト</title>
+    <link rel="icon" href="../img/tottori.jpg">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/sample/Accodion.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css"
+    />
+</head>
+<body>
+     <div id="statusBarParts"></div>
+    <div id="headerParts"></div>
+    <div id="menuParts"></div>
+    <main>
+        <h1>Accodion</h1>
+        <p id="lastModified"></p>
+
+        <hr>
+        <details>
+            <summary>引用</summary>
+            <p><a href="https://dotinstall.com/lessons/accordion_js">JavaScriptでアコーディオンUIを作ろう</a></p>
+        </details>
+        <hr>
+        <details>
+            <summary>css</summary>
+<pre>
+<code>
+h1 {
+  font-size: 18px;
+  border-bottom: 1px solid;
+  padding:8px 16px;
+  margin-bottom: 16px;
+}
+
+dl {
+    margin:0;
+}
+
+dl > div {
+    margin-bottom: 8px;
+}
+
+dt {
+    padding:8px;
+    /* カーソルを当てるとポインターにする */
+    cursor: pointer;
+    /* 範囲選択出来ないようにする */
+    user-select: none;
+    position: relative;
+}
+
+/* Before疑似要素 */
+dt::before {
+    content: 'Q. ';
+}
+
+/* After疑似要素 */
+dt::After {
+    content: '+';
+    position:absolute;
+    top:8px;
+    right:16px;
+    transition: transform .3s;
+}
+
+dl > div.appear dt::after {
+    transform:rotate(45deg);
+}
+
+dd {
+    padding:8px;
+    margin:0;
+    display:none;
+}
+
+/* Before疑似要素 */
+dd::before {
+    content: 'A. ';
+}
+
+dl > div.appear dd {
+    display: block;
+    animation: .3s fadeIn;
+}
+
+/* DDタグについて、最初は消えているため変化前のスタイルを付けるにはkeyframesを使用する */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+</code>
+</pre>
+        </details>
+        <details>
+            <summary>html</summary>
+<pre>
+<code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;jp&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;title&gt;FAQ&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;FAQ&lt;/h1&gt;
+    &lt;dl&gt;
+      &lt;div&gt;
+        &lt;dt&gt;質問です&lt;/dt&gt;
+        &lt;dd&gt;
+          回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。
+        &lt;/dd&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;dt&gt;質問です&lt;/dt&gt;
+        &lt;dd&gt;
+          回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。
+        &lt;/dd&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;dt&gt;質問です&lt;/dt&gt;
+        &lt;dd&gt;
+          回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。
+        &lt;/dd&gt;
+      &lt;/div&gt;
+    &lt;/dl&gt;
+
+    &lt;script src=&quot;js/main.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;  
+</code>
+</pre>
+        </details>
+        <details>
+            <summary>javaScirpt</summary>
+<pre>
+<code>
+'use strict';
+
+{
+    const dts = document.querySelectorAll('dt');
+    dts.forEach(dt => {
+        dt.addEventListener('click', () => {
+            // appearクラスを付け外し
+            dt.parentNode.classList.toggle('appear');
+            // 選択した要素以外のappearクラスを外す
+            dts.forEach(el => {
+                if (dt !== el) {
+                    el.parentNode.classList.remove('appear');
+                }
+            });
+        });
+    });
+}
+</code>
+</pre>
+        </details>
+        <hr>
+
+    <dl>
+      <div>
+        <dt>質問です</dt>
+        <dd>
+          回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。
+        </dd>
+      </div>
+      <div>
+        <dt>質問です</dt>
+        <dd>
+          回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。
+        </dd>
+      </div>
+      <div>
+        <dt>質問です</dt>
+        <dd>
+          回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。回答です。
+        </dd>
+      </div>
+    </dl>
+    </main>
+    <div id="log"></div>
+    <div id="operationParts"></div>
+    <div id="footerParts"></div>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script>
+        'use strict';
+        {
+            $("#statusBarParts").load("../parts/statusBar.html");
+            $("#headerParts").load("../parts/header.html");
+            $("#menuParts").load("../parts/menu.html");
+            $("#operationParts").load("../parts/operation.html");
+            $("#footerParts").load("../parts/footer.html");
+        }
+    </script>
+    <script src="../js/util.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/sample/Accodion.js"></script>
+</body>
+</html>

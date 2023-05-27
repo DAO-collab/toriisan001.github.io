@@ -1,0 +1,69 @@
+h1 {
+    font-size: 18px;
+    border-bottom: 1px solid;
+    padding:8px 16px;
+    margin-bottom: 16px;
+}
+
+dl {
+    margin:0;
+}
+
+dl > div {
+    margin-bottom: 8px;
+}
+
+dt {
+    padding:8px;
+    /* カーソルを当てるとポインターにする */
+    cursor: pointer;
+    /* 範囲選択出来ないようにする */
+    user-select: none;
+    position: relative;
+}
+
+/* Before疑似要素 */
+dt::before {
+    content: 'Q. ';
+}
+
+/* After疑似要素 */
+dt::After {
+    content: '+';
+    position:absolute;
+    top:8px;
+    right:16px;
+    transition: transform .3s;
+}
+
+dl > div.appear dt::after {
+    transform:rotate(45deg);
+}
+
+dd {
+    padding:8px;
+    margin:0;
+    display:none;
+}
+
+/* Before疑似要素 */
+dd::before {
+    content: 'A. ';
+}
+
+dl > div.appear dd {
+    display: block;
+    animation: .3s fadeIn;
+}
+
+/* DDタグについて、最初は消えているため変化前のスタイルを付けるにはkeyframesを使用する */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
