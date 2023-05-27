@@ -837,6 +837,20 @@ li img {
 </code>
 </pre>
 
+<h2>getBoundingClientRect:要素に関する情報を取得</h2>
+<pre>
+<code>
+const next = document.getElementById('next');
+const ul = document.querySelector('ul');
+const slides = ul.children;
+next.addEventListener('click', () => {
+    // getBoundingClientRect:要素に関する情報を取得
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    ul.style.transform = `translateX(${-1 * slideWidth}px)`;
+});
+</code>
+</pre>
+
     </main>
     <div id="log"></div>
     <div id="operationParts"></div>
