@@ -786,6 +786,29 @@ text-indent: 1em;
 </code>
 </pre>
 
+<h2>範囲選択出来ないようにする</h2>
+<pre>
+<code>
+dt {
+    padding:8px;
+    /* カーソルを当てるとポインターにする */
+    cursor: pointer;
+    /* 範囲選択出来ないようにする */
+    user-select: none;
+}
+</code>
+</pre>
+
+<h2>要素の直前に要素を追加</h2>
+<pre>
+<code>
+/* Before疑似要素 */
+dt::before {
+    content: 'Q. ';
+}    
+</code>
+</pre>
+
     </main>
     <div id="log"></div>
     <div id="operationParts"></div>
