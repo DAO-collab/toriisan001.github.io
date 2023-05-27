@@ -515,15 +515,19 @@ style="pointer-events: none;"
 </code>
 </pre>
 
-        <h2>要素を非表示に</h2>
+        <h2>要素の表示・非表示</h2>
         <h3>displayを使用する</h3>
 <pre>
 <code>
-=====HTML=====
-&lt;div id=&quot;mask&quot; class=&quot;hidden&quot;&gt;&lt;/div&gt;
-=====CSS=====
-#mask.hidden {
+=====非表示=====
+dd {
+    padding:8px;
+    margin:0;
     display:none;
+}
+=====表示=====
+dl > div.appear dd {
+    display: block;
 }
 </code>
 </pre>
