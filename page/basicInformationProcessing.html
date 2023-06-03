@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鳥居涼太のポートフォリオサイト</title>
+    <link rel="icon" href="../img/tottori.jpg">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css"
+    />
+</head>
+<body>
+     <div id="statusBarParts"></div>
+    <div id="headerParts"></div>
+    <div id="menuParts"></div>
+    <main>
+        <h1>基本情報処理</h1>
+        <p id="lastModified"></p>
+    
+        <h2>用語</h2>
+        <h3>2の補数</h3>
+        <p>数を表現する方法の一つです。ある正数に対応する2の補数に求めるには、すべてのビットを反転して1を加えます。</p>
+
+        <h3>論理演算</h3>
+        <p>論理演算は、真(true)と偽(false)を元に、結果を求める演算です。</p>
+        <h4>AND(論理積)</h4>
+        <p>AND(論理積)は、どちらも真の時だけ真となり、それ以外では偽となります。</p>
+        <h4>OR(論理和)</h4>
+        <p>OR(論理和)は、どちらかが真であれば真となり、それ以外は偽となります。</p>
+        <h4>XOR(排他的論理和)</h4>
+        <p>OR(論理和)は、どちらかが真であれば真となり、それ以外は偽となります。</p>
+        <p>排他的（はいたてき）：排他の傾向があるさま。 ある者が権限などを独占的に有するさま。</p>
+        <p>排他（はいた）：自分（の仲間）以外のものを排斥（はいせき）すること。</p>
+        <p>排斥（はいせき）：（好ましくないとして）おしのけ、しりぞけること。</p>
+        <h4>NOT(否定)</h4>
+        <p>NOT(否定)は、真は偽に、偽は真が結果になります。つまり、真偽を逆転させます。</p>
+        <h4>NAND(否定論理積)</h4>
+        <p>NAND(否定論理積)は、ANDとNOTの組み合わせです。論理積の結果を否定します。</p>
+        <h4>NOR(否定論理和)</h4>
+        <p>NOR(否定論理和)は、ORとNOTの組み合わせです。論理和の結果を否定します。</p>
+
+        <h3>排他制御</h3>
+        <p>排他制御とは、一般に、特定のファイルやデータに対するアクセスや更新を制御することである。 特にファイルやデータベースへの書き込み処理を行なう際に、データの整合性を保つためにアクセスやデータの読み書きを一時的に制限すること。</p>
+
+    </main>
+    <div id="log"></div>
+    <div id="operationParts"></div>
+    <div id="footerParts"></div>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script>
+        'use strict';
+        {
+            $("#statusBarParts").load("../parts/statusBar.html");
+            $("#headerParts").load("../parts/header.html");
+            $("#menuParts").load("../parts/menu.html");
+            $("#operationParts").load("../parts/operation.html");
+            $("#footerParts").load("../parts/footer.html");
+        }
+    </script>
+    <script src="../js/util.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
+</body>
+</html>
