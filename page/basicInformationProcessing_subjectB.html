@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鳥居涼太のポートフォリオサイト</title>
+    <link rel="icon" href="../img/tottori.jpg">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css"
+    />
+</head>
+<body>
+     <div id="statusBarParts"></div>
+    <div id="headerParts"></div>
+    <div id="menuParts"></div>
+    <main>
+        <h1>基本情報処理_午後</h1>
+        <p id="lastModified"></p>
+
+        <hr>
+
+        <details>
+            <summary>出題</summary>
+            <p><a href="https://www.fe-siken.com/kakomon/01_aki/">基本情報技術者 令和元年秋期試験問題_午後</a></p>
+        </details>
+
+        <hr>
+
+        <h2>用語</h2>
+
+        <h3>テレワーク</h3>
+        <p>「情報通信技術（ICT＝Information and Communication Technology）を活用した時間や場所を有効に活用できる柔軟な働き方」のこと。 Tele（離れて）とWork（仕事）を組み合わせた造語です。 要するに本拠地のオフィスから離れた場所で、ICTを使って仕事をすることです。</p>
+
+        <h3>プロキシサーバ</h3>
+        <p>クライアントとサーバーの中間で、両者の通信を中継する役割を担うサーバー</p>
+        <p>役割例1.プロキシサーバーが一時的に保存しているキャッシュを返すことで、サイト表示の遅延を防ぐ</p>
+        <p>役割例2.有害なサイトなどを閲覧できないようにするフィルタリング</p>
+        <p>役割例3.ユーザーが海外のサイトにアクセスした際に自動的に翻訳してくれる</p>
+        <p><a href="https://digital-shift.jp/flash_news/s_210208_2">【参考】プロキシサーバーとは？仕組みやメリット・デメリットを詳しく解説！</a></p>
+
+        <h3>VPNクライアント</h3>
+        <p>ユーザーが仮想プライベート ネットワーク (VPN) に接続し、そのネットワーク上のリソースに安全にアクセスできるようにするソフトウェア アプリケーション</p>
+
+        <h3>VPNサーバ</h3>
+        <p>VPNとは、「Virtual Private Network」（仮想プライベートネットワーク）を略した言葉です。 VPNでは通信キャリアの公衆網を使い、仮想的に自社専用のプライベートネットワークを構築します。 その上でVPNサーバーとは、自社でVPNを実現するために必要なサーバーのことです。</p>
+        <p><a href="https://business.ntt-east.co.jp/content/cloudsolution/column-335.html#:~:text=VPN%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%A8%E3%81%AF%E3%80%81VPN,%E7%B7%9A%E3%82%92%E6%84%8F%E5%91%B3%E3%81%97%E3%81%BE%E3%81%99%E3%80%82">【参考】VPNサーバーとは？仕組みやメリット・デメリット、構築方法を解説</a></p>
+
+        <h3>VDI(Virtual Desktop Infrastructure)</h3>
+        <p>VDIとは、Virtual Desktop Infrastructureの略で、パソコンを仮想化した仕組みです。 通常はパソコンで行っている処理をサーバ上の仮想化されたパソコンで実行し、利用者の手元の端末（パソコン／タブレット／スマートフォン）にはその画面だけを転送するので、情報漏えいのリスクが軽減されます。</p>
+        <p>サーバ内にクライアントごとの仮想マシンを用意して仮想デスクトップ環境を構築する技術です。利用者はネットワークを通じてVDIサーバ上の仮想デスクトップ環境に接続し、クライアントPCにはVDIサーバからの操作結果画面のみが転送される仕組みになっています。</p>
+        <p>クライアントがインターネット上のサイトと直接的な通信を行わなくなるので、クライアントPCをインターネットから分離できます。もし利用者の操作により不正なマルウェアをダウンロードしてしまったとしても、それが保存されるのはVDIサーバ上の仮想環境ですので、クライアントPCへの感染を防げます。汚染された仮想環境を削除してしまえば内部ネットワークへの影響もありません。</p>
+
+        <h3>パケットフィルタリング</h3>
+        <p>受信したパケットを検査し、通過させるか否かを判断することを意味します。 一般にルータやファイアウォールがこの機能を実装しています。 検査対象となるデータは、IPアドレスやポート番号といった、パケット ヘッダに含まれる情報です。</p>
+
+        <h3>サブネットマスク（subnet mast）</h3>
+        <p>IPアドレスのうち、ネットワークアドレスとホストアドレスを識別するための数値。 コンピューターが同じLANにいるかを判断する際に利用されることが多い。 サブネットマスクの「サブネット」とは、ネットワークを複数の小さなネットワークに分割したもののこと。 「マスク」は「覆い隠すもの」という意味がある。</p>
+        <p>IPアドレスのどこからどこまでが「どのネットワークですよ～」な情報で、どこからどこまでが「どのコンピュータですよ～」な情報かを示す情報</p>
+        <p>CIDR表記(プレフィックス表記)で書くこともある。例:192.168.65.0/24。IPアドレスの後ろにかかれているスラッシュ＋数値</p>
+        <p>2進数表記で「1」の部分がネットワーク部だよ</p>
+        <p>2進数表記で「0」の部分がホスト部だよ</p>
+        <p><a href="https://wa3.i-3-i.info/word11975.html">【参考】「分かりそう」で「分からない」でも「分かった」気になれるIT用語辞典_サブネットマスク</a></p>
+        <p><a href="https://wa3.i-3-i.info/word12216.html">【参考】「分かりそう」で「分からない」でも「分かった」気になれるIT用語辞典_プレフィックス表記</a></p>
+
+        <h3>シンクライアント（シンクラ）端末</h3>
+        <p>ユーザーが使うクライアント端末に必要最小限の処理をさせ、ほとんどの処理をサーバ側に集中させたシステムアーキテクチャ全般のことをいう。 または、そのようなシステムアーキテクチャで使われるように機能を絞り込んだ専用のクライアント端末のことをいう場合もある。</p>
+
+        <h3>シンクライアント端末から開発サーバにアクセスするときの接続経路</h3>
+        <p>シンクライアント端末→VPNサーバ→VDIサーバ(開発部の従業員であれば開発VMを割り当て)→開発VM→開発サーバ</p>
+
+    </main>
+    <div id="log"></div>
+    <div id="operationParts"></div>
+    <div id="footerParts"></div>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+    <script>
+        'use strict';
+        {
+            $("#statusBarParts").load("../parts/statusBar.html");
+            $("#headerParts").load("../parts/header.html");
+            $("#menuParts").load("../parts/menu.html");
+            $("#operationParts").load("../parts/operation.html");
+            $("#footerParts").load("../parts/footer.html");
+        }
+    </script>
+    <script src="../js/util.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
+</body>
+</html>
