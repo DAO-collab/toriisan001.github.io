@@ -125,6 +125,34 @@
         <p><a href="http://linux-network.cocolog-nifty.com/blog/2011/12/dma-8d7f.html">【参考】DMAについて</a></p>
         <h4>man modprobe</h4>
         <p>依存するモジュールも自動的に追加/削除される、カーネルモジュールを追加/削除するコマンド</p>
+<pre>
+# man modprobe
+
+MODPROBE(8)                                                        MODPROBE(8)
+
+名前
+        modprobe - Linux カーネルにモジュールを追加したり削除したりするプログラ
+        ム
+
+書式
+        modprobe [ -v ] [ -V ] [ -C config-file ] [ -n ] [ -i ] [  -q  ]  [  -o
+        modulename ] [ modulename ] [ module parameters ... ]
+
+        modprobe [ -r ] [ -v ] [ -n ] [ -i ] [ modulename ... ]
+
+        modprobe [ -l ] [ -t dirname ] [ wildcard ]
+
+        modprobe [ -c ]
+
+説明
+        modprobe  は Linux カーネルに賢くモジュールを追加したり削除したりする。
+        利便性のため、モジュール名において _ と - の違いはないことに注意。 mod-
+        probe   は 、 全 て の モジュールと他のファイルをモジュールディレクトリ
+        /lib/modules/‘uname -r‘ から参照する。このほかに、もしあれば  /etc/mod-
+        probe.conf  設定ファイルと /etc/modprobe.d ディレクトリを参照する (mod-
+        probe.conf(5) を参照) 。
+...
+</pre>
 
         <h2>rootとしてユーザ切り替えを処理</h2>
         <p>「sudo su」でrootとしてユーザ切り替えを処理</p>
