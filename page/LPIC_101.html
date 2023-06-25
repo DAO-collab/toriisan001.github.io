@@ -74,6 +74,14 @@
         <h4>yum install [yumパッケージ名]</h4>
         <p>例:yum install epel-release</p>
         <p>rpmパッケージをインストール</p>
+        <h4>yum list [all | パッケージ名]※ パッケージ名は省略可能</h4>
+        <p>全ての利用可能なパッケージの一覧を表示する</p>
+        <h4>yum list installed [パッケージ名]※ パッケージ名は省略可能。</h4>
+        <p>システムにインストール済みの全てのパッケージを一覧表示する</p>
+        <h4>yum list available [パッケージ名]※ パッケージ名は省略可能。</h4>
+        <p>リポジトリ上の利用可能なパッケージを一覧表示する</p>
+        <h4>yum grouplist</h4>
+        <p>全てのパッケージグループを一覧表示する(いつくかのパッケージは目的ごとにグループ分けされています。)</p>
 
         <h3>cat /etc/redhat-release</h3>
         <p>Linux RedHatバージョン確認</p>
