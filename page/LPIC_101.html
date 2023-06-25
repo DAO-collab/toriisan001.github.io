@@ -124,20 +124,20 @@
         <p>telinitコマンドはランレベルを切り替えるコマンド</p>
         <p><a href="https://www.linuxmaster.jp/linux_skill/2010/06/133telinit.html">【参考】telinitコマンド</a></p>
 
-        <h3>設定ファイル</h3>
-        <h4>cat /etc/redhat-release</h4>
+        <h2>設定ファイル</h2>
+        <h3>cat /etc/redhat-release</h3>
         <p>Linux RedHatバージョン確認</p>
-        <h4>cat /proc/interrupts</h4>
+        <h3>cat /proc/interrupts</h3>
         <p>デバイスのIRQを確認</p>
         <p>割り込み要求の情報を表示します。</p>
         <p><a href="https://www.linuxmaster.jp/linux_skill/2012/10/irq.html">【参考】接続デバイスのIRQを表示する</a></p>
-        <h4>cat /proc/ioports</h4>
+        <h3>cat /proc/ioports</h3>
         <p>デバイスのI/Oアドレスを確認</p>
-        <h4>cat /proc/dma</h4>
+        <h3>cat /proc/dma</h3>
         <p><a href="https://atmarkit.itmedia.co.jp/flinux/rensai/linuxtips/145ionirq.html">【参考】I/OポートとIRQの使用状態を確認するには</a></p>
         <p>デバイスの DMA (Direct Memory Access) チャネルを確認</p>
         <p><a href="http://linux-network.cocolog-nifty.com/blog/2011/12/dma-8d7f.html">【参考】DMAについて</a></p>
-        <h4>man modprobe</h4>
+        <h3>man modprobe</h3>
         <p>依存するモジュールも自動的に追加/削除される、カーネルモジュールを追加/削除するコマンド</p>
 <pre>
 # man modprobe
@@ -167,13 +167,13 @@ MODPROBE(8)                                                        MODPROBE(8)
         probe.conf(5) を参照) 。
 ...
 </pre>
-        <h4>cat /etc/inittab</h4>
+        <h3>cat /etc/inittab</h3>
         <p>デフォルトのランレベルを設定するファイル</p>
         <p><a href="https://linuc.org/study/knowledge/504/">【参考】Linux豆知識 174「/etc/inittab」ファイル</a></p>
-        <h4>/etc/init.d</h4>
+        <h3>/etc/init.d</h3>
         <p>ランレベル3の起動スクリプトの実体が置かれている場所</p>
         <p>/etc/rc3.d 配下のスクリプトは、/etc/init.d へのシンボリックリンクです。従って実体は /etc/init.d にあります。</p>
-        <h4>ls -la</h4>
+        <h3>ls -la</h3>
         <p>ls (list directory contents) はファイルの一覧を表示するUnixコマンド</p>
         <p>-l:ロングリストフォーマットを使う。</p>
         <p>-a:隠しファイルや隠しディレクトリも出力する。通常、ls コマンドはピリオドで始まるファイル名やディレクトリ名は表示しないが、このオプションを指定すると、これらも出力対象とする。.（カレントディレクトリ）や ..（親ディレクトリ）も出力される。</p>
