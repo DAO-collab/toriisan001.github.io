@@ -55,6 +55,10 @@
         <h4>rpm -ql [rpmパッケージ名]</h4>
         <p>例:rpm -ql rpm</p>
         <p>パッケージに含まれるファイルの一覧を表示</p>
+        <p>「rpm -ql rpm | grep bin」のようにしてgrepしてもよい</p>
+        <h4>rpm -qf ${ファイル名}</h4>
+        <p>例:rpm -qf /etc/httpd/conf/httpd.conf</p>
+        <p>ファイルがどのパッケージに含まれるかを調べる。</p>
         <h3>yum</h3>
         <h4>yum info [yumパッケージ名]</h4>
         <p>例:yum info php</p>
