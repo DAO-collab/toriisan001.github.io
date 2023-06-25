@@ -85,6 +85,15 @@
 
         <h3>cat /etc/redhat-release</h3>
         <p>Linux RedHatバージョン確認</p>
+        <h3>localectl status</h3>
+
+        <h2>言語設定の変更</h2>
+        <p>「localectl status」で現在の言語設定を確認</p>
+        <p>「localectl list-locales | grep ja」で日本語が使えるかどうかを確認。「ja」を含むリストが表示されればOK。</p>
+        <p>「localectl set-locale LANG=ja_JP.utf8」で「System Locale」を日本語化</p>
+        <p>「localectl set-keymap jp106」でKeymapを設定</p>
+        <p>vagrantで立ち上げた仮想環境のパスワードは「vagrant」だった。</p>
+        <p>最後にexitコマンドでSSHから切断し、「vagrant reload」で設定を反映</p>
 
         <h2>用語</h2>
         <h3>rpmコマンド</h3>
