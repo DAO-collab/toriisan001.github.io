@@ -41,7 +41,137 @@
 
     <h2>VarantとVirtualBoxで仮想環境を立ち上げる</h2>
     <p><a href="https://dotinstall.com/lessons/basic_vagrant/24101">【参考】Vagrant入門</a></p>
-
+    <h3>手順</h3>
+    <p>Vagrantをダウンロード_インストール</p>
+    <p><a href="https://developer.hashicorp.com/vagrant/downloads?product_intent=vagrant">【参考】Install Vagrant</a></p>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/Vagrantをダウンロード_インストール.jpg" alt="Vagrantをダウンロード_インストール.jpg">
+        <figcaption>Vagrantをダウンロード_インストール.jpg</figcaption>
+    </figure>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/VagrantSetUp.jpg" alt="VagrantSetUp.jpg">
+        <figcaption>VagrantSetUp.jpg</figcaption>
+    </figure>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/VagrantSetUp_002.jpg" alt="VagrantSetUp_002.jpg">
+        <figcaption>VagrantSetUp_002.jpg</figcaption>
+    </figure>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/VagrantSetUp_003.jpg" alt="VagrantSetUp_003.jpg">
+        <figcaption>VagrantSetUp_003.jpg</figcaption>
+    </figure>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/VagrantSetUp_004.jpg" alt="VagrantSetUp_004.jpg">
+        <figcaption>VagrantSetUp_004.jpg</figcaption>
+    </figure>
+    <p>VirtualBoxをダウンロード_インストール</p>
+    <p><a href="https://www.virtualbox.org/wiki/Downloads">【参考】Install Vagrant</a></p>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/VirtualBoxをダウンロード_インストール.jpg" alt="VirtualBoxをダウンロード_インストール.jpg">
+        <figcaption>VirtualBoxをダウンロード_インストール.jpg</figcaption>
+    </figure>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/VirtualBox_SetUp.jpg" alt="VirtualBox_SetUp.jpg">
+        <figcaption>VirtualBox_SetUp.jpg</figcaption>
+    </figure>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/VirtualBox_SetUp_002.jpg" alt="VirtualBox_SetUp_002.jpg">
+        <figcaption>VirtualBox_SetUp_002.jpg</figcaption>
+    </figure>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/VirtualBox_SetUp_003.jpg" alt="VirtualBox_SetUp_003.jpg">
+        <figcaption>VirtualBox_SetUp_003.jpg</figcaption>
+    </figure>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/VirtualBox_SetUp_004.jpg" alt="VirtualBox_SetUp_004.jpg">
+        <figcaption>VirtualBox_SetUp_004.jpg</figcaption>
+    </figure>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/VirtualBox_SetUp_005.jpg" alt="VirtualBox_SetUp_005.jpg">
+        <figcaption>VirtualBox_SetUp_005.jpg</figcaption>
+    </figure>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/VirtualBox_SetUp_006.jpg" alt="VirtualBox_SetUp_006.jpg">
+        <figcaption>VirtualBox_SetUp_006.jpg</figcaption>
+    </figure>
+    <p>コマンドラインを立ち上げて「vagrant --version」でバージョンを確認</p>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/バージョンを確認.jpg" alt="バージョンを確認.jpg">
+        <figcaption>バージョンを確認.jpg</figcaption>
+    </figure>
+    <p>Vagrantbox.esで公開されているubuntuを追加</p>
+<pre>
+<code>
+vagrant box add ubuntu/trusty64
+以下が良いと書いていたが何故か取得できなかったので上のコマンドを使用した。
+vagrant box add precise32 http://files.vagrantup.com/precise32.box
+</code>
+</pre>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/vagrant_box_list.jpg" alt="vagrant_box_list.jpg">
+        <figcaption>vagrant_box_list.jpg</figcaption>
+    </figure>
+    <p>「vagrant box list」でボックスが追加されたことを確認</p>
+    <p>「vagrant box remove ${ボックス名}」で追加したボックスを削除出来る。</p>
+    <p>「vagrant box -h」でvagrant boxに合わせて使用できるコマンドを確認できる。</p>
+    <p>以下のサイト等に様々な構成（CentOS、Fedora、Debian など）のBoxが置いてある。</p>
+    <p><a href="http://www.vagrantbox.es/">【参考】Vagrantbox.es</a></p>
+    <p>「centos7_0_x64」も追加してみる</p>
+<pre>
+<code>
+vagrant box add centos64 https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.1.0/centos-7.0-x86_64.box
+</code>
+</pre>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/centos7_0_x64追加.jpg" alt="centos7_0_x64追加.jpg">
+        <figcaption>centos7_0_x64追加.jpg</figcaption>
+    </figure>
+    <p>適当なディレクトリに移動し、「mkdir ${ディレクトリ名}」で作業ディレクトリを作成(仮想マシンごとにディレクトリを作る必要がある)</p>
+    <p>${ディレクトリ名}ディレクトリに移動</p>
+    <p>「vagrant init ${Boxの名前}」を実行する</p>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/centos7_0_x64初期化.jpg" alt="centos7_0_x64初期化.jpg">
+        <figcaption>centos7_0_x64初期化.jpg</figcaption>
+    </figure>
+    <p>vagrantファイルが作成される。Rubyで書かれた設定ファイルで、色々な設定が出来るらしい。「less vagrant」で参照出来る。</p>
+    <p>「vagrant up」で仮想マシンを立ち上げ</p>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/Vagrant_Up.jpg" alt="Vagrant_Up.jpg">
+        <figcaption>Vagrant_Up.jpg</figcaption>
+    </figure>
+    <p>VirtualBoxのコンソールから仮想マシンが立ち上がっていることが確認できる。</p>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/VirtualBoxのコンソール.jpg" alt="VirtualBoxのコンソール.jpg">
+        <figcaption>VirtualBoxのコンソール.jpg</figcaption>
+    </figure>
+    <p>「vagrant status」状態を確認。「running」が稼働を示す。</p>
+    <p>「vagrant suspend」それからスリープさせたい場合、スリープしてすぐたちあげたい場合</p>
+    <p>「vagrant resume」復帰</p>
+    <p>「vagrant halt」終了</p>
+    <p>「vagrant reload」再起動。設定ファイルを変えたときに使う。</p>
+    <p>「vagrant destroy」仮想マシン自体を削除。仮想マシンに対して今まで行った設定が全て無くなる。Vagrantfile 自体は残る。</p>
+    <p>「vagrant ssh」でssh接続が出来る。「vagrant」ユーザーで「/home/vagrant」ディレクトリにいることが確認出来る。</p>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/Vagrant_ssh.jpg" alt="Vagrant_ssh.jpg">
+        <figcaption>Vagrant_ssh.jpg</figcaption>
+    </figure>
+    <p>「sudo yum -y install httpd」でWebサーバーをインストール。</p>
+    <p>「sudo service httpd start」で立ち上げ。</p>
+    <p>「udo chkconfig httpd on」で再起動しても、Web サーバーがちゃんと立ち上がるようにする。</p>
+    <p>「sudo systemctl stop firewalld」でファイアーウォールをストップ。ローカル開発環境なので別にいい。</p>
+    <p>「cd /var/www/html」でhtmlディレクトリに移動</p>
+    <p>「sudo vi index.html」で適当なページを作成</p>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/Vagrant_ssh.jpg" alt="Vagrant_ssh.jpg">
+        <figcaption>Vagrant_ssh.jpg</figcaption>
+    </figure>
+    <p>vagrantファイルを編集する。「config.vm.network "private_network", ip: "192.168.33.10"」のチェックを外す。</p>
+    <p>「vagrant reload」または「vagrant halt」してから「vagrant up」で再起動する。</p>
+    <p>ホスト側のPCのブラウザで「http://192.168.33.10/」にアクセス。</p>
+    <figure>
+        <img class="beside" src="../img/Windows/VarantとVirtualBoxで仮想環境を立ち上げる/ホストPCからアクセス.jpg" alt="ホストPCからアクセス.jpg">
+        <figcaption>ホストPCからアクセス.jpg</figcaption>
+    </figure>
 
     </main>
     <div id="log"></div>
