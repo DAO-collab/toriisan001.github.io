@@ -42,13 +42,27 @@
         <h2>コマンド</h2>
         <h3>init 6</h3>
         <p>ランレベル「6」はシステムの再起動を意味します。</p>
-        <h3>rpm -e [RPMパッケージ名]</h3>
+        <h3>rpm</h3>
+        <h4>rpm -e [RPMパッケージ名]</h4>
         <p>rpmコマンドでパッケージをアンインストールするときは「-e」オプションを使用します。</p>
-        <h3>rpm -qa</h3>
+        <h4>rpm -qa</h4>
         <p>インストール済みのすべてのrpmパッケージの一覧を表示するときは「-qa」オプションを使用します。</p>
-        <h3>yum info [パッケージ名]</h3>
+        <p>「rpm -qa | grep kernel | sort」でインストールされている全パッケージの中から特定の名前を含むパッケージを検索出来る。</p>
+        <h4>rpm -q [rpmパッケージ名]</h4>
+        <p>例:rpm -q rpm</p>
+        <p>パッケージ名を表示</p>
+        <p>インストールされていないパッケージ名を指定すると「yum-utils([rpmパッケージ名])パッケージがインストールされていません」</p>
+        <h4>rpm -ql [rpmパッケージ名]</h4>
+        <p>例:rpm -ql rpm</p>
+        <p>パッケージに含まれるファイルの一覧を表示</p>
+        <h3>yum</h3>
+        <h4>yum info [yumパッケージ名]</h4>
         <p>例:yum info php</p>
         <p>PHPのパッケージについて調べる</p>
+        <h4>yum install [yumパッケージ名]</h4>
+        <p>例:yum install epel-release</p>
+        <p>rpmパッケージをインストール</p>
+
         <h3>cat /etc/redhat-release</h3>
         <p>Linux RedHatバージョン確認</p>
 
@@ -61,6 +75,8 @@
         <p>rpm（個々のパッケージを扱う）</p>
         <p>yum（リポジトリから依存関係を含めて管理する）</p>
         <p><a href="https://eng-entrance.com/linux-package-rpm-yum-def#rpmyum">【参考】【初心者にもわかる】rpmとyumの違いと使い分け一通り</a></p>
+        <h3>epelリポジトリ</h3>
+        <p>EPELとは、業務用のサーバなどで利用するエンタープライズ向けLiunx用のソフトウェアを集積したリポジトリの一つ。 CentOS等の公式パッケージに含まれないが有用なソフトウェアを提供している。</p>
 
 
     </main>
