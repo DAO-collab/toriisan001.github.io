@@ -461,6 +461,20 @@ GRUB_CMDLINE_LINUX="rd.lvm.lv=centos/root rd.lvm.lv=centos/swap crashkernel=auto
         <h2>用語</h2>
         <h3>ハードリンク</h3>
         <p>ファイルの実体を直接参照するリンクのことです。同じ実体を参照するハードリンクは同じinode番号を持ち、複数作成してもコピーのようにディスク容量を消費しません。そのため、更新が無いファイルのバックアップ手段としてハードリンクが使用されることもあります。また、ハードリンク先のファイルの中身を編集すると、元ファイルの中身も同じく変更されます。</p>
+        <h4>ハードリンクを作成</h4>
+        <p>「ln ファイル名 リンク名」</p>
+<pre>
+[root@localhost ~]# vi sample.txt
+[root@localhost ~]# ls
+anaconda-ks.cfg  sample.txt
+[root@localhost ~]# cat sample.txt
+sample
+[root@localhost ~]# ln sample.txt sample_hard
+[root@localhost ~]# ls
+anaconda-ks.cfg  sample_hard  sample.txt
+[root@localhost ~]# ls -i
+34367820 anaconda-ks.cfg  34128087 sample_hard  34128087 sample.txt
+</pre>
         <h3>シンボリックリンク</h3>
         <p>Windowsでのショートカットのようなもので、元ファイルの場所を指し示すリンクのことです。シンボリックリンクが持っている情報は「元ファイル（ディレクトリ）がどこにあるのか」というパス情報のみです。シンボリックリンクの元ファイルを削除すると（他に同じinode番号を持つハードリンクが無ければ）、ファイルの実体は削除されますが、リンクは残ります。ただその場合、シンボリックリンクにアクセスすると、リンクしている元ファイルが無いためエラーになります。</p>
         <h3>inode番号</h3>
