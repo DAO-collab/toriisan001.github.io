@@ -123,6 +123,10 @@
         <h4>telinit ${ランレベル}</h4>
         <p>telinitコマンドはランレベルを切り替えるコマンド</p>
         <p><a href="https://www.linuxmaster.jp/linux_skill/2010/06/133telinit.html">【参考】telinitコマンド</a></p>
+        <h4>cat ${ファイル名}</h4>
+        <p>ファイルを参照</p>
+        <h4>vi ${ファイル名}</h4>
+        <p>ファイルを編集</p>
 
         <h2>ディレクトリ</h2>
 <pre>
@@ -249,6 +253,14 @@ nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
 puppet:x:52:52:Puppet:/var/lib/puppet:/sbin/nologin
 vboxadd:x:998:1::/var/run/vboxadd:/bin/false
 </pre>
+
+        <h2>ユーザーを追加</h2>
+        <p>「sudo useradd -c "${コメント}" -d ${ホームディレクトリのパス} -s ${シェルのパス} ${ユーザー名}」</p>
+        <p>例）「sudo useradd -c "Guest User" -d /home/guest -s /bin/bash guest」</p>
+        <p>「-c コメント」コメント</p>
+        <p>「-d ホームディレクトリのパス」</p>
+        <p>「-s ログインシェルです。ほとんどの場合/bin/bashなので、わざわざ指定する必要はありません。デフォルト値になっています。」</p>
+        <p>ログインシェル:コンピュータを起動したり、ネットワークを通じて外部から接続した際、最初に起動されるシェルをログインシェルという。 ユーザーがログインする度に起動され、環境変数の設定や指定されたシェルスクリプトの実行など初期化処理を行い、操作の受付が可能な状態にする。</p>
 
         <h2>rootとしてユーザ切り替えを処理</h2>
         <p>「sudo su」でrootとしてユーザ切り替えを処理</p>
