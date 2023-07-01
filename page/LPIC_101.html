@@ -477,8 +477,12 @@ sample
 [root@localhost ~]# ln sample.txt sample_hard
 [root@localhost ~]# ls
 anaconda-ks.cfg  sample_hard  sample.txt
-[root@localhost ~]# ls -i
-34367820 anaconda-ks.cfg  34128087 sample_hard  34128087 sample.txt
+[root@localhost ~]# ls -li
+insgesamt 12
+34367820 -rw-------. 1 root root 1431 16. Jul 2015  anaconda-ks.cfg
+34128087 -rw-r--r--  2 root root    7  1. Jul 12:13 sample_hard
+34128087 -rw-r--r--  2 root root    7  1. Jul 12:13 sample.txt
+※inode番号34128087を見るとハードリンクの数が2になっていることが確認できる
 </pre>
         <h3>シンボリックリンク</h3>
         <p>Windowsでのショートカットのようなもので、元ファイルの場所を指し示すリンクのことです。シンボリックリンクが持っている情報は「元ファイル（ディレクトリ）がどこにあるのか」というパス情報のみです。シンボリックリンクの元ファイルを削除すると（他に同じinode番号を持つハードリンクが無ければ）、ファイルの実体は削除されますが、リンクは残ります。ただその場合、シンボリックリンクにアクセスすると、リンクしている元ファイルが無いためエラーになります。</p>
@@ -488,8 +492,13 @@ anaconda-ks.cfg  sample_hard  sample.txt
 [root@localhost ~]# ls
 anaconda-ks.cfg  sample.txt
 [root@localhost ~]# ln -s sample.txt sample_symbolic
-[root@localhost ~]# ls -i
-34367820 anaconda-ks.cfg  34128086 sample_symbolic  34128087 sample.txt
+[root@localhost ~]# ls -li
+insgesamt 8
+34367820 -rw-------. 1 root root 1431 16. Jul 2015  anaconda-ks.cfg
+34128086 lrwxrwxrwx  1 root root   10  1. Jul 12:23 sample_symbolic -> sample.txt
+34128087 -rw-r--r--  1 root root    7  1. Jul 12:13 sample.txt
+※inode番号34128086の先頭にシンボリックリンクを示す「l」がパーミッションの先頭に表示されています。
+※inode番号34128086のファイル名を示す欄では、sample_symbolicはsample.txtのシンボリックであることが分かります。矢印が付いている。
 </pre>
         <h3>inode番号</h3>
         <p>index nodeの略で、Linuxなどのファイルシステムで使用されているファイルなどについての情報を記した管理データのことを指します。inodeはファイルやディレクトリごとに作成されて、それぞれファイルやディレクトリの作成時に一意のinode番号が割り当てられます。inodeで記録されている情報は、パーミッションや所有者、ファイルサイズなどがあります。inodeはファイルシステム作成時に最大数を決定するのでinodeが枯渇するとディスクに空き容量があってもファイルが作成できなくなる可能性があります。</p>
