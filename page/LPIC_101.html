@@ -462,7 +462,7 @@ GRUB_CMDLINE_LINUX="rd.lvm.lv=centos/root rd.lvm.lv=centos/swap crashkernel=auto
         <h3>ハードリンク</h3>
         <p>ファイルの実体を直接参照するリンクのことです。同じ実体を参照するハードリンクは同じinode番号を持ち、複数作成してもコピーのようにディスク容量を消費しません。そのため、更新が無いファイルのバックアップ手段としてハードリンクが使用されることもあります。また、ハードリンク先のファイルの中身を編集すると、元ファイルの中身も同じく変更されます。</p>
         <h4>ハードリンクを作成</h4>
-        <p>「ln ファイル名 リンク名」</p>
+        <p>「ln ファイル名 リンク名」(lnは小文字のLと小文字のn)</p>
 <pre>
 [root@localhost ~]# vi sample.txt
 [root@localhost ~]# ls
