@@ -261,12 +261,17 @@ vboxadd:x:998:1::/var/run/vboxadd:/bin/false
         <p>「-d ホームディレクトリのパス」</p>
         <p>「-s ログインシェルです。ほとんどの場合/bin/bashなので、わざわざ指定する必要はありません。デフォルト値になっています。」</p>
         <p>ログインシェル:コンピュータを起動したり、ネットワークを通じて外部から接続した際、最初に起動されるシェルをログインシェルという。 ユーザーがログインする度に起動され、環境変数の設定や指定されたシェルスクリプトの実行など初期化処理を行い、操作の受付が可能な状態にする。</p>
+        <p>「sudo passwd ${ユーザー名}」でパスワードを設定</p>
         <p>「sudo useradd -c "Torii" -d /home/torii -s /bin/bash torii」を実行してみる。</p>
         <p>「cat /etc/passwd」ファイルを見ると登録内容が増えている。</p>
         <figure>
             <img class="beside" src="../img/LPIC_101/登録内容比較.jpg" alt="登録内容比較.jpg">
             <figcaption>登録内容比較.jpg</figcaption>
         </figure>
+        <p>「sudo passwd torii」を実行してみる。</p>
+
+        <h2>ユーザーの削除</h2>
+        <p>「sudo userdel -r ${ユーザー名}」</p>
 
         <h2>rootとしてユーザ切り替えを処理</h2>
         <p>「sudo su」でrootとしてユーザ切り替えを処理</p>
