@@ -631,6 +631,21 @@ aaa
 bbb
 ccc
 </pre>
+        <h3>uniq -u file</h3>
+        <p>重複していない行のみを表示</p>
+<pre>
+[root@localhost file]# cat file
+aaa
+aaa
+aaa
+aaa
+aaa
+bbb
+bbb
+ccc
+[root@localhost file]# uniq -u file
+ccc
+</pre>
 
 </main>
     <div id="log"></div>
