@@ -585,8 +585,8 @@ refresh リポジトリの更新
 </pre>
         <h3>pstree</h3>
         <p>動作中のプロセスの親子関係をツリー状で表示するコマンド</p>
+        <p>centOS7の場合、「sudo yum install psmisc」が必要だった</p>
         <p><a href="https://ex1.m-yabe.com/archives/4782">【参考】CentOS 7, CentOS 8 に「pstree」をインストールする</a></p>
-
         <h3>ps axf</h3>
         <p>psコマンドで現在実行中のプロセスを確認することが出来ます。</p>
 <pre>
@@ -601,6 +601,14 @@ x 制御端末の無いデーモン等のプロセスも表示
 -l |l 親プロセスのPID(PPID)や実行優先度を決定するnice値(NI)なども併せて表示
 ※「-」を付けないBSDオプションと、「-」で始まるUNIXオプションがある
 </pre>
+        <h3>jobs</h3>
+        <p>現在バックグラウンドで動作しているジョブと一時停止中のジョブを表示するコマンドらしい</p>
+        <h3>top</h3>
+        <p>プロセスの稼動状況を一定時間ごとに更新して表示するコマンド</p>
+        <h3>tree</h3>
+        <p>プロセスではなくファイルやディレクトリの親子関係をツリー状で表示するコマンド</p>
+        <p>centOS7の場合、「sudo yum install tree」が必要だった</p>
+
 
 </main>
     <div id="log"></div>
