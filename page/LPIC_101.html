@@ -646,6 +646,33 @@ ccc
 [root@localhost file]# uniq -u file
 ccc
 </pre>
+        <h3>uniq -d file</h3>
+        <p>重複している行のみを表示</p>
+<pre>
+[root@localhost file]# cat file
+aaa
+aaa
+aaa
+aaa
+aaa
+bbb
+bbb
+ccc
+[root@localhost file]# uniq -d file
+aaa
+bbb
+</pre>
+        <h3>split</h3>
+        <p>ファイルを分割するコマンド</p>
+<pre>
+[root@localhost file]# split -l 3 file
+[root@localhost file]# ls
+file  xaa  xab  xac
+[root@localhost file]# cat xaa
+aaa
+aaa
+aaa
+</pre>
 
 </main>
     <div id="log"></div>
