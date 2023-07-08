@@ -557,6 +557,17 @@ vagrant /vagrant vboxsf uid=1000,gid=1000,_netdev 0 0
         <p>16進数:Hexadecimal</p>
         <h3>headコマンド</h3>
         <p>ファイルの先頭数行を表示するコマンド</p>
+        <h3>LD_LIBRARY_PATH</h3>
+        <p>共有ライブラリの検索パスを設定する環境変数</p>
+<pre>
+sudo mkdir /home/test/libでディレクトリ追加
+
+sudo vi /etc/ld.so.confで以下追記
+$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/test/lib
+
+sudo ldconfigで反映。
+※「ldconfig: $LD_LIBRARY_PATH:/home/lib ist ein unbekannter Bibliothekstyp」と出ている？
+</pre>
 
 
     </main>
