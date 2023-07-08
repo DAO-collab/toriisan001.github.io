@@ -572,9 +572,19 @@ sudo ldconfigで反映。
         <p>zypperコマンドを使用して、リポジトリを更新</p>
         <p>zypperコマンドについて、yum等と一緒でインストールとかに使うらしい。</p>
         <p>centosにはzypperコマンドがないらしい</p>
+<pre>
+zypper [オプション] サブコマンド
+install | in ${パッケージ名} パッケージのインストール
+update | up ${パッケージ名} アップデート
+remove | rm ${パッケージ名} アンインストール
+info ${パッケージ名} 詳細情報
+search | se ${キーワード} 検索
+list-update | lu ${オプション} アップデート可能なパッケージの表示
+lepos | lr リポジトリ上の利用可能なパッケージを一覧表示する
+refresh リポジトリの更新
+</pre>
 
-
-    </main>
+</main>
     <div id="log"></div>
     <div id="operationParts"></div>
     <div id="footerParts"></div>
