@@ -608,7 +608,29 @@ x 制御端末の無いデーモン等のプロセスも表示
         <h3>tree</h3>
         <p>プロセスではなくファイルやディレクトリの親子関係をツリー状で表示するコマンド</p>
         <p>centOS7の場合、「sudo yum install tree」が必要だった</p>
-
+        <h3>uniq file newfile</h3>
+        <p>「file」ファイルにある連続して重複した行を1行にまとめて、「newfile」ファイルに出力</p>
+<pre>
+[root@localhost home]# ls
+file  lib  vagrant
+[root@localhost home]# cd file/
+[root@localhost file]# ls
+[root@localhost file]# vi file
+[root@localhost file]# cat file
+aaa
+aaa
+aaa
+aaa
+aaa
+bbb
+bbb
+ccc
+[root@localhost file]# uniq file newfile
+[root@localhost file]# cat newfile
+aaa
+bbb
+ccc
+</pre>
 
 </main>
     <div id="log"></div>
