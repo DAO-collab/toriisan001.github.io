@@ -817,8 +817,6 @@ insgesamt 4
 insgesamt 4
 -rw-r--r-- 1 root toriisan 1077  8. Jul 15:02 file
 </pre>
-        <h3>chown</h3>
-        <p>ユーザーやグループの所有権を変更するためのコマンド</p>
         <h3>who</h3>
         <p>今現在ログインしているユーザ</p>
 <pre>
@@ -869,6 +867,15 @@ root@localhost file]# useradd torii
 安全でないパスワード: パスワードは辞書チェックに失敗します - 単純すぎて体系的すぎます
 新しいパスワードを再入力します。
 passwd: すべての認証プロパティが正常に更新されました。
+</pre>
+
+        <h3>chown</h3>
+        <p>ユーザーやグループの所有権を変更するためのコマンド</p>
+<pre>
+[root@localhost file]# chown torii:toriisan file
+[root@localhost file]# ls -l
+insgesamt 4
+-rw-r--r-- 1 torii toriisan 1077  8. Jul 15:02 file
 </pre>
 
 </main>
