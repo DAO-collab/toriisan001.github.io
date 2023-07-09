@@ -855,12 +855,21 @@ nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
 puppet:x:52:52:Puppet:/var/lib/puppet:/sbin/nologin
 vboxadd:x:998:1::/var/run/vboxadd:/bin/false
 </pre>
-        <h3>useradd [ユーザー名]</h3>
+        <h3>useradd ${ユーザー名}</h3>
         <p>ユーザーの追加</p>
 <pre>
-[root@localhost file]# sudo useradd toriisan
-useradd: Gruppe toriisan existiert - wenn Sie den Benutzer zur Gruppe hinzufügen
-möchten, benutzen Sie -g.
+root@localhost file]# useradd torii
+</pre>
+        <h3>passwd ${ユーザー名}</h3>
+        <p>パスワードを設定</p>
+<pre>
+[root@localhost file]# useradd torii
+[root@localhost file]# passwd torii
+ユーザーtoriiのパスワードを変更します。
+新しいパスワードを入力：
+安全でないパスワード: パスワードは辞書チェックに失敗します - 単純すぎて体系的すぎます
+新しいパスワードを再入力します。
+passwd: すべての認証プロパティが正常に更新されました。
 </pre>
 
 </main>
