@@ -806,8 +806,17 @@ puppet:x:52:
 vboxsf:x:997:
 toriisan:x:1001:
 </pre>
-        <h3>chgrp</h3>
+        <h3>chgrp ${グループ名} ${ファイル名}</h3>
         <p>指定したファイルまたはディレクトリの所有グループを変更するコマンド(ただし所有ユーザの変更はできない)</p>
+<pre>
+[root@localhost file]# ls -l
+insgesamt 4
+-rw-r--r-- 1 root root 1077  8. Jul 15:02 file
+[root@localhost file]# chgrp toriisan file
+[root@localhost file]# ls -l
+insgesamt 4
+-rw-r--r-- 1 root toriisan 1077  8. Jul 15:02 file
+</pre>
 
 </main>
     <div id="log"></div>
