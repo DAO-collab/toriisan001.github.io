@@ -713,9 +713,8 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 </pre>
         <p><a href="https://www.ibm.com/docs/ja/aix/7.1?topic=f-fmt-command">【参考】fmt コマンド</a></p>
-        <h3>chgrp</h3>
-        <p>指定したファイルまたはディレクトリの所有グループを変更するコマンド(ただし所有ユーザの変更はできない)</p>
-        <h3>sudo groupadd toriisan</h3>
+        <h3>sudo groupadd ${グループ名}</h3>
+        <p>グループの追加</p>
 <pre>
 ■以下グループの追加
 [root@localhost file]# cat /etc/group
@@ -807,6 +806,8 @@ puppet:x:52:
 vboxsf:x:997:
 toriisan:x:1001:
 </pre>
+        <h3>chgrp</h3>
+        <p>指定したファイルまたはディレクトリの所有グループを変更するコマンド(ただし所有ユーザの変更はできない)</p>
 
 </main>
     <div id="log"></div>
