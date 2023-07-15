@@ -929,16 +929,18 @@ HH:MM HH時MM分に実行
 +M M分後に実行
 now 今すぐに実行
 </pre>
-<h3>「du -sh dir」らしいが、CentOSでは「du -sh *」でないとだめか？？？</h3>
-<p>ディレクトリの合計容量のみを分かりやすい単位を付加して表示</p>
-<pre>
-[root@localhost file]# du -sh dir
-du: "dir" にアクセスできません: ファイルまたはディレクトリが見つかりません
-[root@localhost file]# du -sh *
-0       a
-4,0K    a.txtr
-4,0K    file
-</pre>
+        <h3>「du -sh dir」らしいが、CentOSでは「du -sh *」でないとだめか？？？</h3>
+        <p>ディレクトリの合計容量のみを分かりやすい単位を付加して表示</p>
+        <p>上表より、ディレクトリの合計容量のみを表示するオプションは「-s」です。また、分かりやすい単位を付加してサイズを表示するには「-h」オプションを併用します。</p>
+        <p>sはsummarize（合計）、hはhuman readable（人にとって読みやすい）から来ています。</p>
+        <pre>
+        [root@localhost file]# du -sh dir
+        du: "dir" にアクセスできません: ファイルまたはディレクトリが見つかりません
+        [root@localhost file]# du -sh *
+        0       a
+        4,0K    a.txtr
+        4,0K    file
+        </pre>
 
 
 </main>
