@@ -175,6 +175,42 @@ vagrant box add centos7_0_x64 https://github.com/tommy-muehle/puppet-vagrant-box
 
     <p>「vagrant up」が突然起動しなくなったが、virtual boxを一度アンインストール・インストールすれば解決した。理由は不明</p>
     <p><a href="https://bunsugi.com/vagrant-up-timeout-trouble-shooting/">Vagrant起動時に「SSH auth method : private key」で止まってタイムアウトになる問題の解決</a></p>
+    <p>「yum」が突然使えなくなったが、virtual boxを一度アンインストール・インストールすれば解決した。理由は不明</p>
+<pre>
+[vagrant@localhost ~]$  yum list
+Geladene Plugins: fastestmirror
+base                                                                                             | 3.6 kB  00:00:04
+
+
+    One of the configured repositories failed (Unbekannt),
+    and yum doesn't have enough cached data to continue. At this point the only
+    safe thing yum can do is fail. There are a few ways to work "fix" this:
+
+        1. Contact the upstream for the repository and get them to fix the problem.
+
+        2. Reconfigure the baseurl/etc. for the repository, to point to a working
+        upstream. This is most often useful if you are using a newer
+        distribution release than is supported by the repository (and the
+        packages for the previous distribution release still work).
+
+        3. Disable the repository, so yum won't use it by default. Yum will then
+        just ignore the repository until you permanently enable it again or use
+        --enablerepo for temporary usage:
+
+            yum-config-manager --disable <repoid>
+
+        4. Configure the failing repository to be skipped, if it is unavailable.
+        Note that yum will try to contact the repo. when it runs most commands,
+        so will have to try and fail each time (and thus. yum will be be much
+        slower). If it is a very temporary problem though, this is often a nice
+        compromise:
+
+            yum-config-manager --save --setopt=<repoid>.skip_if_unavailable=true
+
+Cannot retrieve metalink for repository: epel/x86_64. Please verify its path and try again
+[vagrant@localhost ~]$ yum-config-manager --disable <repoid>
+-bash: Syntaxfehler beim unerwarteten Wort `newline'
+</pre>
 
     </main>
     <div id="log"></div>
