@@ -963,6 +963,21 @@ now 今すぐに実行
         <h3>sudo yum update</h3>
         <p>とりあえずyumを全て最新に</p>
         <p><a href="https://kazmax.zpp.jp/linux_beginner/yum_update.html">【参考】kazmax.yum|パッケージの更新</a></p>
+<pre>
+[vagrant@localhost ~]$ sudo yum update
+Geladene Plugins: fastestmirror
+base                                                                                             | 3.6 kB  00:00:00
+extras                                                                                           | 2.9 kB  00:00:00
+updates                                                                                          | 2.9 kB  00:00:00
+(1/4): base/7/x86_64/group_gz                                                                    | 153 kB  00:00:03
+updates/7/x86_64/primary_db    FAILED                                                 ]  33 kB/s | 2.0 MB  00:13:35 ETA
+http://ftp.nara.wide.ad.jp/pub/Linux/centos/7.9.2009/updates/x86_64/repodata/6df07470753b2bea2aaf6f798d9b03d8a1f0a8d483270e4398d43becb1cc3393-primary.sqlite.bz2: [Errno 12] Timeout on http://ftp.nara.wide.ad.jp/pub/Linux/centos/7.9.2009/updates/x86_64/repodata/6df07470753b2bea2aaf6f798d9b03d8a1f0a8d483270e4398d43becb1cc3393-primary.sqlite.bz2: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+Anderer Spiegelserver wird versucht.
+(2/4): extras/7/x86_64/primary_db                                                                | 250 kB  00:00:40
+(3/4): base/7/x86_64/primary_db                                                                  | 6.1 MB  00:02:19
+(4/4): updates/7/x86_64/primary_db            58% [====================               ] 1.4 kB/s |  16 MB  02:23:26 ETA 
+以下略
+</pre>
 
 </main>
     <div id="log"></div>
