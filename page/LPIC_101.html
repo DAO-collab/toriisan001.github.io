@@ -1041,6 +1041,13 @@ postfix-2.10.1-6.el7.x86_64
         <p>rpmコマンドを使用して、インストールされる前に「postfix-1.1.12-1.i386.rpm」ファイルでパッケージの詳細情報を確認</p>
         <p>何故かうまくいかない。</p>
 
+        <h3>「rpm -qf /etc/yum.conf」あるいは「rpm --query --file /etc/yum.conf」</h3>
+        <p>rpmコマンドを使用して、「/etc/yum.conf」ファイルのインストール元パッケージを表示</p>
+<pre>
+[root@localhost vagrant]# rpm -qf /etc/yum.conf
+yum-3.4.3-125.el7.centos.noarch
+</pre>
+
 </main>
     <div id="log"></div>
     <div id="operationParts"></div>
