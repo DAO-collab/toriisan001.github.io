@@ -176,7 +176,7 @@ vagrant box add centos7_0_x64 https://github.com/tommy-muehle/puppet-vagrant-box
     <p>「vagrant up」が突然起動しなくなったが、virtual boxを一度アンインストール・インストールすれば解決した。理由は不明</p>
     <p><a href="https://bunsugi.com/vagrant-up-timeout-trouble-shooting/">Vagrant起動時に「SSH auth method : private key」で止まってタイムアウトになる問題の解決</a></p>
     <p>「yum -y install epel-release」をすると突然yumコマンドでエラーになった。以下に倣って「vi /etc/yum.repos.d/epel.repo」「metalink」行の先頭に「#」を付けてコメントアウト「baseurl」行の先頭にある「#」を外して適用するとyumコマンド使えるようになった。</p>
-    <p><a href="https://kazmax.zpp.jp/linux_beginner/yum_update.html">【参考】kazmax.yum|パッケージの更新</a></p>
+    <p><a href="https://tech.withsin.net/2015/07/27/epel-repository/">【参考】EPELレポジトリの有効化</a></p>
 <pre>
 [vagrant@localhost ~]$  yum list
 Geladene Plugins: fastestmirror
