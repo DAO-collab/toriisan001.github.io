@@ -1093,6 +1093,37 @@ groupinstall グループ パッケージグループのインストール
 ※また、yumコマンドを実行する際、「-y」オプションを使用するとすべての質問に「y」(yes)を自動的に選択します。
 </pre>
 
+        <h3>「yum info ${パッケージ名}」</h3>
+        <p>yumコマンドを使用して、パッケージの詳細な情報を表示</p>
+<pre>
+[vagrant@localhost ~]$ yum info php
+読み込んだプラグイン:fastestmirror
+Determining fastest mirrors
+        * base: ftp.nara.wide.ad.jp
+        * extras: ftp.nara.wide.ad.jp
+        * updates: ftp.nara.wide.ad.jp
+インストール済みパッケージ
+名前                : php
+アーキテクチャー    : x86_64
+バージョン          : 5.4.16
+リリース            : 48.el7
+容量                : 4.4 M
+リポジトリー        : installed
+提供元リポジトリー  : base
+要約                : PHP scripting language for creating dynamic web sites
+URL                 : http://www.php.net/
+ライセンス          : PHP and Zend and BSD
+説明                : PHP is an HTML-embedded scripting language. PHP attempts to make it
+                        : easy for developers to write dynamically generated web pages. PHP also
+                        : offers built-in database integration for several commercial and
+                        : non-commercial database management systems, so writing a
+                        : database-enabled webpage with PHP is fairly simple. The most common
+                        : use of PHP coding is probably as a replacement for CGI scripts.
+                        :
+                        : The php package contains the module (often referred to as mod_php)
+                        : which adds support for the PHP language to Apache HTTP Server.
+</pre>
+
 </main>
     <div id="log"></div>
     <div id="operationParts"></div>
