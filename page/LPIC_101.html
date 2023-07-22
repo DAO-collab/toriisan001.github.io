@@ -1057,6 +1057,19 @@ postfix-2.10.1-6.el7.x86_64
 postfix-2.10.1-6.el7.x86_64
 </pre>
 
+        <h3>「rpm -q --changelog ${パッケージ名}」「rpm --query --changelog ${パッケージ名}」</h3>
+        <p>rpmコマンドを使用して、インストールされているパッケージの変更履歴を調べる。</p>
+<pre>
+[vagrant@localhost ~]$ rpm -q --changelog postfix
+* 2014 年 1 月 24 日金曜日 Daniel Mach <dmach@redhat.com> - 2:2.10.1-6
+- 一括再構築 2014-01-24
+略
+[vagrant@localhost ~]$ rpm --query --changelog postfix
+* 2014 年 1 月 24 日金曜日 Daniel Mach <dmach@redhat.com> - 2:2.10.1-6
+- 一括再構築 2014-01-24
+略
+</pre>
+
 </main>
     <div id="log"></div>
     <div id="operationParts"></div>
