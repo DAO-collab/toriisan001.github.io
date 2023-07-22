@@ -1124,6 +1124,174 @@ URL                 : http://www.php.net/
                         : which adds support for the PHP language to Apache HTTP Server.
 </pre>
 
+        <h3>yum check-update</h3>
+        <p>yumコマンドを使用して、アップデート可能なパッケージを確認</p>
+<pre>
+[vagrant@localhost ~]$ yum check-update
+読み込んだプラグイン:fastestmirror
+Loading mirror speeds from cached hostfile
+        * base: ftp.nara.wide.ad.jp
+        * extras: ftp.nara.wide.ad.jp
+        * updates: ftp.nara.wide.ad.jp
+
+NetworkManager.x86_64                                1:1.18.8-2.el7_9                                         updates
+NetworkManager-libnm.x86_64                          1:1.18.8-2.el7_9                                         updates
+NetworkManager-team.x86_64                           1:1.18.8-2.el7_9                                         updates
+NetworkManager-tui.x86_64                            1:1.18.8-2.el7_9                                         updates
+alsa-tools-firmware.x86_64                           1.1.0-1.el7                                              base
+audit.x86_64                                         2.8.5-4.el7                                              base
+augeas-libs.x86_64                                   1.4.0-10.el7                                             base
+authconfig.x86_64                                    6.2.8-30.el7                                             base
+avahi-autoipd.x86_64                                 0.6.31-20.el7                                            base
+avahi-libs.x86_64                                    0.6.31-20.el7                                            base
+bind-libs-lite.x86_64                                32:9.11.4-26.P2.el7_9.13                                 updates
+biosdevname.x86_64                                   0.7.3-2.el7                                              base
+btrfs-progs.x86_64                                   4.9.1-1.el7                                              base
+bzip2.x86_64                                         1.0.6-13.el7                                             base
+cronie.x86_64                                        1.4.11-25.el7_9                                          updates
+cronie-anacron.x86_64                                1.4.11-25.el7_9                                          updates
+cryptsetup-libs.x86_64                               2.0.3-6.el7                                              base
+dbus.x86_64                                          1:1.10.24-15.el7                                         base
+dbus-libs.x86_64                                     1:1.10.24-15.el7                                         base
+device-mapper.x86_64                                 7:1.02.170-6.el7_9.5                                     updates
+device-mapper-event.x86_64                           7:1.02.170-6.el7_9.5                                     updates
+device-mapper-event-libs.x86_64                      7:1.02.170-6.el7_9.5                                     updates
+device-mapper-libs.x86_64                            7:1.02.170-6.el7_9.5                                     updates
+dhclient.x86_64                                      12:4.2.5-83.el7.centos.1                                 updates
+dhcp-common.x86_64                                   12:4.2.5-83.el7.centos.1                                 updates
+dhcp-libs.x86_64                                     12:4.2.5-83.el7.centos.1                                 updates
+dmidecode.x86_64                                     1:3.2-5.el7_9.1                                          updates
+dnsmasq.x86_64                                       2.76-17.el7_9.3                                          updates
+dracut.x86_64                                        033-572.el7                                              base
+dracut-config-rescue.x86_64                          033-572.el7                                              base
+dracut-network.x86_64                                033-572.el7                                              base
+e2fsprogs.x86_64                                     1.42.9-19.el7                                            base
+ebtables.x86_64                                      2.0.10-16.el7                                            base
+elfutils-libs.x86_64                                 0.176-5.el7                                              base
+file.x86_64                                          5.11-37.el7                                              base
+fipscheck.x86_64                                     1.4.1-6.el7                                              base
+fipscheck-lib.x86_64                                 1.4.1-6.el7                                              base
+firewalld.noarch                                     0.6.3-13.el7_9                                           updates
+gcc.x86_64                                           4.8.5-44.el7                                             base
+gcc-c++.x86_64                                       4.8.5-44.el7                                             base
+gettext.x86_64                                       0.19.8.1-3.el7                                           base
+glib-networking.x86_64                               2.56.1-1.el7                                             base
+glibc-devel.x86_64                                   2.17-326.el7_9                                           updates
+glibc-headers.x86_64                                 2.17-326.el7_9                                           updates
+gnupg2.x86_64                                        2.0.22-5.el7_5                                           base
+gnutls.x86_64                                        3.3.29-9.el7_6                                           base
+gpm-libs.x86_64                                      1.20.7-6.el7                                             base
+gssproxy.x86_64                                      0.7.0-30.el7_9                                           updates
+hwdata.x86_64                                        0.252-9.7.el7                                            base
+initscripts.x86_64                                   9.49.53-1.el7_9.1                                        updates
+iproute.x86_64                                       4.11.0-30.el7                                            base
+iprutils.x86_64                                      2.4.17.1-3.el7_7                                         updates
+iptables.x86_64                                      1.4.21-35.el7                                            base
+iputils.x86_64                                       20160308-10.el7                                          base
+irqbalance.x86_64                                    3:1.0.7-12.el7                                           base
+iwl100-firmware.noarch                               39.31.5.1-80.el7_9                                       updates
+iwl1000-firmware.noarch                              1:39.31.5.1-80.el7_9                                     updates
+iwl105-firmware.noarch                               18.168.6.1-80.el7_9                                      updates
+iwl135-firmware.noarch                               18.168.6.1-80.el7_9                                      updates
+iwl2000-firmware.noarch                              18.168.6.1-80.el7_9                                      updates
+iwl2030-firmware.noarch                              18.168.6.1-80.el7_9                                      updates
+iwl3160-firmware.noarch                              25.30.13.0-80.el7_9                                      updates
+iwl3945-firmware.noarch                              15.32.2.9-80.el7_9                                       updates
+iwl4965-firmware.noarch                              228.61.2.24-80.el7_9                                     updates
+iwl5000-firmware.noarch                              8.83.5.1_1-80.el7_9                                      updates
+iwl5150-firmware.noarch                              8.24.2.2-80.el7_9                                        updates
+iwl6000-firmware.noarch                              9.221.4.1-80.el7_9                                       updates
+iwl6000g2a-firmware.noarch                           18.168.6.1-80.el7_9                                      updates
+iwl6000g2b-firmware.noarch                           18.168.6.1-80.el7_9                                      updates
+iwl6050-firmware.noarch                              41.28.5.1-80.el7_9                                       updates
+iwl7260-firmware.noarch                              25.30.13.0-80.el7_9                                      updates
+kbd.x86_64                                           1.15.5-16.el7_9                                          updates
+kbd-legacy.noarch                                    1.15.5-16.el7_9                                          updates
+kernel.x86_64                                        3.10.0-1160.92.1.el7                                     updates
+kernel-devel.x86_64                                  3.10.0-1160.92.1.el7                                     updates
+kernel-headers.x86_64                                3.10.0-1160.92.1.el7                                     updates
+kernel-tools.x86_64                                  3.10.0-1160.92.1.el7                                     updates
+kernel-tools-libs.x86_64                             3.10.0-1160.92.1.el7                                     updates
+kexec-tools.x86_64                                   2.0.15-51.el7_9.3                                        updates
+kmod.x86_64                                          20-28.el7                                                base
+kpartx.x86_64                                        0.4.9-136.el7_9                                          updates
+krb5-devel.x86_64                                    1.15.1-55.el7_9                                          updates
+libdrm.x86_64                                        2.4.97-2.el7                                             base
+libgudev1.x86_64                                     219-78.el7_9.7                                           updates
+libini_config.x86_64                                 1.3.1-32.el7                                             base
+libndp.x86_64                                        1.2-9.el7                                                base
+libnetfilter_conntrack.x86_64                        1.0.6-1.el7_3                                            base
+libpath_utils.x86_64                                 0.2.1-32.el7                                             base
+libpcap.x86_64                                       14:1.5.3-13.el7_9                                        updates
+libpciaccess.x86_64                                  0.14-1.el7                                               base
+libproxy.x86_64                                      0.4.11-11.el7                                            base
+libselinux-ruby.x86_64                               2.5-15.el7                                               base
+libsoup.x86_64                                       2.62.2-2.el7                                             base
+libtalloc.x86_64                                     2.1.16-1.el7                                             base
+libtevent.x86_64                                     0.9.39-1.el7                                             base
+lvm2.x86_64                                          7:2.02.187-6.el7_9.5                                     updates
+lvm2-libs.x86_64                                     7:2.02.187-6.el7_9.5                                     updates
+make.x86_64                                          1:3.82-24.el7                                            base
+man-db.x86_64                                        2.6.3-11.el7                                             base
+microcode_ctl.x86_64                                 2:2.1-73.15.el7_9                                        updates
+net-tools.x86_64                                     2.0-0.25.20131004git.el7                                 base
+nfs-utils.x86_64                                     1:1.3.0-0.68.el7.2                                       updates
+numactl-libs.x86_64                                  2.0.12-5.el7                                             base
+openssh.x86_64                                       7.4p1-22.el7_9                                           updates
+openssh-clients.x86_64                               7.4p1-22.el7_9                                           updates
+openssh-server.x86_64                                7.4p1-22.el7_9                                           updates
+os-prober.x86_64                                     1.58-9.el7                                               base
+parted.x86_64                                        3.1-32.el7                                               base
+passwd.x86_64                                        0.79-6.el7                                               base
+pciutils.x86_64                                      3.5.1-3.el7                                              base
+perl-Pod-Escapes.noarch                              1:1.04-299.el7_9                                         updates
+plymouth.x86_64                                      0.8.9-0.34.20140113.el7.centos                           base
+plymouth-core-libs.x86_64                            0.8.9-0.34.20140113.el7.centos                           base
+plymouth-scripts.x86_64                              0.8.9-0.34.20140113.el7.centos                           base
+policycoreutils.x86_64                               2.5-34.el7                                               base
+polkit.x86_64                                        0.112-26.el7_9.1                                         updates
+postfix.x86_64                                       2:2.10.1-9.el7                                           base
+ppp.x86_64                                           2.4.5-34.el7_7                                           base
+procps-ng.x86_64                                     3.3.10-28.el7                                            base
+pth.x86_64                                           2.0.7-23.el7                                             base
+python-pyudev.noarch                                 0.15-9.el7                                               base
+python-setuptools.noarch                             0.9.8-7.el7                                              base
+quota.x86_64                                         1:4.01-19.el7                                            base
+readline-devel.x86_64                                6.2-11.el7                                               base
+rpcbind.x86_64                                       0.2.0-49.el7                                             base
+rpm-build-libs.x86_64                                4.11.3-48.el7_9                                          updates
+rpm-python.x86_64                                    4.11.3-48.el7_9                                          updates
+rsyslog.x86_64                                       8.24.0-57.el7_9.3                                        updates
+selinux-policy.noarch                                3.13.1-268.el7_9.2                                       updates
+selinux-policy-targeted.noarch                       3.13.1-268.el7_9.2                                       updates
+sqlite-devel.x86_64                                  3.7.17-8.el7_7.1                                         base
+sudo.x86_64                                          1.8.23-10.el7_9.3                                        updates
+systemd.x86_64                                       219-78.el7_9.7                                           updates
+systemd-libs.x86_64                                  219-78.el7_9.7                                           updates
+systemd-sysv.x86_64                                  219-78.el7_9.7                                           updates
+teamd.x86_64                                         1.29-3.el7                                               base
+trousers.x86_64                                      0.3.14-2.el7                                             base
+tuned.noarch                                         2.11.0-12.el7_9                                          updates
+util-linux.x86_64                                    2.23.2-65.el7_9.1                                        updates
+vim-enhanced.x86_64                                  2:7.4.629-8.el7_9                                        updates
+virt-what.x86_64                                     1.18-4.el7_9.1                                           updates
+wget.x86_64                                          1.14-18.el7_6.1                                          base
+wpa_supplicant.x86_64                                1:2.6-12.el7_9.2                                         updates
+xfsprogs.x86_64                                      4.5.0-22.el7                                             base
+yum.noarch                                           3.4.3-168.el7.centos                                     base
+yum-plugin-fastestmirror.noarch                      1.1.31-54.el7_8                                          base
+zlib-devel.x86_64                                    1.2.7-21.el7_9                                           updates
+不要になったパッケージ
+NetworkManager.x86_64                                1:1.18.8-2.el7_9                                         updates
+        NetworkManager.x86_64                            1:1.0.0-14.git20150121.b4ea599c.el7                      @anaconda
+NetworkManager-ppp.x86_64                            1:1.18.8-2.el7_9                                         updates
+        NetworkManager.x86_64                            1:1.0.0-14.git20150121.b4ea599c.el7                      @anaconda
+rdma-core.i686                                       22.4-6.el7_9                                             updates
+        rdma.noarch                                      7.1_3.17-5.el7                                           @anaconda
+rdma-core.x86_64                                     22.4-6.el7_9                                             updates
+        rdma.noarch                                      7.1_3.17-5.el7                                           @anaconda
+</pre>
+
 </main>
     <div id="log"></div>
     <div id="operationParts"></div>
