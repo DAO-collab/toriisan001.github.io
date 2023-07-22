@@ -1321,6 +1321,33 @@ base.sh  cleanup.sh  puppet.sh  vagrant.sh  virtualbox.sh  zerodisk.sh
 /home/vagrant
 </pre>
 
+        <h3>「cat -n ${ファイル名}」「nl -b a ${ファイル名}」</h3>
+        <p>「file」ファイルを行番号をつけて出力</p>
+<pre>
+[vagrant@localhost file]$ nl -b a file
+1  fkld;lksdajfl;asdfd
+2  fdsnkl;asdfd
+3  fasdnjkf;andsfkladfd
+4  n fdjkl;afds
+5  fdnkajl;df
+6  fd
+7
+8
+9  fdfankldfla
+10
+[vagrant@localhost file]$ cat -n file
+1  fkld;lksdajfl;asdfd
+2  fdsnkl;asdfd
+3  fasdnjkf;andsfkladfd
+4  n fdjkl;afds
+5  fdnkajl;df
+6  fd
+7
+8
+9  fdfankldfla
+10
+</pre>
+
 </main>
     <div id="log"></div>
     <div id="operationParts"></div>
