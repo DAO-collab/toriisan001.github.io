@@ -372,6 +372,8 @@ GRUB_CMDLINE_LINUX="rd.lvm.lv=centos/root rd.lvm.lv=centos/swap crashkernel=auto
         <p>vagrantで立ち上げた仮想環境のパスワードは「vagrant」、ユーザーは「root」だった。</p>
         <p>最後にexitコマンドでSSHから切断し、「vagrant reload」で設定を反映</p>
         <p><a href="https://chusotsu-program.com/vagrant-centos7-localectl/">【参考】VagrantのCentOS7がドイツ語になっていたので日本語化した方法を紹介</a></p>
+        <p>※「vagrant reload」が良くうまくいかなかったが、「vagrant halt」してから「vagrant up --provision」すると上手くいった。</p>
+        <p><a href="https://muoilog.xyz/web-development/vagrant%E3%81%8Cssh-auth-method-private-key%E3%81%A7%E6%AD%A2%E3%81%BE%E3%82%8B%E5%95%8F%E9%A1%8C/">【参考】VagrantがSSH auth method: private keyで止まる問題</a></p>
 
         <h2>用語</h2>
         <h3>rpmコマンド</h3>
