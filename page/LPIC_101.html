@@ -1463,6 +1463,34 @@ fkld;lksdajfl;asdfd
 n fdjkl;afds
 </pre>
 
+        <h3>「cut ${ファイル名}」</h3>
+        <p>ファイルの各行から指定した一部分を切り出し、標準出力に表示するコマンド</p>
+<pre>
+■ 例)3文字目の切り出し
+[vagrant@localhost file]$ cat file
+fkld;lksdajfl;asdfd
+fdsnkl;asdfd
+fasdnjkf;andsfkladfd
+n fdjkl;afds
+fdnkajl;df
+fd
+
+
+fdfankldfla
+
+[vagrant@localhost file]$ cut -c 3 file
+l
+s
+s
+f
+n
+
+
+
+f
+</pre>
+        <p><a href="https://zenn.dev/supersatton/articles/92386c72dc29ab">【参考】【Linux】cutコマンドについて解説します。</a></p>
+
 </main>
     <div id="log"></div>
     <div id="operationParts"></div>
