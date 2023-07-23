@@ -1356,6 +1356,33 @@ base.sh  cleanup.sh  puppet.sh  vagrant.sh  virtualbox.sh  zerodisk.sh
 -b 空行を除いた行に行番号を付ける
 </pre>
 
+        <h3>「head ${ファイル名}」</h3>
+        <p>指定したファイルの先頭部分を表示するコマンド</p>
+<pre>
+[vagrant@localhost file]$ head file
+fkld;lksdajfl;asdfd
+fdsnkl;asdfd
+fasdnjkf;andsfkladfd
+n fdjkl;afds
+fdnkajl;df
+fd
+
+
+fdfankldfla
+
+[vagrant@localhost file]$ cat file
+fkld;lksdajfl;asdfd
+fdsnkl;asdfd
+fasdnjkf;andsfkladfd
+n fdjkl;afds
+fdnkajl;df
+fd
+
+
+fdfankldfla
+※何故か先頭以外も出力されている？？？
+</pre>
+
 </main>
     <div id="log"></div>
     <div id="operationParts"></div>
