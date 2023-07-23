@@ -1519,6 +1519,20 @@ dfdanklfdla
 </pre>
         <p><a href="https://tech.amefure.com/web-linux-tr">【参考】【Linux】trコマンドの使い方！小文字を大文字に変換する方法</a></p>
 
+        <h3>「df」</h3>
+        <p>ファイルシステムの空き容量を確認することができるコマンド</p>
+<pre>
+[vagrant@localhost file]$ df
+ファイルシス            1K-ブロック      使用   使用可 使用% マウント位置
+devtmpfs                     499536         0   499536    0% /dev
+tmpfs                        508740         0   508740    0% /dev/shm
+tmpfs                        508740      6636   502104    2% /run
+tmpfs                        508740         0   508740    0% /sys/fs/cgroup
+/dev/mapper/centos-root     8775680   2458764  6316916   29% /
+/dev/sda1                    508588    121080   387508   24% /boot
+none                      267284040 250623152 16660888   94% /vagrant
+</pre>
+
 </main>
     <div id="log"></div>
     <div id="operationParts"></div>
