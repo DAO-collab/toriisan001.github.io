@@ -1491,6 +1491,34 @@ f
 </pre>
         <p><a href="https://zenn.dev/supersatton/articles/92386c72dc29ab">【参考】【Linux】cutコマンドについて解説します。</a></p>
 
+        <h3>「tr [オプション] [string1] [string2]」</h3>
+        <p>標準入力から受け取った文字列を変換したり、削除したりと整形して出力できるコマンド</p>
+<pre>
+■ 例)ファイルの文字列の置き換え
+[vagrant@localhost file]$ cat file
+fkld;lksdajfl;asdfd
+fdsnkl;asdfd
+fasdnjkf;andsfkladfd
+n fdjkl;afds
+fdnkajl;df
+fd
+
+
+fdfankldfla
+
+[vagrant@localhost file]$ cat file | tr -s 'fd' 'df'
+dklf;lksfajdl;asfdf
+dfsnkl;asfdf
+dasfnjkd;anfsdklafdf
+n dfjkl;adfs
+dfnkajl;fd
+df
+
+
+dfdanklfdla
+</pre>
+        <p><a href="https://tech.amefure.com/web-linux-tr">【参考】【Linux】trコマンドの使い方！小文字を大文字に変換する方法</a></p>
+
 </main>
     <div id="log"></div>
     <div id="operationParts"></div>
