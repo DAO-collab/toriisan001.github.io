@@ -560,6 +560,43 @@ vagrant /vagrant vboxsf uid=1000,gid=1000,_netdev 0 0
         <p>「od -t o /bin/ls」のようにすると8進数で表示</p>
         <p>8進数:Octal Number</p>
         <p>16進数:Hexadecimal</p>
+<pre>
+[vagrant@localhost file]$ cat file
+fkld;lksdajfl;asdfd
+fdsnkl;asdfd
+fasdnjkf;andsfkladfd
+n fdjkl;afds
+fdnkajl;df
+fd
+
+
+fdfankldfla
+[vagrant@localhost file]$ od -o file
+0000000 065546 062154 066073 071553 060544 063152 035554 071541
+0000020 063144 005144 062146 067163 066153 060473 062163 062146
+0000040 063012 071541 067144 065552 035546 067141 071544 065546
+0000060 060554 063144 005144 020156 062146 065552 035554 063141
+0000100 071544 063012 067144 060553 066152 062073 005146 062146
+0000120 005012 063012 063144 067141 066153 063144 060554 005012
+0000140
+[vagrant@localhost file]$ od -x file
+0000000 6b66 646c 6c3b 736b 6164 666a 3b6c 7361
+0000020 6664 0a64 6466 6e73 6c6b 613b 6473 6466
+0000040 660a 7361 6e64 6b6a 3b66 6e61 7364 6b66
+0000060 616c 6664 0a64 206e 6466 6b6a 3b6c 6661
+0000100 7364 660a 6e64 616b 6c6a 643b 0a66 6466
+0000120 0a0a 660a 6664 6e61 6c6b 6664 616c 0a0a
+0000140
+[vagrant@localhost file]$ od -c file
+0000000   f   k   l   d   ;   l   k   s   d   a   j   f   l   ;   a   s
+0000020   d   f   d  \n   f   d   s   n   k   l   ;   a   s   d   f   d
+0000040  \n   f   a   s   d   n   j   k   f   ;   a   n   d   s   f   k
+0000060   l   a   d   f   d  \n   n       f   d   j   k   l   ;   a   f
+0000100   d   s  \n   f   d   n   k   a   j   l   ;   d   f  \n   f   d
+0000120  \n  \n  \n   f   d   f   a   n   k   l   d   f   l   a  \n  \n
+0000140
+</pre>
+
         <h3>headコマンド</h3>
         <p>ファイルの先頭数行を表示するコマンド</p>
         <h3>LD_LIBRARY_PATH</h3>
