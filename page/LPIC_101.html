@@ -1399,6 +1399,33 @@ fdfankldfla
 ※何故か末尾以外も出力されている？？？
 </pre>
 
+        <h3>「sort ${ファイル名}」</h3>
+        <p>行単位でファイルの内容をソートするコマンド</p>
+<pre>
+[vagrant@localhost file]$ cat file
+fkld;lksdajfl;asdfd
+fdsnkl;asdfd
+fasdnjkf;andsfkladfd
+n fdjkl;afds
+fdnkajl;df
+fd
+
+
+fdfankldfla
+
+[vagrant@localhost file]$ sort file
+
+
+
+fasdnjkf;andsfkladfd
+fd
+fdfankldfla
+fdnkajl;df
+fdsnkl;asdfd
+fkld;lksdajfl;asdfd
+n fdjkl;afds
+</pre>
+
 </main>
     <div id="log"></div>
     <div id="operationParts"></div>
