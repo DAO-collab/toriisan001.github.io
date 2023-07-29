@@ -78,12 +78,34 @@
       dateFomatYYYYMMDDhhmmss(new Date(document.lastModified), "/", ":") +
       ")";
 
+    // スクロール禁止付与
+    function noScrollingAdd() {
+      document.addEventListener("touchmove", maskDisableScroll, {
+        passive: false,
+      });
+      document.body.classList.add("overflow-hidden");
+    }
+    // スクロール禁止除去
+    function noScrollingRemove() {
+      document.removeEventListener("touchmove", maskDisableScroll, {
+        passive: false,
+      });
+      document.body.classList.remove("overflow-hidden");
+    }
+
     // QRボタン
     const qr_button = document.getElementById("qr_button");
     const qr = document.getElementById("qr");
     const qr_Mask = document.getElementById("qr_Mask");
-    qr_button.addEventListener("click", (e) => {qr_toggle();});
-    qr_Mask.addEventListener("click", (e) => {qr_toggle();});
+    qr_button.addEventListener("click", (e) => {
+      qr_toggle();
+      noScrollingAdd();
+    });
+    qr_Mask.addEventListener("click", (e) => {
+      qr_toggle();
+      noScrollingRemove();
+    });
+    // QR切り替え
     function qr_toggle() {
       qr.classList.toggle("hidden");
       qr_Mask.classList.toggle("hidden");
@@ -103,20 +125,12 @@
       operationMenu.classList.toggle("hidden");
       operationMenuShow.classList.toggle("hidden");
       operationMenuMask.classList.toggle("hidden");
-      // スクロール禁止付与
-      document.addEventListener("touchmove", maskDisableScroll, {
-        passive: false,
-      });
-      document.body.classList.add("overflow-hidden");
+      noScrollingAdd();
       pageSlide.value = window.pageYOffset;
     });
     operationMenuMask.addEventListener('click', e => {
       operationMenuShow.click();
-      // スクロール禁止除去
-      document.removeEventListener("touchmove", maskDisableScroll, {
-        passive: false,
-      });
-      document.body.classList.remove("overflow-hidden");
+      noScrollingRemove();
     });
     sizeSelect.addEventListener("change", () => {
       setlog('sizeSelect change.\n');
