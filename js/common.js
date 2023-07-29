@@ -78,6 +78,17 @@
       dateFomatYYYYMMDDhhmmss(new Date(document.lastModified), "/", ":") +
       ")";
 
+    // QRボタン
+    const qr_button = document.getElementById("qr_button");
+    const qr = document.getElementById("qr");
+    const qr_Mask = document.getElementById("qr_Mask");
+    qr_button.addEventListener("click", (e) => {qr_toggle();});
+    qr_Mask.addEventListener("click", (e) => {qr_toggle();});
+    function qr_toggle() {
+      qr.classList.toggle("hidden");
+      qr_Mask.classList.toggle("hidden");
+    }
+
     // 操作パネルの制御
     const operationMenuShow = document.getElementById("operationMenuShow");
     const operationMenu = document.getElementById("operationMenu");
