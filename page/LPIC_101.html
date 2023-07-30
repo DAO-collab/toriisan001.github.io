@@ -1772,6 +1772,33 @@ file  vagrant
 file  vagrant
 </pre>
 
+        <h3>「dd if=${ファイル名} of=${出力先(デバイス)}」</h3>
+        <p>「/dev/sda」等にファイルをコピー</p>
+<pre>
+[root@localhost dev]# vi test.txt
+[root@localhost dev]# ls
+autofs           full                nvram     sr1       tty19  tty34  tty5   tty8       vcs5
+block            fuse                oldmem    stderr    tty2   tty35  tty50  tty9       vcs6
+bsg              hpet                port      stdin     tty20  tty36  tty51  ttyS0      vcsa
+btrfs-control    hugepages           ppp       stdout    tty21  tty37  tty52  ttyS1      vcsa1
+cdrom            initctl             ptmx      test.txt  tty22  tty38  tty53  ttyS2      vcsa2
+centos           input               pts       tty       tty23  tty39  tty54  ttyS3      vcsa3
+char             kmsg                random    tty0      tty24  tty4   tty55  uhid       vcsa4
+console          log                 raw       tty1      tty25  tty40  tty56  uinput     vcsa5
+core             loop-control        rtc       tty10     tty26  tty41  tty57  urandom    vcsa6
+cpu              mapper              rtc0      tty11     tty27  tty42  tty58  usbmon0    vfio
+cpu_dma_latency  mcelog              sda       tty12     tty28  tty43  tty59  vboxguest  vga_arbiter
+crash            mem                 sda1      tty13     tty29  tty44  tty6   vboxuser   vhost-net
+disk             mqueue              sda2      tty14     tty3   tty45  tty60  vcs        zero
+dm-0             net                 shm       tty15     tty30  tty46  tty61  vcs1
+dm-1             network_latency     snapshot  tty16     tty31  tty47  tty62  vcs2
+dri              network_throughput  snd       tty17     tty32  tty48  tty63  vcs3
+fd               null                sr0       tty18     tty33  tty49  tty7   vcs4
+[root@localhost dev]# dd if=test.txt of=/dev/sda
+0+1 レコード入力
+0+1 レコード出力
+17 バイト (17 B) コピーされました、 0.000153092 秒、 111 kB/秒
+</pre>
 
 </main>
     <div id="log"></div>
