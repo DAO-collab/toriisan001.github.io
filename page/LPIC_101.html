@@ -1628,6 +1628,60 @@ none                      267284040 250623152 16660888   94% /vagrant
 -print 検索結果を改行で区切って表示(デフォルト)
 -print0 検索結果をNULL文字(\0)で区切って表示
 -exec コマンド名 {} \; 検索結果のファイルに対してコマンドを実行
+
+[vagrant@localhost file]$ find
+.
+./file
+[vagrant@localhost file]$ find file
+file
+[vagrant@localhost file]$ find /home
+/home
+/home/vagrant
+/home/vagrant/.bash_logout
+/home/vagrant/.bash_profile
+/home/vagrant/.bashrc
+/home/vagrant/.veewee_version
+/home/vagrant/.vbox_version
+/home/vagrant/.veewee_params
+/home/vagrant/base.sh
+/home/vagrant/puppet.sh
+/home/vagrant/vagrant.sh
+/home/vagrant/virtualbox.sh
+/home/vagrant/cleanup.sh
+/home/vagrant/zerodisk.sh
+/home/vagrant/.ssh
+/home/vagrant/.ssh/authorized_keys
+/home/vagrant/.bash_history
+/home/vagrant/.viminfo
+/home/file
+/home/file/file
+[vagrant@localhost file]$ find /home -atime 3
+[vagrant@localhost file]$ find /home -atime -1000
+/home
+/home/vagrant
+/home/vagrant/.bash_logout
+/home/vagrant/.bash_profile
+/home/vagrant/.bashrc
+/home/vagrant/.ssh
+/home/vagrant/.ssh/authorized_keys
+/home/vagrant/.bash_history
+/home/vagrant/.viminfo
+/home/file
+/home/file/file
+[vagrant@localhost file]$ find /home -atime -1000 -print
+/home
+/home/vagrant
+/home/vagrant/.bash_logout
+/home/vagrant/.bash_profile
+/home/vagrant/.bashrc
+/home/vagrant/.ssh
+/home/vagrant/.ssh/authorized_keys
+/home/vagrant/.bash_history
+/home/vagrant/.viminfo
+/home/file
+/home/file/file
+[vagrant@localhost file]$ find /home -atime -1000 -print0
+/home/home/vagrant/home/vagrant/.bash_logout/home/vagrant/.bash_profile/home/vagrant/.bashrc/home/vagrant/.ssh/home/vagrant/.ssh/authorized_keys/home/vagrant/.bash_history/home/vagrant/.viminfo/home/file/hom[vagrant@localhost file]$
 </pre>
 
 </main>
