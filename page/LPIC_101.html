@@ -1813,6 +1813,20 @@ fd               null                sr0       tty18     tty33  tty49  tty7   vc
 17 バイト (17 B) コピーされました、 0.000153092 秒、 111 kB/秒
 </pre>
 
+<pre>
+[root@localhost ~]# cat file.txt
+test1.txt
+test2.txt
+test3.txt
+[root@localhost ~]# ls
+anaconda-ks.cfg  backup.cpio  file.txt
+[root@localhost ~]# cat file.txt | xargs --verbose touch
+touch test1.txt test2.txt test3.txt
+[root@localhost ~]# ls
+anaconda-ks.cfg  backup.cpio  file.txt  test1.txt  test2.txt  test3.txt
+※「--verbose」コマンドで、実際に実行されるコマンドを表示させる。1回のtouchコマンドに「file.txt」の中身を引数に渡している。
+</pre>
+
 </main>
     <div id="log"></div>
     <div id="operationParts"></div>
