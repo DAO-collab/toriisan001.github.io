@@ -1717,6 +1717,7 @@ tar [オプション] [ファイルまたはディレクトリ名]
 -j bzip2を通して圧縮/展開
 -J xzを通して圧縮/展開
 
+■ 圧縮例
 [root@localhost file]# ls
 test
 [root@localhost file]# tar cfjv test.tar.bz2 test
@@ -1724,6 +1725,36 @@ test/
 test/test.txt
 [root@localhost file]# ls
 test  test.tar.bz2
+
+■ 展開例
+[root@localhost file]# tar fvxj test.tar.bz2
+test/
+test/test.txt
+[root@localhost file]# ls
+test  test.tar.bz2
+[root@localhost file]# mkdir aaa
+[root@localhost file]# cp test.tar.bz2 aaa
+[root@localhost file]# ls
+aaa  test  test.tar.bz2
+[root@localhost file]# cd aaa
+[root@localhost aaa]# l;s
+bash: l: コマンドが見つかりません
+bash: s: コマンドが見つかりません
+[root@localhost aaa]# ls
+test.tar.bz2
+[root@localhost aaa]# tar fvxj test.tar.bz2
+test/
+test/test.txt
+[root@localhost aaa]# ls
+test  test.tar.bz2
+[root@localhost aaa]# cd test
+[root@localhost test]# ls
+test.txt
+[root@localhost test]# cat test.txt
+fbjkdlsabfkdlbasdfsd
+dfgdsklfads
+fgb sadjkfsd
+fgdsnkflsd;nlfas
 </pre>
 
 
