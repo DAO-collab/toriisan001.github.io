@@ -1816,6 +1816,22 @@ fd               null                sr0       tty18     tty33  tty49  tty7   vc
         <h3>「touch ファイル名」</h3>
         <p>touchはファイルのタイムスタンプを変更するコマンド</p>
         <p>存在しないファイル名を指定することで、内容の入っていないファイルを新規作成する機能も持っている。</p>
+<pre>
+[root@localhost ~]# touch a.dat
+[root@localhost ~]# ls
+a.dat  anaconda-ks.cfg  backup.cpio
+[root@localhost ~]# ls -l
+合計 12
+-rw-r--r--  1 root root    0  7月 30 12:32 a.dat
+-rw-------. 1 root root 1431  7月 16  2015 anaconda-ks.cfg
+-rw-r--r--  1 root root 7680  7月 30 11:50 backup.cpio
+[root@localhost ~]# touch -d "2016-9-20 20:30" a.dat
+[root@localhost ~]# ls -l
+合計 12
+-rw-r--r--  1 root root    0  9月 20  2016 a.dat
+-rw-------. 1 root root 1431  7月 16  2015 anaconda-ks.cfg
+-rw-r--r--  1 root root 7680  7月 30 11:50 backup.cpio
+</pre>
 
         <h3>「xargs」</h3>
         <p>標準入力から渡された文字列を、指定のコマンドの引数として組み立てて実行するコマンド</p>
