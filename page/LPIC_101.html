@@ -1703,8 +1703,28 @@ file  vagrant
 vagrant
 </pre>
 
+        <h3>「tar cfj ${アーカイブファイル名} ${圧縮するファイル}」「tar cfjv ${アーカイブファイル名} ${圧縮するファイル}」</h3>
+        <p>bzip2形式でアーカイブファイル名を指定して圧縮したアーカイブにするコマンド。</p>
+<pre>
+tar [オプション] [ファイルまたはディレクトリ名]
+オプション 説明
+-c 新しいアーカイブを作成
+-x アーカイブからファイルを展開
+-t アーカイブの内容を一覧表示
+-f アーカイブファイル名を指定
+-v 処理の詳細情報の表示
+-z gzipを通して圧縮/展開
+-j bzip2を通して圧縮/展開
+-J xzを通して圧縮/展開
 
-
+[root@localhost file]# ls
+test
+[root@localhost file]# tar cfjv test.tar.bz2 test
+test/
+test/test.txt
+[root@localhost file]# ls
+test  test.tar.bz2
+</pre>
 
 
 
