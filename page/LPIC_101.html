@@ -1379,6 +1379,26 @@ base.sh*  cleanup.sh*  puppet.sh*  vagrant.sh*  virtualbox.sh*  zerodisk.sh*
 [vagrant@localhost ~]$ ls -R
 .:
 base.sh  cleanup.sh  puppet.sh  vagrant.sh  virtualbox.sh  zerodisk.sh
+
+[vagrant@localhost home]$ ls
+file  vagrant
+[vagrant@localhost home]$ ls -F
+file/  vagrant/
+[vagrant@localhost home]$ ls -i
+33691540 file  34367815 vagrant
+[vagrant@localhost home]$ ls -l
+合計 4
+drwxr-xr-x  2 root    root      17  7月 22 12:30 file
+drwx------. 3 vagrant vagrant 4096  7月 22 12:30 vagrant
+[vagrant@localhost home]$ ls -R
+.:
+file  vagrant
+
+./file:
+file
+
+./vagrant:
+base.sh  cleanup.sh  puppet.sh  vagrant.sh  virtualbox.sh  zerodisk.sh
 </pre>
 
         <h3>「man」</h3>
