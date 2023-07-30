@@ -1763,13 +1763,19 @@ cpio [オプション]
 -o 新しいアーカイブを作成
 -i アーカイブからファイルを展開
 
-■ 試したが何故かうまくいかない？
+■ 試したが何故かうまくいかない？と思ったらrootディレクトリにbackup.cpioが出力されていた。
 [root@localhost home]# ls
 file  vagrant
 [root@localhost home]# find . | cpio -o > ~/backup.cpio
 15 blocks
 [root@localhost home]# ls
 file  vagrant
+[root@localhost /]# ls
+bin   dev  home  lib64  mnt  proc  run   srv  tmp  vagrant
+boot  etc  lib   media  opt  root  sbin  sys  usr  var
+[root@localhost /]# cd root
+[root@localhost ~]# ls
+anaconda-ks.cfg  backup.cpio
 </pre>
 
         <h3>「dd if=${ファイル名} of=${出力先(デバイス)}」</h3>
