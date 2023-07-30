@@ -1687,6 +1687,27 @@ file
         <h3>「rm ${ファイル名}」</h3>
         <p>ファイルやディレクトリを削除するコマンド</p>
 
+        <h3>「rm -fR ${ファイル名}」「rm -fr ${ファイル名}」</h3>
+        <p>カレントディレクトリにあるtestディレクトリを内部にあるファイルやディレクトリも含めて再帰的に削除(削除するかどうか確認するメッセージは表示せず、全て強制的に削除)</p>
+<pre>
+rm [コマンド] ファイルまたはディレクトリ名
+オプション 説明
+-f 削除してよいかどうか問い合わせない
+-i 削除してよいかどうか問い合わせる
+-r | -R ディレクトリ全体を再帰的に削除
+
+[root@localhost home]# ls
+file  vagrant
+[root@localhost home]# rm -rf file
+[root@localhost home]# ls
+vagrant
+</pre>
+
+
+
+
+
+
 </main>
     <div id="log"></div>
     <div id="operationParts"></div>
