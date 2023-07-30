@@ -1775,6 +1775,13 @@ file  vagrant
         <h3>「dd if=${ファイル名} of=${出力先(デバイス)}」</h3>
         <p>「/dev/sda」等にファイルをコピー</p>
 <pre>
+dd [オプション]
+オプション 説明
+if=入力ファイル名 入力側のファイル(デバイス)を指定
+of=出力ファイル名 出力側のファイル(デバイス)を指定
+bs=バイト数 入出力のブロックサイズ(一度に読み書きするバイト数)を指定(デフォルトは512バイト)
+count=回数 入力ファイルから出力ファイルへブロックをコピーする回数を指定
+
 [root@localhost dev]# vi test.txt
 [root@localhost dev]# ls
 autofs           full                nvram     sr1       tty19  tty34  tty5   tty8       vcs5
