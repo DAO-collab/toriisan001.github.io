@@ -1339,9 +1339,6 @@ Linux
         <h3>「ls」</h3>
         <p>ディレクトリに格納されているファイルの一覧表示などを行うコマンド</p>
 <pre>
-[vagrant@localhost ~]$ ls
-base.sh  cleanup.sh  puppet.sh  vagrant.sh  virtualbox.sh  zerodisk.sh
-
 ■ls [オプション] [ディレクトリ名またはファイル名]
 オプション 説明
 -a 隠しファイル(ドット「.」で始まるファイル)を含むすべてのファイルとディレクトリを表示
@@ -1355,6 +1352,33 @@ base.sh  cleanup.sh  puppet.sh  vagrant.sh  virtualbox.sh  zerodisk.sh
 -i inode番号を付けて表示
 -l 詳細情報(パーミッション、所有者、サイズ、更新日時など)の表示
 -R サブディレクトリの内容を再帰的に表示
+
+[vagrant@localhost ~]$ ls
+base.sh  cleanup.sh  puppet.sh  vagrant.sh  virtualbox.sh  zerodisk.sh
+[vagrant@localhost ~]$ ls -a
+.   .bash_history  .bash_profile  .ssh           .veewee_params   .viminfo  cleanup.sh  vagrant.sh     zerodisk.sh
+..  .bash_logout   .bashrc        .vbox_version  .veewee_version  base.sh   puppet.sh   virtualbox.sh
+[vagrant@localhost ~]$ ls -A
+.bash_history  .bash_profile  .ssh           .veewee_params   .viminfo  cleanup.sh  vagrant.sh     zerodisk.sh
+.bash_logout   .bashrc        .vbox_version  .veewee_version  base.sh   puppet.sh   virtualbox.sh
+[vagrant@localhost ~]$ ls -d
+.
+[vagrant@localhost ~]$ ls -F
+base.sh*  cleanup.sh*  puppet.sh*  vagrant.sh*  virtualbox.sh*  zerodisk.sh*
+[vagrant@localhost ~]$ ls -i
+34403687 base.sh     34403689 puppet.sh   34403693 virtualbox.sh
+34403699 cleanup.sh  34403691 vagrant.sh  34403700 zerodisk.sh
+[vagrant@localhost ~]$ ls -l
+合計 24
+-rwxr-xr-x 1 vagrant vagrant 450  7月 16  2015 base.sh
+-rwxr-xr-x 1 vagrant vagrant 118  7月 16  2015 cleanup.sh
+-rwxr-xr-x 1 vagrant vagrant 360  7月 16  2015 puppet.sh
+-rwxr-xr-x 1 vagrant vagrant 674  7月 16  2015 vagrant.sh
+-rwxr-xr-x 1 vagrant vagrant 260  7月 16  2015 virtualbox.sh
+-rwxr-xr-x 1 vagrant vagrant 105  7月 16  2015 zerodisk.sh
+[vagrant@localhost ~]$ ls -R
+.:
+base.sh  cleanup.sh  puppet.sh  vagrant.sh  virtualbox.sh  zerodisk.sh
 </pre>
 
         <h3>「man」</h3>
