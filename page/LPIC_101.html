@@ -1754,6 +1754,17 @@ fgb sadjkfsd
 fgdsnkflsd;nlfas
 </pre>
 
+        <h3>「find . | cpio -o > ~/backup.cpio」</h3>
+        <p>カレントディレクトリ以下にある全てのファイルを1つにまとめて、ユーザのホームディレクトリに「backup.cpio」というアーカイブを作成</p>
+<pre>
+■ 試したが何故かうまくいかない？
+[root@localhost home]# ls
+file  vagrant
+[root@localhost home]# find . | cpio -o > ~/backup.cpio
+15 blocks
+[root@localhost home]# ls
+file  vagrant
+</pre>
 
 
 </main>
