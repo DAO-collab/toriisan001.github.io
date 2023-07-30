@@ -10,6 +10,11 @@
     src: url('../font/ipaexm.ttf');
 }
 
+/* detailsタグ */
+details {
+    background-color: #c1baff26;
+}
+
 /* QR */
 #qr_button {
     margin-top: 35px;
