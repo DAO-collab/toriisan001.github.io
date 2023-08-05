@@ -1849,6 +1849,30 @@ anaconda-ks.cfg  backup.cpio  file.txt  test1.txt  test2.txt  test3.txt
 ※「--verbose」コマンドで、実際に実行されるコマンドを表示させる。1回のtouchコマンドに「file.txt」の中身を引数に渡している。
 </pre>
 
+        <h3>「uptime」or「top」</h3>
+        <p>システムの稼働時間や負荷平均などを表示するコマンド</p>
+        <p>topコマンドの実行結果の1行目もuptimeコマンドの実行結果とほぼ同じ</p>
+<pre>
+■ uptime
+[vagrant@localhost ~]$ uptime
+ 05:28:24 up 1 day, 10:43,  1 user,  load average: 0.00, 0.01, 0.05
+
+■ top
+[vagrant@localhost ~]$ top
+top - 05:27:55 up 1 day, 10:42,  1 user,  load average: 0.00, 0.01, 0.05
+Tasks:  84 total,   3 running,  81 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.3 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem :  1017480 total,    71132 free,    99556 used,   846792 buff/cache
+KiB Swap:  1040380 total,  1040372 free,        8 used.   751960 avail Mem
+  PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND
+    1 root      20   0   54276   3908   2376 S  0.0  0.4   0:01.03 systemd
+    2 root      20   0       0      0      0 S  0.0  0.0   0:00.03 kthreadd
+    3 root      20   0       0      0      0 S  0.0  0.0   0:26.26 ksoftirqd/0
+    5 root       0 -20       0      0      0 S  0.0  0.0   0:00.00 kworker/0:0H
+    7 root      rt   0       0      0      0 S  0.0  0.0   0:00.01 migration/0
+    8 root      20   0       0      0      0 S  0.0  0.0   0:00.00 rcu_bh
+</pre>
+
 </main>
     <div id="log"></div>
     <div id="operationParts"></div>
