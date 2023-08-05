@@ -2133,6 +2133,17 @@ ls: /usr/bin/ls /usr/share/man/man1/ls.1.gz
 
         <h3>「/usr/local/bin」</h3>
         <p>全てのユーザが使用できるバイナリ形式の実行ファイルを格納するに適したディレクトリ</p>
+<pre>
+■FHSで規定されている「/usr」以下のディレクトリ配置
+ディレクトリ 格納物
+/user/bin システムの起動には必須ではない、一般ユーザ用のコマンド
+/user/sbin システムの起動には必須ではない、一般ユーザ用のコマンド
+/user/lib /usr/bin,/usr/sbnに格納されるコマンドが必要とする共有ライブラリ
+/usr/local ホスト固有で使用するプログラムや設定ファイル(個人制作など)
+/usr/local/bin プログラムを格納
+/usr/local/etc 設定ファイルを格納
+/usr/share/man マニュアル
+</pre>
 
 </main>
     <div id="log"></div>
