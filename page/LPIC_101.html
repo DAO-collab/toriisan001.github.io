@@ -2145,6 +2145,26 @@ ls: /usr/bin/ls /usr/share/man/man1/ls.1.gz
 /usr/share/man マニュアル
 </pre>
 
+        <h3>パーミッション</h3>
+<pre>
+[root@localhost torii]# ls -al
+合計 8
+drwxr-xr-x  2 root    root      19  8月  5 10:16 .
+drwx------. 4 vagrant vagrant 4096  8月  5 10:16 ..
+-rw-r--r--  1 root    root      19  8月  5 10:16 al.txt
+
+■各列の意味
+1列目・・・ファイルタイプ(パーミション)
+2列目・・・ハードリンクの数
+3列目・・・オーナー名
+4列目・・・グループ名
+5列目・・・バイトサイズ
+6列目・・・タイムスタンプ
+7列目・・・ファイル名
+
+
+</pre>
+
         <h3>「umask」</h3>
         <p>ファイルやディレクトリを新規作成した際の、デフォルトのパーミッションを設定するコマンド</p>
         <p>デフォルトの値は「/etc/bashrc」で設定されているらしい。</p>
