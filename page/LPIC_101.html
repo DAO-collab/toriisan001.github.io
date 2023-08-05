@@ -2114,6 +2114,25 @@ ls: /usr/bin/ls /usr/share/man/man1/ls.1.gz
         <p>ユーザがインストールしたプログラムの配置場所などを推測しやすくするためのもの</p>
         <p>ディストリビューション:配送。 流通。 また、分配された物。 配布物。</p>
         <p><a href="http://rigil.iku4.com/linux/fhs">【参考】ファイルシステム階層標準 (FHS)について</a></p>
+<pre>
+ディレクトリ	意味	説明
+/	Root Filesystem	ファイルシステム階層全体の第一階層。
+ルートディレクトリ。
+/bin	BINaries	シングルユーザモードで必要となる一般ユーザー向けの基本コマンドの実行ファイル (binaries)を格納。
+例えばcat、ls、cpなど。
+/boot	BOOT loader	Linux起動時に必要なファイルを格納。
+/dev	DEVice	基本デバイス(device)を格納。例えば、/dev/nullなど。
+/etc	ETCetera	システム全体に関わる固有設定ファイル群を格納。
+/lib	LIBraries	/bin/ や /sbin/ にある実行ファイルの基本となるライブラリ (library) 群を格納。
+/media	MEDIA	CD-ROMなどのリムーバブル媒体 (media) のマウントポイント（FHS-2.3 で追加）を格納。
+/mnt	MOUNT point	ファイルシステムの一時マウントポイント (mount)を。
+/opt	OPTION	オプション (option) のアプリケーションソフトウェアパッケージのインストール先。
+/run	RUN-time variable data	実行時の可変データー。FHS3.0より新設。
+/sbin	System BINaries	システム管理系コマンドの実行ファイル群(例えば、init、ip、mount)(system binaries)を格納。
+/srv	Data for SeRVices provided by this system	サーバなどが使うシステムによって提供された (served) サイト固有のデータを格納。
+/tmp	TeMPorary files	一時ファイル置場 (temporary files)。
+リブート時に内容が保持されない。
+</pre>
 
 
 </main>
