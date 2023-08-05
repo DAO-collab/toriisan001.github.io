@@ -1992,6 +1992,39 @@ none                      267284040 264475532 2808508   99% /vagrant
         <h3>「fdisk」</h3>
         <p>パーティションの作成やパーティションテーブルの表示を行うコマンド</p>
 
+        <h3>「du -ah home」</h3>
+        <p>事前に「sudo yum install do」でdoコマンドを入れておく</p>
+        <p>ディレクトリと、その配下にあるディレクトリおよびファイルが占めている容量を、分かりやすい単位を付加して表示</p>
+<pre>
+[vagrant@localhost /]$ du -ah home
+4.0K    home/vagrant/.bash_logout
+4.0K    home/vagrant/.bash_profile
+4.0K    home/vagrant/.bashrc
+4.0K    home/vagrant/.veewee_version
+4.0K    home/vagrant/.vbox_version
+4.0K    home/vagrant/.veewee_params
+4.0K    home/vagrant/base.sh
+4.0K    home/vagrant/puppet.sh
+4.0K    home/vagrant/vagrant.sh
+4.0K    home/vagrant/virtualbox.sh
+4.0K    home/vagrant/cleanup.sh
+4.0K    home/vagrant/zerodisk.sh
+4.0K    home/vagrant/.ssh/authorized_keys
+4.0K    home/vagrant/.ssh
+4.0K    home/vagrant/.bash_history
+4.0K    home/vagrant/.viminfo
+64K     home/vagrant
+4.0K    home/file/test/test.txt
+4.0K    home/file/test
+4.0K    home/file/test.tar.bz2
+4.0K    home/file/aaa/test.tar.bz2
+4.0K    home/file/aaa/test/test.txt
+4.0K    home/file/aaa/test
+8.0K    home/file/aaa
+16K     home/file
+80K     home
+</pre>
+
 </main>
     <div id="log"></div>
     <div id="operationParts"></div>
