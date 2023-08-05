@@ -669,6 +669,22 @@
         <p><a href="JavascriptでURLの日本語をエンコード/デコード">【参考】https://hatolabo.com/programming/js-url-encode-utf8</a></p>
 
         <h2>クラス有無を切り替える</h2>
+
+        <h2>数値、文字列相互変換</h2>
+<pre>
+<code>
+// 数値 ⇒ 文字列
+function dateFomatNumToString(num) {
+    return String(num).replace( /(\d)(?=(\d\d\d)+(?!\d))/g, '$1,');
+}
+
+// 文字列 ⇒ 数値
+function dateFomatStringToNum(str) {
+    return Number(str.replace(/,/, ''));
+}
+</code>
+</pre>
+
 <pre>
 <code>
 dt.parentNode.classList.toggle('appear');
