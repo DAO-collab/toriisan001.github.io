@@ -2145,6 +2145,15 @@ ls: /usr/bin/ls /usr/share/man/man1/ls.1.gz
 /usr/share/man マニュアル
 </pre>
 
+        <h3>「umask」</h3>
+        <p>ファイルやディレクトリを新規作成した際の、デフォルトのパーミッションを設定するコマンド</p>
+        <p>デフォルトの値は「/etc/bashrc」で設定されているらしい。</p>
+<pre>
+■ 現在のマスク値の表示
+[vagrant@localhost /]$ umask
+0002
+</pre>
+
 </main>
     <div id="log"></div>
     <div id="operationParts"></div>
