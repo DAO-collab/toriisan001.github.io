@@ -2051,6 +2051,13 @@ alias ls='ls --color=auto'
         <h3>「locate ${ディレクトリ or ファイル名}」</h3>
         <p><a href="https://centos.bungu-do.jp/archives/64">【参考】locateコマンドのインストール</a></p>
 <pre>
+■ locateはmlocateパッケージに入っているのでyumでインストールする。
+[vagrant@localhost /]$ yum install mlocate
+
+■ updatedbを実行してmlocate.dbを生成する。
+[vagrant@localhost /]$ sudo updatedb
+
+■ 検索
 [vagrant@localhost /]$ locate home
 /home
 /etc/selinux/targeted/contexts/files/file_contexts.homedirs
