@@ -2048,6 +2048,54 @@ alias ls='ls --color=auto'
         /usr/bin/ls
 </pre>
 
+        <h3>「locate ${ディレクトリ or ファイル名}」</h3>
+        <p><a href="https://centos.bungu-do.jp/archives/64">【参考】locateコマンドのインストール</a></p>
+<pre>
+[vagrant@localhost /]$ locate home
+/home
+/etc/selinux/targeted/contexts/files/file_contexts.homedirs
+/home/file
+/home/vagrant
+/home/file/aaa
+/home/file/test
+/home/file/test.tar.bz2
+/home/file/aaa/test
+/home/file/aaa/test.tar.bz2
+/home/file/aaa/test/test.txt
+/home/file/test/test.txt
+/home/vagrant/.bash_history
+/home/vagrant/.bash_logout
+/home/vagrant/.bash_profile
+/home/vagrant/.bashrc
+/home/vagrant/.ssh
+/home/vagrant/.vbox_version
+/home/vagrant/.veewee_params
+/home/vagrant/.veewee_version
+/home/vagrant/.viminfo
+/home/vagrant/base.sh
+/home/vagrant/cleanup.sh
+/home/vagrant/puppet.sh
+/home/vagrant/vagrant.sh
+/home/vagrant/virtualbox.sh
+/home/vagrant/zerodisk.sh
+/home/vagrant/.ssh/authorized_keys
+/usr/lib/firewalld/zones/home.xml
+/usr/lib64/security/pam_mkhomedir.so
+/usr/sbin/addgnupghome
+/usr/sbin/genhomedircon
+/usr/sbin/mkhomedir_helper
+/usr/share/doc/pam-1.1.8/html/sag-pam_mkhomedir.html
+/usr/share/doc/pam-1.1.8/txts/README.pam_mkhomedir
+/usr/share/man/man3/selinux_file_context_homedir_path.3.gz
+/usr/share/man/man3/selinux_homedir_context_path.3.gz
+/usr/share/man/man5/file_contexts.homedirs.5.gz
+/usr/share/man/man8/addgnupghome.8.gz
+/usr/share/man/man8/genhomedircon.8.gz
+/usr/share/man/man8/mkhomedir_helper.8.gz
+/usr/share/man/man8/pam_mkhomedir.8.gz
+</pre>
+
+
 </main>
     <div id="log"></div>
     <div id="operationParts"></div>
