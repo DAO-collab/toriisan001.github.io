@@ -24,8 +24,11 @@
     body.style.fontFamily = (mainFontFamily === null) ? config.INITIALIZATION.FONT_FAMILY: mainFontFamily;
     const mainFontSize = storage.getItem(config.SYSTEM_KEY.FONT_SIZE);
     body.style.fontSize = (mainFontSize === null) ? config.INITIALIZATION.FONT_SIZE: mainFontSize;
+    const mainFontWeight = storage.getItem(config.SYSTEM_KEY.FONT_WEIGHT);
+    body.style.fontWeight = (mainFontWeight === null) ? config.INITIALIZATION.FONT_WEIGHT: mainFontWeight;
     const fontSelect = document.getElementById("fontSelect");
     const sizeSelect = document.getElementById("sizeSelect");
+    const fontWeight = document.getElementById("font-weight");
     for (const [key, obj] of Object.entries(Array.from(fontSelect.options))) {
       if (obj.value.replaceAll('"', '') === body.style.fontFamily.replaceAll('"', '')) {
         fontSelect.selectedIndex = key;
@@ -34,6 +37,11 @@
     for (const [key, obj] of Object.entries(Array.from(sizeSelect.options))) {
       if (obj.value === body.style.fontSize) {
         sizeSelect.selectedIndex = key;
+      }
+    }
+    for (const [key, obj] of Object.entries(Array.from(fontWeight.options))) {
+      if (obj.value === body.style.fontWeight) {
+        fontWeight.selectedIndex = key;
       }
     }
 
@@ -143,6 +151,12 @@
       body.style.fontFamily = fontSelect.value;
       pageSlide.max = document.documentElement.scrollHeight;
       storage.setItem(config.SYSTEM_KEY.FONT_FAMILY, fontSelect.value);
+    });
+    fontWeight.addEventListener("change", () => {
+      setlog('fontWeight change.\n');
+      body.style.fontWeight = fontWeight.value;
+      pageSlide.max = document.documentElement.scrollHeight;
+      storage.setItem(config.SYSTEM_KEY.FONT_WEIGHT, fontWeight.value);
     });
     pageSlide.addEventListener("input", () => {
       // setlog('pageSlide input.\n');

@@ -59,7 +59,7 @@ body {
     font-size: 12px; */
     overflow-x: hidden;
     word-break: break-all;
-    font-weight: 500;
+    /* font-weight: 900; */
 }
 
 /* statusBar */
@@ -273,7 +273,6 @@ main button {
     text-indent: 1em;
     border-left: 5px solid #dd1010;
     margin-left: 5px;
-    font-weight: bold;
 }
 
 #menu ul {
@@ -415,11 +414,7 @@ main .applicationBox > figure {
     margin-top: 10px;
 }
 
-#fontSelect {
-    font-size: inherit;
-}
-
-#sizeSelect {
+#fontSelect,#sizeSelect,#font-weight {
     font-size: inherit;
 }
 

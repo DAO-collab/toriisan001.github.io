@@ -5,7 +5,7 @@ function getConfig() {
             LAST_PAGEY_OFFSET: 'SYSTEM_KEY_LAST_PAGEY_OFFSET',
             LOG_SHO_FLAG: 'SYSTEM_KEY_LOG_SHO_FLAG',
             FONT_FAMILY: 'SYSTEM_KEY_FONT_FAMILY',
-            FONT_SIZE: 'SYSTEM_KEY_FONT_SIZE',
+            FONT_WEIGHT: 'SYSTEM_KEY_FONT_WEIGHT',
         },
         PAGE: {
             HOME: 'https://toriisan001.github.io/page/home.html'
@@ -23,6 +23,7 @@ function getConfig() {
         INITIALIZATION: {
             FONT_FAMILY: 'Verdana, sans-serif',
             FONT_SIZE: '12px',
+            FONT_WEIGHT: 'normal',
         },
     };
 }
