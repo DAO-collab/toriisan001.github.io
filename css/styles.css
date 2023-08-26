@@ -13,6 +13,9 @@
 /* detailsタグ */
 details {
     background-color: #c1baff26;
+    border: 0.5px solid #000000;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 /* QR */
