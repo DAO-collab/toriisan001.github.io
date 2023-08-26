@@ -691,6 +691,39 @@ dt.parentNode.classList.toggle('appear');
 </code>
 </pre>
 
+<h2>数値、文字列相互変換</h2>
+<pre>
+<code>
+=====HTML=====
+&lt;form action=&quot;?action=send&quot; method=&quot;post&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;token&quot; value=&quot;&lt;?=h($_SESSION[&#039;token&#039;]);?&gt;&quot;&gt;
+&lt;p style=&quot;font-size:15px;&quot;&gt;メッセージ
+&lt;span class=&quot;tooltip1&quot;&gt;
+    &lt;span class=&quot;mark&quot; style=&quot;font-size:15px&quot;&gt;？&lt;/span&gt;
+    &lt;span class=&quot;description1&quot;&gt;
+        1日に送信出来る制限は10件です。&lt;br&gt;
+        &lt;?=h($systemDateTime);?&gt;はあと&lt;?=(int) CHAT_GPT_SEND_LIMIT - h($sendCount);?&gt;回送信可能です。
+    &lt;/span&gt;
+&lt;/span&gt;
+&lt;/p&gt;
+&lt;input type=&quot;text&quot; name=&quot;message&quot; autocomplete=&quot;off&quot; maxlength=&quot;100&quot; style=&quot;width:calc(100% - 10px); height:30px; margin-bottom:20px; font-size:15px&quot;&gt;
+&lt;br&gt;
+&lt;button id=&quot;send&quot; style=&quot;font-size:15px&quot;&gt;送信&lt;/button&gt;
+&lt;/form&gt;
+
+=====HTML=====
+// 送信押下
+const send = document.getElementById('send');
+send.addEventListener('click', e => {
+    send.disabled = true;
+    send.textContent = '送信中...';
+    send.parentNode.submit();
+});
+</code>
+</pre>
+<p>再実行防止について以下の方法もあるらしい。</p>
+<p><a href="https://qiita.com/sumihiro/items/2cb6fd372a497a937192">【参考】formのsubmit時にdata-loading-textを適切に有効にする</a></p>
+
     </main>
     <div id="log"></div>
     <div id="operationParts"></div>
