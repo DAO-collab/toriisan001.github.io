@@ -459,18 +459,32 @@ bin2hex(random_bytes(32));
 </code>
 </pre>
 
-    <h2>インスタンスの取得</h2>
+    <h2>SQLを実行</h2>
 <pre>
 <code>
-function validateToken()
-{
-    if (
-    empty($_SESSION['token']) ||
-    $_SESSION['token'] !== filter_input(INPUT_POST, 'token')
-    ) {
-    exit('Invalid post request');
-    }
+try {
+    $pdo = new PDO(
+        DSN,
+        DB_USER,
+        DB_PASS,
+        [
+        PDO::ATTR_ERRMODE => PDO:: ERRMODE_EXCEPTION, // エラーが起きた時は例外を投げてねという設定
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ, // オブジェクト形式で結果を取得する設定
+        PDO::ATTR_EMULATE_PREPARES => false, // 取得したデータの型を SQL で定義した型に合わせて取得したいのでfalseにする
+        ]
+    );
+    return $pdo;
+} catch(PDOException $e) {
+echo $e->getMessage();
+exit;
 }
+// プレイスホルダーを使用
+$stmt = $pdo->prepare("UPDATE PHPTodoFunctionTodos SET is_done = NOT is_done WHERE id = :id");
+$stmt->bindValue('id', $id, PDO::PARAM_INT);
+$stmt->execute();
+// プレイスホルダーを使用しない
+$stmt = $pdo->query("SELECT * FROM PHPTodoFunctionTodos ORDER BY id DESC");
+$todos = $stmt->fetchAll();
 </code>
 </pre>
 
