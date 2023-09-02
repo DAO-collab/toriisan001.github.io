@@ -739,6 +739,18 @@ li.children
 </code>
 </pre>
 
+<h2>fetchを使用した非同期通信</h2>
+<pre>
+<code>
+fetch('?action=test', {
+    method: 'POST',
+    body: new URLSearchParams({
+        id: id,
+    }),
+});
+</code>
+</pre>
+
     </main>
     <div id="log"></div>
     <div id="operationParts"></div>
