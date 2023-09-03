@@ -508,9 +508,32 @@ $this->pdo->lastInsertId();
 <h2>json形式で値を返却</h2>
 <pre>
 <code>
+=====JavaScript=====
+// fetchは非同期処理である。
+fetch('?action=test', {
+    method: 'POST',
+    body: new URLSearchParams({
+    }),
+})
+.then(response => response.json())
+.then(json => {
+    console.log(json.id);
+    addTodo(json.id, title);
+});
+=====PHP=====
 $id = $this->add();
 header('Content-Type: application/json');
 echo json_encode(['id' => $id]);
+</code>
+</pre>
+
+<h2>404で返却</h2>
+<pre>
+<code>
+=====JavaScript=====
+=====PHP=====
+header('HTTP', true, 404); // HTTP status code
+exit;
 </code>
 </pre>
 
