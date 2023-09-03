@@ -480,12 +480,17 @@ try {
 echo $e->getMessage();
 exit;
 }
-// プレイスホルダーを使用
-$stmt = $pdo->prepare("UPDATE PHPTodoFunctionTodos SET is_done = NOT is_done WHERE id = :id");
+// プレイスホルダーを使用。実行のみ
+$stmt = $pdo->prepare("UPDATE test SET is_done = NOT is_done WHERE id = :id");
 $stmt->bindValue('id', $id, PDO::PARAM_INT);
 $stmt->execute();
+// プレイスホルダーを使用。値をfetchで取得
+$stmt = $this->pdo->prepare("SELECT * FROM test WHERE id = :id");
+$stmt->bindValue('id', $id, \PDO::PARAM_INT);
+$stmt->execute();
+$todo = $stmt->fetch();
 // プレイスホルダーを使用しない
-$stmt = $pdo->query("SELECT * FROM PHPTodoFunctionTodos ORDER BY id DESC");
+$stmt = $pdo->query("SELECT * FROM test ORDER BY id DESC");
 $todos = $stmt->fetchAll();
 </code>
 </pre>
