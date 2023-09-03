@@ -505,6 +505,15 @@ $this->pdo->lastInsertId();
 </code>
 </pre>
 
+<h2>json形式で値を返却</h2>
+<pre>
+<code>
+$id = $this->add();
+header('Content-Type: application/json');
+echo json_encode(['id' => $id]);
+</code>
+</pre>
+
     </main>
     <div id="log"></div>
     <div id="operationParts"></div>
