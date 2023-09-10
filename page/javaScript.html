@@ -766,6 +766,19 @@ location.reload();
 </code>
 </pre>
 
+    <h2>エンターキーで送信</h2>
+<pre>
+<code>
+document.onkeydown = function(e) {
+    const key = e.keyCode || e.charCode || 0;
+    // 13はEnterキーのキーコード
+    if (key == config.KEY_CODE.ENTER_KEY) {
+        send.click();
+    }
+};
+</code>
+</pre>
+
     </main>
     <div id="log"></div>
     <div id="operationParts"></div>
